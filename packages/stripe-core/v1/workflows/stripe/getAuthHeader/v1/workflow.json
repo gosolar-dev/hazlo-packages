@@ -1,0 +1,43 @@
+{
+  "name": "Get Stripe Auth Header",
+  "description": "Builds an Authorization header from input.bearerToken or env.STRIPE_SECRET_KEY.",
+  "meta": {
+    "provider": "stripe",
+    "operationId": "getAuthHeader"
+  },
+  "input": {
+    "bearerToken": "Optional explicit Stripe secret key. Falls back to env.STRIPE_SECRET_KEY."
+  },
+  "inputRequired": [],
+  "ruleset": {
+    "_pbd_nebula_type": "condition",
+    "op": "!=",
+    "left": {
+      "_pbd_nebula_type": "var",
+      "keyPath": "bearerToken",
+      "optional": true
+    },
+    "right": "",
+    "then": {
+      "_pbd_nebula_type": "concat",
+      "left": "Bearer ",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "keyPath": "bearerToken",
+        "optional": true
+      }
+    },
+    "else": {
+      "_pbd_nebula_type": "concat",
+      "left": "Bearer ",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "keyPath": "env.STRIPE_SECRET_KEY",
+        "optional": true
+      }
+    }
+  },
+  "output": {
+    "authorization": "Bearer sk_test_123"
+  }
+}

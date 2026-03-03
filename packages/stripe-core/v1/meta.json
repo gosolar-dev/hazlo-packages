@@ -1,0 +1,65 @@
+{
+  "schemaVersion": "v1",
+  "name": "stripe-core",
+  "version": "v1",
+  "description": "Core Stripe workflows for auth header generation and customer listing.",
+  "workflows": [
+    {
+      "ref": "stripe/getAuthHeader/v1",
+      "path": "workflows/stripe/getAuthHeader/v1/workflow.json",
+      "description": "Builds a Stripe Authorization header from input or env.",
+      "subworkRefs": [],
+      "requiredEnvKeys": [
+        "STRIPE_SECRET_KEY"
+      ],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "stripe/listCustomers/v1",
+      "path": "workflows/stripe/listCustomers/v1/workflow.json",
+      "description": "Calls Stripe GET /v1/customers.",
+      "subworkRefs": [
+        "stripe/getAuthHeader/v1"
+      ],
+      "requiredEnvKeys": [
+        "STRIPE_SECRET_KEY"
+      ],
+      "optionalEnvKeys": [
+        "STRIPE_API_BASE"
+      ]
+    }
+  ],
+  "defaultInstallRefs": [
+    "stripe/listCustomers/v1"
+  ],
+  "env": [
+    {
+      "key": "STRIPE_SECRET_KEY",
+      "required": true,
+      "description": "Stripe secret key for Authorization header fallback.",
+      "usedByRefs": [
+        "stripe/getAuthHeader/v1",
+        "stripe/listCustomers/v1"
+      ]
+    },
+    {
+      "key": "STRIPE_API_BASE",
+      "required": false,
+      "description": "Optional Stripe API base URL override.",
+      "usedByRefs": [
+        "stripe/listCustomers/v1"
+      ]
+    }
+  ],
+  "checksums": {
+    "stripe/getAuthHeader/v1": "94d1093c0c6541de2863ca2b73afde7e53ac3c88256444aaed5ddd5c831b213f",
+    "stripe/listCustomers/v1": "fd4d5c7052d3ec77cd7d72107d34b8e4f6f128fa5f3b0efcd40aa5e424684ab4"
+  },
+  "homepage": "https://stripe.com/docs/api",
+  "license": "MIT",
+  "tags": [
+    "stripe",
+    "payments",
+    "customers"
+  ]
+}
