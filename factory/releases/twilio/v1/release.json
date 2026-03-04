@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "v1",
+  "package": "twilio",
+  "version": "v1",
+  "provider": "twilio",
+  "mode": "refs",
+  "refs": [
+    "twilio/BuildMobileSendRequest/v1",
+    "twilio/CreateMessage/v1",
+    "twilio/ListMessage/v1",
+    "twilio/FetchMessage/v1",
+    "twilio/UpdateMessage/v1",
+    "twilio/CreateMessageFeedback/v1"
+  ],
+  "description": "Twilio mobile messaging workflows for sending SMS/MMS, checking delivery status, and listing message activity.",
+  "defaultInstallRefs": [
+    "twilio/CreateMessage/v1",
+    "twilio/ListMessage/v1",
+    "twilio/FetchMessage/v1"
+  ],
+  "env": [],
+  "homepage": "https://www.twilio.com/docs/messaging/api",
+  "license": "Apache-2.0",
+  "tags": [
+    "twilio",
+    "messaging",
+    "sms",
+    "mms",
+    "mobile",
+    "openapi",
+    "generated"
+  ],
+  "smokeTests": [
+    {
+      "name": "Build mobile send request envelope",
+      "ref": "twilio/BuildMobileSendRequest/v1",
+      "input": "../../../fixtures/inputs/twilio.buildMobileSendRequest.basic.json",
+      "expected": "../../../fixtures/expected/twilio.buildMobileSendRequest.basic.json"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "name": "FetchMessage",
+  "description": "Fetch a message belonging to the account used to make the request",
+  "meta": {
+    "method": "GET",
+    "operationId": "FetchMessage",
+    "path": "/2010-04-01/Accounts/{AccountSid}/Messages/{Sid}.json"
+  },
+  "input": {
+    "authAccountSidAuthToken": "base64-credentials",
+    "pathAccountSid": "<string>",
+    "pathSid": "<string>"
+  },
+  "inputRequired": [
+    "authAccountSidAuthToken",
+    "pathAccountSid",
+    "pathSid"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "83023f9dab34",
+        "left": "Basic ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "b25e94ebc81e",
+          "keyPath": "authAccountSidAuthToken",
+          "optional": false
+        }
+      }
+    },
+    "host": "https://api.twilio.com",
+    "id": "286f7ab7aef9",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "5ca44a968c54",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "31268851f66e",
+        "left": {
+          "_pbd_hazlo_type": "concat",
+          "id": "38c0e7d4957e",
+          "left": {
+            "_pbd_hazlo_type": "concat",
+            "id": "686df8dc37df",
+            "left": "/2010-04-01/Accounts/",
+            "right": {
+              "_pbd_hazlo_type": "var",
+              "id": "521b1ddbf89d",
+              "keyPath": "pathAccountSid",
+              "optional": false
+            }
+          },
+          "right": "/Messages/"
+        },
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "1e429e005c86",
+          "keyPath": "pathSid",
+          "optional": false
+        }
+      },
+      "right": ".json"
+    },
+    "query": {}
+  }
+}

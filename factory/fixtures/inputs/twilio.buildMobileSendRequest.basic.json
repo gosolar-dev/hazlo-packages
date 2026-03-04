@@ -1,0 +1,8 @@
+{
+  "accountSid": "AC1234567890ABCDEF1234567890ABCD",
+  "authAccountSidAuthToken": "QUMxMjM0NTY3ODkwQUJDREVGMTIzNDU2Nzg5MEFCQ0Q6dGVzdF90b2tlbg==",
+  "to": "+15551234567",
+  "from": "+15557654321",
+  "body": "Hello from Hazlo smoke test",
+  "statusCallback": "https://example.com/twilio/status"
+}

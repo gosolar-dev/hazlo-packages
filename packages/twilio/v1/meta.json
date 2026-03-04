@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "v1",
+  "name": "twilio",
+  "version": "v1",
+  "description": "Twilio mobile messaging workflows for sending SMS/MMS, checking delivery status, and listing message activity.",
+  "workflows": [
+    {
+      "ref": "twilio/BuildMobileSendRequest/v1",
+      "path": "workflows/twilio/BuildMobileSendRequest/v1/workflow.json",
+      "description": "Builds a deterministic Twilio mobile message request envelope for smoke validation and local payload checks.",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "twilio/CreateMessage/v1",
+      "path": "workflows/twilio/CreateMessage/v1/workflow.json",
+      "description": "Send a message from the account used to make the request",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "twilio/CreateMessageFeedback/v1",
+      "path": "workflows/twilio/CreateMessageFeedback/v1/workflow.json",
+      "description": "CreateMessageFeedback",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "twilio/FetchMessage/v1",
+      "path": "workflows/twilio/FetchMessage/v1/workflow.json",
+      "description": "Fetch a message belonging to the account used to make the request",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "twilio/ListMessage/v1",
+      "path": "workflows/twilio/ListMessage/v1/workflow.json",
+      "description": "Retrieve a list of messages belonging to the account used to make the request",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "twilio/UpdateMessage/v1",
+      "path": "workflows/twilio/UpdateMessage/v1/workflow.json",
+      "description": "To redact a message-body from a post-flight message record, post to the message instance resource with an empty body",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    }
+  ],
+  "defaultInstallRefs": [
+    "twilio/CreateMessage/v1",
+    "twilio/FetchMessage/v1",
+    "twilio/ListMessage/v1"
+  ],
+  "env": [],
+  "checksums": {
+    "twilio/BuildMobileSendRequest/v1": "7d5e81ff2e9a2d9bb3a3c8201f42f58f5831457797313f6ba5563519f9481946",
+    "twilio/CreateMessage/v1": "767f5bd094b4e0d543bd6a751133bb812714870a226ac220a88367a0db2a31b2",
+    "twilio/CreateMessageFeedback/v1": "64845129c3b1f2a69673bd4fff20ba9fdef71bb1a63a6e196bc12a04cfc06eeb",
+    "twilio/FetchMessage/v1": "9d6c4bf16a8823faa429ef3d79544d9b0d2c334a62cf6e42aa645e1f67ba01c0",
+    "twilio/ListMessage/v1": "4bc36e5b047874c7c9c702389d0d73b046be4a3f37f00d0d2077a5215cada8a7",
+    "twilio/UpdateMessage/v1": "7c2189929279cde5e1f97d81144ee44355245518e6f4e4f05a776c701f81c01e"
+  },
+  "homepage": "https://www.twilio.com/docs/messaging/api",
+  "license": "Apache-2.0",
+  "tags": [
+    "twilio",
+    "messaging",
+    "sms",
+    "mms",
+    "mobile",
+    "openapi",
+    "generated"
+  ]
+}

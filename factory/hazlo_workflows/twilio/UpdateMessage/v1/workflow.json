@@ -1,0 +1,80 @@
+{
+  "name": "UpdateMessage",
+  "description": "To redact a message-body from a post-flight message record, post to the message instance resource with an empty body",
+  "meta": {
+    "method": "POST",
+    "operationId": "UpdateMessage",
+    "path": "/2010-04-01/Accounts/{AccountSid}/Messages/{Sid}.json"
+  },
+  "input": {
+    "authAccountSidAuthToken": "base64-credentials",
+    "body": {
+      "Body": "<string>",
+      "Status": "canceled"
+    },
+    "pathAccountSid": "<string>",
+    "pathSid": "<string>"
+  },
+  "inputRequired": [
+    "authAccountSidAuthToken",
+    "pathAccountSid",
+    "pathSid"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "bb29fc0e2529",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "ee589204c0d5",
+        "left": "Basic ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "b4e7c80fc358",
+          "keyPath": "authAccountSidAuthToken",
+          "optional": false
+        }
+      }
+    },
+    "host": "https://api.twilio.com",
+    "id": "506c56fa29af",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "1ba81b3a6881",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "82e008565d98",
+        "left": {
+          "_pbd_hazlo_type": "concat",
+          "id": "21925c3d5eb4",
+          "left": {
+            "_pbd_hazlo_type": "concat",
+            "id": "fd662b8f7041",
+            "left": "/2010-04-01/Accounts/",
+            "right": {
+              "_pbd_hazlo_type": "var",
+              "id": "97f3795daf1d",
+              "keyPath": "pathAccountSid",
+              "optional": false
+            }
+          },
+          "right": "/Messages/"
+        },
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "1db63fbda220",
+          "keyPath": "pathSid",
+          "optional": false
+        }
+      },
+      "right": ".json"
+    },
+    "query": {}
+  }
+}

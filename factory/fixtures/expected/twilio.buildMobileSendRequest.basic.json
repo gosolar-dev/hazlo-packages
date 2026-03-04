@@ -1,0 +1,18 @@
+{
+  "result": {
+    "body": {
+      "Body": "Hello from Hazlo smoke test",
+      "From": "+15557654321",
+      "StatusCallback": "https://example.com/twilio/status",
+      "To": "+15551234567"
+    },
+    "headers": {
+      "Authorization": "Basic QUMxMjM0NTY3ODkwQUJDREVGMTIzNDU2Nzg5MEFCQ0Q6dGVzdF90b2tlbg=="
+    },
+    "messageType": "sms",
+    "method": "POST",
+    "path": "/2010-04-01/Accounts/AC1234567890ABCDEF1234567890ABCD/Messages.json",
+    "summary": "Prepared mobile send to +15551234567"
+  },
+  "workflowRef": "twilio/BuildMobileSendRequest/v1"
+}

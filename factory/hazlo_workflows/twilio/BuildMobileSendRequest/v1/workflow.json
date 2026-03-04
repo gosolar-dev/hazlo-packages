@@ -1,0 +1,92 @@
+{
+  "name": "Build mobile send request",
+  "description": "Builds a deterministic Twilio mobile message request envelope for smoke validation and local payload checks.",
+  "meta": {
+    "provider": "twilio",
+    "operationId": "BuildMobileSendRequest"
+  },
+  "input": {
+    "accountSid": "<string>",
+    "authAccountSidAuthToken": "<base64-credentials>",
+    "to": "<string>",
+    "from": "<string>",
+    "body": "<string>",
+    "statusCallback": "<string>",
+    "mediaUrl": "<string>"
+  },
+  "inputRequired": [
+    "accountSid",
+    "authAccountSidAuthToken",
+    "to",
+    "from",
+    "body"
+  ],
+  "ruleset": {
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "left": "/2010-04-01/Accounts/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "keyPath": "accountSid",
+          "optional": false
+        }
+      },
+      "right": "/Messages.json"
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "left": "Basic ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "keyPath": "authAccountSidAuthToken",
+          "optional": false
+        }
+      }
+    },
+    "body": {
+      "To": {
+        "_pbd_hazlo_type": "var",
+        "keyPath": "to",
+        "optional": false
+      },
+      "From": {
+        "_pbd_hazlo_type": "var",
+        "keyPath": "from",
+        "optional": false
+      },
+      "Body": {
+        "_pbd_hazlo_type": "var",
+        "keyPath": "body",
+        "optional": false
+      },
+      "StatusCallback": {
+        "_pbd_hazlo_type": "var",
+        "keyPath": "statusCallback",
+        "optional": true
+      }
+    },
+    "messageType": {
+      "_pbd_hazlo_type": "does_exist",
+      "var": {
+        "_pbd_hazlo_type": "var",
+        "keyPath": "mediaUrl",
+        "optional": true
+      },
+      "then": "mms",
+      "else": "sms"
+    },
+    "summary": {
+      "_pbd_hazlo_type": "concat",
+      "left": "Prepared mobile send to ",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "keyPath": "to",
+        "optional": false
+      }
+    }
+  }
+}

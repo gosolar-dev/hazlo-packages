@@ -1,0 +1,87 @@
+{
+  "name": "CreateMessage",
+  "description": "Send a message from the account used to make the request",
+  "meta": {
+    "method": "POST",
+    "operationId": "CreateMessage",
+    "path": "/2010-04-01/Accounts/{AccountSid}/Messages.json"
+  },
+  "input": {
+    "authAccountSidAuthToken": "base64-credentials",
+    "body": {
+      "AddressRetention": "retain",
+      "ApplicationSid": "<string>",
+      "Attempt": "<number>",
+      "Body": "<string>",
+      "ContentRetention": "retain",
+      "ContentSid": "<string>",
+      "ContentVariables": "<string>",
+      "ForceDelivery": "<boolean>",
+      "From": "<string>",
+      "MaxPrice": "<number>",
+      "MediaUrl": [
+        "<string>"
+      ],
+      "MessagingServiceSid": "<string>",
+      "PersistentAction": [
+        "<string>"
+      ],
+      "ProvideFeedback": "<boolean>",
+      "ScheduleType": "fixed",
+      "SendAsMms": "<boolean>",
+      "SendAt": "<string>",
+      "ShortenUrls": "<boolean>",
+      "SmartEncoded": "<boolean>",
+      "StatusCallback": "<string>",
+      "To": "<string>",
+      "ValidityPeriod": "<number>"
+    },
+    "pathAccountSid": "<string>"
+  },
+  "inputRequired": [
+    "authAccountSidAuthToken",
+    "pathAccountSid"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "ff29dd5788d8",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "d5b11723d19c",
+        "left": "Basic ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "455c82324ee3",
+          "keyPath": "authAccountSidAuthToken",
+          "optional": false
+        }
+      }
+    },
+    "host": "https://api.twilio.com",
+    "id": "e68cc9cd3879",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "6f94ebb25479",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "0d2891329afd",
+        "left": "/2010-04-01/Accounts/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "78a6a78e4542",
+          "keyPath": "pathAccountSid",
+          "optional": false
+        }
+      },
+      "right": "/Messages.json"
+    },
+    "query": {}
+  }
+}

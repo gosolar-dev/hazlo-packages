@@ -1,0 +1,79 @@
+{
+  "name": "CreateMessageFeedback",
+  "description": "CreateMessageFeedback",
+  "meta": {
+    "method": "POST",
+    "operationId": "CreateMessageFeedback",
+    "path": "/2010-04-01/Accounts/{AccountSid}/Messages/{MessageSid}/Feedback.json"
+  },
+  "input": {
+    "authAccountSidAuthToken": "base64-credentials",
+    "body": {
+      "Outcome": "confirmed"
+    },
+    "pathAccountSid": "<string>",
+    "pathMessageSid": "<string>"
+  },
+  "inputRequired": [
+    "authAccountSidAuthToken",
+    "pathAccountSid",
+    "pathMessageSid"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "ffd9afab45ed",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "1a78bcac3e33",
+        "left": "Basic ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "a0dea10e2da7",
+          "keyPath": "authAccountSidAuthToken",
+          "optional": false
+        }
+      }
+    },
+    "host": "https://api.twilio.com",
+    "id": "903749762339",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "fc3710f59d86",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "9be60b2ee390",
+        "left": {
+          "_pbd_hazlo_type": "concat",
+          "id": "ce7184e326ce",
+          "left": {
+            "_pbd_hazlo_type": "concat",
+            "id": "ac7ea219e3d4",
+            "left": "/2010-04-01/Accounts/",
+            "right": {
+              "_pbd_hazlo_type": "var",
+              "id": "e27d0be4351d",
+              "keyPath": "pathAccountSid",
+              "optional": false
+            }
+          },
+          "right": "/Messages/"
+        },
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "2e1ad3ef9638",
+          "keyPath": "pathMessageSid",
+          "optional": false
+        }
+      },
+      "right": "/Feedback.json"
+    },
+    "query": {}
+  }
+}

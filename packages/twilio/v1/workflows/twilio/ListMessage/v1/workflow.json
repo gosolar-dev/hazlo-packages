@@ -1,0 +1,111 @@
+{
+  "name": "ListMessage",
+  "description": "Retrieve a list of messages belonging to the account used to make the request",
+  "meta": {
+    "method": "GET",
+    "operationId": "ListMessage",
+    "path": "/2010-04-01/Accounts/{AccountSid}/Messages.json"
+  },
+  "input": {
+    "authAccountSidAuthToken": "base64-credentials",
+    "pathAccountSid": "<string>",
+    "queryDateSent": "<string>",
+    "queryDateSent<": "<string>",
+    "queryDateSent>": "<string>",
+    "queryFrom": "<string>",
+    "queryPage": "<number>",
+    "queryPageSize": "<number>",
+    "queryPageToken": "<string>",
+    "queryTo": "<string>"
+  },
+  "inputRequired": [
+    "authAccountSidAuthToken",
+    "pathAccountSid"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "79f7086eefba",
+        "left": "Basic ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "7bd4f2b73a2f",
+          "keyPath": "authAccountSidAuthToken",
+          "optional": false
+        }
+      }
+    },
+    "host": "https://api.twilio.com",
+    "id": "10ecfbae944a",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "780085d53be2",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "1f123295da45",
+        "left": "/2010-04-01/Accounts/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "57fdd0dcf253",
+          "keyPath": "pathAccountSid",
+          "optional": false
+        }
+      },
+      "right": "/Messages.json"
+    },
+    "query": {
+      "DateSent": {
+        "_pbd_hazlo_type": "var",
+        "id": "e549b5c9e54a",
+        "keyPath": "queryDateSent",
+        "optional": true
+      },
+      "DateSent<": {
+        "_pbd_hazlo_type": "var",
+        "id": "628926c22a65",
+        "keyPath": "queryDateSent<",
+        "optional": true
+      },
+      "DateSent>": {
+        "_pbd_hazlo_type": "var",
+        "id": "ae7225149ba0",
+        "keyPath": "queryDateSent>",
+        "optional": true
+      },
+      "From": {
+        "_pbd_hazlo_type": "var",
+        "id": "66fc2df3a047",
+        "keyPath": "queryFrom",
+        "optional": true
+      },
+      "Page": {
+        "_pbd_hazlo_type": "var",
+        "id": "84022386aa6e",
+        "keyPath": "queryPage",
+        "optional": true
+      },
+      "PageSize": {
+        "_pbd_hazlo_type": "var",
+        "id": "ef02185a22a4",
+        "keyPath": "queryPageSize",
+        "optional": true
+      },
+      "PageToken": {
+        "_pbd_hazlo_type": "var",
+        "id": "901ff9b0406a",
+        "keyPath": "queryPageToken",
+        "optional": true
+      },
+      "To": {
+        "_pbd_hazlo_type": "var",
+        "id": "6eab6f4de619",
+        "keyPath": "queryTo",
+        "optional": true
+      }
+    }
+  }
+}
