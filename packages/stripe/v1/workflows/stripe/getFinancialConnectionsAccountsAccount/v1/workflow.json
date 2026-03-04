@@ -17,20 +17,20 @@
     "pathAccount"
   ],
   "ruleset": {
-    "_pbd_nebula_type": "api_req",
+    "_pbd_hazlo_type": "api_req",
     "body": {
-      "_pbd_nebula_type": "var",
+      "_pbd_hazlo_type": "var",
       "id": "9905f324721b",
       "keyPath": "body",
       "optional": true
     },
     "headers": {
       "Authorization": {
-        "_pbd_nebula_type": "concat",
+        "_pbd_hazlo_type": "concat",
         "id": "02c030988d69",
         "left": "Bearer ",
         "right": {
-          "_pbd_nebula_type": "var",
+          "_pbd_hazlo_type": "var",
           "id": "e9c9aaf7ce12",
           "keyPath": "authBearerAuth",
           "optional": true
@@ -41,11 +41,11 @@
     "id": "8050c4c24cb8",
     "method": "GET",
     "path": {
-      "_pbd_nebula_type": "concat",
+      "_pbd_hazlo_type": "concat",
       "id": "0eb3759484d8",
       "left": "/v1/financial_connections/accounts/",
       "right": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "cbb246cec7b7",
         "keyPath": "pathAccount",
         "optional": false
@@ -53,7 +53,7 @@
     },
     "query": {
       "expand": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "e1845e711f16",
         "keyPath": "queryExpand",
         "optional": true

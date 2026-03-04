@@ -221,20 +221,20 @@
     "pathSubscriptionExposedId"
   ],
   "ruleset": {
-    "_pbd_nebula_type": "api_req",
+    "_pbd_hazlo_type": "api_req",
     "body": {
-      "_pbd_nebula_type": "var",
+      "_pbd_hazlo_type": "var",
       "id": "f4e1333cbc73",
       "keyPath": "body",
       "optional": true
     },
     "headers": {
       "Authorization": {
-        "_pbd_nebula_type": "concat",
+        "_pbd_hazlo_type": "concat",
         "id": "d5845501cd3d",
         "left": "Bearer ",
         "right": {
-          "_pbd_nebula_type": "var",
+          "_pbd_hazlo_type": "var",
           "id": "74d8ae162d7a",
           "keyPath": "authBearerAuth",
           "optional": true
@@ -245,11 +245,11 @@
     "id": "082bd3c5046a",
     "method": "POST",
     "path": {
-      "_pbd_nebula_type": "concat",
+      "_pbd_hazlo_type": "concat",
       "id": "880599e4e008",
       "left": "/v1/subscriptions/",
       "right": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "eea4b8f55f89",
         "keyPath": "pathSubscriptionExposedId",
         "optional": false

@@ -17,20 +17,20 @@
     "pathReportType"
   ],
   "ruleset": {
-    "_pbd_nebula_type": "api_req",
+    "_pbd_hazlo_type": "api_req",
     "body": {
-      "_pbd_nebula_type": "var",
+      "_pbd_hazlo_type": "var",
       "id": "708b5589c087",
       "keyPath": "body",
       "optional": true
     },
     "headers": {
       "Authorization": {
-        "_pbd_nebula_type": "concat",
+        "_pbd_hazlo_type": "concat",
         "id": "bc0eba1cb78e",
         "left": "Bearer ",
         "right": {
-          "_pbd_nebula_type": "var",
+          "_pbd_hazlo_type": "var",
           "id": "ae3f548ef2a7",
           "keyPath": "authBearerAuth",
           "optional": true
@@ -41,11 +41,11 @@
     "id": "e8718d26ec80",
     "method": "GET",
     "path": {
-      "_pbd_nebula_type": "concat",
+      "_pbd_hazlo_type": "concat",
       "id": "91285e9da819",
       "left": "/v1/reporting/report_types/",
       "right": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "6139599c9244",
         "keyPath": "pathReportType",
         "optional": false
@@ -53,7 +53,7 @@
     },
     "query": {
       "expand": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "e6906f2807de",
         "keyPath": "queryExpand",
         "optional": true

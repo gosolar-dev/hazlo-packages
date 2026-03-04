@@ -20,20 +20,20 @@
     "pathPayout"
   ],
   "ruleset": {
-    "_pbd_nebula_type": "api_req",
+    "_pbd_hazlo_type": "api_req",
     "body": {
-      "_pbd_nebula_type": "var",
+      "_pbd_hazlo_type": "var",
       "id": "c6ba92382aa0",
       "keyPath": "body",
       "optional": true
     },
     "headers": {
       "Authorization": {
-        "_pbd_nebula_type": "concat",
+        "_pbd_hazlo_type": "concat",
         "id": "66268083b4e0",
         "left": "Bearer ",
         "right": {
-          "_pbd_nebula_type": "var",
+          "_pbd_hazlo_type": "var",
           "id": "2f65f4b6a72a",
           "keyPath": "authBearerAuth",
           "optional": true
@@ -44,14 +44,14 @@
     "id": "c4dd8298bc21",
     "method": "POST",
     "path": {
-      "_pbd_nebula_type": "concat",
+      "_pbd_hazlo_type": "concat",
       "id": "fdcc41026842",
       "left": {
-        "_pbd_nebula_type": "concat",
+        "_pbd_hazlo_type": "concat",
         "id": "e42c9dbf354d",
         "left": "/v1/payouts/",
         "right": {
-          "_pbd_nebula_type": "var",
+          "_pbd_hazlo_type": "var",
           "id": "4fabaf7f4b33",
           "keyPath": "pathPayout",
           "optional": false

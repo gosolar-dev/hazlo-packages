@@ -16,20 +16,20 @@
     "queryStartingAfter": "<string>"
   },
   "ruleset": {
-    "_pbd_nebula_type": "api_req",
+    "_pbd_hazlo_type": "api_req",
     "body": {
-      "_pbd_nebula_type": "var",
+      "_pbd_hazlo_type": "var",
       "id": "38188759ce42",
       "keyPath": "body",
       "optional": true
     },
     "headers": {
       "Authorization": {
-        "_pbd_nebula_type": "concat",
+        "_pbd_hazlo_type": "concat",
         "id": "3409be100830",
         "left": "Bearer ",
         "right": {
-          "_pbd_nebula_type": "var",
+          "_pbd_hazlo_type": "var",
           "id": "ee1ba9ffc6d9",
           "keyPath": "authBearerAuth",
           "optional": true
@@ -42,25 +42,25 @@
     "path": "/v1/climate/products",
     "query": {
       "ending_before": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "026c97a0a7c3",
         "keyPath": "queryEndingBefore",
         "optional": true
       },
       "expand": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "d2899d5b9232",
         "keyPath": "queryExpand",
         "optional": true
       },
       "limit": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "5d87d40eb36a",
         "keyPath": "queryLimit",
         "optional": true
       },
       "starting_after": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "ff78e933286a",
         "keyPath": "queryStartingAfter",
         "optional": true

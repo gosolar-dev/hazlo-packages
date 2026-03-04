@@ -20,20 +20,20 @@
     "queryType": "<string>"
   },
   "ruleset": {
-    "_pbd_nebula_type": "api_req",
+    "_pbd_hazlo_type": "api_req",
     "body": {
-      "_pbd_nebula_type": "var",
+      "_pbd_hazlo_type": "var",
       "id": "88c721d0b5ab",
       "keyPath": "body",
       "optional": true
     },
     "headers": {
       "Authorization": {
-        "_pbd_nebula_type": "concat",
+        "_pbd_hazlo_type": "concat",
         "id": "3b3575f600c5",
         "left": "Bearer ",
         "right": {
-          "_pbd_nebula_type": "var",
+          "_pbd_hazlo_type": "var",
           "id": "ad5d403d6bef",
           "keyPath": "authBearerAuth",
           "optional": true
@@ -46,49 +46,49 @@
     "path": "/v1/issuing/transactions",
     "query": {
       "card": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "909f0be9c2c0",
         "keyPath": "queryCard",
         "optional": true
       },
       "cardholder": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "eccedfc2fed9",
         "keyPath": "queryCardholder",
         "optional": true
       },
       "created": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "1e3829fa0a64",
         "keyPath": "queryCreated",
         "optional": true
       },
       "ending_before": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "2747b254cc66",
         "keyPath": "queryEndingBefore",
         "optional": true
       },
       "expand": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "a0f7b69c5d35",
         "keyPath": "queryExpand",
         "optional": true
       },
       "limit": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "157ad17c0144",
         "keyPath": "queryLimit",
         "optional": true
       },
       "starting_after": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "5f91c4225b0d",
         "keyPath": "queryStartingAfter",
         "optional": true
       },
       "type": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "c621a4df7c08",
         "keyPath": "queryType",
         "optional": true

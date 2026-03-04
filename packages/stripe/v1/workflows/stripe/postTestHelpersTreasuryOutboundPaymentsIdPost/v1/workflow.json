@@ -20,20 +20,20 @@
     "pathId"
   ],
   "ruleset": {
-    "_pbd_nebula_type": "api_req",
+    "_pbd_hazlo_type": "api_req",
     "body": {
-      "_pbd_nebula_type": "var",
+      "_pbd_hazlo_type": "var",
       "id": "9cf8d0e53e67",
       "keyPath": "body",
       "optional": true
     },
     "headers": {
       "Authorization": {
-        "_pbd_nebula_type": "concat",
+        "_pbd_hazlo_type": "concat",
         "id": "f2b2ebaab5aa",
         "left": "Bearer ",
         "right": {
-          "_pbd_nebula_type": "var",
+          "_pbd_hazlo_type": "var",
           "id": "6df0a5f75c33",
           "keyPath": "authBearerAuth",
           "optional": true
@@ -44,14 +44,14 @@
     "id": "49481c756893",
     "method": "POST",
     "path": {
-      "_pbd_nebula_type": "concat",
+      "_pbd_hazlo_type": "concat",
       "id": "33e231030bbb",
       "left": {
-        "_pbd_nebula_type": "concat",
+        "_pbd_hazlo_type": "concat",
         "id": "a9dd967f88cf",
         "left": "/v1/test_helpers/treasury/outbound_payments/",
         "right": {
-          "_pbd_nebula_type": "var",
+          "_pbd_hazlo_type": "var",
           "id": "f38e8f767fe2",
           "keyPath": "pathId",
           "optional": false

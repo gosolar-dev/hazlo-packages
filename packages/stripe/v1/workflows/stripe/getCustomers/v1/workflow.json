@@ -19,20 +19,20 @@
     "queryTestClock": "<string>"
   },
   "ruleset": {
-    "_pbd_nebula_type": "api_req",
+    "_pbd_hazlo_type": "api_req",
     "body": {
-      "_pbd_nebula_type": "var",
+      "_pbd_hazlo_type": "var",
       "id": "c8b61deb582b",
       "keyPath": "body",
       "optional": true
     },
     "headers": {
       "Authorization": {
-        "_pbd_nebula_type": "concat",
+        "_pbd_hazlo_type": "concat",
         "id": "6b11077ad2c9",
         "left": "Bearer ",
         "right": {
-          "_pbd_nebula_type": "var",
+          "_pbd_hazlo_type": "var",
           "id": "a599b9c9b522",
           "keyPath": "authBearerAuth",
           "optional": true
@@ -45,43 +45,43 @@
     "path": "/v1/customers",
     "query": {
       "created": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "227868084c48",
         "keyPath": "queryCreated",
         "optional": true
       },
       "email": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "f3e5ab4659db",
         "keyPath": "queryEmail",
         "optional": true
       },
       "ending_before": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "95174c7967ba",
         "keyPath": "queryEndingBefore",
         "optional": true
       },
       "expand": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "cf00055a5989",
         "keyPath": "queryExpand",
         "optional": true
       },
       "limit": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "648786582288",
         "keyPath": "queryLimit",
         "optional": true
       },
       "starting_after": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "b9d4eb58bed9",
         "keyPath": "queryStartingAfter",
         "optional": true
       },
       "test_clock": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "0ab4903c7a0d",
         "keyPath": "queryTestClock",
         "optional": true

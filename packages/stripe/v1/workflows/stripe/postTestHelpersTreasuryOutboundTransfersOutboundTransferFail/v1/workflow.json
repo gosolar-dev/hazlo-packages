@@ -20,20 +20,20 @@
     "pathOutboundTransfer"
   ],
   "ruleset": {
-    "_pbd_nebula_type": "api_req",
+    "_pbd_hazlo_type": "api_req",
     "body": {
-      "_pbd_nebula_type": "var",
+      "_pbd_hazlo_type": "var",
       "id": "99f278decd91",
       "keyPath": "body",
       "optional": true
     },
     "headers": {
       "Authorization": {
-        "_pbd_nebula_type": "concat",
+        "_pbd_hazlo_type": "concat",
         "id": "1cf7a12dc26c",
         "left": "Bearer ",
         "right": {
-          "_pbd_nebula_type": "var",
+          "_pbd_hazlo_type": "var",
           "id": "dd14e6fbcc2a",
           "keyPath": "authBearerAuth",
           "optional": true
@@ -44,14 +44,14 @@
     "id": "736fb8183adb",
     "method": "POST",
     "path": {
-      "_pbd_nebula_type": "concat",
+      "_pbd_hazlo_type": "concat",
       "id": "533595b5bc46",
       "left": {
-        "_pbd_nebula_type": "concat",
+        "_pbd_hazlo_type": "concat",
         "id": "b9d4b897368e",
         "left": "/v1/test_helpers/treasury/outbound_transfers/",
         "right": {
-          "_pbd_nebula_type": "var",
+          "_pbd_hazlo_type": "var",
           "id": "3182847d4e9e",
           "keyPath": "pathOutboundTransfer",
           "optional": false

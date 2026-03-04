@@ -18,20 +18,20 @@
     "queryStatus": "<string>"
   },
   "ruleset": {
-    "_pbd_nebula_type": "api_req",
+    "_pbd_hazlo_type": "api_req",
     "body": {
-      "_pbd_nebula_type": "var",
+      "_pbd_hazlo_type": "var",
       "id": "280111ee67c6",
       "keyPath": "body",
       "optional": true
     },
     "headers": {
       "Authorization": {
-        "_pbd_nebula_type": "concat",
+        "_pbd_hazlo_type": "concat",
         "id": "ffbfcd89da3f",
         "left": "Bearer ",
         "right": {
-          "_pbd_nebula_type": "var",
+          "_pbd_hazlo_type": "var",
           "id": "89bad65141c1",
           "keyPath": "authBearerAuth",
           "optional": true
@@ -44,37 +44,37 @@
     "path": "/v1/treasury/financial_accounts",
     "query": {
       "created": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "14f16677e85a",
         "keyPath": "queryCreated",
         "optional": true
       },
       "ending_before": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "26124f14bbf8",
         "keyPath": "queryEndingBefore",
         "optional": true
       },
       "expand": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "d9e56d457d7d",
         "keyPath": "queryExpand",
         "optional": true
       },
       "limit": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "a088a3b248f1",
         "keyPath": "queryLimit",
         "optional": true
       },
       "starting_after": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "f144de1de4df",
         "keyPath": "queryStartingAfter",
         "optional": true
       },
       "status": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "49ae8f0000c5",
         "keyPath": "queryStatus",
         "optional": true

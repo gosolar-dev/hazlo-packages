@@ -19,20 +19,20 @@
     "pathId"
   ],
   "ruleset": {
-    "_pbd_nebula_type": "api_req",
+    "_pbd_hazlo_type": "api_req",
     "body": {
-      "_pbd_nebula_type": "var",
+      "_pbd_hazlo_type": "var",
       "id": "d8c3fee1a6ac",
       "keyPath": "body",
       "optional": true
     },
     "headers": {
       "Authorization": {
-        "_pbd_nebula_type": "concat",
+        "_pbd_hazlo_type": "concat",
         "id": "f0948b8c9259",
         "left": "Bearer ",
         "right": {
-          "_pbd_nebula_type": "var",
+          "_pbd_hazlo_type": "var",
           "id": "d1578be2b5b4",
           "keyPath": "authBearerAuth",
           "optional": true
@@ -43,17 +43,17 @@
     "id": "83ecd439414e",
     "method": "GET",
     "path": {
-      "_pbd_nebula_type": "concat",
+      "_pbd_hazlo_type": "concat",
       "id": "3244e39d82dd",
       "left": {
-        "_pbd_nebula_type": "concat",
+        "_pbd_hazlo_type": "concat",
         "id": "51a588dc1e7c",
         "left": {
-          "_pbd_nebula_type": "concat",
+          "_pbd_hazlo_type": "concat",
           "id": "f52713370b48",
           "left": "/v1/customers/",
           "right": {
-            "_pbd_nebula_type": "var",
+            "_pbd_hazlo_type": "var",
             "id": "65bbd2710773",
             "keyPath": "pathCustomer",
             "optional": false
@@ -62,7 +62,7 @@
         "right": "/tax_ids/"
       },
       "right": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "bc997636de9f",
         "keyPath": "pathId",
         "optional": false
@@ -70,7 +70,7 @@
     },
     "query": {
       "expand": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "ac320bc62c67",
         "keyPath": "queryExpand",
         "optional": true

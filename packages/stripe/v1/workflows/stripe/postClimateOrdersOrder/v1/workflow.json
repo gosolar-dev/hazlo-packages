@@ -26,20 +26,20 @@
     "pathOrder"
   ],
   "ruleset": {
-    "_pbd_nebula_type": "api_req",
+    "_pbd_hazlo_type": "api_req",
     "body": {
-      "_pbd_nebula_type": "var",
+      "_pbd_hazlo_type": "var",
       "id": "8ab5c4a4008b",
       "keyPath": "body",
       "optional": true
     },
     "headers": {
       "Authorization": {
-        "_pbd_nebula_type": "concat",
+        "_pbd_hazlo_type": "concat",
         "id": "721850be5589",
         "left": "Bearer ",
         "right": {
-          "_pbd_nebula_type": "var",
+          "_pbd_hazlo_type": "var",
           "id": "531de039dacb",
           "keyPath": "authBearerAuth",
           "optional": true
@@ -50,11 +50,11 @@
     "id": "f0f25de3c568",
     "method": "POST",
     "path": {
-      "_pbd_nebula_type": "concat",
+      "_pbd_hazlo_type": "concat",
       "id": "8827cee61ad8",
       "left": "/v1/climate/orders/",
       "right": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "51bc3289273f",
         "keyPath": "pathOrder",
         "optional": false

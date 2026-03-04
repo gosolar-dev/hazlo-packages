@@ -20,20 +20,20 @@
     "queryTransferGroup": "<string>"
   },
   "ruleset": {
-    "_pbd_nebula_type": "api_req",
+    "_pbd_hazlo_type": "api_req",
     "body": {
-      "_pbd_nebula_type": "var",
+      "_pbd_hazlo_type": "var",
       "id": "d8b474cf70b7",
       "keyPath": "body",
       "optional": true
     },
     "headers": {
       "Authorization": {
-        "_pbd_nebula_type": "concat",
+        "_pbd_hazlo_type": "concat",
         "id": "2118b489fcc6",
         "left": "Bearer ",
         "right": {
-          "_pbd_nebula_type": "var",
+          "_pbd_hazlo_type": "var",
           "id": "9a81723e730c",
           "keyPath": "authBearerAuth",
           "optional": true
@@ -46,49 +46,49 @@
     "path": "/v1/charges",
     "query": {
       "created": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "7a7490e61aa7",
         "keyPath": "queryCreated",
         "optional": true
       },
       "customer": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "7ebc9ab6024c",
         "keyPath": "queryCustomer",
         "optional": true
       },
       "ending_before": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "7ae47971f0a6",
         "keyPath": "queryEndingBefore",
         "optional": true
       },
       "expand": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "f2a32a02e124",
         "keyPath": "queryExpand",
         "optional": true
       },
       "limit": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "bfb5928dab08",
         "keyPath": "queryLimit",
         "optional": true
       },
       "payment_intent": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "2efbddc9f2be",
         "keyPath": "queryPaymentIntent",
         "optional": true
       },
       "starting_after": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "776259749298",
         "keyPath": "queryStartingAfter",
         "optional": true
       },
       "transfer_group": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "49c91e854358",
         "keyPath": "queryTransferGroup",
         "optional": true

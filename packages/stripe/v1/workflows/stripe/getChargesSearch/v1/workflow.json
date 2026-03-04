@@ -19,20 +19,20 @@
     "queryQuery"
   ],
   "ruleset": {
-    "_pbd_nebula_type": "api_req",
+    "_pbd_hazlo_type": "api_req",
     "body": {
-      "_pbd_nebula_type": "var",
+      "_pbd_hazlo_type": "var",
       "id": "a9881788d533",
       "keyPath": "body",
       "optional": true
     },
     "headers": {
       "Authorization": {
-        "_pbd_nebula_type": "concat",
+        "_pbd_hazlo_type": "concat",
         "id": "441c7ca5800d",
         "left": "Bearer ",
         "right": {
-          "_pbd_nebula_type": "var",
+          "_pbd_hazlo_type": "var",
           "id": "6a896614600e",
           "keyPath": "authBearerAuth",
           "optional": true
@@ -45,25 +45,25 @@
     "path": "/v1/charges/search",
     "query": {
       "expand": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "b530353bde91",
         "keyPath": "queryExpand",
         "optional": true
       },
       "limit": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "9ef6f6b83b97",
         "keyPath": "queryLimit",
         "optional": true
       },
       "page": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "80af3ceac950",
         "keyPath": "queryPage",
         "optional": true
       },
       "query": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "52f4741e111d",
         "keyPath": "queryQuery",
         "optional": false

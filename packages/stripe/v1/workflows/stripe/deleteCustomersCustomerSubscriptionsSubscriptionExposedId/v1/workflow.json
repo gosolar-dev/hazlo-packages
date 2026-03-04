@@ -24,20 +24,20 @@
     "pathSubscriptionExposedId"
   ],
   "ruleset": {
-    "_pbd_nebula_type": "api_req",
+    "_pbd_hazlo_type": "api_req",
     "body": {
-      "_pbd_nebula_type": "var",
+      "_pbd_hazlo_type": "var",
       "id": "1e941ce045fe",
       "keyPath": "body",
       "optional": true
     },
     "headers": {
       "Authorization": {
-        "_pbd_nebula_type": "concat",
+        "_pbd_hazlo_type": "concat",
         "id": "1eda945457b1",
         "left": "Bearer ",
         "right": {
-          "_pbd_nebula_type": "var",
+          "_pbd_hazlo_type": "var",
           "id": "cd5a7a2aa498",
           "keyPath": "authBearerAuth",
           "optional": true
@@ -48,17 +48,17 @@
     "id": "ca4204ca7db1",
     "method": "DELETE",
     "path": {
-      "_pbd_nebula_type": "concat",
+      "_pbd_hazlo_type": "concat",
       "id": "c233024aeef3",
       "left": {
-        "_pbd_nebula_type": "concat",
+        "_pbd_hazlo_type": "concat",
         "id": "e3c3b5104b13",
         "left": {
-          "_pbd_nebula_type": "concat",
+          "_pbd_hazlo_type": "concat",
           "id": "681a5983d02d",
           "left": "/v1/customers/",
           "right": {
-            "_pbd_nebula_type": "var",
+            "_pbd_hazlo_type": "var",
             "id": "23cd4d3c2824",
             "keyPath": "pathCustomer",
             "optional": false
@@ -67,7 +67,7 @@
         "right": "/subscriptions/"
       },
       "right": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "f21beb394f2b",
         "keyPath": "pathSubscriptionExposedId",
         "optional": false

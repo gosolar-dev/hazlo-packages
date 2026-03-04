@@ -83,20 +83,20 @@
     "pathLineItemId"
   ],
   "ruleset": {
-    "_pbd_nebula_type": "api_req",
+    "_pbd_hazlo_type": "api_req",
     "body": {
-      "_pbd_nebula_type": "var",
+      "_pbd_hazlo_type": "var",
       "id": "c91457933a58",
       "keyPath": "body",
       "optional": true
     },
     "headers": {
       "Authorization": {
-        "_pbd_nebula_type": "concat",
+        "_pbd_hazlo_type": "concat",
         "id": "f3dfc08cfd75",
         "left": "Bearer ",
         "right": {
-          "_pbd_nebula_type": "var",
+          "_pbd_hazlo_type": "var",
           "id": "eb099ccafe0d",
           "keyPath": "authBearerAuth",
           "optional": true
@@ -107,17 +107,17 @@
     "id": "898536c28032",
     "method": "POST",
     "path": {
-      "_pbd_nebula_type": "concat",
+      "_pbd_hazlo_type": "concat",
       "id": "71b8902128c6",
       "left": {
-        "_pbd_nebula_type": "concat",
+        "_pbd_hazlo_type": "concat",
         "id": "f44168cca592",
         "left": {
-          "_pbd_nebula_type": "concat",
+          "_pbd_hazlo_type": "concat",
           "id": "d266ab388b50",
           "left": "/v1/invoices/",
           "right": {
-            "_pbd_nebula_type": "var",
+            "_pbd_hazlo_type": "var",
             "id": "5b9d765ba618",
             "keyPath": "pathInvoice",
             "optional": false
@@ -126,7 +126,7 @@
         "right": "/lines/"
       },
       "right": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "ba6b8092762f",
         "keyPath": "pathLineItemId",
         "optional": false

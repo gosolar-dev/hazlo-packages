@@ -110,20 +110,20 @@
     "pathCustomer"
   ],
   "ruleset": {
-    "_pbd_nebula_type": "api_req",
+    "_pbd_hazlo_type": "api_req",
     "body": {
-      "_pbd_nebula_type": "var",
+      "_pbd_hazlo_type": "var",
       "id": "81f73557996e",
       "keyPath": "body",
       "optional": true
     },
     "headers": {
       "Authorization": {
-        "_pbd_nebula_type": "concat",
+        "_pbd_hazlo_type": "concat",
         "id": "fbe4fd57ad99",
         "left": "Bearer ",
         "right": {
-          "_pbd_nebula_type": "var",
+          "_pbd_hazlo_type": "var",
           "id": "1388e93b58f4",
           "keyPath": "authBearerAuth",
           "optional": true
@@ -134,11 +134,11 @@
     "id": "a72f257e19f5",
     "method": "POST",
     "path": {
-      "_pbd_nebula_type": "concat",
+      "_pbd_hazlo_type": "concat",
       "id": "7a18c6d3fe59",
       "left": "/v1/customers/",
       "right": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "f4fb5d1764b9",
         "keyPath": "pathCustomer",
         "optional": false

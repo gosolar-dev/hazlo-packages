@@ -54,20 +54,20 @@
     "pathInvoiceitem"
   ],
   "ruleset": {
-    "_pbd_nebula_type": "api_req",
+    "_pbd_hazlo_type": "api_req",
     "body": {
-      "_pbd_nebula_type": "var",
+      "_pbd_hazlo_type": "var",
       "id": "8c72cb9c2828",
       "keyPath": "body",
       "optional": true
     },
     "headers": {
       "Authorization": {
-        "_pbd_nebula_type": "concat",
+        "_pbd_hazlo_type": "concat",
         "id": "ce7e8a581758",
         "left": "Bearer ",
         "right": {
-          "_pbd_nebula_type": "var",
+          "_pbd_hazlo_type": "var",
           "id": "cf1da5469bcf",
           "keyPath": "authBearerAuth",
           "optional": true
@@ -78,11 +78,11 @@
     "id": "ef3a7570cd35",
     "method": "POST",
     "path": {
-      "_pbd_nebula_type": "concat",
+      "_pbd_hazlo_type": "concat",
       "id": "2b44f99bc18d",
       "left": "/v1/invoiceitems/",
       "right": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "5a40862100f9",
         "keyPath": "pathInvoiceitem",
         "optional": false

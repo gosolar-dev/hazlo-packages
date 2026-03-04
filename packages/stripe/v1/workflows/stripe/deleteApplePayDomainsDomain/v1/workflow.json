@@ -16,20 +16,20 @@
     "pathDomain"
   ],
   "ruleset": {
-    "_pbd_nebula_type": "api_req",
+    "_pbd_hazlo_type": "api_req",
     "body": {
-      "_pbd_nebula_type": "var",
+      "_pbd_hazlo_type": "var",
       "id": "1ebb19ab18cc",
       "keyPath": "body",
       "optional": true
     },
     "headers": {
       "Authorization": {
-        "_pbd_nebula_type": "concat",
+        "_pbd_hazlo_type": "concat",
         "id": "7a3726023094",
         "left": "Bearer ",
         "right": {
-          "_pbd_nebula_type": "var",
+          "_pbd_hazlo_type": "var",
           "id": "8b7eb818fc8c",
           "keyPath": "authBearerAuth",
           "optional": true
@@ -40,11 +40,11 @@
     "id": "c4470fa95941",
     "method": "DELETE",
     "path": {
-      "_pbd_nebula_type": "concat",
+      "_pbd_hazlo_type": "concat",
       "id": "09c6626e7f12",
       "left": "/v1/apple_pay/domains/",
       "right": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "30ecf3b9a84c",
         "keyPath": "pathDomain",
         "optional": false

@@ -25,20 +25,20 @@
     "pathId"
   ],
   "ruleset": {
-    "_pbd_nebula_type": "api_req",
+    "_pbd_hazlo_type": "api_req",
     "body": {
-      "_pbd_nebula_type": "var",
+      "_pbd_hazlo_type": "var",
       "id": "3c775850aa99",
       "keyPath": "body",
       "optional": true
     },
     "headers": {
       "Authorization": {
-        "_pbd_nebula_type": "concat",
+        "_pbd_hazlo_type": "concat",
         "id": "b0123ffd4b5f",
         "left": "Bearer ",
         "right": {
-          "_pbd_nebula_type": "var",
+          "_pbd_hazlo_type": "var",
           "id": "ebc27b16e3f3",
           "keyPath": "authBearerAuth",
           "optional": true
@@ -49,20 +49,20 @@
     "id": "7df606c9e53a",
     "method": "POST",
     "path": {
-      "_pbd_nebula_type": "concat",
+      "_pbd_hazlo_type": "concat",
       "id": "50601c14a349",
       "left": {
-        "_pbd_nebula_type": "concat",
+        "_pbd_hazlo_type": "concat",
         "id": "eb2e99b89015",
         "left": {
-          "_pbd_nebula_type": "concat",
+          "_pbd_hazlo_type": "concat",
           "id": "551fd9fad05f",
           "left": {
-            "_pbd_nebula_type": "concat",
+            "_pbd_hazlo_type": "concat",
             "id": "f742d71789ca",
             "left": "/v1/customers/",
             "right": {
-              "_pbd_nebula_type": "var",
+              "_pbd_hazlo_type": "var",
               "id": "5a44524b08e3",
               "keyPath": "pathCustomer",
               "optional": false
@@ -71,7 +71,7 @@
           "right": "/bank_accounts/"
         },
         "right": {
-          "_pbd_nebula_type": "var",
+          "_pbd_hazlo_type": "var",
           "id": "4e49d989897a",
           "keyPath": "pathId",
           "optional": false

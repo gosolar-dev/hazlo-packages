@@ -29,20 +29,20 @@
     "pathWebhookEndpoint"
   ],
   "ruleset": {
-    "_pbd_nebula_type": "api_req",
+    "_pbd_hazlo_type": "api_req",
     "body": {
-      "_pbd_nebula_type": "var",
+      "_pbd_hazlo_type": "var",
       "id": "0508e47aca26",
       "keyPath": "body",
       "optional": true
     },
     "headers": {
       "Authorization": {
-        "_pbd_nebula_type": "concat",
+        "_pbd_hazlo_type": "concat",
         "id": "ae4a218164ca",
         "left": "Bearer ",
         "right": {
-          "_pbd_nebula_type": "var",
+          "_pbd_hazlo_type": "var",
           "id": "19bd3c90dece",
           "keyPath": "authBearerAuth",
           "optional": true
@@ -53,11 +53,11 @@
     "id": "436f454adc98",
     "method": "POST",
     "path": {
-      "_pbd_nebula_type": "concat",
+      "_pbd_hazlo_type": "concat",
       "id": "d92ae944ab96",
       "left": "/v1/webhook_endpoints/",
       "right": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "95bf17c0b68d",
         "keyPath": "pathWebhookEndpoint",
         "optional": false

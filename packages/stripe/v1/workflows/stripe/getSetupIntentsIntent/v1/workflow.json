@@ -18,20 +18,20 @@
     "pathIntent"
   ],
   "ruleset": {
-    "_pbd_nebula_type": "api_req",
+    "_pbd_hazlo_type": "api_req",
     "body": {
-      "_pbd_nebula_type": "var",
+      "_pbd_hazlo_type": "var",
       "id": "6ad975b58eeb",
       "keyPath": "body",
       "optional": true
     },
     "headers": {
       "Authorization": {
-        "_pbd_nebula_type": "concat",
+        "_pbd_hazlo_type": "concat",
         "id": "cf5a45da530a",
         "left": "Bearer ",
         "right": {
-          "_pbd_nebula_type": "var",
+          "_pbd_hazlo_type": "var",
           "id": "cb06f3a186bb",
           "keyPath": "authBearerAuth",
           "optional": true
@@ -42,11 +42,11 @@
     "id": "539585e5c683",
     "method": "GET",
     "path": {
-      "_pbd_nebula_type": "concat",
+      "_pbd_hazlo_type": "concat",
       "id": "152a7cff09bd",
       "left": "/v1/setup_intents/",
       "right": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "850775cf33bf",
         "keyPath": "pathIntent",
         "optional": false
@@ -54,13 +54,13 @@
     },
     "query": {
       "client_secret": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "1b138980006a",
         "keyPath": "queryClientSecret",
         "optional": true
       },
       "expand": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "2c9c684fab54",
         "keyPath": "queryExpand",
         "optional": true

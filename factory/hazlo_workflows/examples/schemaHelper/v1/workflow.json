@@ -1,0 +1,35 @@
+{
+  "name": "Schema Helper",
+  "description": "Simple helper workflow used by schemaAllNodes subwork examples.",
+  "meta": {
+    "provider": "examples",
+    "operationId": "schemaHelper"
+  },
+  "input": {
+    "name": "Optional name for greeting"
+  },
+  "inputRequired": [],
+  "ruleset": {
+    "_pbd_hazlo_type": "concat",
+    "left": "Helper says hi to ",
+    "right": {
+      "_pbd_hazlo_type": "condition",
+      "left": {
+        "_pbd_hazlo_type": "var",
+        "keyPath": "name",
+        "optional": true
+      },
+      "op": "NE",
+      "right": "",
+      "then": {
+        "_pbd_hazlo_type": "var",
+        "keyPath": "name",
+        "optional": true
+      },
+      "else": "anonymous"
+    }
+  },
+  "output": {
+    "greeting": "Helper says hi to Ada"
+  }
+}

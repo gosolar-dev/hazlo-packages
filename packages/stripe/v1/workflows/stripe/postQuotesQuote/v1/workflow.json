@@ -98,20 +98,20 @@
     "pathQuote"
   ],
   "ruleset": {
-    "_pbd_nebula_type": "api_req",
+    "_pbd_hazlo_type": "api_req",
     "body": {
-      "_pbd_nebula_type": "var",
+      "_pbd_hazlo_type": "var",
       "id": "6c3f2458be6c",
       "keyPath": "body",
       "optional": true
     },
     "headers": {
       "Authorization": {
-        "_pbd_nebula_type": "concat",
+        "_pbd_hazlo_type": "concat",
         "id": "f0372df0bbe0",
         "left": "Bearer ",
         "right": {
-          "_pbd_nebula_type": "var",
+          "_pbd_hazlo_type": "var",
           "id": "08d5d9bb75fa",
           "keyPath": "authBearerAuth",
           "optional": true
@@ -122,11 +122,11 @@
     "id": "8dd8effbb855",
     "method": "POST",
     "path": {
-      "_pbd_nebula_type": "concat",
+      "_pbd_hazlo_type": "concat",
       "id": "a8fce42fb3cc",
       "left": "/v1/quotes/",
       "right": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "98c28d8a0270",
         "keyPath": "pathQuote",
         "optional": false

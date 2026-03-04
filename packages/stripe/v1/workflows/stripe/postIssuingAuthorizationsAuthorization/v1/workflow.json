@@ -23,20 +23,20 @@
     "pathAuthorization"
   ],
   "ruleset": {
-    "_pbd_nebula_type": "api_req",
+    "_pbd_hazlo_type": "api_req",
     "body": {
-      "_pbd_nebula_type": "var",
+      "_pbd_hazlo_type": "var",
       "id": "3acf90b2e89e",
       "keyPath": "body",
       "optional": true
     },
     "headers": {
       "Authorization": {
-        "_pbd_nebula_type": "concat",
+        "_pbd_hazlo_type": "concat",
         "id": "bb4f31e879b0",
         "left": "Bearer ",
         "right": {
-          "_pbd_nebula_type": "var",
+          "_pbd_hazlo_type": "var",
           "id": "6de66b4a266e",
           "keyPath": "authBearerAuth",
           "optional": true
@@ -47,11 +47,11 @@
     "id": "6f575309754e",
     "method": "POST",
     "path": {
-      "_pbd_nebula_type": "concat",
+      "_pbd_hazlo_type": "concat",
       "id": "8fa9aa16b71b",
       "left": "/v1/issuing/authorizations/",
       "right": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "2c671608879d",
         "keyPath": "pathAuthorization",
         "optional": false

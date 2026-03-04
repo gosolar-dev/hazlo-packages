@@ -21,20 +21,20 @@
     "pathItem"
   ],
   "ruleset": {
-    "_pbd_nebula_type": "api_req",
+    "_pbd_hazlo_type": "api_req",
     "body": {
-      "_pbd_nebula_type": "var",
+      "_pbd_hazlo_type": "var",
       "id": "25fc17eb2f5f",
       "keyPath": "body",
       "optional": true
     },
     "headers": {
       "Authorization": {
-        "_pbd_nebula_type": "concat",
+        "_pbd_hazlo_type": "concat",
         "id": "978d31a02453",
         "left": "Bearer ",
         "right": {
-          "_pbd_nebula_type": "var",
+          "_pbd_hazlo_type": "var",
           "id": "a7281db5b914",
           "keyPath": "authBearerAuth",
           "optional": true
@@ -45,11 +45,11 @@
     "id": "fc7cf61ef2c1",
     "method": "DELETE",
     "path": {
-      "_pbd_nebula_type": "concat",
+      "_pbd_hazlo_type": "concat",
       "id": "a83278dd8c15",
       "left": "/v1/subscription_items/",
       "right": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "f4ccf1da2d12",
         "keyPath": "pathItem",
         "optional": false

@@ -25,20 +25,20 @@
     "pathRefund"
   ],
   "ruleset": {
-    "_pbd_nebula_type": "api_req",
+    "_pbd_hazlo_type": "api_req",
     "body": {
-      "_pbd_nebula_type": "var",
+      "_pbd_hazlo_type": "var",
       "id": "0b7c723198fb",
       "keyPath": "body",
       "optional": true
     },
     "headers": {
       "Authorization": {
-        "_pbd_nebula_type": "concat",
+        "_pbd_hazlo_type": "concat",
         "id": "c89504be090d",
         "left": "Bearer ",
         "right": {
-          "_pbd_nebula_type": "var",
+          "_pbd_hazlo_type": "var",
           "id": "b1fee62b713f",
           "keyPath": "authBearerAuth",
           "optional": true
@@ -49,17 +49,17 @@
     "id": "b8c0d43aa8cf",
     "method": "POST",
     "path": {
-      "_pbd_nebula_type": "concat",
+      "_pbd_hazlo_type": "concat",
       "id": "7d55f03fd7fe",
       "left": {
-        "_pbd_nebula_type": "concat",
+        "_pbd_hazlo_type": "concat",
         "id": "e2a3beafd1a6",
         "left": {
-          "_pbd_nebula_type": "concat",
+          "_pbd_hazlo_type": "concat",
           "id": "5a0f730df9d2",
           "left": "/v1/charges/",
           "right": {
-            "_pbd_nebula_type": "var",
+            "_pbd_hazlo_type": "var",
             "id": "acf8729653fb",
             "keyPath": "pathCharge",
             "optional": false
@@ -68,7 +68,7 @@
         "right": "/refunds/"
       },
       "right": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "d77c0df8f843",
         "keyPath": "pathRefund",
         "optional": false

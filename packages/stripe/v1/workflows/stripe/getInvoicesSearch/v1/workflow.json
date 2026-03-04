@@ -19,20 +19,20 @@
     "queryQuery"
   ],
   "ruleset": {
-    "_pbd_nebula_type": "api_req",
+    "_pbd_hazlo_type": "api_req",
     "body": {
-      "_pbd_nebula_type": "var",
+      "_pbd_hazlo_type": "var",
       "id": "fd3ffd3ca564",
       "keyPath": "body",
       "optional": true
     },
     "headers": {
       "Authorization": {
-        "_pbd_nebula_type": "concat",
+        "_pbd_hazlo_type": "concat",
         "id": "11370d9bde77",
         "left": "Bearer ",
         "right": {
-          "_pbd_nebula_type": "var",
+          "_pbd_hazlo_type": "var",
           "id": "380ea387cac1",
           "keyPath": "authBearerAuth",
           "optional": true
@@ -45,25 +45,25 @@
     "path": "/v1/invoices/search",
     "query": {
       "expand": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "8b3b6d3ada20",
         "keyPath": "queryExpand",
         "optional": true
       },
       "limit": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "439a24235efc",
         "keyPath": "queryLimit",
         "optional": true
       },
       "page": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "5a281cec6b2f",
         "keyPath": "queryPage",
         "optional": true
       },
       "query": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "341b7cc60085",
         "keyPath": "queryQuery",
         "optional": false

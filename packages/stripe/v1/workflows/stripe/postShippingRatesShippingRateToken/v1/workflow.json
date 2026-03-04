@@ -33,20 +33,20 @@
     "pathShippingRateToken"
   ],
   "ruleset": {
-    "_pbd_nebula_type": "api_req",
+    "_pbd_hazlo_type": "api_req",
     "body": {
-      "_pbd_nebula_type": "var",
+      "_pbd_hazlo_type": "var",
       "id": "408cd829eeae",
       "keyPath": "body",
       "optional": true
     },
     "headers": {
       "Authorization": {
-        "_pbd_nebula_type": "concat",
+        "_pbd_hazlo_type": "concat",
         "id": "708966cb3cac",
         "left": "Bearer ",
         "right": {
-          "_pbd_nebula_type": "var",
+          "_pbd_hazlo_type": "var",
           "id": "fd6685e832ec",
           "keyPath": "authBearerAuth",
           "optional": true
@@ -57,11 +57,11 @@
     "id": "547215e7b1ee",
     "method": "POST",
     "path": {
-      "_pbd_nebula_type": "concat",
+      "_pbd_hazlo_type": "concat",
       "id": "8f38b3abe066",
       "left": "/v1/shipping_rates/",
       "right": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "af8db948c02c",
         "keyPath": "pathShippingRateToken",
         "optional": false

@@ -24,20 +24,20 @@
     "queryFinancialAccount"
   ],
   "ruleset": {
-    "_pbd_nebula_type": "api_req",
+    "_pbd_hazlo_type": "api_req",
     "body": {
-      "_pbd_nebula_type": "var",
+      "_pbd_hazlo_type": "var",
       "id": "bf7cbd411c29",
       "keyPath": "body",
       "optional": true
     },
     "headers": {
       "Authorization": {
-        "_pbd_nebula_type": "concat",
+        "_pbd_hazlo_type": "concat",
         "id": "ec7f06633560",
         "left": "Bearer ",
         "right": {
-          "_pbd_nebula_type": "var",
+          "_pbd_hazlo_type": "var",
           "id": "070249589943",
           "keyPath": "authBearerAuth",
           "optional": true
@@ -50,55 +50,55 @@
     "path": "/v1/treasury/transaction_entries",
     "query": {
       "created": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "391fee7a2221",
         "keyPath": "queryCreated",
         "optional": true
       },
       "effective_at": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "14eea58c89e6",
         "keyPath": "queryEffectiveAt",
         "optional": true
       },
       "ending_before": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "0756e7ae3c95",
         "keyPath": "queryEndingBefore",
         "optional": true
       },
       "expand": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "8cc4916dcb12",
         "keyPath": "queryExpand",
         "optional": true
       },
       "financial_account": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "b35dd7298225",
         "keyPath": "queryFinancialAccount",
         "optional": false
       },
       "limit": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "10ede90b9d28",
         "keyPath": "queryLimit",
         "optional": true
       },
       "order_by": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "c1c6d68c4947",
         "keyPath": "queryOrderBy",
         "optional": true
       },
       "starting_after": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "997eae5968d6",
         "keyPath": "queryStartingAfter",
         "optional": true
       },
       "transaction": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "d07d480c194d",
         "keyPath": "queryTransaction",
         "optional": true

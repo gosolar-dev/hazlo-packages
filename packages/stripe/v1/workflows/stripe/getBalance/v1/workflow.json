@@ -13,20 +13,20 @@
     "queryExpand": []
   },
   "ruleset": {
-    "_pbd_nebula_type": "api_req",
+    "_pbd_hazlo_type": "api_req",
     "body": {
-      "_pbd_nebula_type": "var",
+      "_pbd_hazlo_type": "var",
       "id": "e4fb1a982ff1",
       "keyPath": "body",
       "optional": true
     },
     "headers": {
       "Authorization": {
-        "_pbd_nebula_type": "concat",
+        "_pbd_hazlo_type": "concat",
         "id": "1c6fe42fbd45",
         "left": "Bearer ",
         "right": {
-          "_pbd_nebula_type": "var",
+          "_pbd_hazlo_type": "var",
           "id": "26adf87569f8",
           "keyPath": "authBearerAuth",
           "optional": true
@@ -39,7 +39,7 @@
     "path": "/v1/balance",
     "query": {
       "expand": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "7bc56e63cb30",
         "keyPath": "queryExpand",
         "optional": true

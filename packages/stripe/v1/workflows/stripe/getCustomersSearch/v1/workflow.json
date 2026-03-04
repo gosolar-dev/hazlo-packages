@@ -19,20 +19,20 @@
     "queryQuery"
   ],
   "ruleset": {
-    "_pbd_nebula_type": "api_req",
+    "_pbd_hazlo_type": "api_req",
     "body": {
-      "_pbd_nebula_type": "var",
+      "_pbd_hazlo_type": "var",
       "id": "8fa1fcea564c",
       "keyPath": "body",
       "optional": true
     },
     "headers": {
       "Authorization": {
-        "_pbd_nebula_type": "concat",
+        "_pbd_hazlo_type": "concat",
         "id": "00f4fe2f70d0",
         "left": "Bearer ",
         "right": {
-          "_pbd_nebula_type": "var",
+          "_pbd_hazlo_type": "var",
           "id": "52b6b8313376",
           "keyPath": "authBearerAuth",
           "optional": true
@@ -45,25 +45,25 @@
     "path": "/v1/customers/search",
     "query": {
       "expand": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "3beb69404f24",
         "keyPath": "queryExpand",
         "optional": true
       },
       "limit": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "99d29b1fa146",
         "keyPath": "queryLimit",
         "optional": true
       },
       "page": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "68b51c5e08d9",
         "keyPath": "queryPage",
         "optional": true
       },
       "query": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "40dfc3590f32",
         "keyPath": "queryQuery",
         "optional": false

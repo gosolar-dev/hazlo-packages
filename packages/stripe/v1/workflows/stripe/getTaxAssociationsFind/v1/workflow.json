@@ -17,20 +17,20 @@
     "queryPaymentIntent"
   ],
   "ruleset": {
-    "_pbd_nebula_type": "api_req",
+    "_pbd_hazlo_type": "api_req",
     "body": {
-      "_pbd_nebula_type": "var",
+      "_pbd_hazlo_type": "var",
       "id": "64bffe839ff8",
       "keyPath": "body",
       "optional": true
     },
     "headers": {
       "Authorization": {
-        "_pbd_nebula_type": "concat",
+        "_pbd_hazlo_type": "concat",
         "id": "66fd96ffbbbd",
         "left": "Bearer ",
         "right": {
-          "_pbd_nebula_type": "var",
+          "_pbd_hazlo_type": "var",
           "id": "8206afea3e45",
           "keyPath": "authBearerAuth",
           "optional": true
@@ -43,13 +43,13 @@
     "path": "/v1/tax/associations/find",
     "query": {
       "expand": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "178c1dc0258c",
         "keyPath": "queryExpand",
         "optional": true
       },
       "payment_intent": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "e0abdd824c74",
         "keyPath": "queryPaymentIntent",
         "optional": false

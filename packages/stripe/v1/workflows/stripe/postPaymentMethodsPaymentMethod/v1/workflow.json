@@ -54,20 +54,20 @@
     "pathPaymentMethod"
   ],
   "ruleset": {
-    "_pbd_nebula_type": "api_req",
+    "_pbd_hazlo_type": "api_req",
     "body": {
-      "_pbd_nebula_type": "var",
+      "_pbd_hazlo_type": "var",
       "id": "eae51dc2756c",
       "keyPath": "body",
       "optional": true
     },
     "headers": {
       "Authorization": {
-        "_pbd_nebula_type": "concat",
+        "_pbd_hazlo_type": "concat",
         "id": "ade791f0c505",
         "left": "Bearer ",
         "right": {
-          "_pbd_nebula_type": "var",
+          "_pbd_hazlo_type": "var",
           "id": "8fbd23c8fa51",
           "keyPath": "authBearerAuth",
           "optional": true
@@ -78,11 +78,11 @@
     "id": "cad944076def",
     "method": "POST",
     "path": {
-      "_pbd_nebula_type": "concat",
+      "_pbd_hazlo_type": "concat",
       "id": "3d1bc8ae204a",
       "left": "/v1/payment_methods/",
       "right": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "1b7e5d78c161",
         "keyPath": "pathPaymentMethod",
         "optional": false

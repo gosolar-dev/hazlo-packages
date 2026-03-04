@@ -13,20 +13,20 @@
     "queryExpand": []
   },
   "ruleset": {
-    "_pbd_nebula_type": "api_req",
+    "_pbd_hazlo_type": "api_req",
     "body": {
-      "_pbd_nebula_type": "var",
+      "_pbd_hazlo_type": "var",
       "id": "fd7df9455c72",
       "keyPath": "body",
       "optional": true
     },
     "headers": {
       "Authorization": {
-        "_pbd_nebula_type": "concat",
+        "_pbd_hazlo_type": "concat",
         "id": "482792853c5b",
         "left": "Bearer ",
         "right": {
-          "_pbd_nebula_type": "var",
+          "_pbd_hazlo_type": "var",
           "id": "29f29470d812",
           "keyPath": "authBearerAuth",
           "optional": true
@@ -39,7 +39,7 @@
     "path": "/v1/balance_settings",
     "query": {
       "expand": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "ac67ff50b4b9",
         "keyPath": "queryExpand",
         "optional": true

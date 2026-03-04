@@ -23,20 +23,20 @@
     "queryType": "<string>"
   },
   "ruleset": {
-    "_pbd_nebula_type": "api_req",
+    "_pbd_hazlo_type": "api_req",
     "body": {
-      "_pbd_nebula_type": "var",
+      "_pbd_hazlo_type": "var",
       "id": "86ae26cdcf0c",
       "keyPath": "body",
       "optional": true
     },
     "headers": {
       "Authorization": {
-        "_pbd_nebula_type": "concat",
+        "_pbd_hazlo_type": "concat",
         "id": "f3c7ce7f353e",
         "left": "Bearer ",
         "right": {
-          "_pbd_nebula_type": "var",
+          "_pbd_hazlo_type": "var",
           "id": "ba2366b551c4",
           "keyPath": "authBearerAuth",
           "optional": true
@@ -49,67 +49,67 @@
     "path": "/v1/prices",
     "query": {
       "active": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "75fd0f80059e",
         "keyPath": "queryActive",
         "optional": true
       },
       "created": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "18668fc6de70",
         "keyPath": "queryCreated",
         "optional": true
       },
       "currency": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "fbdfe3f57183",
         "keyPath": "queryCurrency",
         "optional": true
       },
       "ending_before": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "559412cc047f",
         "keyPath": "queryEndingBefore",
         "optional": true
       },
       "expand": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "5a32642e65fd",
         "keyPath": "queryExpand",
         "optional": true
       },
       "limit": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "c8a3b388d9ec",
         "keyPath": "queryLimit",
         "optional": true
       },
       "lookup_keys": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "04efdb4a8ada",
         "keyPath": "queryLookupKeys",
         "optional": true
       },
       "product": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "41b07d363589",
         "keyPath": "queryProduct",
         "optional": true
       },
       "recurring": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "fdd845f0a71f",
         "keyPath": "queryRecurring",
         "optional": true
       },
       "starting_after": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "a30b0a255b0c",
         "keyPath": "queryStartingAfter",
         "optional": true
       },
       "type": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "ded120bf299d",
         "keyPath": "queryType",
         "optional": true

@@ -89,20 +89,20 @@
     "pathConfiguration"
   ],
   "ruleset": {
-    "_pbd_nebula_type": "api_req",
+    "_pbd_hazlo_type": "api_req",
     "body": {
-      "_pbd_nebula_type": "var",
+      "_pbd_hazlo_type": "var",
       "id": "a85382c1579f",
       "keyPath": "body",
       "optional": true
     },
     "headers": {
       "Authorization": {
-        "_pbd_nebula_type": "concat",
+        "_pbd_hazlo_type": "concat",
         "id": "231bccac6711",
         "left": "Bearer ",
         "right": {
-          "_pbd_nebula_type": "var",
+          "_pbd_hazlo_type": "var",
           "id": "f5b70b08901a",
           "keyPath": "authBearerAuth",
           "optional": true
@@ -113,11 +113,11 @@
     "id": "9495b98920b2",
     "method": "POST",
     "path": {
-      "_pbd_nebula_type": "concat",
+      "_pbd_hazlo_type": "concat",
       "id": "51294edfa212",
       "left": "/v1/billing_portal/configurations/",
       "right": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "4bf398f2da16",
         "keyPath": "pathConfiguration",
         "optional": false

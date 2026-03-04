@@ -1,6 +1,6 @@
 # stripe v1
 
-Generated Stripe workflow package for Nebula.
+Generated Stripe workflow package for Hazlo.
 
 ## Summary
 
@@ -19,8 +19,8 @@ Generated Stripe workflow package for Nebula.
 
 ## Validation
 
-Use Nebula to inspect one generated workflow:
+Use Hazlo to inspect one generated workflow:
 
 ```bash
-./nebula workflows describe --ref stripe/getCustomers/v1
+hazlo workflows describe --ref stripe/getCustomers/v1
 ```

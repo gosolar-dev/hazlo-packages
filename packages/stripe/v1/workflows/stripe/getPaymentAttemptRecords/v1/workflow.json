@@ -19,20 +19,20 @@
     "queryPaymentRecord"
   ],
   "ruleset": {
-    "_pbd_nebula_type": "api_req",
+    "_pbd_hazlo_type": "api_req",
     "body": {
-      "_pbd_nebula_type": "var",
+      "_pbd_hazlo_type": "var",
       "id": "fddcc54981f6",
       "keyPath": "body",
       "optional": true
     },
     "headers": {
       "Authorization": {
-        "_pbd_nebula_type": "concat",
+        "_pbd_hazlo_type": "concat",
         "id": "65e370887720",
         "left": "Bearer ",
         "right": {
-          "_pbd_nebula_type": "var",
+          "_pbd_hazlo_type": "var",
           "id": "d0a7fc20f04f",
           "keyPath": "authBearerAuth",
           "optional": true
@@ -45,25 +45,25 @@
     "path": "/v1/payment_attempt_records",
     "query": {
       "expand": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "015532fb8cd5",
         "keyPath": "queryExpand",
         "optional": true
       },
       "limit": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "72bf71c68c74",
         "keyPath": "queryLimit",
         "optional": true
       },
       "payment_record": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "959391745306",
         "keyPath": "queryPaymentRecord",
         "optional": false
       },
       "starting_after": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "a9d1e15b26e5",
         "keyPath": "queryStartingAfter",
         "optional": true

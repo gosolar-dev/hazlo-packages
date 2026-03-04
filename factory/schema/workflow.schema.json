@@ -1,0 +1,693 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/gosolar-dev/hazlo/schema/workflow.schema.json",
+  "title": "hazlo Workflow Definition",
+  "description": "Strict Draft 2020-12 schema for hazlo workflow definitions. Assumes default typed-node discriminator key `_pbd_hazlo_type`.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "ruleset"
+  ],
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "meta": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "input": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "inputRequired": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "ruleset": {
+      "$ref": "#/$defs/schemaNode"
+    },
+    "output": true
+  },
+  "$defs": {
+    "schemaNode": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "number"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/schemaNode"
+          }
+        },
+        {
+          "$ref": "#/$defs/typedNode"
+        },
+        {
+          "$ref": "#/$defs/untypedObject"
+        }
+      ]
+    },
+    "untypedObject": {
+      "type": "object",
+      "not": {
+        "required": [
+          "_pbd_hazlo_type"
+        ]
+      },
+      "additionalProperties": {
+        "$ref": "#/$defs/schemaNode"
+      }
+    },
+    "typedNode": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/varNode"
+        },
+        {
+          "$ref": "#/$defs/ignoreNode"
+        },
+        {
+          "$ref": "#/$defs/errNode"
+        },
+        {
+          "$ref": "#/$defs/conditionNode"
+        },
+        {
+          "$ref": "#/$defs/switchNode"
+        },
+        {
+          "$ref": "#/$defs/caseNode"
+        },
+        {
+          "$ref": "#/$defs/apiReqNode"
+        },
+        {
+          "$ref": "#/$defs/concatNode"
+        },
+        {
+          "$ref": "#/$defs/roundNode"
+        },
+        {
+          "$ref": "#/$defs/mathNode"
+        },
+        {
+          "$ref": "#/$defs/forEachNode"
+        },
+        {
+          "$ref": "#/$defs/doesExistNode"
+        },
+        {
+          "$ref": "#/$defs/rememberNode"
+        },
+        {
+          "$ref": "#/$defs/subworkNode"
+        },
+        {
+          "$ref": "#/$defs/numNode"
+        },
+        {
+          "$ref": "#/$defs/strNode"
+        },
+        {
+          "$ref": "#/$defs/boolNode"
+        }
+      ]
+    },
+    "typedNodeCommonProps": {
+      "id": {
+        "type": "string",
+        "minLength": 1
+      },
+      "ID": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "comparisonOperator": {
+      "description": "Condition operators accepted by migration/runtime.",
+      "type": "string",
+      "enum": [
+        "EQ",
+        "NE",
+        "GT",
+        "LT",
+        "CT",
+        "CONTAINS",
+        "==",
+        "=",
+        "!=",
+        "<>",
+        ">",
+        "<"
+      ]
+    },
+    "arithmeticOperator": {
+      "description": "Math operators accepted by migration/runtime.",
+      "type": "string",
+      "enum": [
+        "+",
+        "-",
+        "*",
+        "/",
+        "÷"
+      ]
+    },
+    "caseLikeNode": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "that",
+        "then"
+      ],
+      "properties": {
+        "_pbd_hazlo_type": {
+          "enum": [
+            "case",
+            "is"
+          ]
+        },
+        "id": {
+          "$ref": "#/$defs/typedNodeCommonProps/id"
+        },
+        "ID": {
+          "$ref": "#/$defs/typedNodeCommonProps/ID"
+        },
+        "that": {
+          "$ref": "#/$defs/schemaNode"
+        },
+        "then": {
+          "$ref": "#/$defs/schemaNode"
+        }
+      }
+    },
+    "varNode": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "_pbd_hazlo_type",
+        "keyPath",
+        "optional"
+      ],
+      "properties": {
+        "_pbd_hazlo_type": {
+          "const": "var"
+        },
+        "id": {
+          "$ref": "#/$defs/typedNodeCommonProps/id"
+        },
+        "ID": {
+          "$ref": "#/$defs/typedNodeCommonProps/ID"
+        },
+        "keyPath": {
+          "type": "string",
+          "minLength": 1
+        },
+        "optional": {
+          "type": "boolean"
+        }
+      }
+    },
+    "ignoreNode": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "_pbd_hazlo_type"
+      ],
+      "properties": {
+        "_pbd_hazlo_type": {
+          "const": "ignore"
+        },
+        "id": {
+          "$ref": "#/$defs/typedNodeCommonProps/id"
+        },
+        "ID": {
+          "$ref": "#/$defs/typedNodeCommonProps/ID"
+        }
+      }
+    },
+    "errNode": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "_pbd_hazlo_type"
+      ],
+      "properties": {
+        "_pbd_hazlo_type": {
+          "const": "err"
+        },
+        "id": {
+          "$ref": "#/$defs/typedNodeCommonProps/id"
+        },
+        "ID": {
+          "$ref": "#/$defs/typedNodeCommonProps/ID"
+        },
+        "context": {
+          "$ref": "#/$defs/schemaNode"
+        }
+      }
+    },
+    "conditionNode": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "_pbd_hazlo_type",
+        "op",
+        "left",
+        "right",
+        "then",
+        "else"
+      ],
+      "properties": {
+        "_pbd_hazlo_type": {
+          "const": "condition"
+        },
+        "id": {
+          "$ref": "#/$defs/typedNodeCommonProps/id"
+        },
+        "ID": {
+          "$ref": "#/$defs/typedNodeCommonProps/ID"
+        },
+        "op": {
+          "$ref": "#/$defs/comparisonOperator"
+        },
+        "left": {
+          "$ref": "#/$defs/schemaNode"
+        },
+        "right": {
+          "$ref": "#/$defs/schemaNode"
+        },
+        "then": {
+          "$ref": "#/$defs/schemaNode"
+        },
+        "else": {
+          "$ref": "#/$defs/schemaNode"
+        }
+      }
+    },
+    "switchNode": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "_pbd_hazlo_type",
+        "this",
+        "default",
+        "cases"
+      ],
+      "properties": {
+        "_pbd_hazlo_type": {
+          "const": "switch"
+        },
+        "id": {
+          "$ref": "#/$defs/typedNodeCommonProps/id"
+        },
+        "ID": {
+          "$ref": "#/$defs/typedNodeCommonProps/ID"
+        },
+        "this": {
+          "$ref": "#/$defs/schemaNode"
+        },
+        "default": {
+          "$ref": "#/$defs/schemaNode"
+        },
+        "cases": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/caseLikeNode"
+          }
+        }
+      }
+    },
+    "caseNode": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/caseLikeNode"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "_pbd_hazlo_type": {
+              "const": "case"
+            }
+          }
+        }
+      ]
+    },
+    "apiReqNode": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "_pbd_hazlo_type",
+        "host",
+        "path",
+        "query",
+        "method",
+        "body",
+        "headers"
+      ],
+      "properties": {
+        "_pbd_hazlo_type": {
+          "const": "api_req"
+        },
+        "id": {
+          "$ref": "#/$defs/typedNodeCommonProps/id"
+        },
+        "ID": {
+          "$ref": "#/$defs/typedNodeCommonProps/ID"
+        },
+        "host": {
+          "$ref": "#/$defs/schemaNode"
+        },
+        "path": {
+          "$ref": "#/$defs/schemaNode"
+        },
+        "query": {
+          "description": "Request query node. Arrays become repeated query params at runtime.",
+          "$ref": "#/$defs/schemaNode"
+        },
+        "method": {
+          "$ref": "#/$defs/schemaNode"
+        },
+        "body": {
+          "description": "Request body node. Runtime sends string/bytes raw; other values are JSON-marshaled.",
+          "$ref": "#/$defs/schemaNode"
+        },
+        "headers": {
+          "description": "Request headers node. If body is JSON-marshaled and no Content-Type is set, runtime sets application/json.",
+          "$ref": "#/$defs/schemaNode"
+        }
+      }
+    },
+    "concatNode": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "_pbd_hazlo_type",
+        "left",
+        "right"
+      ],
+      "properties": {
+        "_pbd_hazlo_type": {
+          "const": "concat"
+        },
+        "id": {
+          "$ref": "#/$defs/typedNodeCommonProps/id"
+        },
+        "ID": {
+          "$ref": "#/$defs/typedNodeCommonProps/ID"
+        },
+        "left": {
+          "$ref": "#/$defs/schemaNode"
+        },
+        "right": {
+          "$ref": "#/$defs/schemaNode"
+        }
+      }
+    },
+    "roundNode": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "_pbd_hazlo_type",
+        "val"
+      ],
+      "properties": {
+        "_pbd_hazlo_type": {
+          "const": "round"
+        },
+        "id": {
+          "$ref": "#/$defs/typedNodeCommonProps/id"
+        },
+        "ID": {
+          "$ref": "#/$defs/typedNodeCommonProps/ID"
+        },
+        "val": {
+          "$ref": "#/$defs/schemaNode"
+        },
+        "decimals": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string",
+              "pattern": "^-?\\d+$"
+            }
+          ]
+        }
+      }
+    },
+    "mathNode": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "_pbd_hazlo_type",
+        "op",
+        "left",
+        "right"
+      ],
+      "properties": {
+        "_pbd_hazlo_type": {
+          "const": "math"
+        },
+        "id": {
+          "$ref": "#/$defs/typedNodeCommonProps/id"
+        },
+        "ID": {
+          "$ref": "#/$defs/typedNodeCommonProps/ID"
+        },
+        "op": {
+          "$ref": "#/$defs/arithmeticOperator"
+        },
+        "left": {
+          "$ref": "#/$defs/schemaNode"
+        },
+        "right": {
+          "$ref": "#/$defs/schemaNode"
+        }
+      }
+    },
+    "forEachNode": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "_pbd_hazlo_type",
+        "var",
+        "as",
+        "do",
+        "then"
+      ],
+      "properties": {
+        "_pbd_hazlo_type": {
+          "const": "for_each"
+        },
+        "id": {
+          "$ref": "#/$defs/typedNodeCommonProps/id"
+        },
+        "ID": {
+          "$ref": "#/$defs/typedNodeCommonProps/ID"
+        },
+        "var": {
+          "$ref": "#/$defs/schemaNode"
+        },
+        "as": {
+          "$ref": "#/$defs/schemaNode"
+        },
+        "do": {
+          "$ref": "#/$defs/schemaNode"
+        },
+        "then": {
+          "$ref": "#/$defs/schemaNode"
+        }
+      }
+    },
+    "doesExistNode": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "_pbd_hazlo_type",
+        "var",
+        "then",
+        "else"
+      ],
+      "properties": {
+        "_pbd_hazlo_type": {
+          "const": "does_exist"
+        },
+        "id": {
+          "$ref": "#/$defs/typedNodeCommonProps/id"
+        },
+        "ID": {
+          "$ref": "#/$defs/typedNodeCommonProps/ID"
+        },
+        "var": {
+          "$ref": "#/$defs/schemaNode"
+        },
+        "then": {
+          "$ref": "#/$defs/schemaNode"
+        },
+        "else": {
+          "$ref": "#/$defs/schemaNode"
+        }
+      }
+    },
+    "rememberNode": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "_pbd_hazlo_type",
+        "as",
+        "val",
+        "then"
+      ],
+      "properties": {
+        "_pbd_hazlo_type": {
+          "const": "remember"
+        },
+        "id": {
+          "$ref": "#/$defs/typedNodeCommonProps/id"
+        },
+        "ID": {
+          "$ref": "#/$defs/typedNodeCommonProps/ID"
+        },
+        "as": {
+          "$ref": "#/$defs/schemaNode"
+        },
+        "val": {
+          "$ref": "#/$defs/schemaNode"
+        },
+        "then": {
+          "$ref": "#/$defs/schemaNode"
+        }
+      }
+    },
+    "subworkNode": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "_pbd_hazlo_type"
+      ],
+      "properties": {
+        "_pbd_hazlo_type": {
+          "const": "subwork"
+        },
+        "id": {
+          "$ref": "#/$defs/typedNodeCommonProps/id"
+        },
+        "ID": {
+          "$ref": "#/$defs/typedNodeCommonProps/ID"
+        },
+        "workflow": {
+          "$ref": "#/$defs/schemaNode"
+        },
+        "workflowId": {
+          "$ref": "#/$defs/schemaNode"
+        },
+        "payload": {
+          "$ref": "#/$defs/schemaNode"
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "workflow"
+          ]
+        },
+        {
+          "required": [
+            "workflowId"
+          ]
+        }
+      ]
+    },
+    "numNode": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "_pbd_hazlo_type",
+        "val"
+      ],
+      "properties": {
+        "_pbd_hazlo_type": {
+          "const": "num"
+        },
+        "id": {
+          "$ref": "#/$defs/typedNodeCommonProps/id"
+        },
+        "ID": {
+          "$ref": "#/$defs/typedNodeCommonProps/ID"
+        },
+        "val": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string",
+              "pattern": "^\\s*-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:[eE][+-]?\\d+)?\\s*$"
+            }
+          ]
+        }
+      }
+    },
+    "strNode": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "_pbd_hazlo_type",
+        "val"
+      ],
+      "properties": {
+        "_pbd_hazlo_type": {
+          "const": "str"
+        },
+        "id": {
+          "$ref": "#/$defs/typedNodeCommonProps/id"
+        },
+        "ID": {
+          "$ref": "#/$defs/typedNodeCommonProps/ID"
+        },
+        "val": {
+          "type": "string"
+        }
+      }
+    },
+    "boolNode": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "_pbd_hazlo_type",
+        "val"
+      ],
+      "properties": {
+        "_pbd_hazlo_type": {
+          "const": "bool"
+        },
+        "id": {
+          "$ref": "#/$defs/typedNodeCommonProps/id"
+        },
+        "ID": {
+          "$ref": "#/$defs/typedNodeCommonProps/ID"
+        },
+        "val": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

@@ -70,20 +70,20 @@
     "pathFinancialAccount"
   ],
   "ruleset": {
-    "_pbd_nebula_type": "api_req",
+    "_pbd_hazlo_type": "api_req",
     "body": {
-      "_pbd_nebula_type": "var",
+      "_pbd_hazlo_type": "var",
       "id": "76995c4d7349",
       "keyPath": "body",
       "optional": true
     },
     "headers": {
       "Authorization": {
-        "_pbd_nebula_type": "concat",
+        "_pbd_hazlo_type": "concat",
         "id": "b5e9e78bec38",
         "left": "Bearer ",
         "right": {
-          "_pbd_nebula_type": "var",
+          "_pbd_hazlo_type": "var",
           "id": "e9a898655e09",
           "keyPath": "authBearerAuth",
           "optional": true
@@ -94,11 +94,11 @@
     "id": "a728160c56b3",
     "method": "POST",
     "path": {
-      "_pbd_nebula_type": "concat",
+      "_pbd_hazlo_type": "concat",
       "id": "9a2d3195a1b6",
       "left": "/v1/treasury/financial_accounts/",
       "right": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "0f38e573b9f8",
         "keyPath": "pathFinancialAccount",
         "optional": false

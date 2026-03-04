@@ -38,20 +38,20 @@
     "pathSession"
   ],
   "ruleset": {
-    "_pbd_nebula_type": "api_req",
+    "_pbd_hazlo_type": "api_req",
     "body": {
-      "_pbd_nebula_type": "var",
+      "_pbd_hazlo_type": "var",
       "id": "ed5a2063c428",
       "keyPath": "body",
       "optional": true
     },
     "headers": {
       "Authorization": {
-        "_pbd_nebula_type": "concat",
+        "_pbd_hazlo_type": "concat",
         "id": "8758c2a375ed",
         "left": "Bearer ",
         "right": {
-          "_pbd_nebula_type": "var",
+          "_pbd_hazlo_type": "var",
           "id": "b7d86f4008e0",
           "keyPath": "authBearerAuth",
           "optional": true
@@ -62,11 +62,11 @@
     "id": "a6e2fd7c1d6d",
     "method": "POST",
     "path": {
-      "_pbd_nebula_type": "concat",
+      "_pbd_hazlo_type": "concat",
       "id": "4216b6a640a4",
       "left": "/v1/identity/verification_sessions/",
       "right": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "786ffbfbe312",
         "keyPath": "pathSession",
         "optional": false

@@ -13,20 +13,20 @@
     "queryExpand": []
   },
   "ruleset": {
-    "_pbd_nebula_type": "api_req",
+    "_pbd_hazlo_type": "api_req",
     "body": {
-      "_pbd_nebula_type": "var",
+      "_pbd_hazlo_type": "var",
       "id": "49f16b936f76",
       "keyPath": "body",
       "optional": true
     },
     "headers": {
       "Authorization": {
-        "_pbd_nebula_type": "concat",
+        "_pbd_hazlo_type": "concat",
         "id": "4ff1893f6c4d",
         "left": "Bearer ",
         "right": {
-          "_pbd_nebula_type": "var",
+          "_pbd_hazlo_type": "var",
           "id": "75a2f90bb6f6",
           "keyPath": "authBearerAuth",
           "optional": true
@@ -39,7 +39,7 @@
     "path": "/v1/tax/settings",
     "query": {
       "expand": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "11f66032becb",
         "keyPath": "queryExpand",
         "optional": true

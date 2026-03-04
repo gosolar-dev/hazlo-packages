@@ -23,20 +23,20 @@
     "pathSettlement"
   ],
   "ruleset": {
-    "_pbd_nebula_type": "api_req",
+    "_pbd_hazlo_type": "api_req",
     "body": {
-      "_pbd_nebula_type": "var",
+      "_pbd_hazlo_type": "var",
       "id": "96e62b68b411",
       "keyPath": "body",
       "optional": true
     },
     "headers": {
       "Authorization": {
-        "_pbd_nebula_type": "concat",
+        "_pbd_hazlo_type": "concat",
         "id": "eaff7c6e1b8c",
         "left": "Bearer ",
         "right": {
-          "_pbd_nebula_type": "var",
+          "_pbd_hazlo_type": "var",
           "id": "0c94b7266f92",
           "keyPath": "authBearerAuth",
           "optional": true
@@ -47,11 +47,11 @@
     "id": "c31dc00baf54",
     "method": "POST",
     "path": {
-      "_pbd_nebula_type": "concat",
+      "_pbd_hazlo_type": "concat",
       "id": "2f780639e372",
       "left": "/v1/issuing/settlements/",
       "right": {
-        "_pbd_nebula_type": "var",
+        "_pbd_hazlo_type": "var",
         "id": "625650799601",
         "keyPath": "pathSettlement",
         "optional": false
