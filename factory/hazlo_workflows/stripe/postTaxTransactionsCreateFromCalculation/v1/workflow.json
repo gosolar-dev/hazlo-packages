@@ -1,0 +1,54 @@
+{
+  "name": "Create a transaction from a calculation",
+  "description": "<p>Creates a Tax Transaction from a calculation, if that calculation hasn’t expired. Calculations expire after 90 days.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postTaxTransactionsCreateFromCalculation",
+    "path": "/v1/tax/transactions/create_from_calculation",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "calculation": "<string>",
+      "expand": [
+        "<string>"
+      ],
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "posted_at": "<number>",
+      "reference": "<string>"
+    }
+  },
+  "inputRequired": [
+    "body"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "e8d3d524fbc3",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "d60af9eb30f3",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "82636f55d264",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "3b640589a0f0",
+    "method": "POST",
+    "path": "/v1/tax/transactions/create_from_calculation",
+    "query": {}
+  }
+}

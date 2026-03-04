@@ -1,71 +1,92 @@
-# hazlo Playground
+# Hazlo Factory
 
-hazlo Playground is a lightweight starter repository for building hazlo workflows without carrying hazlo source code.
+Factory is the source-of-truth workspace for creating, iterating, evaluating, and promoting workflows into `packages/`.
 
-## What’s Included
-- `hazlo` executable
-- `schema/workflow.schema.json`
-- `hazlo_workflows/examples/*`
-- this `README.md`
+## Directory Contract
 
-## Quick Start
+- `hazlo_workflows/`: authoring source files
+- `scripts/`: pipeline automation
+- `releases/<package>/<version>/release.json`: promotion config
+- `fixtures/inputs` and `fixtures/expected`: deterministic smoke test fixtures
+- `schema/release-manifest.schema.json`: release manifest schema
+- `openapi/`: OpenAPI specs used for imports
+- `reports/`: generated smoke mismatch artifacts
 
-1. Verify the CLI:
-   ```bash
-   chmod +x ./bin/hazlo
-   ./bin/hazlo --help
-   ```
-2. List local workflows:
+## 1) Create
+
 ```bash
-./bin/hazlo workflows list
-./bin/hazlo workflows list examples
-```
-
-3. Run sample workflows:
-```bash
-./bin/hazlo workflows eval --ref examples/schemaHelper/v1 --input '{"name":"Ada"}'
-./bin/hazlo workflows eval --ref examples/schemaAllNodes/v1 --input '{"name":"Ada","numbers":[1,2,3],"needle":"sunlight"}'
-```
-4. Inspect workflow metadata:
-```bash
-./bin/hazlo workflows describe --ref examples/schemaAllNodes/v1
-```
-
-## Create a new workflow
-```bash
-./bin/hazlo workflows new \
+node factory/scripts/create-workflow.mjs new \
   --ref acme/getStatus/v1 \
   --host https://api.example.com \
   --path /status \
   --method GET
+
+node factory/scripts/create-workflow.mjs import-openapi \
+  --spec factory/openapi/acme/openapi.yaml \
+  --provider acme \
+  --host https://api.example.com \
+  --version v1
 ```
-Then iterate with
+
+Both commands enforce `factory/hazlo_workflows` as the base directory.
+
+## 2) Iterate
+
 ```bash
-./bin/hazlo workflows describe --ref acme/getStatus/v1
-./bin/hazlo workflows eval --ref acme/getStatus/v1 --input '{}'
+./bin/hazlo workflows describe --ref examples/schemaHelper/v1
+./bin/hazlo workflows eval --ref examples/schemaHelper/v1 --input '{"name":"Ada"}'
 ```
-## Workflow Conventions
 
-- Reference format: `<provider>/<workflow>/<version>`
-- File location: `hazlo_workflows/<provider>/<workflow>/<version>/workflow.json`
-- Schema authority: `schema/workflow.schema.json`
-- Typed nodes use `_pbd_hazlo_type`
+## 3) Evaluate (strict)
 
-## Environment Values (Secrets)
-
-Use hazlo’s local env store instead of committing secrets:
 ```bash
-./bin/hazlo workflows env set --key API_TOKEN --value '<token>'
-./bin/hazlo workflows env list
+node factory/scripts/lint-workflows.mjs --manifest factory/releases/examples/v1/release.json
+node factory/scripts/eval-smoke.mjs --manifest factory/releases/examples/v1/release.json
 ```
-Values are injected under env.<KEY> during evaluation.
 
-## Optional Local Config
+`lint-workflows` enforces:
+- no `_pbd_nebula_type`
+- valid path/ref/version shape
+- `hazlo workflows describe` success for all candidate refs
+- `defaultInstallRefs` membership
 
-Create .hazlo_config to pin directories:
-```json
-{
-  "workflowsDir": "./bin/hazlo_workflows",
-  "envFile": "./env.json"
-}
+`eval-smoke` enforces:
+- deterministic manifest-defined smoke cases
+- expected JSON snapshot match
+- no `api_req` workflows in smoke set
+
+## 4) Publish (Factory -> Packages)
+
+```bash
+node factory/scripts/promote-package.mjs --manifest factory/releases/examples/v1/release.json --dry-run
+node factory/scripts/promote-package.mjs --manifest factory/releases/examples/v1/release.json
+```
+
+Promotion behavior:
+- supports `mode: full` and `mode: refs`
+- refuses overwrite when `packages/<package>/<version>` already exists
+- stages output in temp directory
+- generates `meta.json` (workflows, subwork refs, env keys, checksums)
+- updates `packages/index.json`
+- runs `packages/tests/run.mjs` against staged output before writing
+
+## Manifest Fields
+
+Each `release.json` includes:
+- `schemaVersion`, `package`, `version`, `provider`, `mode`
+- `refs` (required for `mode: refs`)
+- `description`, `defaultInstallRefs`, `env`
+- `homepage`, `license`, `tags`
+- `smokeTests` (`ref`, `input`, `expected`)
+
+See `schema/release-manifest.schema.json`.
+
+## Canonical Node Key
+
+All typed nodes must use `_pbd_hazlo_type`.
+
+Use migration helper when needed:
+
+```bash
+node factory/scripts/migrate-node-key.mjs --root factory/hazlo_workflows --root packages
 ```

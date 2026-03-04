@@ -1,0 +1,123 @@
+{
+  "name": "Update a source",
+  "description": "<p>Updates the specified source by setting the values of the parameters passed. Any parameters not provided will be left unchanged.</p>\n\n<p>This request accepts the <code>metadata</code> and <code>owner</code> as arguments. It is also possible to update type specific information for selected payment methods. Please refer to our <a href=\"/docs/sources\">payment method guides</a> for more detail.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postSourcesSource",
+    "path": "/v1/sources/{source}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "amount": "<number>",
+      "expand": [
+        "<string>"
+      ],
+      "mandate": {
+        "acceptance": {
+          "date": "<number>",
+          "ip": "<string>",
+          "offline": {
+            "contact_email": "<string>"
+          },
+          "online": {
+            "date": "<number>",
+            "ip": "<string>",
+            "user_agent": "<string>"
+          },
+          "status": "accepted",
+          "type": "offline",
+          "user_agent": "<string>"
+        },
+        "amount": "<number>",
+        "currency": "<string>",
+        "interval": "one_time",
+        "notification_method": "deprecated_none"
+      },
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "owner": {
+        "address": {
+          "city": "<string>",
+          "country": "<string>",
+          "line1": "<string>",
+          "line2": "<string>",
+          "postal_code": "<string>",
+          "state": "<string>"
+        },
+        "email": "<string>",
+        "name": "<string>",
+        "phone": "<string>"
+      },
+      "source_order": {
+        "items": [
+          {
+            "amount": "<number>",
+            "currency": "<string>",
+            "description": "<string>",
+            "parent": "<string>",
+            "quantity": "<number>",
+            "type": "discount"
+          }
+        ],
+        "shipping": {
+          "address": {
+            "city": "<string>",
+            "country": "<string>",
+            "line1": "<string>",
+            "line2": "<string>",
+            "postal_code": "<string>",
+            "state": "<string>"
+          },
+          "carrier": "<string>",
+          "name": "<string>",
+          "phone": "<string>",
+          "tracking_number": "<string>"
+        }
+      }
+    },
+    "pathSource": "<string>"
+  },
+  "inputRequired": [
+    "pathSource"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "63b321d49e83",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "5034c308a34f",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "3d74d0fc2ff2",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "5c3d69d10b3f",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "c9b15848e7b2",
+      "left": "/v1/sources/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "5ba42ebbe75a",
+        "keyPath": "pathSource",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

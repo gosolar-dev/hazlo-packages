@@ -1,0 +1,99 @@
+{
+  "name": "Update FinancialAccount Features",
+  "description": "<p>Updates the Features associated with a FinancialAccount.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postTreasuryFinancialAccountsFinancialAccountFeatures",
+    "path": "/v1/treasury/financial_accounts/{financial_account}/features",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "card_issuing": {
+        "requested": "<boolean>"
+      },
+      "deposit_insurance": {
+        "requested": "<boolean>"
+      },
+      "expand": [
+        "<string>"
+      ],
+      "financial_addresses": {
+        "aba": {
+          "requested": "<boolean>"
+        }
+      },
+      "inbound_transfers": {
+        "ach": {
+          "requested": "<boolean>"
+        }
+      },
+      "intra_stripe_flows": {
+        "requested": "<boolean>"
+      },
+      "outbound_payments": {
+        "ach": {
+          "requested": "<boolean>"
+        },
+        "us_domestic_wire": {
+          "requested": "<boolean>"
+        }
+      },
+      "outbound_transfers": {
+        "ach": {
+          "requested": "<boolean>"
+        },
+        "us_domestic_wire": {
+          "requested": "<boolean>"
+        }
+      }
+    },
+    "pathFinancialAccount": "<string>"
+  },
+  "inputRequired": [
+    "pathFinancialAccount"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "9fdc64d79065",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "616b4392f746",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "761b94cc1c82",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "744bb388ffc3",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "f207963e6ad7",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "a52189068030",
+        "left": "/v1/treasury/financial_accounts/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "3134b3799ee2",
+          "keyPath": "pathFinancialAccount",
+          "optional": false
+        }
+      },
+      "right": "/features"
+    },
+    "query": {}
+  }
+}

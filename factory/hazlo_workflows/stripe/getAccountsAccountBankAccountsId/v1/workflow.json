@@ -1,0 +1,80 @@
+{
+  "name": "Retrieve an external account",
+  "description": "<p>Retrieve a specified external account for a given account.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getAccountsAccountBankAccountsId",
+    "path": "/v1/accounts/{account}/bank_accounts/{id}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathAccount": "<string>",
+    "pathId": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathAccount",
+    "pathId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "68dff57b2ac5",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "ecc38c1bffc6",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "a5f18f9dcaef",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "f37a9ee6d395",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "ccd5106823c4",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "46dfd5a710f8",
+        "left": {
+          "_pbd_hazlo_type": "concat",
+          "id": "86706a820651",
+          "left": "/v1/accounts/",
+          "right": {
+            "_pbd_hazlo_type": "var",
+            "id": "09936283a28c",
+            "keyPath": "pathAccount",
+            "optional": false
+          }
+        },
+        "right": "/bank_accounts/"
+      },
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "888ed2d9197c",
+        "keyPath": "pathId",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "1fb52f32e135",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

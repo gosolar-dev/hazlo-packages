@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve an early fraud warning",
+  "description": "<p>Retrieves the details of an early fraud warning that has previously been created. </p>\n\n<p>Please refer to the <a href=\"#early_fraud_warning_object\">early fraud warning</a> object reference for more details.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getRadarEarlyFraudWarningsEarlyFraudWarning",
+    "path": "/v1/radar/early_fraud_warnings/{early_fraud_warning}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathEarlyFraudWarning": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathEarlyFraudWarning"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "3f2b8f4a73fd",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "a6c04548567e",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "1b4a5889e0ea",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "bd987310b91c",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "bf9ea19ac784",
+      "left": "/v1/radar/early_fraud_warnings/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "38f3d976a793",
+        "keyPath": "pathEarlyFraudWarning",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "fcfbfe16ab8a",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

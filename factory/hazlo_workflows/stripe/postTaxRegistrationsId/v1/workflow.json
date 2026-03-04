@@ -1,0 +1,61 @@
+{
+  "name": "Update a registration",
+  "description": "<p>Updates an existing Tax <code>Registration</code> object.</p>\n\n<p>A registration cannot be deleted after it has been created. If you wish to end a registration you may do so by setting <code>expires_at</code>.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postTaxRegistrationsId",
+    "path": "/v1/tax/registrations/{id}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "active_from": "now",
+      "expand": [
+        "<string>"
+      ],
+      "expires_at": "now"
+    },
+    "pathId": "<string>"
+  },
+  "inputRequired": [
+    "pathId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "61044e8ee6d3",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "e9b7a764606b",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "c9e87fbe57d1",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "c36386c3a838",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "d5506457939a",
+      "left": "/v1/tax/registrations/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "c30ae0259c85",
+        "keyPath": "pathId",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "name": "Retrieve account",
+  "description": "<p>Retrieves the details of an account.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getAccount",
+    "path": "/v1/account",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryExpand": []
+  },
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "15ba3752bc00",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "2fdc37a65c06",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "d78fd83df721",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "4e5f634a0e7b",
+    "method": "GET",
+    "path": "/v1/account",
+    "query": {
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "d832f5842c0b",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "name": "List all application fee refunds",
+  "description": "<p>You can see a list of the refunds belonging to a specific application fee. Note that the 10 most recent refunds are always available by default on the application fee object. If you need more than those 10, you can use this API method and the <code>limit</code> and <code>starting_after</code> parameters to page through additional refunds.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getApplicationFeesIdRefunds",
+    "path": "/v1/application_fees/{id}/refunds",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathId": "<string>",
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryLimit": "<number>",
+    "queryStartingAfter": "<string>"
+  },
+  "inputRequired": [
+    "pathId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "8b91100d3356",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "227500d58936",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "1eb60281d155",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "b94097d30d15",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "5e6c72d11039",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "d6b00cf48551",
+        "left": "/v1/application_fees/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "3edfbedae820",
+          "keyPath": "pathId",
+          "optional": false
+        }
+      },
+      "right": "/refunds"
+    },
+    "query": {
+      "ending_before": {
+        "_pbd_hazlo_type": "var",
+        "id": "ac5fc793f871",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "ca266c961cb6",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_hazlo_type": "var",
+        "id": "b3c61034070e",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_hazlo_type": "var",
+        "id": "548ace7d514e",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      }
+    }
+  }
+}

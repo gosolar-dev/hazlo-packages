@@ -1,0 +1,89 @@
+{
+  "name": "Retrieve a credit note's line items",
+  "description": "<p>When retrieving a credit note, you’ll get a <strong>lines</strong> property containing the first handful of those items. There is also a URL where you can retrieve the full (paginated) list of line items.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getCreditNotesCreditNoteLines",
+    "path": "/v1/credit_notes/{credit_note}/lines",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathCreditNote": "<string>",
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryLimit": "<number>",
+    "queryStartingAfter": "<string>"
+  },
+  "inputRequired": [
+    "pathCreditNote"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "87cb47aa6216",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "884a8bf9efaf",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "35043cd8e6a5",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "46ae75083002",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "395c4a5ce66c",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "e59211ace71e",
+        "left": "/v1/credit_notes/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "6ad4594c6926",
+          "keyPath": "pathCreditNote",
+          "optional": false
+        }
+      },
+      "right": "/lines"
+    },
+    "query": {
+      "ending_before": {
+        "_pbd_hazlo_type": "var",
+        "id": "8a7ce5f4adb2",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "25086ae9ad97",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_hazlo_type": "var",
+        "id": "53f51327e83e",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_hazlo_type": "var",
+        "id": "8386a19fecf9",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      }
+    }
+  }
+}

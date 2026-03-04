@@ -1,0 +1,134 @@
+{
+  "name": "Bulk add invoice line items",
+  "description": "<p>Adds multiple line items to an invoice. This is only possible when an invoice is still a draft.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postInvoicesInvoiceAddLines",
+    "path": "/v1/invoices/{invoice}/add_lines",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ],
+      "invoice_metadata": {
+        "<key>": "<string>"
+      },
+      "lines": [
+        {
+          "amount": "<number>",
+          "description": "<string>",
+          "discountable": "<boolean>",
+          "discounts": [
+            {
+              "coupon": "<string>",
+              "discount": "<string>",
+              "promotion_code": "<string>"
+            }
+          ],
+          "invoice_item": "<string>",
+          "metadata": {
+            "<key>": "<string>"
+          },
+          "period": {
+            "end": "<number>",
+            "start": "<number>"
+          },
+          "price_data": {
+            "currency": "<string>",
+            "product": "<string>",
+            "product_data": {
+              "description": "<string>",
+              "images": [
+                "<string>"
+              ],
+              "metadata": {
+                "<key>": "<string>"
+              },
+              "name": "<string>",
+              "tax_code": "<string>",
+              "unit_label": "<string>"
+            },
+            "tax_behavior": "exclusive",
+            "unit_amount": "<number>",
+            "unit_amount_decimal": "<string>"
+          },
+          "pricing": {
+            "price": "<string>"
+          },
+          "quantity": "<number>",
+          "tax_amounts": [
+            {
+              "amount": "<number>",
+              "tax_rate_data": {
+                "country": "<string>",
+                "description": "<string>",
+                "display_name": "<string>",
+                "inclusive": "<boolean>",
+                "jurisdiction": "<string>",
+                "jurisdiction_level": "city",
+                "percentage": "<number>",
+                "state": "<string>",
+                "tax_type": "amusement_tax"
+              },
+              "taxability_reason": "customer_exempt",
+              "taxable_amount": "<number>"
+            }
+          ],
+          "tax_rates": [
+            "<string>"
+          ]
+        }
+      ]
+    },
+    "pathInvoice": "<string>"
+  },
+  "inputRequired": [
+    "body",
+    "pathInvoice"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "a65e0f048246",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "396774051a88",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "b03d1ae3f33b",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "d4af4200ac3d",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "277e60477b91",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "fc95c3f934e1",
+        "left": "/v1/invoices/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "e318dd7a0913",
+          "keyPath": "pathInvoice",
+          "optional": false
+        }
+      },
+      "right": "/add_lines"
+    },
+    "query": {}
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "name": "PostCustomersCustomerCardsId",
+  "description": "<p>Update a specified source for a given customer.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postCustomersCustomerCardsId",
+    "path": "/v1/customers/{customer}/cards/{id}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "account_holder_name": "<string>",
+      "account_holder_type": "company",
+      "address_city": "<string>",
+      "address_country": "<string>",
+      "address_line1": "<string>",
+      "address_line2": "<string>",
+      "address_state": "<string>",
+      "address_zip": "<string>",
+      "exp_month": "<string>",
+      "exp_year": "<string>",
+      "expand": [
+        "<string>"
+      ],
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "name": "<string>",
+      "owner": {
+        "address": {
+          "city": "<string>",
+          "country": "<string>",
+          "line1": "<string>",
+          "line2": "<string>",
+          "postal_code": "<string>",
+          "state": "<string>"
+        },
+        "email": "<string>",
+        "name": "<string>",
+        "phone": "<string>"
+      }
+    },
+    "pathCustomer": "<string>",
+    "pathId": "<string>"
+  },
+  "inputRequired": [
+    "pathCustomer",
+    "pathId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "39f911c71eeb",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "4f4491b886b1",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "b35b55fcaa44",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "d8adfa18f102",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "17c22b3e2f33",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "7b691073b429",
+        "left": {
+          "_pbd_hazlo_type": "concat",
+          "id": "6620dae547f4",
+          "left": "/v1/customers/",
+          "right": {
+            "_pbd_hazlo_type": "var",
+            "id": "454705a0afa3",
+            "keyPath": "pathCustomer",
+            "optional": false
+          }
+        },
+        "right": "/cards/"
+      },
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "9875a1552f04",
+        "keyPath": "pathId",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

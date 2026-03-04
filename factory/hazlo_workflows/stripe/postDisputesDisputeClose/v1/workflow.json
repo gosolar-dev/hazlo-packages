@@ -1,0 +1,64 @@
+{
+  "name": "Close a dispute",
+  "description": "<p>Closing the dispute for a charge indicates that you do not have any evidence to submit and are essentially dismissing the dispute, acknowledging it as lost.</p>\n\n<p>The status of the dispute will change from <code>needs_response</code> to <code>lost</code>. <em>Closing a dispute is irreversible</em>.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postDisputesDisputeClose",
+    "path": "/v1/disputes/{dispute}/close",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ]
+    },
+    "pathDispute": "<string>"
+  },
+  "inputRequired": [
+    "pathDispute"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "56f480aff618",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "f0875deab4a1",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "c60fd59a76e6",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "2b593913aa97",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "277dd051afd2",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "19604a66d580",
+        "left": "/v1/disputes/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "cfeddd0f3c26",
+          "keyPath": "pathDispute",
+          "optional": false
+        }
+      },
+      "right": "/close"
+    },
+    "query": {}
+  }
+}

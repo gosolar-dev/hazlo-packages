@@ -1,0 +1,69 @@
+{
+  "name": "Confirm a PaymentIntent on the Reader",
+  "description": "<p>Finalizes a payment on a Reader. See <a href=\"/docs/terminal/payments/collect-card-payment?terminal-sdk-platform=server-driven&process=inspect#confirm-the-paymentintent\">Confirming a Payment</a> for more details.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postTerminalReadersReaderConfirmPaymentIntent",
+    "path": "/v1/terminal/readers/{reader}/confirm_payment_intent",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "confirm_config": {
+        "return_url": "<string>"
+      },
+      "expand": [
+        "<string>"
+      ],
+      "payment_intent": "<string>"
+    },
+    "pathReader": "<string>"
+  },
+  "inputRequired": [
+    "body",
+    "pathReader"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "f0256c01a151",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "4aa508fc03f6",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "dbdf96bcfe3f",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "5089c3cfc451",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "2635256a3bb7",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "457acbc266dd",
+        "left": "/v1/terminal/readers/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "263445b41969",
+          "keyPath": "pathReader",
+          "optional": false
+        }
+      },
+      "right": "/confirm_payment_intent"
+    },
+    "query": {}
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "name": "Download quote PDF",
+  "description": "<p>Download the PDF for a finalized quote. Explanation for special handling can be found <a href=\"https://docs.stripe.com/quotes/overview#quote_pdf\">here</a></p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getQuotesQuotePdf",
+    "path": "/v1/quotes/{quote}/pdf",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathQuote": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathQuote"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "84d1ffdab19c",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "47fc50c5d769",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "23e7b40f589e",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "27599400e3f5",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "facf7414ff73",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "57793e8c3eb6",
+        "left": "/v1/quotes/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "c317a059d103",
+          "keyPath": "pathQuote",
+          "optional": false
+        }
+      },
+      "right": "/pdf"
+    },
+    "query": {
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "8da4a17cebec",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

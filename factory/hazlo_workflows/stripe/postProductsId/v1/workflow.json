@@ -1,0 +1,85 @@
+{
+  "name": "Update a product",
+  "description": "<p>Updates the specific product by setting the values of the parameters passed. Any parameters not provided will be left unchanged.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postProductsId",
+    "path": "/v1/products/{id}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "active": "<boolean>",
+      "default_price": "<string>",
+      "description": "<string>",
+      "expand": [
+        "<string>"
+      ],
+      "images": [
+        "<string>"
+      ],
+      "marketing_features": [
+        {
+          "name": "<string>"
+        }
+      ],
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "name": "<string>",
+      "package_dimensions": {
+        "height": "<number>",
+        "length": "<number>",
+        "weight": "<number>",
+        "width": "<number>"
+      },
+      "shippable": "<boolean>",
+      "statement_descriptor": "<string>",
+      "tax_code": "<string>",
+      "unit_label": "<string>",
+      "url": "<string>"
+    },
+    "pathId": "<string>"
+  },
+  "inputRequired": [
+    "pathId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "a2fa52b4d17c",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "3d60351ccd80",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "c07c8a869fdb",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "836a43d0ec39",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "16da3b7d0b8d",
+      "left": "/v1/products/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "35fd32e5b76f",
+        "keyPath": "pathId",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

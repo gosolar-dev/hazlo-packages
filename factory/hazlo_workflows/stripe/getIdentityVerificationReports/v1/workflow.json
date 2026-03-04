@@ -1,0 +1,98 @@
+{
+  "name": "List VerificationReports",
+  "description": "<p>List all verification reports.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getIdentityVerificationReports",
+    "path": "/v1/identity/verification_reports",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryClientReferenceId": "<string>",
+    "queryCreated": "<string>",
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryLimit": "<number>",
+    "queryStartingAfter": "<string>",
+    "queryType": "<string>",
+    "queryVerificationSession": "<string>"
+  },
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "6027aa305172",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "7db47b4b546e",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "bcccc25d7865",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "4d88607285ad",
+    "method": "GET",
+    "path": "/v1/identity/verification_reports",
+    "query": {
+      "client_reference_id": {
+        "_pbd_hazlo_type": "var",
+        "id": "6250cc9d0f3c",
+        "keyPath": "queryClientReferenceId",
+        "optional": true
+      },
+      "created": {
+        "_pbd_hazlo_type": "var",
+        "id": "ee095a364a6f",
+        "keyPath": "queryCreated",
+        "optional": true
+      },
+      "ending_before": {
+        "_pbd_hazlo_type": "var",
+        "id": "0a87a187a6d3",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "bdfb2728a887",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_hazlo_type": "var",
+        "id": "c8bd2ba43b9c",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_hazlo_type": "var",
+        "id": "6c42954601e5",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      },
+      "type": {
+        "_pbd_hazlo_type": "var",
+        "id": "33862739c83d",
+        "keyPath": "queryType",
+        "optional": true
+      },
+      "verification_session": {
+        "_pbd_hazlo_type": "var",
+        "id": "189f0d1a065d",
+        "keyPath": "queryVerificationSession",
+        "optional": true
+      }
+    }
+  }
+}

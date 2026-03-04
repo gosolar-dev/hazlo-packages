@@ -1,0 +1,110 @@
+{
+  "name": "Report a payment attempt",
+  "description": "<p>Report a new payment attempt on the specified Payment Record. A new payment\n attempt can only be specified if all other payment attempts are canceled or failed.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postPaymentRecordsIdReportPaymentAttempt",
+    "path": "/v1/payment_records/{id}/report_payment_attempt",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "description": "<string>",
+      "expand": [
+        "<string>"
+      ],
+      "failed": {
+        "failed_at": "<number>"
+      },
+      "guaranteed": {
+        "guaranteed_at": "<number>"
+      },
+      "initiated_at": "<number>",
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "outcome": "failed",
+      "payment_method_details": {
+        "billing_details": {
+          "address": {
+            "city": "<string>",
+            "country": "<string>",
+            "line1": "<string>",
+            "line2": "<string>",
+            "postal_code": "<string>",
+            "state": "<string>"
+          },
+          "email": "<string>",
+          "name": "<string>",
+          "phone": "<string>"
+        },
+        "custom": {
+          "display_name": "<string>",
+          "type": "<string>"
+        },
+        "payment_method": "<string>",
+        "type": "custom"
+      },
+      "shipping_details": {
+        "address": {
+          "city": "<string>",
+          "country": "<string>",
+          "line1": "<string>",
+          "line2": "<string>",
+          "postal_code": "<string>",
+          "state": "<string>"
+        },
+        "name": "<string>",
+        "phone": "<string>"
+      }
+    },
+    "pathId": "<string>"
+  },
+  "inputRequired": [
+    "body",
+    "pathId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "ca7305d3b416",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "64b9ca81ff31",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "b4adbd99249d",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "a7e518d8de0d",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "e0dcd7d6dda5",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "256fc68511ea",
+        "left": "/v1/payment_records/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "916f62d6df26",
+          "keyPath": "pathId",
+          "optional": false
+        }
+      },
+      "right": "/report_payment_attempt"
+    },
+    "query": {}
+  }
+}

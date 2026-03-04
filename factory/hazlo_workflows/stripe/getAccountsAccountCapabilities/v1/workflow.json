@@ -1,0 +1,68 @@
+{
+  "name": "List all account capabilities",
+  "description": "<p>Returns a list of capabilities associated with the account. The capabilities are returned sorted by creation date, with the most recent capability appearing first.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getAccountsAccountCapabilities",
+    "path": "/v1/accounts/{account}/capabilities",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathAccount": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathAccount"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "d255c172183d",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "d92bfeca94dc",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "36d9da7b2ba5",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "d5e1c98a94c3",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "7aec3588f6b5",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "a7df5d96a113",
+        "left": "/v1/accounts/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "8f52619b83cf",
+          "keyPath": "pathAccount",
+          "optional": false
+        }
+      },
+      "right": "/capabilities"
+    },
+    "query": {
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "26ffbeef0229",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

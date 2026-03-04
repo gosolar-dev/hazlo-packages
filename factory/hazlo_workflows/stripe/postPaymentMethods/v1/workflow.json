@@ -1,0 +1,180 @@
+{
+  "name": "Shares a PaymentMethod",
+  "description": "<p>Creates a PaymentMethod object. Read the <a href=\"/docs/stripe-js/reference#stripe-create-payment-method\">Stripe.js reference</a> to learn how to create PaymentMethods via Stripe.js.</p>\n\n<p>Instead of creating a PaymentMethod directly, we recommend using the <a href=\"/docs/payments/accept-a-payment\">PaymentIntents</a> API to accept a payment immediately or the <a href=\"/docs/payments/save-and-reuse\">SetupIntent</a> API to collect payment method details ahead of a future payment.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postPaymentMethods",
+    "path": "/v1/payment_methods",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "acss_debit": {
+        "account_number": "<string>",
+        "institution_number": "<string>",
+        "transit_number": "<string>"
+      },
+      "affirm": {},
+      "afterpay_clearpay": {},
+      "alipay": {},
+      "allow_redisplay": "always",
+      "alma": {},
+      "amazon_pay": {},
+      "au_becs_debit": {
+        "account_number": "<string>",
+        "bsb_number": "<string>"
+      },
+      "bacs_debit": {
+        "account_number": "<string>",
+        "sort_code": "<string>"
+      },
+      "bancontact": {},
+      "billie": {},
+      "billing_details": {
+        "address": {
+          "city": "<string>",
+          "country": "<string>",
+          "line1": "<string>",
+          "line2": "<string>",
+          "postal_code": "<string>",
+          "state": "<string>"
+        },
+        "email": "<string>",
+        "name": "<string>",
+        "phone": "<string>",
+        "tax_id": "<string>"
+      },
+      "blik": {},
+      "boleto": {
+        "tax_id": "<string>"
+      },
+      "card": {
+        "cvc": "<string>",
+        "exp_month": "<number>",
+        "exp_year": "<number>",
+        "networks": {
+          "preferred": "cartes_bancaires"
+        },
+        "number": "<string>"
+      },
+      "cashapp": {},
+      "crypto": {},
+      "custom": {
+        "type": "<string>"
+      },
+      "customer": "<string>",
+      "customer_balance": {},
+      "eps": {
+        "bank": "arzte_und_apotheker_bank"
+      },
+      "expand": [
+        "<string>"
+      ],
+      "fpx": {
+        "bank": "affin_bank"
+      },
+      "giropay": {},
+      "grabpay": {},
+      "ideal": {
+        "bank": "abn_amro"
+      },
+      "interac_present": {},
+      "kakao_pay": {},
+      "klarna": {
+        "dob": {
+          "day": "<number>",
+          "month": "<number>",
+          "year": "<number>"
+        }
+      },
+      "konbini": {},
+      "kr_card": {},
+      "link": {},
+      "mb_way": {},
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "mobilepay": {},
+      "multibanco": {},
+      "naver_pay": {
+        "funding": "card"
+      },
+      "nz_bank_account": {
+        "account_holder_name": "<string>",
+        "account_number": "<string>",
+        "bank_code": "<string>",
+        "branch_code": "<string>",
+        "reference": "<string>",
+        "suffix": "<string>"
+      },
+      "oxxo": {},
+      "p24": {
+        "bank": "alior_bank"
+      },
+      "pay_by_bank": {},
+      "payco": {},
+      "payment_method": "<string>",
+      "paynow": {},
+      "paypal": {},
+      "payto": {
+        "account_number": "<string>",
+        "bsb_number": "<string>",
+        "pay_id": "<string>"
+      },
+      "pix": {},
+      "promptpay": {},
+      "radar_options": {
+        "session": "<string>"
+      },
+      "revolut_pay": {},
+      "samsung_pay": {},
+      "satispay": {},
+      "sepa_debit": {
+        "iban": "<string>"
+      },
+      "sofort": {
+        "country": "AT"
+      },
+      "swish": {},
+      "twint": {},
+      "type": "acss_debit",
+      "us_bank_account": {
+        "account_holder_type": "company",
+        "account_number": "<string>",
+        "account_type": "checking",
+        "financial_connections_account": "<string>",
+        "routing_number": "<string>"
+      },
+      "wechat_pay": {},
+      "zip": {}
+    }
+  },
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "a2e9d57a2edb",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "705969d20d04",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "646cf8433894",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "7daef6997c0f",
+    "method": "POST",
+    "path": "/v1/payment_methods",
+    "query": {}
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "name": "Create an order",
+  "description": "<p>Creates a Climate order object for a given Climate product. The order will be processed immediately\nafter creation and payment will be deducted your Stripe balance.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postClimateOrders",
+    "path": "/v1/climate/orders",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "amount": "<number>",
+      "beneficiary": {
+        "public_name": "<string>"
+      },
+      "currency": "<string>",
+      "expand": [
+        "<string>"
+      ],
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "metric_tons": "<string>",
+      "product": "<string>"
+    }
+  },
+  "inputRequired": [
+    "body"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "ff9a7415497d",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "f71f34eb6035",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "67cd97bdfffb",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "9c698e47c8e3",
+    "method": "POST",
+    "path": "/v1/climate/orders",
+    "query": {}
+  }
+}

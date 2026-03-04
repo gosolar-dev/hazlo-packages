@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve a balance transaction",
+  "description": "<p>Retrieves the balance transaction with the given ID.</p>\n\n<p>Note that this endpoint previously used the path <code>/v1/balance/history/:id</code>.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getBalanceTransactionsId",
+    "path": "/v1/balance_transactions/{id}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathId": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "81b66d4ad6e1",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "65e1c984835d",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "a60b84319c76",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "6dff65d05ae3",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "aaeb639ebde6",
+      "left": "/v1/balance_transactions/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "715c79235885",
+        "keyPath": "pathId",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "51570e3e5c28",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

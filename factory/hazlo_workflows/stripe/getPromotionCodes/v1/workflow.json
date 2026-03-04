@@ -1,0 +1,112 @@
+{
+  "name": "List all promotion codes",
+  "description": "<p>Returns a list of your promotion codes.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getPromotionCodes",
+    "path": "/v1/promotion_codes",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryActive": "<boolean>",
+    "queryCode": "<string>",
+    "queryCoupon": "<string>",
+    "queryCreated": "<string>",
+    "queryCustomer": "<string>",
+    "queryCustomerAccount": "<string>",
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryLimit": "<number>",
+    "queryStartingAfter": "<string>"
+  },
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "0803f8458c50",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "ae5c74c6f9cd",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "555835573fb5",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "cc34108f7b38",
+    "method": "GET",
+    "path": "/v1/promotion_codes",
+    "query": {
+      "active": {
+        "_pbd_hazlo_type": "var",
+        "id": "09011fb0d81c",
+        "keyPath": "queryActive",
+        "optional": true
+      },
+      "code": {
+        "_pbd_hazlo_type": "var",
+        "id": "a25d947c0164",
+        "keyPath": "queryCode",
+        "optional": true
+      },
+      "coupon": {
+        "_pbd_hazlo_type": "var",
+        "id": "b718390ea8da",
+        "keyPath": "queryCoupon",
+        "optional": true
+      },
+      "created": {
+        "_pbd_hazlo_type": "var",
+        "id": "e835817aaadb",
+        "keyPath": "queryCreated",
+        "optional": true
+      },
+      "customer": {
+        "_pbd_hazlo_type": "var",
+        "id": "7e76d4b2c426",
+        "keyPath": "queryCustomer",
+        "optional": true
+      },
+      "customer_account": {
+        "_pbd_hazlo_type": "var",
+        "id": "65408a2d7212",
+        "keyPath": "queryCustomerAccount",
+        "optional": true
+      },
+      "ending_before": {
+        "_pbd_hazlo_type": "var",
+        "id": "cebdff41da6d",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "0a983118ec7a",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_hazlo_type": "var",
+        "id": "b820fe14a946",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_hazlo_type": "var",
+        "id": "e3e59a6c77d1",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      }
+    }
+  }
+}

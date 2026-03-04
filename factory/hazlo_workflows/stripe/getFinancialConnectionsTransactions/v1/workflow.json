@@ -1,0 +1,94 @@
+{
+  "name": "List Transactions",
+  "description": "<p>Returns a list of Financial Connections <code>Transaction</code> objects.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getFinancialConnectionsTransactions",
+    "path": "/v1/financial_connections/transactions",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryAccount": "<string>",
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryLimit": "<number>",
+    "queryStartingAfter": "<string>",
+    "queryTransactedAt": "<string>",
+    "queryTransactionRefresh": {}
+  },
+  "inputRequired": [
+    "queryAccount"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "de8a3c4f7d84",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "799a1ef4cd35",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "79082cb7c479",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "62cc499bda9c",
+    "method": "GET",
+    "path": "/v1/financial_connections/transactions",
+    "query": {
+      "account": {
+        "_pbd_hazlo_type": "var",
+        "id": "db5a8c9617ab",
+        "keyPath": "queryAccount",
+        "optional": false
+      },
+      "ending_before": {
+        "_pbd_hazlo_type": "var",
+        "id": "d201afa45bab",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "5e697faad2ba",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_hazlo_type": "var",
+        "id": "382ce8c7e126",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_hazlo_type": "var",
+        "id": "430807f23888",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      },
+      "transacted_at": {
+        "_pbd_hazlo_type": "var",
+        "id": "f8250e251493",
+        "keyPath": "queryTransactedAt",
+        "optional": true
+      },
+      "transaction_refresh": {
+        "_pbd_hazlo_type": "var",
+        "id": "3afb41955cbd",
+        "keyPath": "queryTransactionRefresh",
+        "optional": true
+      }
+    }
+  }
+}

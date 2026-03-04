@@ -1,2 +1,3 @@
 .hazlo
 bin
+factory/reports/*.actual.json

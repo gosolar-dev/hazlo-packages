@@ -1,0 +1,80 @@
+{
+  "name": "Retrieve a card",
+  "description": "<p>You can always see the 10 most recent cards directly on a customer; this method lets you retrieve details about a specific card stored on the customer.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getCustomersCustomerCardsId",
+    "path": "/v1/customers/{customer}/cards/{id}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathCustomer": "<string>",
+    "pathId": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathCustomer",
+    "pathId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "c7e3913cbea5",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "0bad54bc1e77",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "b48116da0b5a",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "fe8471a2783a",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "cf4da86e5042",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "5382b8edc92b",
+        "left": {
+          "_pbd_hazlo_type": "concat",
+          "id": "be12b22b9dfa",
+          "left": "/v1/customers/",
+          "right": {
+            "_pbd_hazlo_type": "var",
+            "id": "861b6e185671",
+            "keyPath": "pathCustomer",
+            "optional": false
+          }
+        },
+        "right": "/cards/"
+      },
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "46db5f7e3516",
+        "keyPath": "pathId",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "322cc0855379",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

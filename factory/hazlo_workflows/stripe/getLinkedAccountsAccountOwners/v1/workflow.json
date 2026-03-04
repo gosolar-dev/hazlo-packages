@@ -1,0 +1,97 @@
+{
+  "name": "List Account Owners",
+  "description": "<p>Lists all owners for a given <code>Account</code></p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getLinkedAccountsAccountOwners",
+    "path": "/v1/linked_accounts/{account}/owners",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathAccount": "<string>",
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryLimit": "<number>",
+    "queryOwnership": "<string>",
+    "queryStartingAfter": "<string>"
+  },
+  "inputRequired": [
+    "pathAccount",
+    "queryOwnership"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "251798fc1e29",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "caf55aba32cf",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "7fa19b511a5c",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "f5c4ca16ab60",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "f49f6d50cb51",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "f136aefe6ce9",
+        "left": "/v1/linked_accounts/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "0fdcb9fc1881",
+          "keyPath": "pathAccount",
+          "optional": false
+        }
+      },
+      "right": "/owners"
+    },
+    "query": {
+      "ending_before": {
+        "_pbd_hazlo_type": "var",
+        "id": "3e287468e14b",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "330ad54e44c3",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_hazlo_type": "var",
+        "id": "c3038a6b857a",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "ownership": {
+        "_pbd_hazlo_type": "var",
+        "id": "82e64b0bfaab",
+        "keyPath": "queryOwnership",
+        "optional": false
+      },
+      "starting_after": {
+        "_pbd_hazlo_type": "var",
+        "id": "8af9bd8c687b",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      }
+    }
+  }
+}

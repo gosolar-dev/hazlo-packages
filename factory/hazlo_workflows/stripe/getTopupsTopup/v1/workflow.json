@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve a top-up",
+  "description": "<p>Retrieves the details of a top-up that has previously been created. Supply the unique top-up ID that was returned from your previous request, and Stripe will return the corresponding top-up information.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getTopupsTopup",
+    "path": "/v1/topups/{topup}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathTopup": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathTopup"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "4a954ed0c9da",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "d5ad36b0f9a0",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "67fce8dc9ac8",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "99f940a1513b",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "4881c90fa166",
+      "left": "/v1/topups/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "e1600f019b98",
+        "keyPath": "pathTopup",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "0413fd3213c8",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

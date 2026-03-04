@@ -1,0 +1,96 @@
+{
+  "name": "Collect inputs using a Reader",
+  "description": "<p>Initiates an <a href=\"/docs/terminal/features/collect-inputs\">input collection flow</a> on a Reader to display input forms and collect information from your customers.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postTerminalReadersReaderCollectInputs",
+    "path": "/v1/terminal/readers/{reader}/collect_inputs",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ],
+      "inputs": [
+        {
+          "custom_text": {
+            "description": "<string>",
+            "skip_button": "<string>",
+            "submit_button": "<string>",
+            "title": "<string>"
+          },
+          "required": "<boolean>",
+          "selection": {
+            "choices": [
+              {
+                "id": "<string>",
+                "style": "primary",
+                "text": "<string>"
+              }
+            ]
+          },
+          "toggles": [
+            {
+              "default_value": "disabled",
+              "description": "<string>",
+              "title": "<string>"
+            }
+          ],
+          "type": "email"
+        }
+      ],
+      "metadata": {
+        "<key>": "<string>"
+      }
+    },
+    "pathReader": "<string>"
+  },
+  "inputRequired": [
+    "body",
+    "pathReader"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "a23f07ff1a3f",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "08bf800a8c4f",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "9d63fb733e74",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "830f07130d9e",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "b38c113855ec",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "5a0bad0fab10",
+        "left": "/v1/terminal/readers/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "1a5e29fb0b60",
+          "keyPath": "pathReader",
+          "optional": false
+        }
+      },
+      "right": "/collect_inputs"
+    },
+    "query": {}
+  }
+}

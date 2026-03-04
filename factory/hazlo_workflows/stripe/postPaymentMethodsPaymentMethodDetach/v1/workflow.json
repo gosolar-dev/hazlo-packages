@@ -1,0 +1,64 @@
+{
+  "name": "Detach a PaymentMethod from a Customer",
+  "description": "<p>Detaches a PaymentMethod object from a Customer. After a PaymentMethod is detached, it can no longer be used for a payment or re-attached to a Customer.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postPaymentMethodsPaymentMethodDetach",
+    "path": "/v1/payment_methods/{payment_method}/detach",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ]
+    },
+    "pathPaymentMethod": "<string>"
+  },
+  "inputRequired": [
+    "pathPaymentMethod"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "6b564b2c33a6",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "9283fb4e13d7",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "4c8125c86fee",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "22ad21f023c9",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "991ceb1e4c3b",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "2e21edaf1bb7",
+        "left": "/v1/payment_methods/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "034c3e5b74d3",
+          "keyPath": "pathPaymentMethod",
+          "optional": false
+        }
+      },
+      "right": "/detach"
+    },
+    "query": {}
+  }
+}

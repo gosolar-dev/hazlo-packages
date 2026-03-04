@@ -1,0 +1,102 @@
+{
+  "name": "Create a Payment Evaluation",
+  "description": "<p>Request a Radar API fraud risk score from Stripe for a payment before sending it for external processor authorization.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postRadarPaymentEvaluations",
+    "path": "/v1/radar/payment_evaluations",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "client_device_metadata_details": {
+        "radar_session": "<string>"
+      },
+      "customer_details": {
+        "customer": "<string>",
+        "customer_account": "<string>",
+        "email": "<string>",
+        "name": "<string>",
+        "phone": "<string>"
+      },
+      "expand": [
+        "<string>"
+      ],
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "payment_details": {
+        "amount": "<number>",
+        "currency": "<string>",
+        "description": "<string>",
+        "money_movement_details": {
+          "card": {
+            "customer_presence": "off_session",
+            "payment_type": "one_off"
+          },
+          "money_movement_type": "card"
+        },
+        "payment_method_details": {
+          "billing_details": {
+            "address": {
+              "city": "<string>",
+              "country": "<string>",
+              "line1": "<string>",
+              "line2": "<string>",
+              "postal_code": "<string>",
+              "state": "<string>"
+            },
+            "email": "<string>",
+            "name": "<string>",
+            "phone": "<string>"
+          },
+          "payment_method": "<string>"
+        },
+        "shipping_details": {
+          "address": {
+            "city": "<string>",
+            "country": "<string>",
+            "line1": "<string>",
+            "line2": "<string>",
+            "postal_code": "<string>",
+            "state": "<string>"
+          },
+          "name": "<string>",
+          "phone": "<string>"
+        },
+        "statement_descriptor": "<string>"
+      }
+    }
+  },
+  "inputRequired": [
+    "body"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "eae5bec0ce1d",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "db517fdbe02e",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "3e7747fbc859",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "eb6bfb869c03",
+    "method": "POST",
+    "path": "/v1/radar/payment_evaluations",
+    "query": {}
+  }
+}

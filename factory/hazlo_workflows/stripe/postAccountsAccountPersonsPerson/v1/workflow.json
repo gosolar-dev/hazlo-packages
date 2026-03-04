@@ -1,0 +1,196 @@
+{
+  "name": "Update a person",
+  "description": "<p>Updates an existing person.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postAccountsAccountPersonsPerson",
+    "path": "/v1/accounts/{account}/persons/{person}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "additional_tos_acceptances": {
+        "account": {
+          "date": "<number>",
+          "ip": "<string>",
+          "user_agent": "<string>"
+        }
+      },
+      "address": {
+        "city": "<string>",
+        "country": "<string>",
+        "line1": "<string>",
+        "line2": "<string>",
+        "postal_code": "<string>",
+        "state": "<string>"
+      },
+      "address_kana": {
+        "city": "<string>",
+        "country": "<string>",
+        "line1": "<string>",
+        "line2": "<string>",
+        "postal_code": "<string>",
+        "state": "<string>",
+        "town": "<string>"
+      },
+      "address_kanji": {
+        "city": "<string>",
+        "country": "<string>",
+        "line1": "<string>",
+        "line2": "<string>",
+        "postal_code": "<string>",
+        "state": "<string>",
+        "town": "<string>"
+      },
+      "dob": {
+        "day": "<number>",
+        "month": "<number>",
+        "year": "<number>"
+      },
+      "documents": {
+        "company_authorization": {
+          "files": [
+            "<string>"
+          ]
+        },
+        "passport": {
+          "files": [
+            "<string>"
+          ]
+        },
+        "visa": {
+          "files": [
+            "<string>"
+          ]
+        }
+      },
+      "email": "<string>",
+      "expand": [
+        "<string>"
+      ],
+      "first_name": "<string>",
+      "first_name_kana": "<string>",
+      "first_name_kanji": "<string>",
+      "full_name_aliases": [
+        "<string>"
+      ],
+      "gender": "<string>",
+      "id_number": "<string>",
+      "id_number_secondary": "<string>",
+      "last_name": "<string>",
+      "last_name_kana": "<string>",
+      "last_name_kanji": "<string>",
+      "maiden_name": "<string>",
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "nationality": "<string>",
+      "person_token": "<string>",
+      "phone": "<string>",
+      "political_exposure": "existing",
+      "registered_address": {
+        "city": "<string>",
+        "country": "<string>",
+        "line1": "<string>",
+        "line2": "<string>",
+        "postal_code": "<string>",
+        "state": "<string>"
+      },
+      "relationship": {
+        "authorizer": "<boolean>",
+        "director": "<boolean>",
+        "executive": "<boolean>",
+        "legal_guardian": "<boolean>",
+        "owner": "<boolean>",
+        "percent_ownership": "<number>",
+        "representative": "<boolean>",
+        "title": "<string>"
+      },
+      "ssn_last_4": "<string>",
+      "us_cfpb_data": {
+        "ethnicity_details": {
+          "ethnicity": [
+            "cuban"
+          ],
+          "ethnicity_other": "<string>"
+        },
+        "race_details": {
+          "race": [
+            "african_american"
+          ],
+          "race_other": "<string>"
+        },
+        "self_identified_gender": "<string>"
+      },
+      "verification": {
+        "additional_document": {
+          "back": "<string>",
+          "front": "<string>"
+        },
+        "document": {
+          "back": "<string>",
+          "front": "<string>"
+        }
+      }
+    },
+    "pathAccount": "<string>",
+    "pathPerson": "<string>"
+  },
+  "inputRequired": [
+    "pathAccount",
+    "pathPerson"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "8939cc794819",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "7cabc5aa0478",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "f93ecfc78e6f",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "9ae8a3be4b96",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "d6645ee866ab",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "19b233a438b8",
+        "left": {
+          "_pbd_hazlo_type": "concat",
+          "id": "9efe9d964b13",
+          "left": "/v1/accounts/",
+          "right": {
+            "_pbd_hazlo_type": "var",
+            "id": "11b6ec05c43f",
+            "keyPath": "pathAccount",
+            "optional": false
+          }
+        },
+        "right": "/persons/"
+      },
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "ed3ec0b0d037",
+        "keyPath": "pathPerson",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "name": "Retrieve the credit balance summary for a customer",
+  "description": "<p>Retrieves the credit balance summary for a customer.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getBillingCreditBalanceSummary",
+    "path": "/v1/billing/credit_balance_summary",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryCustomer": "<string>",
+    "queryCustomerAccount": "<string>",
+    "queryExpand": [],
+    "queryFilter": {}
+  },
+  "inputRequired": [
+    "queryFilter"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "90470ef1440e",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "8486cf7b9999",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "85f605aa10a5",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "ebd1956e015e",
+    "method": "GET",
+    "path": "/v1/billing/credit_balance_summary",
+    "query": {
+      "customer": {
+        "_pbd_hazlo_type": "var",
+        "id": "a4464148b9cc",
+        "keyPath": "queryCustomer",
+        "optional": true
+      },
+      "customer_account": {
+        "_pbd_hazlo_type": "var",
+        "id": "e4aa30f37ff4",
+        "keyPath": "queryCustomerAccount",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "cbf54a9870c2",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "filter": {
+        "_pbd_hazlo_type": "var",
+        "id": "bd4e879f0378",
+        "keyPath": "queryFilter",
+        "optional": false
+      }
+    }
+  }
+}

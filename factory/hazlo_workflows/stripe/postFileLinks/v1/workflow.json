@@ -1,0 +1,53 @@
+{
+  "name": "Create a file link",
+  "description": "<p>Creates a new file link object.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postFileLinks",
+    "path": "/v1/file_links",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ],
+      "expires_at": "<number>",
+      "file": "<string>",
+      "metadata": {
+        "<key>": "<string>"
+      }
+    }
+  },
+  "inputRequired": [
+    "body"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "0cda6ccadfa9",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "7c67b5cd5dd1",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "bdb1f3920da8",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "9b12c76d9f86",
+    "method": "POST",
+    "path": "/v1/file_links",
+    "query": {}
+  }
+}

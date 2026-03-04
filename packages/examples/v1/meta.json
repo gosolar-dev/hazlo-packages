@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "v1",
+  "name": "examples",
+  "version": "v1",
+  "description": "Factory example workflows used to validate local authoring, iteration, and publish pipeline behavior.",
+  "workflows": [
+    {
+      "ref": "examples/schemaAllNodes/v1",
+      "path": "workflows/examples/schemaAllNodes/v1/workflow.json",
+      "description": "Demonstrates every supported schema node type in one workflow.",
+      "subworkRefs": [
+        "examples/schemaHelper/v1"
+      ],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "examples/schemaHelper/v1",
+      "path": "workflows/examples/schemaHelper/v1/workflow.json",
+      "description": "Simple helper workflow used by schemaAllNodes subwork examples.",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    }
+  ],
+  "defaultInstallRefs": [
+    "examples/schemaAllNodes/v1",
+    "examples/schemaHelper/v1"
+  ],
+  "env": [],
+  "checksums": {
+    "examples/schemaAllNodes/v1": "74840f746d0e1a672b5b1b1c71c7338df54c9a4840dedb6d81b69125ca17f781",
+    "examples/schemaHelper/v1": "41ac01a81165b6815a505f97ca274266d43a34aa68d18e6468e248a99d80cd48"
+  },
+  "homepage": "https://hazlo.dev",
+  "license": "MIT",
+  "tags": [
+    "examples",
+    "factory",
+    "pipeline"
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "name": "Approve an authorization",
+  "description": "<p>[Deprecated] Approves a pending Issuing <code>Authorization</code> object. This request should be made within the timeout window of the <a href=\"/docs/issuing/controls/real-time-authorizations\">real-time authorization</a> flow. \nThis method is deprecated. Instead, <a href=\"/docs/issuing/controls/real-time-authorizations#authorization-handling\">respond directly to the webhook request to approve an authorization</a>.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postIssuingAuthorizationsAuthorizationApprove",
+    "path": "/v1/issuing/authorizations/{authorization}/approve",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "amount": "<number>",
+      "expand": [
+        "<string>"
+      ],
+      "metadata": {
+        "<key>": "<string>"
+      }
+    },
+    "pathAuthorization": "<string>"
+  },
+  "inputRequired": [
+    "pathAuthorization"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "3cea82096f17",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "7ab411bfeab7",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "83b98dfdc004",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "ddd6a5eedcab",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "ba32a568680c",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "c048fcffcde2",
+        "left": "/v1/issuing/authorizations/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "3f7e7d04e950",
+          "keyPath": "pathAuthorization",
+          "optional": false
+        }
+      },
+      "right": "/approve"
+    },
+    "query": {}
+  }
+}

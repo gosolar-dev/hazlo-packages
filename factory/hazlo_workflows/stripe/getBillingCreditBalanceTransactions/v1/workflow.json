@@ -1,0 +1,91 @@
+{
+  "name": "List credit balance transactions",
+  "description": "<p>Retrieve a list of credit balance transactions.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getBillingCreditBalanceTransactions",
+    "path": "/v1/billing/credit_balance_transactions",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryCreditGrant": "<string>",
+    "queryCustomer": "<string>",
+    "queryCustomerAccount": "<string>",
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryLimit": "<number>",
+    "queryStartingAfter": "<string>"
+  },
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "d48a58502223",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "9f589cc19bff",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "9fd5ae42ba7c",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "93e30d860a0d",
+    "method": "GET",
+    "path": "/v1/billing/credit_balance_transactions",
+    "query": {
+      "credit_grant": {
+        "_pbd_hazlo_type": "var",
+        "id": "bd110e883823",
+        "keyPath": "queryCreditGrant",
+        "optional": true
+      },
+      "customer": {
+        "_pbd_hazlo_type": "var",
+        "id": "30ec891e64cc",
+        "keyPath": "queryCustomer",
+        "optional": true
+      },
+      "customer_account": {
+        "_pbd_hazlo_type": "var",
+        "id": "57fbfb2f3eb2",
+        "keyPath": "queryCustomerAccount",
+        "optional": true
+      },
+      "ending_before": {
+        "_pbd_hazlo_type": "var",
+        "id": "3c3fa2ae9bbd",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "4eb0cfb99bb6",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_hazlo_type": "var",
+        "id": "58e56e4cd193",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_hazlo_type": "var",
+        "id": "0fb3294cf010",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve a Report Run",
+  "description": "<p>Retrieves the details of an existing Report Run.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getReportingReportRunsReportRun",
+    "path": "/v1/reporting/report_runs/{report_run}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathReportRun": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathReportRun"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "ac12599a1541",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "b0b686835069",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "0c0ba2b66b2c",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "fb102507cbd2",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "2b5b76fe39f4",
+      "left": "/v1/reporting/report_runs/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "59bd5b53a71c",
+        "keyPath": "pathReportRun",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "fb778bcef860",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "name": "Update a value list",
+  "description": "<p>Updates a <code>ValueList</code> object by setting the values of the parameters passed. Any parameters not provided will be left unchanged. Note that <code>item_type</code> is immutable.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postRadarValueListsValueList",
+    "path": "/v1/radar/value_lists/{value_list}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "alias": "<string>",
+      "expand": [
+        "<string>"
+      ],
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "name": "<string>"
+    },
+    "pathValueList": "<string>"
+  },
+  "inputRequired": [
+    "pathValueList"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "815efc3bae5f",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "032c51241f76",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "cd2d43fc0e81",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "741d055e90ba",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "61dd5186cbba",
+      "left": "/v1/radar/value_lists/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "0ed1298ed632",
+        "keyPath": "pathValueList",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

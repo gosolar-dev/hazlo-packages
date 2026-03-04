@@ -1,0 +1,68 @@
+{
+  "name": "GetChargesChargeDispute",
+  "description": "<p>Retrieve a dispute for a specified charge.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getChargesChargeDispute",
+    "path": "/v1/charges/{charge}/dispute",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathCharge": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathCharge"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "793e6825b11e",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "2627973b62c1",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "4f0d8993651e",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "b1e716f81780",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "5980a38b4ee9",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "5adcfe5a467a",
+        "left": "/v1/charges/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "02eeb66ace7b",
+          "keyPath": "pathCharge",
+          "optional": false
+        }
+      },
+      "right": "/dispute"
+    },
+    "query": {
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "2c35f560a668",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

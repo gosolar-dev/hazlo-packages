@@ -1,0 +1,68 @@
+{
+  "name": "Retrieve a cash balance",
+  "description": "<p>Retrieves a customer’s cash balance.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getCustomersCustomerCashBalance",
+    "path": "/v1/customers/{customer}/cash_balance",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathCustomer": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathCustomer"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "f14829744e16",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "7aa3b1ba61c8",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "44b0e4bb5d28",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "00fb111ef2ce",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "1b238be04b00",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "0574ce67f1d4",
+        "left": "/v1/customers/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "b61c41a8f0f4",
+          "keyPath": "pathCustomer",
+          "optional": false
+        }
+      },
+      "right": "/cash_balance"
+    },
+    "query": {
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "94f9786befaf",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

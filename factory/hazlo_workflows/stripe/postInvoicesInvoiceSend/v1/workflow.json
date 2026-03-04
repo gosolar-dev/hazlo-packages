@@ -1,0 +1,64 @@
+{
+  "name": "Send an invoice for manual payment",
+  "description": "<p>Stripe will automatically send invoices to customers according to your <a href=\"https://dashboard.stripe.com/account/billing/automatic\">subscriptions settings</a>. However, if you’d like to manually send an invoice to your customer out of the normal schedule, you can do so. When sending invoices that have already been paid, there will be no reference to the payment in the email.</p>\n\n<p>Requests made in test-mode result in no emails being sent, despite sending an <code>invoice.sent</code> event.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postInvoicesInvoiceSend",
+    "path": "/v1/invoices/{invoice}/send",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ]
+    },
+    "pathInvoice": "<string>"
+  },
+  "inputRequired": [
+    "pathInvoice"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "35c0375eea71",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "3e6b20b638ee",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "f7b5e352827d",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "f0bbef28f035",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "ef0d65488c5b",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "7537f31f267a",
+        "left": "/v1/invoices/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "7edb6ef0eefa",
+          "keyPath": "pathInvoice",
+          "optional": false
+        }
+      },
+      "right": "/send"
+    },
+    "query": {}
+  }
+}

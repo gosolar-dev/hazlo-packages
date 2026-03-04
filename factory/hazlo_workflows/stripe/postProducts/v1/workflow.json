@@ -1,0 +1,115 @@
+{
+  "name": "Create a product",
+  "description": "<p>Creates a new product object.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postProducts",
+    "path": "/v1/products",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "active": "<boolean>",
+      "default_price_data": {
+        "currency": "<string>",
+        "currency_options": {
+          "<key>": {
+            "custom_unit_amount": {
+              "enabled": "<boolean>",
+              "maximum": "<number>",
+              "minimum": "<number>",
+              "preset": "<number>"
+            },
+            "tax_behavior": "exclusive",
+            "tiers": [
+              {
+                "flat_amount": "<number>",
+                "flat_amount_decimal": "<string>",
+                "unit_amount": "<number>",
+                "unit_amount_decimal": "<string>",
+                "up_to": "inf"
+              }
+            ],
+            "unit_amount": "<number>",
+            "unit_amount_decimal": "<string>"
+          }
+        },
+        "custom_unit_amount": {
+          "enabled": "<boolean>",
+          "maximum": "<number>",
+          "minimum": "<number>",
+          "preset": "<number>"
+        },
+        "metadata": {
+          "<key>": "<string>"
+        },
+        "recurring": {
+          "interval": "day",
+          "interval_count": "<number>"
+        },
+        "tax_behavior": "exclusive",
+        "unit_amount": "<number>",
+        "unit_amount_decimal": "<string>"
+      },
+      "description": "<string>",
+      "expand": [
+        "<string>"
+      ],
+      "id": "<string>",
+      "images": [
+        "<string>"
+      ],
+      "marketing_features": [
+        {
+          "name": "<string>"
+        }
+      ],
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "name": "<string>",
+      "package_dimensions": {
+        "height": "<number>",
+        "length": "<number>",
+        "weight": "<number>",
+        "width": "<number>"
+      },
+      "shippable": "<boolean>",
+      "statement_descriptor": "<string>",
+      "tax_code": "<string>",
+      "unit_label": "<string>",
+      "url": "<string>"
+    }
+  },
+  "inputRequired": [
+    "body"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "44184c631d61",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "f89352622337",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "52a2f1683ed7",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "b7a9e78b07f6",
+    "method": "POST",
+    "path": "/v1/products",
+    "query": {}
+  }
+}

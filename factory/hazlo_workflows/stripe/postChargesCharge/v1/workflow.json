@@ -1,0 +1,83 @@
+{
+  "name": "Update a charge",
+  "description": "<p>Updates the specified charge by setting the values of the parameters passed. Any parameters not provided will be left unchanged.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postChargesCharge",
+    "path": "/v1/charges/{charge}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "customer": "<string>",
+      "description": "<string>",
+      "expand": [
+        "<string>"
+      ],
+      "fraud_details": {
+        "user_report": ""
+      },
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "receipt_email": "<string>",
+      "shipping": {
+        "address": {
+          "city": "<string>",
+          "country": "<string>",
+          "line1": "<string>",
+          "line2": "<string>",
+          "postal_code": "<string>",
+          "state": "<string>"
+        },
+        "carrier": "<string>",
+        "name": "<string>",
+        "phone": "<string>",
+        "tracking_number": "<string>"
+      },
+      "transfer_group": "<string>"
+    },
+    "pathCharge": "<string>"
+  },
+  "inputRequired": [
+    "pathCharge"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "1a92d811ece8",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "3bf3925447f6",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "f66bfc95efd6",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "ad80517785dd",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "39443b1b2341",
+      "left": "/v1/charges/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "93c6df399c5c",
+        "keyPath": "pathCharge",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

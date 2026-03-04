@@ -1,0 +1,58 @@
+{
+  "name": "Create a webhook endpoint",
+  "description": "<p>A webhook endpoint must have a <code>url</code> and a list of <code>enabled_events</code>. You may optionally specify the Boolean <code>connect</code> parameter. If set to true, then a Connect webhook endpoint that notifies the specified <code>url</code> about events from all connected accounts is created; otherwise an account webhook endpoint that notifies the specified <code>url</code> only about events from your account is created. You can also create webhook endpoints in the <a href=\"https://dashboard.stripe.com/account/webhooks\">webhooks settings</a> section of the Dashboard.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postWebhookEndpoints",
+    "path": "/v1/webhook_endpoints",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "api_version": "2011-01-01",
+      "connect": "<boolean>",
+      "description": "<string>",
+      "enabled_events": [
+        "*"
+      ],
+      "expand": [
+        "<string>"
+      ],
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "url": "<string>"
+    }
+  },
+  "inputRequired": [
+    "body"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "a48926f8564d",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "669abe1fc41a",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "732a4dda5967",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "27feb36e6c4c",
+    "method": "POST",
+    "path": "/v1/webhook_endpoints",
+    "query": {}
+  }
+}

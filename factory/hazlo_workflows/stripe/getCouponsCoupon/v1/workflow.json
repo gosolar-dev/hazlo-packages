@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve a coupon",
+  "description": "<p>Retrieves the coupon with the given ID.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getCouponsCoupon",
+    "path": "/v1/coupons/{coupon}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathCoupon": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathCoupon"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "2115eaeea9d3",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "b378f44e578b",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "5ecc39819302",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "37e4db3f55e5",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "d5dd83a4ee22",
+      "left": "/v1/coupons/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "d749adeba339",
+        "keyPath": "pathCoupon",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "5e6465b07e70",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

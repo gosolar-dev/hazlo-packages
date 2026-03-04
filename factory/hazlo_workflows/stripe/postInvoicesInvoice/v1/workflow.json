@@ -1,0 +1,223 @@
+{
+  "name": "Update an invoice",
+  "description": "<p>Draft invoices are fully editable. Once an invoice is <a href=\"/docs/billing/invoices/workflow#finalized\">finalized</a>,\nmonetary values, as well as <code>collection_method</code>, become uneditable.</p>\n\n<p>If you would like to stop the Stripe Billing engine from automatically finalizing, reattempting payments on,\nsending reminders for, or <a href=\"/docs/billing/invoices/reconciliation\">automatically reconciling</a> invoices, pass\n<code>auto_advance=false</code>.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postInvoicesInvoice",
+    "path": "/v1/invoices/{invoice}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "account_tax_ids": [
+        "<string>"
+      ],
+      "application_fee_amount": "<number>",
+      "auto_advance": "<boolean>",
+      "automatic_tax": {
+        "enabled": "<boolean>",
+        "liability": {
+          "account": "<string>",
+          "type": "account"
+        }
+      },
+      "automatically_finalizes_at": "<number>",
+      "collection_method": "charge_automatically",
+      "custom_fields": [
+        {
+          "name": "<string>",
+          "value": "<string>"
+        }
+      ],
+      "days_until_due": "<number>",
+      "default_payment_method": "<string>",
+      "default_source": "<string>",
+      "default_tax_rates": [
+        "<string>"
+      ],
+      "description": "<string>",
+      "discounts": [
+        {
+          "coupon": "<string>",
+          "discount": "<string>",
+          "promotion_code": "<string>"
+        }
+      ],
+      "due_date": "<number>",
+      "effective_at": "<number>",
+      "expand": [
+        "<string>"
+      ],
+      "footer": "<string>",
+      "issuer": {
+        "account": "<string>",
+        "type": "account"
+      },
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "number": "<string>",
+      "on_behalf_of": "<string>",
+      "payment_settings": {
+        "default_mandate": "<string>",
+        "payment_method_options": {
+          "acss_debit": {
+            "mandate_options": {
+              "transaction_type": "business"
+            },
+            "verification_method": "automatic"
+          },
+          "bancontact": {
+            "preferred_language": "de"
+          },
+          "card": {
+            "installments": {
+              "enabled": "<boolean>",
+              "plan": {
+                "count": "<number>",
+                "interval": "month",
+                "type": "bonus"
+              }
+            },
+            "request_three_d_secure": "any"
+          },
+          "customer_balance": {
+            "bank_transfer": {
+              "eu_bank_transfer": {
+                "country": "<string>"
+              },
+              "type": "<string>"
+            },
+            "funding_type": "<string>"
+          },
+          "konbini": {},
+          "payto": {
+            "mandate_options": {
+              "amount": "<number>",
+              "purpose": "dependant_support"
+            }
+          },
+          "sepa_debit": {},
+          "us_bank_account": {
+            "financial_connections": {
+              "filters": {
+                "account_subcategories": [
+                  "checking"
+                ]
+              },
+              "permissions": [
+                "balances"
+              ],
+              "prefetch": [
+                "balances"
+              ]
+            },
+            "verification_method": "automatic"
+          }
+        },
+        "payment_method_types": [
+          "ach_credit_transfer"
+        ]
+      },
+      "rendering": {
+        "amount_tax_display": "",
+        "pdf": {
+          "page_size": "a4"
+        },
+        "template": "<string>",
+        "template_version": "<number>"
+      },
+      "shipping_cost": {
+        "shipping_rate": "<string>",
+        "shipping_rate_data": {
+          "delivery_estimate": {
+            "maximum": {
+              "unit": "business_day",
+              "value": "<number>"
+            },
+            "minimum": {
+              "unit": "business_day",
+              "value": "<number>"
+            }
+          },
+          "display_name": "<string>",
+          "fixed_amount": {
+            "amount": "<number>",
+            "currency": "<string>",
+            "currency_options": {
+              "<key>": {
+                "amount": "<number>",
+                "tax_behavior": "exclusive"
+              }
+            }
+          },
+          "metadata": {
+            "<key>": "<string>"
+          },
+          "tax_behavior": "exclusive",
+          "tax_code": "<string>",
+          "type": "fixed_amount"
+        }
+      },
+      "shipping_details": {
+        "address": {
+          "city": "<string>",
+          "country": "<string>",
+          "line1": "<string>",
+          "line2": "<string>",
+          "postal_code": "<string>",
+          "state": "<string>"
+        },
+        "name": "<string>",
+        "phone": "<string>"
+      },
+      "statement_descriptor": "<string>",
+      "transfer_data": {
+        "amount": "<number>",
+        "destination": "<string>"
+      }
+    },
+    "pathInvoice": "<string>"
+  },
+  "inputRequired": [
+    "pathInvoice"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "d764768da473",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "819732099c4e",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "c0bf73f8e70e",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "c3bf44b6e745",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "52a99b2cc578",
+      "left": "/v1/invoices/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "63787ef19a4a",
+        "keyPath": "pathInvoice",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

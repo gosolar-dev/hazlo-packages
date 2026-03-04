@@ -1,0 +1,86 @@
+{
+  "name": "Create an external account",
+  "description": "<p>Create an external account for a given account.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postAccountsAccountExternalAccounts",
+    "path": "/v1/accounts/{account}/external_accounts",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "bank_account": {
+        "account_holder_name": "<string>",
+        "account_holder_type": "company",
+        "account_number": "<string>",
+        "account_type": "checking",
+        "country": "<string>",
+        "currency": "<string>",
+        "documents": {
+          "bank_account_ownership_verification": {
+            "files": [
+              "<string>"
+            ]
+          }
+        },
+        "object": "bank_account",
+        "routing_number": "<string>"
+      },
+      "default_for_currency": "<boolean>",
+      "expand": [
+        "<string>"
+      ],
+      "external_account": "<string>",
+      "metadata": {
+        "<key>": "<string>"
+      }
+    },
+    "pathAccount": "<string>"
+  },
+  "inputRequired": [
+    "pathAccount"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "34ff9105ea9c",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "9ea6c7bf8b88",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "4d2466811495",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "1741b1ba5fd2",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "3f038cd58e32",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "25b41dc1c40a",
+        "left": "/v1/accounts/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "90d20bba5c90",
+          "keyPath": "pathAccount",
+          "optional": false
+        }
+      },
+      "right": "/external_accounts"
+    },
+    "query": {}
+  }
+}

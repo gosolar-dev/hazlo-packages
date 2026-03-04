@@ -1,0 +1,84 @@
+{
+  "name": "List all files",
+  "description": "<p>Returns a list of the files that your account has access to. Stripe sorts and returns the files by their creation dates, placing the most recently created files at the top.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getFiles",
+    "path": "/v1/files",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryCreated": "<string>",
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryLimit": "<number>",
+    "queryPurpose": "<string>",
+    "queryStartingAfter": "<string>"
+  },
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "a04427792bf2",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "d8e2b74d3b8e",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "ab0119dfc089",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "80504ecfe9da",
+    "method": "GET",
+    "path": "/v1/files",
+    "query": {
+      "created": {
+        "_pbd_hazlo_type": "var",
+        "id": "f08424e986c8",
+        "keyPath": "queryCreated",
+        "optional": true
+      },
+      "ending_before": {
+        "_pbd_hazlo_type": "var",
+        "id": "5483d87b645f",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "ad7eb45bf186",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_hazlo_type": "var",
+        "id": "4e23eeebfabd",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "purpose": {
+        "_pbd_hazlo_type": "var",
+        "id": "e069a7e39bb7",
+        "keyPath": "queryPurpose",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_hazlo_type": "var",
+        "id": "56685b0e1555",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      }
+    }
+  }
+}

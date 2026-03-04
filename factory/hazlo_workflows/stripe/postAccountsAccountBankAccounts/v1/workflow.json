@@ -1,0 +1,86 @@
+{
+  "name": "Create an external account",
+  "description": "<p>Create an external account for a given account.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postAccountsAccountBankAccounts",
+    "path": "/v1/accounts/{account}/bank_accounts",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "bank_account": {
+        "account_holder_name": "<string>",
+        "account_holder_type": "company",
+        "account_number": "<string>",
+        "account_type": "checking",
+        "country": "<string>",
+        "currency": "<string>",
+        "documents": {
+          "bank_account_ownership_verification": {
+            "files": [
+              "<string>"
+            ]
+          }
+        },
+        "object": "bank_account",
+        "routing_number": "<string>"
+      },
+      "default_for_currency": "<boolean>",
+      "expand": [
+        "<string>"
+      ],
+      "external_account": "<string>",
+      "metadata": {
+        "<key>": "<string>"
+      }
+    },
+    "pathAccount": "<string>"
+  },
+  "inputRequired": [
+    "pathAccount"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "a55919754eec",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "5d4c5729caf4",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "7c2343fe39f2",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "d0fbcd853d1f",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "68e1aa823e6d",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "2edef6f67602",
+        "left": "/v1/accounts/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "aa5bc44c45e8",
+          "keyPath": "pathAccount",
+          "optional": false
+        }
+      },
+      "right": "/bank_accounts"
+    },
+    "query": {}
+  }
+}

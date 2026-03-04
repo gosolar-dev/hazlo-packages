@@ -1,0 +1,63 @@
+{
+  "name": "Update a file link",
+  "description": "<p>Updates an existing file link object. Expired links can no longer be updated.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postFileLinksLink",
+    "path": "/v1/file_links/{link}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ],
+      "expires_at": "now",
+      "metadata": {
+        "<key>": "<string>"
+      }
+    },
+    "pathLink": "<string>"
+  },
+  "inputRequired": [
+    "pathLink"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "141f073effbe",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "40633ccb4a44",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "a6dcf3e2d3cb",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "d23007097567",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "8a9840e4010e",
+      "left": "/v1/file_links/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "6da730bfed58",
+        "keyPath": "pathLink",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

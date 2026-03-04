@@ -1,0 +1,96 @@
+{
+  "name": "List all external accounts",
+  "description": "<p>List external accounts for an account.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getAccountsAccountExternalAccounts",
+    "path": "/v1/accounts/{account}/external_accounts",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathAccount": "<string>",
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryLimit": "<number>",
+    "queryObject": "<string>",
+    "queryStartingAfter": "<string>"
+  },
+  "inputRequired": [
+    "pathAccount"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "6d5567914564",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "742f9cf6d911",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "7e0edfe30cb2",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "a1ab71969175",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "b80b9e4e8b5c",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "c6f2ee5a8d9d",
+        "left": "/v1/accounts/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "8a201873274c",
+          "keyPath": "pathAccount",
+          "optional": false
+        }
+      },
+      "right": "/external_accounts"
+    },
+    "query": {
+      "ending_before": {
+        "_pbd_hazlo_type": "var",
+        "id": "8a9e1714b5e8",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "758502181b8e",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_hazlo_type": "var",
+        "id": "1db77f6273cc",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "object": {
+        "_pbd_hazlo_type": "var",
+        "id": "098859230705",
+        "keyPath": "queryObject",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_hazlo_type": "var",
+        "id": "4d255debcf49",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      }
+    }
+  }
+}

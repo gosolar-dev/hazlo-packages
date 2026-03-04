@@ -1,0 +1,99 @@
+{
+  "name": "Create a Tax Calculation",
+  "description": "<p>Calculates tax based on the input and returns a Tax <code>Calculation</code> object.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postTaxCalculations",
+    "path": "/v1/tax/calculations",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "currency": "<string>",
+      "customer": "<string>",
+      "customer_details": {
+        "address": {
+          "city": "<string>",
+          "country": "<string>",
+          "line1": "<string>",
+          "line2": "<string>",
+          "postal_code": "<string>",
+          "state": "<string>"
+        },
+        "address_source": "billing",
+        "ip_address": "<string>",
+        "tax_ids": [
+          {
+            "type": "ad_nrt",
+            "value": "<string>"
+          }
+        ],
+        "taxability_override": "customer_exempt"
+      },
+      "expand": [
+        "<string>"
+      ],
+      "line_items": [
+        {
+          "amount": "<number>",
+          "metadata": {
+            "<key>": "<string>"
+          },
+          "product": "<string>",
+          "quantity": "<number>",
+          "reference": "<string>",
+          "tax_behavior": "exclusive",
+          "tax_code": "<string>"
+        }
+      ],
+      "ship_from_details": {
+        "address": {
+          "city": "<string>",
+          "country": "<string>",
+          "line1": "<string>",
+          "line2": "<string>",
+          "postal_code": "<string>",
+          "state": "<string>"
+        }
+      },
+      "shipping_cost": {
+        "amount": "<number>",
+        "shipping_rate": "<string>",
+        "tax_behavior": "exclusive",
+        "tax_code": "<string>"
+      },
+      "tax_date": "<number>"
+    }
+  },
+  "inputRequired": [
+    "body"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "b01396cf6d12",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "45476f10ab5a",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "ea3bb7578cfb",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "d47a616d8ad5",
+    "method": "POST",
+    "path": "/v1/tax/calculations",
+    "query": {}
+  }
+}

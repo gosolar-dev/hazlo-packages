@@ -1,0 +1,60 @@
+{
+  "name": "Update a billing meter",
+  "description": "<p>Updates a billing meter.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postBillingMetersId",
+    "path": "/v1/billing/meters/{id}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "display_name": "<string>",
+      "expand": [
+        "<string>"
+      ]
+    },
+    "pathId": "<string>"
+  },
+  "inputRequired": [
+    "pathId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "8bd552775f1c",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "8b3d39f40590",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "0b24b45f52ac",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "fc98a0ee1068",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "4b026e09c2b0",
+      "left": "/v1/billing/meters/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "7c68135c3112",
+        "keyPath": "pathId",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

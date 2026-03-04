@@ -1,0 +1,64 @@
+{
+  "name": "Validate an existing payment method domain",
+  "description": "<p>Some payment methods might require additional steps to register a domain. If the requirements weren’t satisfied when the domain was created, the payment method will be inactive on the domain.\nThe payment method doesn’t appear in Elements or Embedded Checkout for this domain until it is active.</p>\n\n<p>To activate a payment method on an existing payment method domain, complete the required registration steps specific to the payment method, and then validate the payment method domain with this endpoint.</p>\n\n<p>Related guides: <a href=\"/docs/payments/payment-methods/pmd-registration\">Payment method domains</a>.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postPaymentMethodDomainsPaymentMethodDomainValidate",
+    "path": "/v1/payment_method_domains/{payment_method_domain}/validate",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ]
+    },
+    "pathPaymentMethodDomain": "<string>"
+  },
+  "inputRequired": [
+    "pathPaymentMethodDomain"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "be7e9615cad4",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "7298550bd001",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "b567702e8131",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "625c9e338763",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "c7c731ce75f1",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "eca23029459b",
+        "left": "/v1/payment_method_domains/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "70dd7ff39592",
+          "keyPath": "pathPaymentMethodDomain",
+          "optional": false
+        }
+      },
+      "right": "/validate"
+    },
+    "query": {}
+  }
+}

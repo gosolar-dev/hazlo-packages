@@ -1,0 +1,62 @@
+{
+  "name": "Update a settlement",
+  "description": "<p>Updates the specified Issuing <code>Settlement</code> object by setting the values of the parameters passed. Any parameters not provided will be left unchanged.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postIssuingSettlementsSettlement",
+    "path": "/v1/issuing/settlements/{settlement}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ],
+      "metadata": {
+        "<key>": "<string>"
+      }
+    },
+    "pathSettlement": "<string>"
+  },
+  "inputRequired": [
+    "pathSettlement"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "96e62b68b411",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "eaff7c6e1b8c",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "0c94b7266f92",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "c31dc00baf54",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "2f780639e372",
+      "left": "/v1/issuing/settlements/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "625650799601",
+        "keyPath": "pathSettlement",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

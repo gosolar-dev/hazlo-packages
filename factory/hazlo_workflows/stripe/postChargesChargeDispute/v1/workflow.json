@@ -1,0 +1,140 @@
+{
+  "name": "PostChargesChargeDispute",
+  "description": "PostChargesChargeDispute",
+  "meta": {
+    "method": "POST",
+    "operationId": "postChargesChargeDispute",
+    "path": "/v1/charges/{charge}/dispute",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "evidence": {
+        "access_activity_log": "<string>",
+        "billing_address": "<string>",
+        "cancellation_policy": "<string>",
+        "cancellation_policy_disclosure": "<string>",
+        "cancellation_rebuttal": "<string>",
+        "customer_communication": "<string>",
+        "customer_email_address": "<string>",
+        "customer_name": "<string>",
+        "customer_purchase_ip": "<string>",
+        "customer_signature": "<string>",
+        "duplicate_charge_documentation": "<string>",
+        "duplicate_charge_explanation": "<string>",
+        "duplicate_charge_id": "<string>",
+        "enhanced_evidence": {
+          "visa_compelling_evidence_3": {
+            "disputed_transaction": {
+              "customer_account_id": "<string>",
+              "customer_device_fingerprint": "<string>",
+              "customer_device_id": "<string>",
+              "customer_email_address": "<string>",
+              "customer_purchase_ip": "<string>",
+              "merchandise_or_services": "merchandise",
+              "product_description": "<string>",
+              "shipping_address": {
+                "city": "<string>",
+                "country": "<string>",
+                "line1": "<string>",
+                "line2": "<string>",
+                "postal_code": "<string>",
+                "state": "<string>"
+              }
+            },
+            "prior_undisputed_transactions": [
+              {
+                "charge": "<string>",
+                "customer_account_id": "<string>",
+                "customer_device_fingerprint": "<string>",
+                "customer_device_id": "<string>",
+                "customer_email_address": "<string>",
+                "customer_purchase_ip": "<string>",
+                "product_description": "<string>",
+                "shipping_address": {
+                  "city": "<string>",
+                  "country": "<string>",
+                  "line1": "<string>",
+                  "line2": "<string>",
+                  "postal_code": "<string>",
+                  "state": "<string>"
+                }
+              }
+            ]
+          },
+          "visa_compliance": {
+            "fee_acknowledged": "<boolean>"
+          }
+        },
+        "product_description": "<string>",
+        "receipt": "<string>",
+        "refund_policy": "<string>",
+        "refund_policy_disclosure": "<string>",
+        "refund_refusal_explanation": "<string>",
+        "service_date": "<string>",
+        "service_documentation": "<string>",
+        "shipping_address": "<string>",
+        "shipping_carrier": "<string>",
+        "shipping_date": "<string>",
+        "shipping_documentation": "<string>",
+        "shipping_tracking_number": "<string>",
+        "uncategorized_file": "<string>",
+        "uncategorized_text": "<string>"
+      },
+      "expand": [
+        "<string>"
+      ],
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "submit": "<boolean>"
+    },
+    "pathCharge": "<string>"
+  },
+  "inputRequired": [
+    "pathCharge"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "e6fe5ed611ec",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "2d00903bd11b",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "e532372199ad",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "5e66a9bcec27",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "67c7d239cc22",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "1851140cf4ed",
+        "left": "/v1/charges/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "7ae53f3ff55f",
+          "keyPath": "pathCharge",
+          "optional": false
+        }
+      },
+      "right": "/dispute"
+    },
+    "query": {}
+  }
+}

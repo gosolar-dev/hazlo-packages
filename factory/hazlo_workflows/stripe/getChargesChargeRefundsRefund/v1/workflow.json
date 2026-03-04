@@ -1,0 +1,80 @@
+{
+  "name": "GetChargesChargeRefundsRefund",
+  "description": "<p>Retrieves the details of an existing refund.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getChargesChargeRefundsRefund",
+    "path": "/v1/charges/{charge}/refunds/{refund}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathCharge": "<string>",
+    "pathRefund": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathCharge",
+    "pathRefund"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "5380cd37070b",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "c8396849d9cc",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "12f4290b9aab",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "a870e084a99c",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "f57ffa72ae7c",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "629eb420f912",
+        "left": {
+          "_pbd_hazlo_type": "concat",
+          "id": "545c933c02e8",
+          "left": "/v1/charges/",
+          "right": {
+            "_pbd_hazlo_type": "var",
+            "id": "ddca25bfeb63",
+            "keyPath": "pathCharge",
+            "optional": false
+          }
+        },
+        "right": "/refunds/"
+      },
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "6d119e9a2903",
+        "keyPath": "pathRefund",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "e2c7ece28d6e",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "name": "PostCustomersCustomerBankAccountsId",
+  "description": "<p>Update a specified source for a given customer.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postCustomersCustomerBankAccountsId",
+    "path": "/v1/customers/{customer}/bank_accounts/{id}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "account_holder_name": "<string>",
+      "account_holder_type": "company",
+      "address_city": "<string>",
+      "address_country": "<string>",
+      "address_line1": "<string>",
+      "address_line2": "<string>",
+      "address_state": "<string>",
+      "address_zip": "<string>",
+      "exp_month": "<string>",
+      "exp_year": "<string>",
+      "expand": [
+        "<string>"
+      ],
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "name": "<string>",
+      "owner": {
+        "address": {
+          "city": "<string>",
+          "country": "<string>",
+          "line1": "<string>",
+          "line2": "<string>",
+          "postal_code": "<string>",
+          "state": "<string>"
+        },
+        "email": "<string>",
+        "name": "<string>",
+        "phone": "<string>"
+      }
+    },
+    "pathCustomer": "<string>",
+    "pathId": "<string>"
+  },
+  "inputRequired": [
+    "pathCustomer",
+    "pathId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "f028fd31c066",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "4afcefa8a501",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "79272dbd360f",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "4c8e8f693e4c",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "aed96bc633ba",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "3c845513edf5",
+        "left": {
+          "_pbd_hazlo_type": "concat",
+          "id": "a12045cb206d",
+          "left": "/v1/customers/",
+          "right": {
+            "_pbd_hazlo_type": "var",
+            "id": "993fbe5d5db5",
+            "keyPath": "pathCustomer",
+            "optional": false
+          }
+        },
+        "right": "/bank_accounts/"
+      },
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "bf8a2127645c",
+        "keyPath": "pathId",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

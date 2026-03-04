@@ -1,0 +1,76 @@
+{
+  "name": "Delete a customer source",
+  "description": "<p>Delete a specified source for a given customer.</p>",
+  "meta": {
+    "method": "DELETE",
+    "operationId": "deleteCustomersCustomerCardsId",
+    "path": "/v1/customers/{customer}/cards/{id}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ]
+    },
+    "pathCustomer": "<string>",
+    "pathId": "<string>"
+  },
+  "inputRequired": [
+    "pathCustomer",
+    "pathId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "08abe196ad35",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "d6c6a8f660ab",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "eb14bd972907",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "065c5601cbbc",
+    "method": "DELETE",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "3feed519e3d5",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "9f8c26e82ad8",
+        "left": {
+          "_pbd_hazlo_type": "concat",
+          "id": "ce03582998bb",
+          "left": "/v1/customers/",
+          "right": {
+            "_pbd_hazlo_type": "var",
+            "id": "8a55150bb840",
+            "keyPath": "pathCustomer",
+            "optional": false
+          }
+        },
+        "right": "/cards/"
+      },
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "9f7ebd3902a2",
+        "keyPath": "pathId",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

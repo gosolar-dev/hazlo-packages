@@ -1,0 +1,53 @@
+{
+  "name": "Create a billing meter event adjustment",
+  "description": "<p>Creates a billing meter event adjustment.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postBillingMeterEventAdjustments",
+    "path": "/v1/billing/meter_event_adjustments",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "cancel": {
+        "identifier": "<string>"
+      },
+      "event_name": "<string>",
+      "expand": [
+        "<string>"
+      ],
+      "type": "cancel"
+    }
+  },
+  "inputRequired": [
+    "body"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "1f0b364f464c",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "a9f34c7f468d",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "8cc97742ef6f",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "61006bf0a7d1",
+    "method": "POST",
+    "path": "/v1/billing/meter_event_adjustments",
+    "query": {}
+  }
+}

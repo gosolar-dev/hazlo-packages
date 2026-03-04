@@ -1,7 +1,16 @@
 {
   "schemaVersion": "v1",
-  "generatedAt": "2026-03-04T03:43:38.433Z",
+  "generatedAt": "2026-03-04T09:01:40.419Z",
   "packages": [
+    {
+      "name": "examples",
+      "latestVersion": "v1",
+      "versions": [
+        "v1"
+      ],
+      "description": "Factory example workflows used to validate local authoring, iteration, and publish pipeline behavior.",
+      "path": "packages/examples"
+    },
     {
       "name": "stripe",
       "latestVersion": "v1",

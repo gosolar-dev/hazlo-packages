@@ -1,0 +1,64 @@
+{
+  "name": "Deactivate a billing meter",
+  "description": "<p>When a meter is deactivated, no more meter events will be accepted for this meter. You can’t attach a deactivated meter to a price.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postBillingMetersIdDeactivate",
+    "path": "/v1/billing/meters/{id}/deactivate",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ]
+    },
+    "pathId": "<string>"
+  },
+  "inputRequired": [
+    "pathId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "f5563b8782b4",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "f3a22c62e937",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "6de73c8f63e0",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "40e170ccff54",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "0f3d67546360",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "8766c8d5e718",
+        "left": "/v1/billing/meters/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "ef9eadf98e98",
+          "keyPath": "pathId",
+          "optional": false
+        }
+      },
+      "right": "/deactivate"
+    },
+    "query": {}
+  }
+}

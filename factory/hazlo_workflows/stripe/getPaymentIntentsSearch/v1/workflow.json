@@ -1,0 +1,73 @@
+{
+  "name": "Search PaymentIntents",
+  "description": "<p>Search for PaymentIntents you’ve previously created using Stripe’s <a href=\"/docs/search#search-query-language\">Search Query Language</a>.\nDon’t use search in read-after-write flows where strict consistency is necessary. Under normal operating\nconditions, data is searchable in less than a minute. Occasionally, propagation of new or updated data can be up\nto an hour behind during outages. Search functionality is not available to merchants in India.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getPaymentIntentsSearch",
+    "path": "/v1/payment_intents/search",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryExpand": [],
+    "queryLimit": "<number>",
+    "queryPage": "<string>",
+    "queryQuery": "<string>"
+  },
+  "inputRequired": [
+    "queryQuery"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "664f3ccf6753",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "3d057b5a5e8a",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "16d3bcf1ef03",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "85b5ea4da9f7",
+    "method": "GET",
+    "path": "/v1/payment_intents/search",
+    "query": {
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "8df64e8cb8e2",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_hazlo_type": "var",
+        "id": "6a3a643f0bac",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "page": {
+        "_pbd_hazlo_type": "var",
+        "id": "18e1e370ac3a",
+        "keyPath": "queryPage",
+        "optional": true
+      },
+      "query": {
+        "_pbd_hazlo_type": "var",
+        "id": "2ebb638715ae",
+        "keyPath": "queryQuery",
+        "optional": false
+      }
+    }
+  }
+}

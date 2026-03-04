@@ -2,114 +2,58 @@
 
 ## Purpose
 
-This repository is a hazlo workflow playground.
+`factory/` is the workflow factory for this repository.
 
-It is intentionally lightweight and includes:
-- the `hazlo` executable
-- workflow schema in `schema/workflow.schema.json`
-- local workflows in `hazlo_workflows/**` (including examples)
+It is the only area for workflow authoring and release preparation.
 
-It does **not** include hazlo runtime/source code, and should not be used for engine development.
+`packages/` is publish output and must be produced by pipeline scripts.
 
-## Primary Workflow (OpenAPI First)
+## Required Flow
 
-Default authoring flow in this repo:
+1. Create in `factory/hazlo_workflows/**`
+2. Iterate with `hazlo workflows describe` and `hazlo workflows eval`
+3. Gate with:
+   - `node factory/scripts/lint-workflows.mjs --manifest ...`
+   - `node factory/scripts/eval-smoke.mjs --manifest ...`
+4. Publish with:
+   - `node factory/scripts/promote-package.mjs --manifest ... [--dry-run]`
 
-1. Start from OpenAPI documentation (`.yaml` or `.json`)
-2. Generate workflows with `hazlo workflows import-openapi`
-3. Refine generated `workflow.json` files
-4. Validate with `describe` and `eval`
+## Script Entry Points
 
-Use this command pattern:
+- `factory/scripts/create-workflow.mjs`
+- `factory/scripts/lint-workflows.mjs`
+- `factory/scripts/eval-smoke.mjs`
+- `factory/scripts/promote-package.mjs`
+- `factory/scripts/migrate-node-key.mjs`
 
-```bash
-./bin/hazlo workflows import-openapi \
-  --spec ./openapi.yaml \
-  --provider acme \
-  --host https://api.acme.com \
-  --version v1
-```
+## Structural Rules
 
-Generated files are expected at:
+- Workflow ref format: `<provider>/<workflow>/<version>`
+- Source path format: `factory/hazlo_workflows/<provider>/<workflow>/<version>/workflow.json`
+- Typed node key must be `_pbd_hazlo_type`
+- `_pbd_nebula_type` is disallowed
 
-`hazlo_workflows/<provider>/<operationId>/<version>/workflow.json`
+## Release Manifest Rules
 
-Use `--force` only when you intentionally want to overwrite generated files.
+- Use `factory/releases/<package>/<version>/release.json`
+- Version must be explicit (`vN`)
+- Use `mode: full` or `mode: refs`
+- `defaultInstallRefs` must exist in the candidate set
+- Smoke tests must reference deterministic fixtures
 
-## Repository Scope Rules
+## Safety and Scope
 
-- Keep changes focused on:
-  - `hazlo_workflows/**`
-  - `schema/**`
-  - docs (`README.md`, examples)
-  - config files (for local workflow execution)
-- Do not add hazlo source/runtime implementation code.
-- Do not modify the `hazlo` binary.
-- Do not commit secrets.
+- Do not modify `bin/hazlo`
+- Do not add runtime/engine implementation code
+- Do not commit secrets
+- Use `.hazlo` env store for local secrets
 
-## Workflow Conventions
+## Validation Before Merge
 
-- Workflow references use `<provider>/<workflow>/<version>`.
-- Typed nodes use `_pbd_hazlo_type`.
-- Keep JSON valid and cleanly formatted.
-- Keep `input` and `inputRequired` aligned with actual runtime needs.
-- Keep metadata consistent (`meta.provider`, `meta.operationId`).
-
-## Standard Commands
+Run:
 
 ```bash
-# CLI help
-./bin/hazlo --help
-./bin/hazlo workflows --help
-
-# Discover workflows
-./bin/hazlo workflows list
-./bin/hazlo workflows list <provider>
-./bin/hazlo workflows describe --ref <provider>/<workflow>/<version>
-
-# Evaluate workflows
-./bin/hazlo workflows eval --ref <provider>/<workflow>/<version> --input '{}'
-
-# Import from OpenAPI (preferred)
-./bin/hazlo workflows import-openapi --spec ./openapi.yaml --provider <provider> --host https://api.example.com --version v1
-
-# Manual scaffold (fallback when no OpenAPI spec exists)
-./bin/hazlo workflows new --ref <provider>/<workflow>/v1 --host https://api.example.com --path /resource --method GET
+node factory/scripts/lint-workflows.mjs --manifest <manifest>
+node factory/scripts/eval-smoke.mjs --manifest <manifest>
+node packages/tests/run.mjs
 ```
-
-## Validation Checklist (Before Merging)
-
-- `./bin/hazlo workflows list` shows expected refs.
-- `./bin/hazlo workflows describe --ref ...` works for changed workflows.
-- `./bin/hazlo workflows eval --ref ... --input ...` succeeds for representative inputs.
-- If shared examples are affected, re-run:
-  - `examples/schemaHelper/v1`
-  - `examples/schemaAllNodes/v1`
-
-## Secrets and Environment
-
-Use hazlo env store for sensitive values:
-
-```bash
-./bin/hazlo workflows env set --key API_TOKEN --value '<token>'
-./bin/hazlo workflows env list
-```
-
-Runtime injects these as `env.<KEY>`.
-
-Never store tokens in workflow JSON, examples, or docs.
-
-## Local Config
-
-If needed, configure local paths via `.hazlo_config`:
-
-```json
-{
-  "workflowsDir": "./bin/hazlo_workflows",
-  "envFile": "./env.json"
-}
-```
-
-## Out of Scope
-
-If work requires changing hazlo CLI/runtime behavior, stop and move that task to the main hazlo source repository.

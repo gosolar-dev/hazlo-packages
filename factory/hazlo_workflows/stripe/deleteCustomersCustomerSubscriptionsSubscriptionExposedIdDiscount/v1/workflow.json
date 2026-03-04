@@ -1,0 +1,77 @@
+{
+  "name": "Delete a customer discount",
+  "description": "<p>Removes the currently applied discount on a customer.</p>",
+  "meta": {
+    "method": "DELETE",
+    "operationId": "deleteCustomersCustomerSubscriptionsSubscriptionExposedIdDiscount",
+    "path": "/v1/customers/{customer}/subscriptions/{subscription_exposed_id}/discount",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathCustomer": "<string>",
+    "pathSubscriptionExposedId": "<string>"
+  },
+  "inputRequired": [
+    "pathCustomer",
+    "pathSubscriptionExposedId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "ba416473fb45",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "589a0118f1ef",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "5329ae589db1",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "6728c2ca5d8a",
+    "method": "DELETE",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "5698d8114088",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "f289ae39af6d",
+        "left": {
+          "_pbd_hazlo_type": "concat",
+          "id": "dddd0e5eb4ac",
+          "left": {
+            "_pbd_hazlo_type": "concat",
+            "id": "5948d264a45a",
+            "left": "/v1/customers/",
+            "right": {
+              "_pbd_hazlo_type": "var",
+              "id": "786e52a3044d",
+              "keyPath": "pathCustomer",
+              "optional": false
+            }
+          },
+          "right": "/subscriptions/"
+        },
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "e98df0842940",
+          "keyPath": "pathSubscriptionExposedId",
+          "optional": false
+        }
+      },
+      "right": "/discount"
+    },
+    "query": {}
+  }
+}

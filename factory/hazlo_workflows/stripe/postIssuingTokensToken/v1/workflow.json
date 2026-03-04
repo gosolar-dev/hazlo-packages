@@ -1,0 +1,61 @@
+{
+  "name": "Update a token status",
+  "description": "<p>Attempts to update the specified Issuing <code>Token</code> object to the status specified.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postIssuingTokensToken",
+    "path": "/v1/issuing/tokens/{token}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ],
+      "status": "active"
+    },
+    "pathToken": "<string>"
+  },
+  "inputRequired": [
+    "body",
+    "pathToken"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "85b4dda57714",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "983930544b4c",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "ace3da8678e7",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "b93fbfbca067",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "d44e1a959d0c",
+      "left": "/v1/issuing/tokens/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "74a794460251",
+        "keyPath": "pathToken",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "name": "List all schedules",
+  "description": "<p>Retrieves the list of your subscription schedules.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getSubscriptionSchedules",
+    "path": "/v1/subscription_schedules",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryCanceledAt": "<string>",
+    "queryCompletedAt": "<string>",
+    "queryCreated": "<string>",
+    "queryCustomer": "<string>",
+    "queryCustomerAccount": "<string>",
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryLimit": "<number>",
+    "queryReleasedAt": "<string>",
+    "queryScheduled": "<boolean>",
+    "queryStartingAfter": "<string>"
+  },
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "11715b1f33e1",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "b492a4d065ac",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "7c78cc1e6564",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "b252aa3d6ebc",
+    "method": "GET",
+    "path": "/v1/subscription_schedules",
+    "query": {
+      "canceled_at": {
+        "_pbd_hazlo_type": "var",
+        "id": "65eac96188e7",
+        "keyPath": "queryCanceledAt",
+        "optional": true
+      },
+      "completed_at": {
+        "_pbd_hazlo_type": "var",
+        "id": "ab238c0aa12d",
+        "keyPath": "queryCompletedAt",
+        "optional": true
+      },
+      "created": {
+        "_pbd_hazlo_type": "var",
+        "id": "80cae5de1f07",
+        "keyPath": "queryCreated",
+        "optional": true
+      },
+      "customer": {
+        "_pbd_hazlo_type": "var",
+        "id": "e85651f89b33",
+        "keyPath": "queryCustomer",
+        "optional": true
+      },
+      "customer_account": {
+        "_pbd_hazlo_type": "var",
+        "id": "a77b40df9cb9",
+        "keyPath": "queryCustomerAccount",
+        "optional": true
+      },
+      "ending_before": {
+        "_pbd_hazlo_type": "var",
+        "id": "95a58d1dcead",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "a2391c21e195",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_hazlo_type": "var",
+        "id": "9a0daa4ea9e5",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "released_at": {
+        "_pbd_hazlo_type": "var",
+        "id": "9893db11e859",
+        "keyPath": "queryReleasedAt",
+        "optional": true
+      },
+      "scheduled": {
+        "_pbd_hazlo_type": "var",
+        "id": "ecea19163226",
+        "keyPath": "queryScheduled",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_hazlo_type": "var",
+        "id": "89f86942d0b4",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      }
+    }
+  }
+}

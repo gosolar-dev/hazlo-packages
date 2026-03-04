@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve a ForwardingRequest",
+  "description": "<p>Retrieves a ForwardingRequest object.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getForwardingRequestsId",
+    "path": "/v1/forwarding/requests/{id}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathId": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "3c3c9cacc4fd",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "da46c21da107",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "cb98a15fe947",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "79cf4421f9b0",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "195efe2094ba",
+      "left": "/v1/forwarding/requests/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "900dc94800f4",
+        "keyPath": "pathId",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "3bf2bc52e52f",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

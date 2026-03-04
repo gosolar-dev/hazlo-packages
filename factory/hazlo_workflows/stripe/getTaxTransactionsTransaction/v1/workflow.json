@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve a transaction",
+  "description": "<p>Retrieves a Tax <code>Transaction</code> object.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getTaxTransactionsTransaction",
+    "path": "/v1/tax/transactions/{transaction}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathTransaction": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathTransaction"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "c557b5d72762",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "0f3a3de4259f",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "ef20537216fd",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "d4db7e266f7e",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "6364d6a3a136",
+      "left": "/v1/tax/transactions/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "d16010d340d0",
+        "keyPath": "pathTransaction",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "d5e3acc15bb6",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "name": "Create a price",
+  "description": "<p>Creates a new <a href=\"https://docs.stripe.com/api/prices\">Price</a> for an existing <a href=\"https://docs.stripe.com/api/products\">Product</a>. The Price can be recurring or one-time.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postPrices",
+    "path": "/v1/prices",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "active": "<boolean>",
+      "billing_scheme": "per_unit",
+      "currency": "<string>",
+      "currency_options": {
+        "<key>": {
+          "custom_unit_amount": {
+            "enabled": "<boolean>",
+            "maximum": "<number>",
+            "minimum": "<number>",
+            "preset": "<number>"
+          },
+          "tax_behavior": "exclusive",
+          "tiers": [
+            {
+              "flat_amount": "<number>",
+              "flat_amount_decimal": "<string>",
+              "unit_amount": "<number>",
+              "unit_amount_decimal": "<string>",
+              "up_to": "inf"
+            }
+          ],
+          "unit_amount": "<number>",
+          "unit_amount_decimal": "<string>"
+        }
+      },
+      "custom_unit_amount": {
+        "enabled": "<boolean>",
+        "maximum": "<number>",
+        "minimum": "<number>",
+        "preset": "<number>"
+      },
+      "expand": [
+        "<string>"
+      ],
+      "lookup_key": "<string>",
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "nickname": "<string>",
+      "product": "<string>",
+      "product_data": {
+        "active": "<boolean>",
+        "id": "<string>",
+        "metadata": {
+          "<key>": "<string>"
+        },
+        "name": "<string>",
+        "statement_descriptor": "<string>",
+        "tax_code": "<string>",
+        "unit_label": "<string>"
+      },
+      "recurring": {
+        "interval": "day",
+        "interval_count": "<number>",
+        "meter": "<string>",
+        "usage_type": "licensed"
+      },
+      "tax_behavior": "exclusive",
+      "tiers": [
+        {
+          "flat_amount": "<number>",
+          "flat_amount_decimal": "<string>",
+          "unit_amount": "<number>",
+          "unit_amount_decimal": "<string>",
+          "up_to": "inf"
+        }
+      ],
+      "tiers_mode": "graduated",
+      "transfer_lookup_key": "<boolean>",
+      "transform_quantity": {
+        "divide_by": "<number>",
+        "round": "down"
+      },
+      "unit_amount": "<number>",
+      "unit_amount_decimal": "<string>"
+    }
+  },
+  "inputRequired": [
+    "body"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "7282e50791a6",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "1635c7a2386f",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "ef42eb7d2e2c",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "95f2dd33ffe1",
+    "method": "POST",
+    "path": "/v1/prices",
+    "query": {}
+  }
+}

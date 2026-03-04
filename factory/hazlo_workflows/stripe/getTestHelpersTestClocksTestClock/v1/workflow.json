@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve a test clock",
+  "description": "<p>Retrieves a test clock.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getTestHelpersTestClocksTestClock",
+    "path": "/v1/test_helpers/test_clocks/{test_clock}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathTestClock": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathTestClock"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "304448cadf46",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "009b078ed809",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "2ef01915058f",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "a3e29b16fd19",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "6a8a192bc8ab",
+      "left": "/v1/test_helpers/test_clocks/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "42ef32b65806",
+        "keyPath": "pathTestClock",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "d8a1ef4da807",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

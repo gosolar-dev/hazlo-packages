@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve an invoice",
+  "description": "<p>Retrieves the invoice with the given ID.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getInvoicesInvoice",
+    "path": "/v1/invoices/{invoice}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathInvoice": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathInvoice"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "a46927c7c5be",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "36f66dea4388",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "04fb4ef979e0",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "1bedf7ea7a61",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "d510d46a3cc1",
+      "left": "/v1/invoices/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "904197dac70c",
+        "keyPath": "pathInvoice",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "544dc394cbf2",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

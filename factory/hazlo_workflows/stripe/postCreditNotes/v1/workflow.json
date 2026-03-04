@@ -1,0 +1,95 @@
+{
+  "name": "Create a credit note",
+  "description": "<p>Issue a credit note to adjust the amount of a finalized invoice. A credit note will first reduce the invoice’s <code>amount_remaining</code> (and <code>amount_due</code>), but not below zero.\nThis amount is indicated by the credit note’s <code>pre_payment_amount</code>. The excess amount is indicated by <code>post_payment_amount</code>, and it can result in any combination of the following:</p>\n\n<ul>\n<li>Refunds: create a new refund (using <code>refund_amount</code>) or link existing refunds (using <code>refunds</code>).</li>\n<li>Customer balance credit: credit the customer’s balance (using <code>credit_amount</code>) which will be automatically applied to their next invoice when it’s finalized.</li>\n<li>Outside of Stripe credit: record the amount that is or will be credited outside of Stripe (using <code>out_of_band_amount</code>).</li>\n</ul>\n\n<p>The sum of refunds, customer balance credits, and outside of Stripe credits must equal the <code>post_payment_amount</code>.</p>\n\n<p>You may issue multiple credit notes for an invoice. Each credit note may increment the invoice’s <code>pre_payment_credit_notes_amount</code>,\n<code>post_payment_credit_notes_amount</code>, or both, depending on the invoice’s <code>amount_remaining</code> at the time of credit note creation.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postCreditNotes",
+    "path": "/v1/credit_notes",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "amount": "<number>",
+      "credit_amount": "<number>",
+      "effective_at": "<number>",
+      "email_type": "credit_note",
+      "expand": [
+        "<string>"
+      ],
+      "invoice": "<string>",
+      "lines": [
+        {
+          "amount": "<number>",
+          "description": "<string>",
+          "invoice_line_item": "<string>",
+          "quantity": "<number>",
+          "tax_amounts": [
+            {
+              "amount": "<number>",
+              "tax_rate": "<string>",
+              "taxable_amount": "<number>"
+            }
+          ],
+          "tax_rates": [
+            "<string>"
+          ],
+          "type": "custom_line_item",
+          "unit_amount": "<number>",
+          "unit_amount_decimal": "<string>"
+        }
+      ],
+      "memo": "<string>",
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "out_of_band_amount": "<number>",
+      "reason": "duplicate",
+      "refund_amount": "<number>",
+      "refunds": [
+        {
+          "amount_refunded": "<number>",
+          "payment_record_refund": {
+            "payment_record": "<string>",
+            "refund_group": "<string>"
+          },
+          "refund": "<string>",
+          "type": "payment_record_refund"
+        }
+      ],
+      "shipping_cost": {
+        "shipping_rate": "<string>"
+      }
+    }
+  },
+  "inputRequired": [
+    "body"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "0500a9778917",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "271ca34a3586",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "54e7f0100247",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "8979763786b8",
+    "method": "POST",
+    "path": "/v1/credit_notes",
+    "query": {}
+  }
+}

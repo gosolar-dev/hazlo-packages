@@ -1,0 +1,77 @@
+{
+  "name": "List payment method configurations",
+  "description": "<p>List payment method configurations</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getPaymentMethodConfigurations",
+    "path": "/v1/payment_method_configurations",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryApplication": "<string>",
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryLimit": "<number>",
+    "queryStartingAfter": "<string>"
+  },
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "4a64e7a44bea",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "fda0ec50a31b",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "10ea8f0d15cd",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "152283b45233",
+    "method": "GET",
+    "path": "/v1/payment_method_configurations",
+    "query": {
+      "application": {
+        "_pbd_hazlo_type": "var",
+        "id": "89dc0ed079c5",
+        "keyPath": "queryApplication",
+        "optional": true
+      },
+      "ending_before": {
+        "_pbd_hazlo_type": "var",
+        "id": "879c5debf225",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "41ae2bff76ff",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_hazlo_type": "var",
+        "id": "cfc32a241558",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_hazlo_type": "var",
+        "id": "db56d3ecbcdf",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      }
+    }
+  }
+}

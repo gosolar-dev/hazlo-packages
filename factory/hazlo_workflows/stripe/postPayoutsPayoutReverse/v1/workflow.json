@@ -1,0 +1,67 @@
+{
+  "name": "Reverse a payout",
+  "description": "<p>Reverses a payout by debiting the destination bank account. At this time, you can only reverse payouts for connected accounts to US and Canadian bank accounts. If the payout is manual and in the <code>pending</code> status, use <code>/v1/payouts/:id/cancel</code> instead.</p>\n\n<p>By requesting a reversal through <code>/v1/payouts/:id/reverse</code>, you confirm that the authorized signatory of the selected bank account authorizes the debit on the bank account and that no other authorization is required.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postPayoutsPayoutReverse",
+    "path": "/v1/payouts/{payout}/reverse",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ],
+      "metadata": {
+        "<key>": "<string>"
+      }
+    },
+    "pathPayout": "<string>"
+  },
+  "inputRequired": [
+    "pathPayout"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "3e9a06ee829c",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "de7912e1fc28",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "1a42a8619418",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "68445e081465",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "0a13f8e9a80b",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "43bef1a8054e",
+        "left": "/v1/payouts/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "98dd6a341a00",
+          "keyPath": "pathPayout",
+          "optional": false
+        }
+      },
+      "right": "/reverse"
+    },
+    "query": {}
+  }
+}

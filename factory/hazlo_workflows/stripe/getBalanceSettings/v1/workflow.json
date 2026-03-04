@@ -1,0 +1,49 @@
+{
+  "name": "Retrieve balance settings",
+  "description": "<p>Retrieves balance settings for a given connected account.\n Related guide: <a href=\"/connect/authentication\">Making API calls for connected accounts</a></p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getBalanceSettings",
+    "path": "/v1/balance_settings",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryExpand": []
+  },
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "fd7df9455c72",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "482792853c5b",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "29f29470d812",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "228c1f80cb1d",
+    "method": "GET",
+    "path": "/v1/balance_settings",
+    "query": {
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "ac67ff50b4b9",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

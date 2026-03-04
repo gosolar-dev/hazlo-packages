@@ -1,0 +1,99 @@
+{
+  "name": "PostAccountsAccountBankAccountsId",
+  "description": "<p>Updates the metadata, account holder name, account holder type of a bank account belonging to\na connected account and optionally sets it as the default for its currency. Other bank account\ndetails are not editable by design.</p>\n\n<p>You can only update bank accounts when <a href=\"/api/accounts/object#account_object-controller-requirement_collection\">account.controller.requirement_collection</a> is <code>application</code>, which includes <a href=\"/connect/custom-accounts\">Custom accounts</a>.</p>\n\n<p>You can re-enable a disabled bank account by performing an update call without providing any\narguments or changes.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postAccountsAccountBankAccountsId",
+    "path": "/v1/accounts/{account}/bank_accounts/{id}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "account_holder_name": "<string>",
+      "account_holder_type": "",
+      "account_type": "checking",
+      "address_city": "<string>",
+      "address_country": "<string>",
+      "address_line1": "<string>",
+      "address_line2": "<string>",
+      "address_state": "<string>",
+      "address_zip": "<string>",
+      "default_for_currency": "<boolean>",
+      "documents": {
+        "bank_account_ownership_verification": {
+          "files": [
+            "<string>"
+          ]
+        }
+      },
+      "exp_month": "<string>",
+      "exp_year": "<string>",
+      "expand": [
+        "<string>"
+      ],
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "name": "<string>"
+    },
+    "pathAccount": "<string>",
+    "pathId": "<string>"
+  },
+  "inputRequired": [
+    "pathAccount",
+    "pathId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "25a3600ed2a1",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "770896d71f23",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "c8d338846f51",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "709dbc519397",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "91c4440db1b7",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "42185e8deec9",
+        "left": {
+          "_pbd_hazlo_type": "concat",
+          "id": "5ee935e9ede1",
+          "left": "/v1/accounts/",
+          "right": {
+            "_pbd_hazlo_type": "var",
+            "id": "f29c633da918",
+            "keyPath": "pathAccount",
+            "optional": false
+          }
+        },
+        "right": "/bank_accounts/"
+      },
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "01f4e6f13193",
+        "keyPath": "pathId",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

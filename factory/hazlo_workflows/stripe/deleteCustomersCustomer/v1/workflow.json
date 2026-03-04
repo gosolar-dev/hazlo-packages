@@ -1,0 +1,55 @@
+{
+  "name": "Delete a customer",
+  "description": "<p>Permanently deletes a customer. It cannot be undone. Also immediately cancels any active subscriptions on the customer.</p>",
+  "meta": {
+    "method": "DELETE",
+    "operationId": "deleteCustomersCustomer",
+    "path": "/v1/customers/{customer}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathCustomer": "<string>"
+  },
+  "inputRequired": [
+    "pathCustomer"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "879d3beace09",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "fb6ddd3823c3",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "3a4ad6fb0d14",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "3d3d1e8be13a",
+    "method": "DELETE",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "35f807d5e578",
+      "left": "/v1/customers/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "0130702af1f5",
+        "keyPath": "pathCustomer",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

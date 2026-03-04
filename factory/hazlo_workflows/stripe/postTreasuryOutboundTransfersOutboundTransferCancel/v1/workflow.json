@@ -1,0 +1,64 @@
+{
+  "name": "Cancel an OutboundTransfer",
+  "description": "<p>An OutboundTransfer can be canceled if the funds have not yet been paid out.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postTreasuryOutboundTransfersOutboundTransferCancel",
+    "path": "/v1/treasury/outbound_transfers/{outbound_transfer}/cancel",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ]
+    },
+    "pathOutboundTransfer": "<string>"
+  },
+  "inputRequired": [
+    "pathOutboundTransfer"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "071b8e63719a",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "c9581308afaa",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "c51bf611b1ae",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "df8f533d855e",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "076eac2cdbe7",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "52b28a196cf6",
+        "left": "/v1/treasury/outbound_transfers/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "ca180a9073fc",
+          "keyPath": "pathOutboundTransfer",
+          "optional": false
+        }
+      },
+      "right": "/cancel"
+    },
+    "query": {}
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "name": "List all issuing tokens for card",
+  "description": "<p>Lists all Issuing <code>Token</code> objects for a given card.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getIssuingTokens",
+    "path": "/v1/issuing/tokens",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryCard": "<string>",
+    "queryCreated": "<string>",
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryLimit": "<number>",
+    "queryStartingAfter": "<string>",
+    "queryStatus": "<string>"
+  },
+  "inputRequired": [
+    "queryCard"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "98350c0704c9",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "5dad7fbef4a6",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "b830495c450b",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "af33c98bbd16",
+    "method": "GET",
+    "path": "/v1/issuing/tokens",
+    "query": {
+      "card": {
+        "_pbd_hazlo_type": "var",
+        "id": "bcd47a358639",
+        "keyPath": "queryCard",
+        "optional": false
+      },
+      "created": {
+        "_pbd_hazlo_type": "var",
+        "id": "81e5d7421a02",
+        "keyPath": "queryCreated",
+        "optional": true
+      },
+      "ending_before": {
+        "_pbd_hazlo_type": "var",
+        "id": "8d9dccb6de84",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "a274fdf4bf46",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_hazlo_type": "var",
+        "id": "312a8da37420",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_hazlo_type": "var",
+        "id": "a5485d87005a",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      },
+      "status": {
+        "_pbd_hazlo_type": "var",
+        "id": "f142332620b9",
+        "keyPath": "queryStatus",
+        "optional": true
+      }
+    }
+  }
+}

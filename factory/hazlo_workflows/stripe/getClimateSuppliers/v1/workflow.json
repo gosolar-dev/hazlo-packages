@@ -1,0 +1,70 @@
+{
+  "name": "List suppliers",
+  "description": "<p>Lists all available Climate supplier objects.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getClimateSuppliers",
+    "path": "/v1/climate/suppliers",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryLimit": "<number>",
+    "queryStartingAfter": "<string>"
+  },
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "f16b9c53a71c",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "735a6e3716df",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "5fcc9019ca9f",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "bf9946731268",
+    "method": "GET",
+    "path": "/v1/climate/suppliers",
+    "query": {
+      "ending_before": {
+        "_pbd_hazlo_type": "var",
+        "id": "e728068b1b49",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "07e1f8e9b4e0",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_hazlo_type": "var",
+        "id": "e16d4a5ab828",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_hazlo_type": "var",
+        "id": "cb8ef149721b",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve a shipping rate",
+  "description": "<p>Returns the shipping rate object with the given ID.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getShippingRatesShippingRateToken",
+    "path": "/v1/shipping_rates/{shipping_rate_token}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathShippingRateToken": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathShippingRateToken"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "e61358c283ce",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "1fdc3100ee47",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "8cf642402797",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "80f3352cce51",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "b73b2ac391c2",
+      "left": "/v1/shipping_rates/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "4d9596cc1f8d",
+        "keyPath": "pathShippingRateToken",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "177052819dc5",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

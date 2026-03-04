@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "v1",
+  "package": "stripe",
+  "version": "v1",
+  "provider": "stripe",
+  "mode": "full",
+  "description": "Comprehensive Stripe workflows generated from Stripe OpenAPI with lowerCamel refs.",
+  "defaultInstallRefs": [
+    "stripe/getCustomers/v1",
+    "stripe/postCustomers/v1",
+    "stripe/getPaymentIntents/v1",
+    "stripe/postPaymentIntents/v1",
+    "stripe/getInvoices/v1",
+    "stripe/postRefunds/v1"
+  ],
+  "env": [],
+  "homepage": "https://stripe.com/docs/api",
+  "license": "MIT",
+  "tags": [
+    "stripe",
+    "payments",
+    "openapi",
+    "generated"
+  ],
+  "smokeTests": []
+}

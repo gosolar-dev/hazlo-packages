@@ -1,0 +1,140 @@
+{
+  "name": "List subscriptions",
+  "description": "<p>By default, returns a list of subscriptions that have not been canceled. In order to list canceled subscriptions, specify <code>status=canceled</code>.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getSubscriptions",
+    "path": "/v1/subscriptions",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryAutomaticTax": {},
+    "queryCollectionMethod": "<string>",
+    "queryCreated": "<string>",
+    "queryCurrentPeriodEnd": "<string>",
+    "queryCurrentPeriodStart": "<string>",
+    "queryCustomer": "<string>",
+    "queryCustomerAccount": "<string>",
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryLimit": "<number>",
+    "queryPrice": "<string>",
+    "queryStartingAfter": "<string>",
+    "queryStatus": "<string>",
+    "queryTestClock": "<string>"
+  },
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "057799d99a9b",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "d9df7ef48ae4",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "978b95e3906e",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "06a809e7c2bf",
+    "method": "GET",
+    "path": "/v1/subscriptions",
+    "query": {
+      "automatic_tax": {
+        "_pbd_hazlo_type": "var",
+        "id": "9248580e7737",
+        "keyPath": "queryAutomaticTax",
+        "optional": true
+      },
+      "collection_method": {
+        "_pbd_hazlo_type": "var",
+        "id": "984da6c81662",
+        "keyPath": "queryCollectionMethod",
+        "optional": true
+      },
+      "created": {
+        "_pbd_hazlo_type": "var",
+        "id": "15cdd587e96b",
+        "keyPath": "queryCreated",
+        "optional": true
+      },
+      "current_period_end": {
+        "_pbd_hazlo_type": "var",
+        "id": "048b1a3df794",
+        "keyPath": "queryCurrentPeriodEnd",
+        "optional": true
+      },
+      "current_period_start": {
+        "_pbd_hazlo_type": "var",
+        "id": "5fbe0e0fc9a1",
+        "keyPath": "queryCurrentPeriodStart",
+        "optional": true
+      },
+      "customer": {
+        "_pbd_hazlo_type": "var",
+        "id": "f6b6524b6cba",
+        "keyPath": "queryCustomer",
+        "optional": true
+      },
+      "customer_account": {
+        "_pbd_hazlo_type": "var",
+        "id": "8c798b7ef822",
+        "keyPath": "queryCustomerAccount",
+        "optional": true
+      },
+      "ending_before": {
+        "_pbd_hazlo_type": "var",
+        "id": "c20144681a8c",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "70c1cbea0150",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_hazlo_type": "var",
+        "id": "f99531888c9b",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "price": {
+        "_pbd_hazlo_type": "var",
+        "id": "edfbb19e26b5",
+        "keyPath": "queryPrice",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_hazlo_type": "var",
+        "id": "5642a5e4f3c8",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      },
+      "status": {
+        "_pbd_hazlo_type": "var",
+        "id": "07102bf52a1c",
+        "keyPath": "queryStatus",
+        "optional": true
+      },
+      "test_clock": {
+        "_pbd_hazlo_type": "var",
+        "id": "394d76c6b471",
+        "keyPath": "queryTestClock",
+        "optional": true
+      }
+    }
+  }
+}

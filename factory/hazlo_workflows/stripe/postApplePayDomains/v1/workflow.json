@@ -1,0 +1,49 @@
+{
+  "name": "PostApplePayDomains",
+  "description": "<p>Create an apple pay domain.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postApplePayDomains",
+    "path": "/v1/apple_pay/domains",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "domain_name": "<string>",
+      "expand": [
+        "<string>"
+      ]
+    }
+  },
+  "inputRequired": [
+    "body"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "d1070b4c734c",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "7860a6176735",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "43edb5801967",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "3ee1bb98d59c",
+    "method": "POST",
+    "path": "/v1/apple_pay/domains",
+    "query": {}
+  }
+}

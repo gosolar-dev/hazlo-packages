@@ -1,0 +1,137 @@
+{
+  "name": "Update a quote",
+  "description": "<p>A quote models prices and services for a customer.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postQuotesQuote",
+    "path": "/v1/quotes/{quote}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "application_fee_amount": "<number>",
+      "application_fee_percent": "<number>",
+      "automatic_tax": {
+        "enabled": "<boolean>",
+        "liability": {
+          "account": "<string>",
+          "type": "account"
+        }
+      },
+      "collection_method": "charge_automatically",
+      "customer": "<string>",
+      "customer_account": "<string>",
+      "default_tax_rates": [
+        "<string>"
+      ],
+      "description": "<string>",
+      "discounts": [
+        {
+          "coupon": "<string>",
+          "discount": "<string>",
+          "promotion_code": "<string>"
+        }
+      ],
+      "expand": [
+        "<string>"
+      ],
+      "expires_at": "<number>",
+      "footer": "<string>",
+      "header": "<string>",
+      "invoice_settings": {
+        "days_until_due": "<number>",
+        "issuer": {
+          "account": "<string>",
+          "type": "account"
+        }
+      },
+      "line_items": [
+        {
+          "discounts": [
+            {
+              "coupon": "<string>",
+              "discount": "<string>",
+              "promotion_code": "<string>"
+            }
+          ],
+          "id": "<string>",
+          "price": "<string>",
+          "price_data": {
+            "currency": "<string>",
+            "product": "<string>",
+            "recurring": {
+              "interval": "day",
+              "interval_count": "<number>"
+            },
+            "tax_behavior": "exclusive",
+            "unit_amount": "<number>",
+            "unit_amount_decimal": "<string>"
+          },
+          "quantity": "<number>",
+          "tax_rates": [
+            "<string>"
+          ]
+        }
+      ],
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "on_behalf_of": "<string>",
+      "subscription_data": {
+        "description": "<string>",
+        "effective_date": "current_period_end",
+        "metadata": {
+          "<key>": "<string>"
+        },
+        "trial_period_days": "<number>"
+      },
+      "transfer_data": {
+        "amount": "<number>",
+        "amount_percent": "<number>",
+        "destination": "<string>"
+      }
+    },
+    "pathQuote": "<string>"
+  },
+  "inputRequired": [
+    "pathQuote"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "6c3f2458be6c",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "f0372df0bbe0",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "08d5d9bb75fa",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "8dd8effbb855",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "a8fce42fb3cc",
+      "left": "/v1/quotes/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "98c28d8a0270",
+        "keyPath": "pathQuote",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

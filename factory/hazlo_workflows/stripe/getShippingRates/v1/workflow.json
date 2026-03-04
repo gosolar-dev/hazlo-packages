@@ -1,0 +1,91 @@
+{
+  "name": "List all shipping rates",
+  "description": "<p>Returns a list of your shipping rates.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getShippingRates",
+    "path": "/v1/shipping_rates",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryActive": "<boolean>",
+    "queryCreated": "<string>",
+    "queryCurrency": "<string>",
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryLimit": "<number>",
+    "queryStartingAfter": "<string>"
+  },
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "df47802730d9",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "c169d884449f",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "6b0285f737cf",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "e43d2424d3e7",
+    "method": "GET",
+    "path": "/v1/shipping_rates",
+    "query": {
+      "active": {
+        "_pbd_hazlo_type": "var",
+        "id": "d6070ee02b81",
+        "keyPath": "queryActive",
+        "optional": true
+      },
+      "created": {
+        "_pbd_hazlo_type": "var",
+        "id": "8e1bdf118ab1",
+        "keyPath": "queryCreated",
+        "optional": true
+      },
+      "currency": {
+        "_pbd_hazlo_type": "var",
+        "id": "7d5c15136070",
+        "keyPath": "queryCurrency",
+        "optional": true
+      },
+      "ending_before": {
+        "_pbd_hazlo_type": "var",
+        "id": "460d817912ea",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "884b5bbaa4cd",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_hazlo_type": "var",
+        "id": "fdf34be5d56e",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_hazlo_type": "var",
+        "id": "cac6539e2af1",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      }
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "name": "Update settings",
+  "description": "<p>Updates Tax <code>Settings</code> parameters used in tax calculations. All parameters are editable but none can be removed once set.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postTaxSettings",
+    "path": "/v1/tax/settings",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "defaults": {
+        "tax_behavior": "exclusive",
+        "tax_code": "<string>"
+      },
+      "expand": [
+        "<string>"
+      ],
+      "head_office": {
+        "address": {
+          "city": "<string>",
+          "country": "<string>",
+          "line1": "<string>",
+          "line2": "<string>",
+          "postal_code": "<string>",
+          "state": "<string>"
+        }
+      }
+    }
+  },
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "1c2ea740a39f",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "733f35c9060c",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "f2b21555c447",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "6b6be8ffbf06",
+    "method": "POST",
+    "path": "/v1/tax/settings",
+    "query": {}
+  }
+}

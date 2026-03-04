@@ -1,0 +1,64 @@
+{
+  "name": "Cancel a top-up",
+  "description": "<p>Cancels a top-up. Only pending top-ups can be canceled.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postTopupsTopupCancel",
+    "path": "/v1/topups/{topup}/cancel",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ]
+    },
+    "pathTopup": "<string>"
+  },
+  "inputRequired": [
+    "pathTopup"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "54f60551e7c3",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "66fbb63e8bcc",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "1a52af61bb8f",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "becc29dbeb30",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "4d8479e54421",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "1def51a4dfe7",
+        "left": "/v1/topups/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "e0103e520214",
+          "keyPath": "pathTopup",
+          "optional": false
+        }
+      },
+      "right": "/cancel"
+    },
+    "query": {}
+  }
+}

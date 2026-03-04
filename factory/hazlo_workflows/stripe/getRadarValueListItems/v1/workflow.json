@@ -1,0 +1,94 @@
+{
+  "name": "List all value list items",
+  "description": "<p>Returns a list of <code>ValueListItem</code> objects. The objects are sorted in descending order by creation date, with the most recently created object appearing first.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getRadarValueListItems",
+    "path": "/v1/radar/value_list_items",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryCreated": "<string>",
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryLimit": "<number>",
+    "queryStartingAfter": "<string>",
+    "queryValue": "<string>",
+    "queryValueList": "<string>"
+  },
+  "inputRequired": [
+    "queryValueList"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "7c0bdd29ae9a",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "1f2358271944",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "1a4c17011549",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "b7d9953ac552",
+    "method": "GET",
+    "path": "/v1/radar/value_list_items",
+    "query": {
+      "created": {
+        "_pbd_hazlo_type": "var",
+        "id": "2c2cb40377b5",
+        "keyPath": "queryCreated",
+        "optional": true
+      },
+      "ending_before": {
+        "_pbd_hazlo_type": "var",
+        "id": "1aa8d89b021b",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "4a494c979de8",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_hazlo_type": "var",
+        "id": "399d3d7e308f",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_hazlo_type": "var",
+        "id": "96a85e52235b",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      },
+      "value": {
+        "_pbd_hazlo_type": "var",
+        "id": "b0366a44f6c0",
+        "keyPath": "queryValue",
+        "optional": true
+      },
+      "value_list": {
+        "_pbd_hazlo_type": "var",
+        "id": "50af7af92d32",
+        "keyPath": "queryValueList",
+        "optional": false
+      }
+    }
+  }
+}

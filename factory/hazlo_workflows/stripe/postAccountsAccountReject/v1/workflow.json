@@ -1,0 +1,66 @@
+{
+  "name": "Reject an account",
+  "description": "<p>With <a href=\"/connect\">Connect</a>, you can reject accounts that you have flagged as suspicious.</p>\n\n<p>Only accounts where your platform is liable for negative account balances, which includes Custom and Express accounts, can be rejected. Test-mode accounts can be rejected at any time. Live-mode accounts can only be rejected after all balances are zero.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postAccountsAccountReject",
+    "path": "/v1/accounts/{account}/reject",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ],
+      "reason": "<string>"
+    },
+    "pathAccount": "<string>"
+  },
+  "inputRequired": [
+    "body",
+    "pathAccount"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "2cc6e46cd028",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "165a41b67feb",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "108c813b48f6",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "ab8b5283aaca",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "a9cfbdb0e94a",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "9e2c59df0ebb",
+        "left": "/v1/accounts/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "a909c42e6aa3",
+          "keyPath": "pathAccount",
+          "optional": false
+        }
+      },
+      "right": "/reject"
+    },
+    "query": {}
+  }
+}

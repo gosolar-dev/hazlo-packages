@@ -1,0 +1,103 @@
+{
+  "name": "List a Customer's PaymentMethods",
+  "description": "<p>Returns a list of PaymentMethods for a given Customer</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getCustomersCustomerPaymentMethods",
+    "path": "/v1/customers/{customer}/payment_methods",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathCustomer": "<string>",
+    "queryAllowRedisplay": "<string>",
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryLimit": "<number>",
+    "queryStartingAfter": "<string>",
+    "queryType": "<string>"
+  },
+  "inputRequired": [
+    "pathCustomer"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "e7fe92ae6638",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "60c660bacc9c",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "751064391929",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "1bacce5a27b6",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "6ed971a39411",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "ad9d57e897ee",
+        "left": "/v1/customers/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "20b2df598d67",
+          "keyPath": "pathCustomer",
+          "optional": false
+        }
+      },
+      "right": "/payment_methods"
+    },
+    "query": {
+      "allow_redisplay": {
+        "_pbd_hazlo_type": "var",
+        "id": "0ec23c08bf10",
+        "keyPath": "queryAllowRedisplay",
+        "optional": true
+      },
+      "ending_before": {
+        "_pbd_hazlo_type": "var",
+        "id": "e6423854a919",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "3751d67e09df",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_hazlo_type": "var",
+        "id": "358828ad5fbe",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_hazlo_type": "var",
+        "id": "412ba2c54f35",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      },
+      "type": {
+        "_pbd_hazlo_type": "var",
+        "id": "eb69899cc2bf",
+        "keyPath": "queryType",
+        "optional": true
+      }
+    }
+  }
+}

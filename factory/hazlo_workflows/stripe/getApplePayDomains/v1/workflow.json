@@ -1,0 +1,77 @@
+{
+  "name": "GetApplePayDomains",
+  "description": "<p>List apple pay domains.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getApplePayDomains",
+    "path": "/v1/apple_pay/domains",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryDomainName": "<string>",
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryLimit": "<number>",
+    "queryStartingAfter": "<string>"
+  },
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "971504968c7b",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "66a6fe1b9ec5",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "27046302bfd9",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "b1d35e849919",
+    "method": "GET",
+    "path": "/v1/apple_pay/domains",
+    "query": {
+      "domain_name": {
+        "_pbd_hazlo_type": "var",
+        "id": "fce9cbeb5688",
+        "keyPath": "queryDomainName",
+        "optional": true
+      },
+      "ending_before": {
+        "_pbd_hazlo_type": "var",
+        "id": "463ca6ef7a4f",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "cd97181233e5",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_hazlo_type": "var",
+        "id": "0d01aee8cba0",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_hazlo_type": "var",
+        "id": "68427852e573",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      }
+    }
+  }
+}

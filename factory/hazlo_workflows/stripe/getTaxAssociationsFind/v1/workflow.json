@@ -1,0 +1,59 @@
+{
+  "name": "Find a Tax Association",
+  "description": "<p>Finds a tax association object by PaymentIntent id.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getTaxAssociationsFind",
+    "path": "/v1/tax/associations/find",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryExpand": [],
+    "queryPaymentIntent": "<string>"
+  },
+  "inputRequired": [
+    "queryPaymentIntent"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "64bffe839ff8",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "66fd96ffbbbd",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "8206afea3e45",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "cb2f57575d57",
+    "method": "GET",
+    "path": "/v1/tax/associations/find",
+    "query": {
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "178c1dc0258c",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "payment_intent": {
+        "_pbd_hazlo_type": "var",
+        "id": "e0abdd824c74",
+        "keyPath": "queryPaymentIntent",
+        "optional": false
+      }
+    }
+  }
+}

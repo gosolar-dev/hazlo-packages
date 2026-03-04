@@ -1,0 +1,66 @@
+{
+  "name": "Attach a feature to a product",
+  "description": "<p>Creates a product_feature, which represents a feature attachment to a product</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postProductsProductFeatures",
+    "path": "/v1/products/{product}/features",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "entitlement_feature": "<string>",
+      "expand": [
+        "<string>"
+      ]
+    },
+    "pathProduct": "<string>"
+  },
+  "inputRequired": [
+    "body",
+    "pathProduct"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "fed7c7c74c68",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "3e7aa12f2249",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "34ed9290b2b9",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "fee7b5372607",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "b3adba6e2a28",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "70449ff74801",
+        "left": "/v1/products/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "0f071a3c920c",
+          "keyPath": "pathProduct",
+          "optional": false
+        }
+      },
+      "right": "/features"
+    },
+    "query": {}
+  }
+}

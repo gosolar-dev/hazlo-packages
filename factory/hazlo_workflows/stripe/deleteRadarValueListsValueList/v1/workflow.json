@@ -1,0 +1,55 @@
+{
+  "name": "Delete a value list",
+  "description": "<p>Deletes a <code>ValueList</code> object, also deleting any items contained within the value list. To be deleted, a value list must not be referenced in any rules.</p>",
+  "meta": {
+    "method": "DELETE",
+    "operationId": "deleteRadarValueListsValueList",
+    "path": "/v1/radar/value_lists/{value_list}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathValueList": "<string>"
+  },
+  "inputRequired": [
+    "pathValueList"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "71e08bc14fea",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "4a3598d5e0b9",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "1fa4ef87904f",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "9e4df5e51441",
+    "method": "DELETE",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "0eaff04eae75",
+      "left": "/v1/radar/value_lists/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "678d60cd2866",
+        "keyPath": "pathValueList",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

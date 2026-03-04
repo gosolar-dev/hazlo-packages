@@ -1,0 +1,69 @@
+{
+  "name": "Update a tax rate",
+  "description": "<p>Updates an existing tax rate.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postTaxRatesTaxRate",
+    "path": "/v1/tax_rates/{tax_rate}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "active": "<boolean>",
+      "country": "<string>",
+      "description": "<string>",
+      "display_name": "<string>",
+      "expand": [
+        "<string>"
+      ],
+      "jurisdiction": "<string>",
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "state": "<string>",
+      "tax_type": "amusement_tax"
+    },
+    "pathTaxRate": "<string>"
+  },
+  "inputRequired": [
+    "pathTaxRate"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "e7cfa557407f",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "c9dfdedf88f8",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "5fb62455b59e",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "4b2dcba52b91",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "d8ab48454a63",
+      "left": "/v1/tax_rates/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "9ecb041567c2",
+        "keyPath": "pathTaxRate",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "name": "Update a FinancialAccount",
+  "description": "<p>Updates the details of a FinancialAccount.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postTreasuryFinancialAccountsFinancialAccount",
+    "path": "/v1/treasury/financial_accounts/{financial_account}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ],
+      "features": {
+        "card_issuing": {
+          "requested": "<boolean>"
+        },
+        "deposit_insurance": {
+          "requested": "<boolean>"
+        },
+        "financial_addresses": {
+          "aba": {
+            "requested": "<boolean>"
+          }
+        },
+        "inbound_transfers": {
+          "ach": {
+            "requested": "<boolean>"
+          }
+        },
+        "intra_stripe_flows": {
+          "requested": "<boolean>"
+        },
+        "outbound_payments": {
+          "ach": {
+            "requested": "<boolean>"
+          },
+          "us_domestic_wire": {
+            "requested": "<boolean>"
+          }
+        },
+        "outbound_transfers": {
+          "ach": {
+            "requested": "<boolean>"
+          },
+          "us_domestic_wire": {
+            "requested": "<boolean>"
+          }
+        }
+      },
+      "forwarding_settings": {
+        "financial_account": "<string>",
+        "payment_method": "<string>",
+        "type": "financial_account"
+      },
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "nickname": "<string>",
+      "platform_restrictions": {
+        "inbound_flows": "restricted",
+        "outbound_flows": "restricted"
+      }
+    },
+    "pathFinancialAccount": "<string>"
+  },
+  "inputRequired": [
+    "pathFinancialAccount"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "76995c4d7349",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "b5e9e78bec38",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "e9a898655e09",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "a728160c56b3",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "9a2d3195a1b6",
+      "left": "/v1/treasury/financial_accounts/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "0f38e573b9f8",
+        "keyPath": "pathFinancialAccount",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

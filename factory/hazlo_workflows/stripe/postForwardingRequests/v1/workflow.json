@@ -1,0 +1,65 @@
+{
+  "name": "Create a ForwardingRequest",
+  "description": "<p>Creates a ForwardingRequest object.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postForwardingRequests",
+    "path": "/v1/forwarding/requests",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ],
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "payment_method": "<string>",
+      "replacements": [
+        "card_cvc"
+      ],
+      "request": {
+        "body": "<string>",
+        "headers": [
+          {
+            "name": "<string>",
+            "value": "<string>"
+          }
+        ]
+      },
+      "url": "<string>"
+    }
+  },
+  "inputRequired": [
+    "body"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "cc08a6c233a4",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "a46af98817b8",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "85dda193874d",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "bd9a96f2cfd8",
+    "method": "POST",
+    "path": "/v1/forwarding/requests",
+    "query": {}
+  }
+}

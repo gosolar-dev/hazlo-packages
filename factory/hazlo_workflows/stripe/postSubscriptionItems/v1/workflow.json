@@ -1,0 +1,81 @@
+{
+  "name": "Create a subscription item",
+  "description": "<p>Adds a new item to an existing subscription. No existing items will be changed or replaced.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postSubscriptionItems",
+    "path": "/v1/subscription_items",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "billing_thresholds": {
+        "usage_gte": "<number>"
+      },
+      "discounts": [
+        {
+          "coupon": "<string>",
+          "discount": "<string>",
+          "promotion_code": "<string>"
+        }
+      ],
+      "expand": [
+        "<string>"
+      ],
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "payment_behavior": "allow_incomplete",
+      "price": "<string>",
+      "price_data": {
+        "currency": "<string>",
+        "product": "<string>",
+        "recurring": {
+          "interval": "day",
+          "interval_count": "<number>"
+        },
+        "tax_behavior": "exclusive",
+        "unit_amount": "<number>",
+        "unit_amount_decimal": "<string>"
+      },
+      "proration_behavior": "always_invoice",
+      "proration_date": "<number>",
+      "quantity": "<number>",
+      "subscription": "<string>",
+      "tax_rates": [
+        "<string>"
+      ]
+    }
+  },
+  "inputRequired": [
+    "body"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "df040b00aea8",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "957a4a01bf3b",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "3a53552860f9",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "710238bb13ad",
+    "method": "POST",
+    "path": "/v1/subscription_items",
+    "query": {}
+  }
+}

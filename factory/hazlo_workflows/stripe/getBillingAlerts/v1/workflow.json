@@ -1,0 +1,84 @@
+{
+  "name": "List billing alerts",
+  "description": "<p>Lists billing active and inactive alerts</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getBillingAlerts",
+    "path": "/v1/billing/alerts",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryAlertType": "<string>",
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryLimit": "<number>",
+    "queryMeter": "<string>",
+    "queryStartingAfter": "<string>"
+  },
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "95f651f14e25",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "9978fe696a40",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "a0a7c30850d7",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "b1ac4ee61044",
+    "method": "GET",
+    "path": "/v1/billing/alerts",
+    "query": {
+      "alert_type": {
+        "_pbd_hazlo_type": "var",
+        "id": "843057a4defe",
+        "keyPath": "queryAlertType",
+        "optional": true
+      },
+      "ending_before": {
+        "_pbd_hazlo_type": "var",
+        "id": "fd8db64a9528",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "f73d229079dd",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_hazlo_type": "var",
+        "id": "2a6003d361d0",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "meter": {
+        "_pbd_hazlo_type": "var",
+        "id": "31b2b46076e6",
+        "keyPath": "queryMeter",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_hazlo_type": "var",
+        "id": "5b839b863837",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      }
+    }
+  }
+}

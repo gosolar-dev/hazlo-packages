@@ -1,0 +1,89 @@
+{
+  "name": "List all PaymentIntent LineItems",
+  "description": "<p>Lists all LineItems of a given PaymentIntent.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getPaymentIntentsIntentAmountDetailsLineItems",
+    "path": "/v1/payment_intents/{intent}/amount_details_line_items",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathIntent": "<string>",
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryLimit": "<number>",
+    "queryStartingAfter": "<string>"
+  },
+  "inputRequired": [
+    "pathIntent"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "6af54ab21a2e",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "b843a660d339",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "752909bb9964",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "69b37e761ca1",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "f1c68fc7b0e5",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "574ade90f6b2",
+        "left": "/v1/payment_intents/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "ee7fb3940ac7",
+          "keyPath": "pathIntent",
+          "optional": false
+        }
+      },
+      "right": "/amount_details_line_items"
+    },
+    "query": {
+      "ending_before": {
+        "_pbd_hazlo_type": "var",
+        "id": "d1796bb7711d",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "1445e33e44d4",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_hazlo_type": "var",
+        "id": "946ffc8fef43",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_hazlo_type": "var",
+        "id": "075382760d7c",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      }
+    }
+  }
+}

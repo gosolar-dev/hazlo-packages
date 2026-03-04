@@ -1,0 +1,49 @@
+{
+  "name": "List all Report Types",
+  "description": "<p>Returns a full list of Report Types.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getReportingReportTypes",
+    "path": "/v1/reporting/report_types",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryExpand": []
+  },
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "e6cea367b755",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "54e3c50f15e6",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "e9b3c7d42098",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "a9f31cbf8fbf",
+    "method": "GET",
+    "path": "/v1/reporting/report_types",
+    "query": {
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "e3bf98d8e5fc",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

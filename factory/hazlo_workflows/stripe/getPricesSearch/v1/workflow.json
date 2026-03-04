@@ -1,0 +1,73 @@
+{
+  "name": "Search prices",
+  "description": "<p>Search for prices you’ve previously created using Stripe’s <a href=\"/docs/search#search-query-language\">Search Query Language</a>.\nDon’t use search in read-after-write flows where strict consistency is necessary. Under normal operating\nconditions, data is searchable in less than a minute. Occasionally, propagation of new or updated data can be up\nto an hour behind during outages. Search functionality is not available to merchants in India.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getPricesSearch",
+    "path": "/v1/prices/search",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryExpand": [],
+    "queryLimit": "<number>",
+    "queryPage": "<string>",
+    "queryQuery": "<string>"
+  },
+  "inputRequired": [
+    "queryQuery"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "2ded354fa680",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "63c433f221d8",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "0cecbe2a8768",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "6e31789095d2",
+    "method": "GET",
+    "path": "/v1/prices/search",
+    "query": {
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "891c8f53ffb1",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_hazlo_type": "var",
+        "id": "149f074d6f03",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "page": {
+        "_pbd_hazlo_type": "var",
+        "id": "d9a6763f35ad",
+        "keyPath": "queryPage",
+        "optional": true
+      },
+      "query": {
+        "_pbd_hazlo_type": "var",
+        "id": "9784be00f22b",
+        "keyPath": "queryQuery",
+        "optional": false
+      }
+    }
+  }
+}

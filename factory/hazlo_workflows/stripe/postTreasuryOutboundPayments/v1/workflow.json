@@ -1,0 +1,94 @@
+{
+  "name": "Create an OutboundPayment",
+  "description": "<p>Creates an OutboundPayment.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postTreasuryOutboundPayments",
+    "path": "/v1/treasury/outbound_payments",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "amount": "<number>",
+      "currency": "<string>",
+      "customer": "<string>",
+      "description": "<string>",
+      "destination_payment_method": "<string>",
+      "destination_payment_method_data": {
+        "billing_details": {
+          "address": {
+            "city": "<string>",
+            "country": "<string>",
+            "line1": "<string>",
+            "line2": "<string>",
+            "postal_code": "<string>",
+            "state": "<string>"
+          },
+          "email": "<string>",
+          "name": "<string>",
+          "phone": "<string>"
+        },
+        "financial_account": "<string>",
+        "metadata": {
+          "<key>": "<string>"
+        },
+        "type": "financial_account",
+        "us_bank_account": {
+          "account_holder_type": "company",
+          "account_number": "<string>",
+          "account_type": "checking",
+          "financial_connections_account": "<string>",
+          "routing_number": "<string>"
+        }
+      },
+      "destination_payment_method_options": {
+        "us_bank_account": {
+          "network": "ach"
+        }
+      },
+      "end_user_details": {
+        "ip_address": "<string>",
+        "present": "<boolean>"
+      },
+      "expand": [
+        "<string>"
+      ],
+      "financial_account": "<string>",
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "statement_descriptor": "<string>"
+    }
+  },
+  "inputRequired": [
+    "body"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "26960f91d3b0",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "2d96553c12e1",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "688cef185333",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "bf5a6ed1c524",
+    "method": "POST",
+    "path": "/v1/treasury/outbound_payments",
+    "query": {}
+  }
+}

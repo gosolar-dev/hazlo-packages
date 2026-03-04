@@ -1,0 +1,57 @@
+{
+  "name": "Create a top-up",
+  "description": "<p>Top up the balance of an account</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postTopups",
+    "path": "/v1/topups",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "amount": "<number>",
+      "currency": "<string>",
+      "description": "<string>",
+      "expand": [
+        "<string>"
+      ],
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "source": "<string>",
+      "statement_descriptor": "<string>",
+      "transfer_group": "<string>"
+    }
+  },
+  "inputRequired": [
+    "body"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "17460f0819d6",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "fb9acff87e8a",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "2f3331ae6e4c",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "0bdaef5da9a7",
+    "method": "POST",
+    "path": "/v1/topups",
+    "query": {}
+  }
+}

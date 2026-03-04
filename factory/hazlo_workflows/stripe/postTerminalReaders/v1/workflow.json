@@ -1,0 +1,54 @@
+{
+  "name": "Create a Reader",
+  "description": "<p>Creates a new <code>Reader</code> object.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postTerminalReaders",
+    "path": "/v1/terminal/readers",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ],
+      "label": "<string>",
+      "location": "<string>",
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "registration_code": "<string>"
+    }
+  },
+  "inputRequired": [
+    "body"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "3a1bca9c3fd0",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "751280eebaac",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "ad765c57cf9b",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "28f8763858b7",
+    "method": "POST",
+    "path": "/v1/terminal/readers",
+    "query": {}
+  }
+}

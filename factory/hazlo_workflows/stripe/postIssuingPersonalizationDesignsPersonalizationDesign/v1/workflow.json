@@ -1,0 +1,76 @@
+{
+  "name": "Update a personalization design",
+  "description": "<p>Updates a card personalization object.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postIssuingPersonalizationDesignsPersonalizationDesign",
+    "path": "/v1/issuing/personalization_designs/{personalization_design}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "card_logo": "<string>",
+      "carrier_text": {
+        "footer_body": "<string>",
+        "footer_title": "<string>",
+        "header_body": "<string>",
+        "header_title": "<string>"
+      },
+      "expand": [
+        "<string>"
+      ],
+      "lookup_key": "<string>",
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "name": "<string>",
+      "physical_bundle": "<string>",
+      "preferences": {
+        "is_default": "<boolean>"
+      },
+      "transfer_lookup_key": "<boolean>"
+    },
+    "pathPersonalizationDesign": "<string>"
+  },
+  "inputRequired": [
+    "pathPersonalizationDesign"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "41636db1d7ae",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "eea6b4eb1f87",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "12527d265c2c",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "2760b3c6b222",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "e9871169dd00",
+      "left": "/v1/issuing/personalization_designs/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "1c6d4903d483",
+        "keyPath": "pathPersonalizationDesign",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

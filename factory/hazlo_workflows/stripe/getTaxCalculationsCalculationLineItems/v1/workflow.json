@@ -1,0 +1,89 @@
+{
+  "name": "Retrieve a calculation's line items",
+  "description": "<p>Retrieves the line items of a tax calculation as a collection, if the calculation hasn’t expired.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getTaxCalculationsCalculationLineItems",
+    "path": "/v1/tax/calculations/{calculation}/line_items",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathCalculation": "<string>",
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryLimit": "<number>",
+    "queryStartingAfter": "<string>"
+  },
+  "inputRequired": [
+    "pathCalculation"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "f56e842c6ddb",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "590b9d8b7ee4",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "b77662a48bc1",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "8d1b314e9cf5",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "91d8cd7e496b",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "34c7a24f3df2",
+        "left": "/v1/tax/calculations/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "71716cd59c89",
+          "keyPath": "pathCalculation",
+          "optional": false
+        }
+      },
+      "right": "/line_items"
+    },
+    "query": {
+      "ending_before": {
+        "_pbd_hazlo_type": "var",
+        "id": "06f1cc65c91e",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "656709a96fee",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_hazlo_type": "var",
+        "id": "4d44eaf35fa6",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_hazlo_type": "var",
+        "id": "8f88bc32a882",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      }
+    }
+  }
+}

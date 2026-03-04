@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve a credit note",
+  "description": "<p>Retrieves the credit note object with the given identifier.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getCreditNotesId",
+    "path": "/v1/credit_notes/{id}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathId": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "d431f5882560",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "3bb3cca1c4d7",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "496c9b32ea26",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "190b3340ca38",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "6e723eb8e3b4",
+      "left": "/v1/credit_notes/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "867c6b9f426f",
+        "keyPath": "pathId",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "a7f9cd92dca7",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

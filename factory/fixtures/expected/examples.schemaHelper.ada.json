@@ -1,0 +1,4 @@
+{
+  "result": "Helper says hi to Ada",
+  "workflowRef": "examples/schemaHelper/v1"
+}

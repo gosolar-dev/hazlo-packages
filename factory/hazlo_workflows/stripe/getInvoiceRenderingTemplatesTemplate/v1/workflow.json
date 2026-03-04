@@ -1,0 +1,70 @@
+{
+  "name": "Retrieve an invoice rendering template",
+  "description": "<p>Retrieves an invoice rendering template with the given ID. It by default returns the latest version of the template. Optionally, specify a version to see previous versions.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getInvoiceRenderingTemplatesTemplate",
+    "path": "/v1/invoice_rendering_templates/{template}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathTemplate": "<string>",
+    "queryExpand": [],
+    "queryVersion": "<number>"
+  },
+  "inputRequired": [
+    "pathTemplate"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "c148ffd16ec1",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "452689a28fe6",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "e9f3153baf93",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "ba07d6e55102",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "8f87c0df371f",
+      "left": "/v1/invoice_rendering_templates/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "b849087c8758",
+        "keyPath": "pathTemplate",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "ce948667dde0",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "version": {
+        "_pbd_hazlo_type": "var",
+        "id": "020d53e4f841",
+        "keyPath": "queryVersion",
+        "optional": true
+      }
+    }
+  }
+}

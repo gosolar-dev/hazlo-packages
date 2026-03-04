@@ -1,0 +1,64 @@
+{
+  "name": "Cancel a refund",
+  "description": "<p>Cancels a refund with a status of <code>requires_action</code>.</p>\n\n<p>You can’t cancel refunds in other states. Only refunds for payment methods that require customer action can enter the <code>requires_action</code> state.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postRefundsRefundCancel",
+    "path": "/v1/refunds/{refund}/cancel",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ]
+    },
+    "pathRefund": "<string>"
+  },
+  "inputRequired": [
+    "pathRefund"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "c1673f540420",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "b64609f83920",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "16dc3e3b12d0",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "fdd955ee419d",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "413c283a4c93",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "e507c5197a3a",
+        "left": "/v1/refunds/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "d5f89250d0aa",
+          "keyPath": "pathRefund",
+          "optional": false
+        }
+      },
+      "right": "/cancel"
+    },
+    "query": {}
+  }
+}

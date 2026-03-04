@@ -1,0 +1,67 @@
+{
+  "name": "Resume a subscription",
+  "description": "<p>Initiates resumption of a paused subscription, optionally resetting the billing cycle anchor and creating prorations. If no resumption invoice is generated, the subscription becomes <code>active</code> immediately. If a resumption invoice is generated, the subscription remains <code>paused</code> until the invoice is paid or marked uncollectible. If the invoice is not paid by the expiration date, it is voided and the subscription remains <code>paused</code>.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postSubscriptionsSubscriptionResume",
+    "path": "/v1/subscriptions/{subscription}/resume",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "billing_cycle_anchor": "now",
+      "expand": [
+        "<string>"
+      ],
+      "proration_behavior": "always_invoice",
+      "proration_date": "<number>"
+    },
+    "pathSubscription": "<string>"
+  },
+  "inputRequired": [
+    "pathSubscription"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "c78f5d7ad010",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "d00b26e59b6a",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "6b77b1e465f3",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "1ea85724e9eb",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "75a0e653e089",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "c84674993c92",
+        "left": "/v1/subscriptions/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "1e7802ac2960",
+          "keyPath": "pathSubscription",
+          "optional": false
+        }
+      },
+      "right": "/resume"
+    },
+    "query": {}
+  }
+}

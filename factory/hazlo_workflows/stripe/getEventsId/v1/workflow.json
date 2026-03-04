@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve an event",
+  "description": "<p>Retrieves the details of an event if it was created in the last 30 days. Supply the unique identifier of the event, which you might have received in a webhook.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getEventsId",
+    "path": "/v1/events/{id}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathId": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "8db1467c87ae",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "b7bbbdf365a7",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "eafb14f3cc38",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "1e5a2d1206f0",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "27e050cd8b7d",
+      "left": "/v1/events/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "f2931f9ee443",
+        "keyPath": "pathId",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "900d62bcc8e8",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

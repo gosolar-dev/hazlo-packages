@@ -1,0 +1,64 @@
+{
+  "name": "Expire a Checkout Session",
+  "description": "<p>A Checkout Session can be expired when it is in one of these statuses: <code>open</code> </p>\n\n<p>After it expires, a customer can’t complete a Checkout Session and customers loading the Checkout Session see a message saying the Checkout Session is expired.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postCheckoutSessionsSessionExpire",
+    "path": "/v1/checkout/sessions/{session}/expire",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ]
+    },
+    "pathSession": "<string>"
+  },
+  "inputRequired": [
+    "pathSession"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "f62d2d747ccc",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "f9c01a341b44",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "7feb45fe510e",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "41cda4103a4e",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "7baa9c3c377d",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "f3512f6271aa",
+        "left": "/v1/checkout/sessions/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "ac66f7beea6d",
+          "keyPath": "pathSession",
+          "optional": false
+        }
+      },
+      "right": "/expire"
+    },
+    "query": {}
+  }
+}

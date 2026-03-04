@@ -1,0 +1,109 @@
+{
+  "name": "Create a card",
+  "description": "<p>Creates an Issuing <code>Card</code> object.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postIssuingCards",
+    "path": "/v1/issuing/cards",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "cardholder": "<string>",
+      "currency": "<string>",
+      "exp_month": "<number>",
+      "exp_year": "<number>",
+      "expand": [
+        "<string>"
+      ],
+      "financial_account": "<string>",
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "personalization_design": "<string>",
+      "pin": {
+        "encrypted_number": "<string>"
+      },
+      "replacement_for": "<string>",
+      "replacement_reason": "damaged",
+      "second_line": "<string>",
+      "shipping": {
+        "address": {
+          "city": "<string>",
+          "country": "<string>",
+          "line1": "<string>",
+          "line2": "<string>",
+          "postal_code": "<string>",
+          "state": "<string>"
+        },
+        "address_validation": {
+          "mode": "disabled"
+        },
+        "customs": {
+          "eori_number": "<string>"
+        },
+        "name": "<string>",
+        "phone_number": "<string>",
+        "require_signature": "<boolean>",
+        "service": "express",
+        "type": "bulk"
+      },
+      "spending_controls": {
+        "allowed_categories": [
+          "ac_refrigeration_repair"
+        ],
+        "allowed_merchant_countries": [
+          "<string>"
+        ],
+        "blocked_categories": [
+          "ac_refrigeration_repair"
+        ],
+        "blocked_merchant_countries": [
+          "<string>"
+        ],
+        "spending_limits": [
+          {
+            "amount": "<number>",
+            "categories": [
+              "ac_refrigeration_repair"
+            ],
+            "interval": "all_time"
+          }
+        ]
+      },
+      "status": "active",
+      "type": "physical"
+    }
+  },
+  "inputRequired": [
+    "body"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "447d9cecd507",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "c06f244333f0",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "b88d18f5d47f",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "680b9d28b221",
+    "method": "POST",
+    "path": "/v1/issuing/cards",
+    "query": {}
+  }
+}

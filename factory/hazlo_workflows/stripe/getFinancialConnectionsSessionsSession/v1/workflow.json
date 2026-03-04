@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve a Session",
+  "description": "<p>Retrieves the details of a Financial Connections <code>Session</code></p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getFinancialConnectionsSessionsSession",
+    "path": "/v1/financial_connections/sessions/{session}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathSession": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathSession"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "d1d45dfe501c",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "1715e7f7020a",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "e11b4ecf5a18",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "680cf31ff881",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "4a0d01915556",
+      "left": "/v1/financial_connections/sessions/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "126ef9636242",
+        "keyPath": "pathSession",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "61b2be1134bf",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

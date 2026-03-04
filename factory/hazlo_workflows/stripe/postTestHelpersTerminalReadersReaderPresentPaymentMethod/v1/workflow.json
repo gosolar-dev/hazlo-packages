@@ -1,0 +1,78 @@
+{
+  "name": "Simulate presenting a payment method",
+  "description": "<p>Presents a payment method on a simulated reader. Can be used to simulate accepting a payment, saving a card or refunding a transaction.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postTestHelpersTerminalReadersReaderPresentPaymentMethod",
+    "path": "/v1/test_helpers/terminal/readers/{reader}/present_payment_method",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "amount_tip": "<number>",
+      "card": {
+        "cvc": "<string>",
+        "exp_month": "<number>",
+        "exp_year": "<number>",
+        "number": "<string>"
+      },
+      "card_present": {
+        "number": "<string>"
+      },
+      "expand": [
+        "<string>"
+      ],
+      "interac_present": {
+        "number": "<string>"
+      },
+      "type": "card"
+    },
+    "pathReader": "<string>"
+  },
+  "inputRequired": [
+    "pathReader"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "53d90258fc73",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "f7555cde1b2e",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "0c87b5381dfb",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "7ade5f2afd05",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "4599e3bc18c9",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "2a9a85757a04",
+        "left": "/v1/test_helpers/terminal/readers/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "372419cd8764",
+          "keyPath": "pathReader",
+          "optional": false
+        }
+      },
+      "right": "/present_payment_method"
+    },
+    "query": {}
+  }
+}

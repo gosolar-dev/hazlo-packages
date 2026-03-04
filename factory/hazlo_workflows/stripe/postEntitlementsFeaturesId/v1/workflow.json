@@ -1,0 +1,64 @@
+{
+  "name": "Updates a feature",
+  "description": "<p>Update a feature’s metadata or permanently deactivate it.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postEntitlementsFeaturesId",
+    "path": "/v1/entitlements/features/{id}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "active": "<boolean>",
+      "expand": [
+        "<string>"
+      ],
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "name": "<string>"
+    },
+    "pathId": "<string>"
+  },
+  "inputRequired": [
+    "pathId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "d603644c5e7e",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "3c923afe1ebf",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "446d456fb907",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "196cc0051d58",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "d1406ca80cbd",
+      "left": "/v1/entitlements/features/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "bae8e4d3f54c",
+        "keyPath": "pathId",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

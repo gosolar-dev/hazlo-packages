@@ -1,0 +1,91 @@
+{
+  "name": "List all plans",
+  "description": "<p>Returns a list of your plans.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getPlans",
+    "path": "/v1/plans",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryActive": "<boolean>",
+    "queryCreated": "<string>",
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryLimit": "<number>",
+    "queryProduct": "<string>",
+    "queryStartingAfter": "<string>"
+  },
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "30234148d6b4",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "5a273481eace",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "fe1661525db6",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "61f2af4cd968",
+    "method": "GET",
+    "path": "/v1/plans",
+    "query": {
+      "active": {
+        "_pbd_hazlo_type": "var",
+        "id": "59c2dc49c6e1",
+        "keyPath": "queryActive",
+        "optional": true
+      },
+      "created": {
+        "_pbd_hazlo_type": "var",
+        "id": "3631b00d70d1",
+        "keyPath": "queryCreated",
+        "optional": true
+      },
+      "ending_before": {
+        "_pbd_hazlo_type": "var",
+        "id": "9e41234e45f9",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "36fe49d8fe56",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_hazlo_type": "var",
+        "id": "7fbe1483b5cb",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "product": {
+        "_pbd_hazlo_type": "var",
+        "id": "cf194cae03fa",
+        "keyPath": "queryProduct",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_hazlo_type": "var",
+        "id": "7ca8864f990c",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      }
+    }
+  }
+}

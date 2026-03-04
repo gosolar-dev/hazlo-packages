@@ -1,0 +1,68 @@
+{
+  "name": "Unsubscribe from data refreshes for an Account",
+  "description": "<p>Unsubscribes from periodic refreshes of data associated with a Financial Connections <code>Account</code>.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postFinancialConnectionsAccountsAccountUnsubscribe",
+    "path": "/v1/financial_connections/accounts/{account}/unsubscribe",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ],
+      "features": [
+        "transactions"
+      ]
+    },
+    "pathAccount": "<string>"
+  },
+  "inputRequired": [
+    "body",
+    "pathAccount"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "798df952b03c",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "09a4c1bad428",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "9b7547c7bbd2",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "9fa23a0c00b8",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "cd451e929963",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "7d9449345291",
+        "left": "/v1/financial_connections/accounts/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "448c9ecf0839",
+          "keyPath": "pathAccount",
+          "optional": false
+        }
+      },
+      "right": "/unsubscribe"
+    },
+    "query": {}
+  }
+}

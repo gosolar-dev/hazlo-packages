@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve a Transaction",
+  "description": "<p>Retrieves the details of an existing Transaction.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getTreasuryTransactionsId",
+    "path": "/v1/treasury/transactions/{id}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathId": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "b2830fee1650",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "f36c8c2c8c00",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "53abdaa3a65b",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "e40c42c26db2",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "fc9efeffb00e",
+      "left": "/v1/treasury/transactions/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "c24c7e55e508",
+        "keyPath": "pathId",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "2a0655dae221",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

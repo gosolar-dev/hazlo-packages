@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve a plan",
+  "description": "<p>Retrieves the plan with the given ID.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getPlansPlan",
+    "path": "/v1/plans/{plan}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathPlan": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathPlan"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "c1b06ae7baf6",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "318a617657c2",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "ef3bbaf7ef40",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "b582dd7957c3",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "0bcdf1e51fe8",
+      "left": "/v1/plans/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "627200ffbf3b",
+        "keyPath": "pathPlan",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "627a0c5488ad",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

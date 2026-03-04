@@ -1,0 +1,64 @@
+{
+  "name": "Create a login link",
+  "description": "<p>Creates a login link for a connected account to access the Express Dashboard.</p>\n\n<p><strong>You can only create login links for accounts that use the <a href=\"/connect/express-dashboard\">Express Dashboard</a> and are connected to your platform</strong>.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postAccountsAccountLoginLinks",
+    "path": "/v1/accounts/{account}/login_links",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ]
+    },
+    "pathAccount": "<string>"
+  },
+  "inputRequired": [
+    "pathAccount"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "0710aa63a7d5",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "b365dee75e74",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "8a909abfbffd",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "c3ecef986cde",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "bf162ea70810",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "85159ceeb7b4",
+        "left": "/v1/accounts/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "508c11571838",
+          "keyPath": "pathAccount",
+          "optional": false
+        }
+      },
+      "right": "/login_links"
+    },
+    "query": {}
+  }
+}

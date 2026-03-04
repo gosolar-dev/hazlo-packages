@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve a file link",
+  "description": "<p>Retrieves the file link with the given ID.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getFileLinksLink",
+    "path": "/v1/file_links/{link}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathLink": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathLink"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "82ba90259377",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "a7ab443901a8",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "72739bee6e41",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "8b6a18ab9da8",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "e038a66840d3",
+      "left": "/v1/file_links/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "58f8971dc569",
+        "keyPath": "pathLink",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "5cf19efb65c8",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

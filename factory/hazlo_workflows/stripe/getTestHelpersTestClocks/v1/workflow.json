@@ -1,0 +1,70 @@
+{
+  "name": "List all test clocks",
+  "description": "<p>Returns a list of your test clocks.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getTestHelpersTestClocks",
+    "path": "/v1/test_helpers/test_clocks",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryLimit": "<number>",
+    "queryStartingAfter": "<string>"
+  },
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "2a5d8cdca8fa",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "47dda71c28a6",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "0c436d2e0ef6",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "9b4dec012db6",
+    "method": "GET",
+    "path": "/v1/test_helpers/test_clocks",
+    "query": {
+      "ending_before": {
+        "_pbd_hazlo_type": "var",
+        "id": "3a7006b33567",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "fe8fa128f71b",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_hazlo_type": "var",
+        "id": "b2527976657d",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_hazlo_type": "var",
+        "id": "70abbfc58e00",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      }
+    }
+  }
+}

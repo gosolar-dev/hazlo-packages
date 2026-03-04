@@ -1,0 +1,89 @@
+{
+  "name": "Retrieve a payment link's line items",
+  "description": "<p>When retrieving a payment link, there is an includable <strong>line_items</strong> property containing the first handful of those items. There is also a URL where you can retrieve the full (paginated) list of line items.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getPaymentLinksPaymentLinkLineItems",
+    "path": "/v1/payment_links/{payment_link}/line_items",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathPaymentLink": "<string>",
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryLimit": "<number>",
+    "queryStartingAfter": "<string>"
+  },
+  "inputRequired": [
+    "pathPaymentLink"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "fb32aa2446cf",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "66a102420f21",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "c61a4f23aeb4",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "530d052d396f",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "4ee6b19f1d68",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "6ef2e4005542",
+        "left": "/v1/payment_links/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "d4b30e4571c0",
+          "keyPath": "pathPaymentLink",
+          "optional": false
+        }
+      },
+      "right": "/line_items"
+    },
+    "query": {
+      "ending_before": {
+        "_pbd_hazlo_type": "var",
+        "id": "9aef949dada8",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "d7383b1dc4fa",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_hazlo_type": "var",
+        "id": "51f38627b1f8",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_hazlo_type": "var",
+        "id": "133ca4fb7fab",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      }
+    }
+  }
+}

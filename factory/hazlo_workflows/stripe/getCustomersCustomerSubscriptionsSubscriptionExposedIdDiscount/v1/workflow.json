@@ -1,0 +1,85 @@
+{
+  "name": "GetCustomersCustomerSubscriptionsSubscriptionExposedIdDiscount",
+  "description": "GetCustomersCustomerSubscriptionsSubscriptionExposedIdDiscount",
+  "meta": {
+    "method": "GET",
+    "operationId": "getCustomersCustomerSubscriptionsSubscriptionExposedIdDiscount",
+    "path": "/v1/customers/{customer}/subscriptions/{subscription_exposed_id}/discount",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathCustomer": "<string>",
+    "pathSubscriptionExposedId": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathCustomer",
+    "pathSubscriptionExposedId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "43440ba56c97",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "89bc6271f66f",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "a2078697bd70",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "50d50c507d04",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "b6308066bf25",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "28493200db6c",
+        "left": {
+          "_pbd_hazlo_type": "concat",
+          "id": "6d7630124bc9",
+          "left": {
+            "_pbd_hazlo_type": "concat",
+            "id": "91b831563012",
+            "left": "/v1/customers/",
+            "right": {
+              "_pbd_hazlo_type": "var",
+              "id": "234baae4ec05",
+              "keyPath": "pathCustomer",
+              "optional": false
+            }
+          },
+          "right": "/subscriptions/"
+        },
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "bc709064b644",
+          "keyPath": "pathSubscriptionExposedId",
+          "optional": false
+        }
+      },
+      "right": "/discount"
+    },
+    "query": {
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "f9d61bc1ff85",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

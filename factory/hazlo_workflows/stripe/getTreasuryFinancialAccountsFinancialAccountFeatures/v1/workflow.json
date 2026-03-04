@@ -1,0 +1,68 @@
+{
+  "name": "Retrieve FinancialAccount Features",
+  "description": "<p>Retrieves Features information associated with the FinancialAccount.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getTreasuryFinancialAccountsFinancialAccountFeatures",
+    "path": "/v1/treasury/financial_accounts/{financial_account}/features",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathFinancialAccount": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathFinancialAccount"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "2f7f1c4734c1",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "9a34ec00c09a",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "b95e438c12e2",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "e5e8ecda65a9",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "e22e443d48f8",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "9787f10724b0",
+        "left": "/v1/treasury/financial_accounts/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "42614708ea6c",
+          "keyPath": "pathFinancialAccount",
+          "optional": false
+        }
+      },
+      "right": "/features"
+    },
+    "query": {
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "4342f781a6e2",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "name": "Delete a draft invoice",
+  "description": "<p>Permanently deletes a one-off invoice draft. This cannot be undone. Attempts to delete invoices that are no longer in a draft state will fail; once an invoice has been finalized or if an invoice is for a subscription, it must be <a href=\"#void_invoice\">voided</a>.</p>",
+  "meta": {
+    "method": "DELETE",
+    "operationId": "deleteInvoicesInvoice",
+    "path": "/v1/invoices/{invoice}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathInvoice": "<string>"
+  },
+  "inputRequired": [
+    "pathInvoice"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "cd8dbd293e52",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "3e743f61a036",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "0f2db8cb0141",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "9d2d26871973",
+    "method": "DELETE",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "4987c95ee3ba",
+      "left": "/v1/invoices/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "03b426530256",
+        "keyPath": "pathInvoice",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

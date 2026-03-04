@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve a payment method domain",
+  "description": "<p>Retrieves the details of an existing payment method domain.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getPaymentMethodDomainsPaymentMethodDomain",
+    "path": "/v1/payment_method_domains/{payment_method_domain}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathPaymentMethodDomain": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathPaymentMethodDomain"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "9d84e6b8bc70",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "663d8f9efbda",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "bf948436d775",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "112d229f2fae",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "8198185fbc78",
+      "left": "/v1/payment_method_domains/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "10b8ce3848c4",
+        "keyPath": "pathPaymentMethodDomain",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "804be5212a64",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

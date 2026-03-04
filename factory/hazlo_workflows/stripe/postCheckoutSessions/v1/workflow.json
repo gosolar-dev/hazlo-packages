@@ -1,0 +1,635 @@
+{
+  "name": "Create a Checkout Session",
+  "description": "<p>Creates a Checkout Session object.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postCheckoutSessions",
+    "path": "/v1/checkout/sessions",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "adaptive_pricing": {
+        "enabled": "<boolean>"
+      },
+      "after_expiration": {
+        "recovery": {
+          "allow_promotion_codes": "<boolean>",
+          "enabled": "<boolean>"
+        }
+      },
+      "allow_promotion_codes": "<boolean>",
+      "automatic_tax": {
+        "enabled": "<boolean>",
+        "liability": {
+          "account": "<string>",
+          "type": "account"
+        }
+      },
+      "billing_address_collection": "auto",
+      "branding_settings": {
+        "background_color": "<string>",
+        "border_style": "",
+        "button_color": "<string>",
+        "display_name": "<string>",
+        "font_family": "",
+        "icon": {
+          "file": "<string>",
+          "type": "file",
+          "url": "<string>"
+        },
+        "logo": {
+          "file": "<string>",
+          "type": "file",
+          "url": "<string>"
+        }
+      },
+      "cancel_url": "<string>",
+      "client_reference_id": "<string>",
+      "consent_collection": {
+        "payment_method_reuse_agreement": {
+          "position": "auto"
+        },
+        "promotions": "auto",
+        "terms_of_service": "none"
+      },
+      "currency": "<string>",
+      "custom_fields": [
+        {
+          "dropdown": {
+            "default_value": "<string>",
+            "options": [
+              {
+                "label": "<string>",
+                "value": "<string>"
+              }
+            ]
+          },
+          "key": "<string>",
+          "label": {
+            "custom": "<string>",
+            "type": "custom"
+          },
+          "numeric": {
+            "default_value": "<string>",
+            "maximum_length": "<number>",
+            "minimum_length": "<number>"
+          },
+          "optional": "<boolean>",
+          "text": {
+            "default_value": "<string>",
+            "maximum_length": "<number>",
+            "minimum_length": "<number>"
+          },
+          "type": "dropdown"
+        }
+      ],
+      "custom_text": {
+        "after_submit": {
+          "message": "<string>"
+        },
+        "shipping_address": {
+          "message": "<string>"
+        },
+        "submit": {
+          "message": "<string>"
+        },
+        "terms_of_service_acceptance": {
+          "message": "<string>"
+        }
+      },
+      "customer": "<string>",
+      "customer_account": "<string>",
+      "customer_creation": "always",
+      "customer_email": "<string>",
+      "customer_update": {
+        "address": "auto",
+        "name": "auto",
+        "shipping": "auto"
+      },
+      "discounts": [
+        {
+          "coupon": "<string>",
+          "promotion_code": "<string>"
+        }
+      ],
+      "excluded_payment_method_types": [
+        "acss_debit"
+      ],
+      "expand": [
+        "<string>"
+      ],
+      "expires_at": "<number>",
+      "invoice_creation": {
+        "enabled": "<boolean>",
+        "invoice_data": {
+          "account_tax_ids": [
+            "<string>"
+          ],
+          "custom_fields": [
+            {
+              "name": "<string>",
+              "value": "<string>"
+            }
+          ],
+          "description": "<string>",
+          "footer": "<string>",
+          "issuer": {
+            "account": "<string>",
+            "type": "account"
+          },
+          "metadata": {
+            "<key>": "<string>"
+          },
+          "rendering_options": {
+            "amount_tax_display": "",
+            "template": "<string>"
+          }
+        }
+      },
+      "line_items": [
+        {
+          "adjustable_quantity": {
+            "enabled": "<boolean>",
+            "maximum": "<number>",
+            "minimum": "<number>"
+          },
+          "dynamic_tax_rates": [
+            "<string>"
+          ],
+          "metadata": {
+            "<key>": "<string>"
+          },
+          "price": "<string>",
+          "price_data": {
+            "currency": "<string>",
+            "product": "<string>",
+            "product_data": {
+              "description": "<string>",
+              "images": [
+                "<string>"
+              ],
+              "metadata": {
+                "<key>": "<string>"
+              },
+              "name": "<string>",
+              "tax_code": "<string>",
+              "unit_label": "<string>"
+            },
+            "recurring": {
+              "interval": "day",
+              "interval_count": "<number>"
+            },
+            "tax_behavior": "exclusive",
+            "unit_amount": "<number>",
+            "unit_amount_decimal": "<string>"
+          },
+          "quantity": "<number>",
+          "tax_rates": [
+            "<string>"
+          ]
+        }
+      ],
+      "locale": "auto",
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "mode": "payment",
+      "name_collection": {
+        "business": {
+          "enabled": "<boolean>",
+          "optional": "<boolean>"
+        },
+        "individual": {
+          "enabled": "<boolean>",
+          "optional": "<boolean>"
+        }
+      },
+      "optional_items": [
+        {
+          "adjustable_quantity": {
+            "enabled": "<boolean>",
+            "maximum": "<number>",
+            "minimum": "<number>"
+          },
+          "price": "<string>",
+          "quantity": "<number>"
+        }
+      ],
+      "origin_context": "mobile_app",
+      "payment_intent_data": {
+        "application_fee_amount": "<number>",
+        "capture_method": "automatic",
+        "description": "<string>",
+        "metadata": {
+          "<key>": "<string>"
+        },
+        "on_behalf_of": "<string>",
+        "receipt_email": "<string>",
+        "setup_future_usage": "off_session",
+        "shipping": {
+          "address": {
+            "city": "<string>",
+            "country": "<string>",
+            "line1": "<string>",
+            "line2": "<string>",
+            "postal_code": "<string>",
+            "state": "<string>"
+          },
+          "carrier": "<string>",
+          "name": "<string>",
+          "phone": "<string>",
+          "tracking_number": "<string>"
+        },
+        "statement_descriptor": "<string>",
+        "statement_descriptor_suffix": "<string>",
+        "transfer_data": {
+          "amount": "<number>",
+          "destination": "<string>"
+        },
+        "transfer_group": "<string>"
+      },
+      "payment_method_collection": "always",
+      "payment_method_configuration": "<string>",
+      "payment_method_data": {
+        "allow_redisplay": "always"
+      },
+      "payment_method_options": {
+        "acss_debit": {
+          "currency": "cad",
+          "mandate_options": {
+            "custom_mandate_url": "<string>",
+            "default_for": [
+              "invoice"
+            ],
+            "interval_description": "<string>",
+            "payment_schedule": "combined",
+            "transaction_type": "business"
+          },
+          "setup_future_usage": "none",
+          "target_date": "<string>",
+          "verification_method": "automatic"
+        },
+        "affirm": {
+          "capture_method": "manual",
+          "setup_future_usage": "none"
+        },
+        "afterpay_clearpay": {
+          "capture_method": "manual",
+          "setup_future_usage": "none"
+        },
+        "alipay": {
+          "setup_future_usage": "none"
+        },
+        "alma": {
+          "capture_method": "manual"
+        },
+        "amazon_pay": {
+          "capture_method": "manual",
+          "setup_future_usage": "none"
+        },
+        "au_becs_debit": {
+          "setup_future_usage": "none",
+          "target_date": "<string>"
+        },
+        "bacs_debit": {
+          "mandate_options": {
+            "reference_prefix": "<string>"
+          },
+          "setup_future_usage": "none",
+          "target_date": "<string>"
+        },
+        "bancontact": {
+          "setup_future_usage": "none"
+        },
+        "billie": {
+          "capture_method": "manual"
+        },
+        "boleto": {
+          "expires_after_days": "<number>",
+          "setup_future_usage": "none"
+        },
+        "card": {
+          "capture_method": "manual",
+          "installments": {
+            "enabled": "<boolean>"
+          },
+          "request_extended_authorization": "if_available",
+          "request_incremental_authorization": "if_available",
+          "request_multicapture": "if_available",
+          "request_overcapture": "if_available",
+          "request_three_d_secure": "any",
+          "restrictions": {
+            "brands_blocked": [
+              "american_express"
+            ]
+          },
+          "setup_future_usage": "off_session",
+          "statement_descriptor_suffix_kana": "<string>",
+          "statement_descriptor_suffix_kanji": "<string>"
+        },
+        "cashapp": {
+          "capture_method": "manual",
+          "setup_future_usage": "none"
+        },
+        "customer_balance": {
+          "bank_transfer": {
+            "eu_bank_transfer": {
+              "country": "<string>"
+            },
+            "requested_address_types": [
+              "aba"
+            ],
+            "type": "eu_bank_transfer"
+          },
+          "funding_type": "bank_transfer",
+          "setup_future_usage": "none"
+        },
+        "demo_pay": {
+          "setup_future_usage": "none"
+        },
+        "eps": {
+          "setup_future_usage": "none"
+        },
+        "fpx": {
+          "setup_future_usage": "none"
+        },
+        "giropay": {
+          "setup_future_usage": "none"
+        },
+        "grabpay": {
+          "setup_future_usage": "none"
+        },
+        "ideal": {
+          "setup_future_usage": "none"
+        },
+        "kakao_pay": {
+          "capture_method": "manual",
+          "setup_future_usage": "none"
+        },
+        "klarna": {
+          "capture_method": "manual",
+          "setup_future_usage": "none",
+          "subscriptions": [
+            {
+              "interval": "day",
+              "interval_count": "<number>",
+              "name": "<string>",
+              "next_billing": {
+                "amount": "<number>",
+                "date": "<string>"
+              },
+              "reference": "<string>"
+            }
+          ]
+        },
+        "konbini": {
+          "expires_after_days": "<number>",
+          "setup_future_usage": "none"
+        },
+        "kr_card": {
+          "capture_method": "manual",
+          "setup_future_usage": "none"
+        },
+        "link": {
+          "capture_method": "manual",
+          "setup_future_usage": "none"
+        },
+        "mobilepay": {
+          "capture_method": "manual",
+          "setup_future_usage": "none"
+        },
+        "multibanco": {
+          "setup_future_usage": "none"
+        },
+        "naver_pay": {
+          "capture_method": "manual",
+          "setup_future_usage": "none"
+        },
+        "oxxo": {
+          "expires_after_days": "<number>",
+          "setup_future_usage": "none"
+        },
+        "p24": {
+          "setup_future_usage": "none",
+          "tos_shown_and_accepted": "<boolean>"
+        },
+        "pay_by_bank": {},
+        "payco": {
+          "capture_method": "manual"
+        },
+        "paynow": {
+          "setup_future_usage": "none"
+        },
+        "paypal": {
+          "capture_method": "",
+          "preferred_locale": "cs-CZ",
+          "reference": "<string>",
+          "risk_correlation_id": "<string>",
+          "setup_future_usage": ""
+        },
+        "payto": {
+          "mandate_options": {
+            "amount": "<number>",
+            "amount_type": "",
+            "end_date": "<string>",
+            "payment_schedule": "",
+            "payments_per_period": "<number>",
+            "purpose": "",
+            "start_date": "<string>"
+          },
+          "setup_future_usage": "none"
+        },
+        "pix": {
+          "amount_includes_iof": "always",
+          "expires_after_seconds": "<number>",
+          "setup_future_usage": "none"
+        },
+        "revolut_pay": {
+          "capture_method": "manual",
+          "setup_future_usage": "none"
+        },
+        "samsung_pay": {
+          "capture_method": "manual"
+        },
+        "satispay": {
+          "capture_method": "manual"
+        },
+        "sepa_debit": {
+          "mandate_options": {
+            "reference_prefix": "<string>"
+          },
+          "setup_future_usage": "none",
+          "target_date": "<string>"
+        },
+        "sofort": {
+          "setup_future_usage": "none"
+        },
+        "swish": {
+          "reference": "<string>"
+        },
+        "twint": {
+          "setup_future_usage": "none"
+        },
+        "us_bank_account": {
+          "financial_connections": {
+            "permissions": [
+              "balances"
+            ],
+            "prefetch": [
+              "balances"
+            ]
+          },
+          "setup_future_usage": "none",
+          "target_date": "<string>",
+          "verification_method": "automatic"
+        },
+        "wechat_pay": {
+          "app_id": "<string>",
+          "client": "android",
+          "setup_future_usage": "none"
+        }
+      },
+      "payment_method_types": [
+        "acss_debit"
+      ],
+      "permissions": {
+        "update_shipping_details": "client_only"
+      },
+      "phone_number_collection": {
+        "enabled": "<boolean>"
+      },
+      "redirect_on_completion": "always",
+      "return_url": "<string>",
+      "saved_payment_method_options": {
+        "allow_redisplay_filters": [
+          "always"
+        ],
+        "payment_method_remove": "disabled",
+        "payment_method_save": "disabled"
+      },
+      "setup_intent_data": {
+        "description": "<string>",
+        "metadata": {
+          "<key>": "<string>"
+        },
+        "on_behalf_of": "<string>"
+      },
+      "shipping_address_collection": {
+        "allowed_countries": [
+          "AC"
+        ]
+      },
+      "shipping_options": [
+        {
+          "shipping_rate": "<string>",
+          "shipping_rate_data": {
+            "delivery_estimate": {
+              "maximum": {
+                "unit": "business_day",
+                "value": "<number>"
+              },
+              "minimum": {
+                "unit": "business_day",
+                "value": "<number>"
+              }
+            },
+            "display_name": "<string>",
+            "fixed_amount": {
+              "amount": "<number>",
+              "currency": "<string>",
+              "currency_options": {
+                "<key>": {
+                  "amount": "<number>",
+                  "tax_behavior": "exclusive"
+                }
+              }
+            },
+            "metadata": {
+              "<key>": "<string>"
+            },
+            "tax_behavior": "exclusive",
+            "tax_code": "<string>",
+            "type": "fixed_amount"
+          }
+        }
+      ],
+      "submit_type": "auto",
+      "subscription_data": {
+        "application_fee_percent": "<number>",
+        "billing_cycle_anchor": "<number>",
+        "billing_mode": {
+          "flexible": {
+            "proration_discounts": "included"
+          },
+          "type": "classic"
+        },
+        "default_tax_rates": [
+          "<string>"
+        ],
+        "description": "<string>",
+        "invoice_settings": {
+          "issuer": {
+            "account": "<string>",
+            "type": "account"
+          }
+        },
+        "metadata": {
+          "<key>": "<string>"
+        },
+        "on_behalf_of": "<string>",
+        "proration_behavior": "create_prorations",
+        "transfer_data": {
+          "amount_percent": "<number>",
+          "destination": "<string>"
+        },
+        "trial_end": "<number>",
+        "trial_period_days": "<number>",
+        "trial_settings": {
+          "end_behavior": {
+            "missing_payment_method": "cancel"
+          }
+        }
+      },
+      "success_url": "<string>",
+      "tax_id_collection": {
+        "enabled": "<boolean>",
+        "required": "if_supported"
+      },
+      "ui_mode": "custom",
+      "wallet_options": {
+        "link": {
+          "display": "auto"
+        }
+      }
+    }
+  },
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "af7c5d0cbc68",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "34025b6356f5",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "19f6a573b3a0",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "464fdb065e94",
+    "method": "POST",
+    "path": "/v1/checkout/sessions",
+    "query": {}
+  }
+}

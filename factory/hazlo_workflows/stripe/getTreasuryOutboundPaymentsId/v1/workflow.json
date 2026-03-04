@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve an OutboundPayment",
+  "description": "<p>Retrieves the details of an existing OutboundPayment by passing the unique OutboundPayment ID from either the OutboundPayment creation request or OutboundPayment list.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getTreasuryOutboundPaymentsId",
+    "path": "/v1/treasury/outbound_payments/{id}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathId": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "ccdced3b1f79",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "be36f4cbdaac",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "a65244a7fb30",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "ee335fc98c4f",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "cb4741189057",
+      "left": "/v1/treasury/outbound_payments/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "27aca746af78",
+        "keyPath": "pathId",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "8e4d6a42013d",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

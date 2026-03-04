@@ -1,0 +1,66 @@
+{
+  "name": "Update balance settings",
+  "description": "<p>Updates balance settings for a given connected account.\n Related guide: <a href=\"/connect/authentication\">Making API calls for connected accounts</a></p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postBalanceSettings",
+    "path": "/v1/balance_settings",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ],
+      "payments": {
+        "debit_negative_balances": "<boolean>",
+        "payouts": {
+          "minimum_balance_by_currency": {
+            "<key>": "<number>"
+          },
+          "schedule": {
+            "interval": "daily",
+            "monthly_payout_days": [
+              "<number>"
+            ],
+            "weekly_payout_days": [
+              "friday"
+            ]
+          },
+          "statement_descriptor": "<string>"
+        },
+        "settlement_timing": {
+          "delay_days_override": "<number>"
+        }
+      }
+    }
+  },
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "127d79fa0c8e",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "c90a8ad42183",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "2ed9bab2d3ff",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "6d503113b765",
+    "method": "POST",
+    "path": "/v1/balance_settings",
+    "query": {}
+  }
+}

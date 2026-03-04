@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve a tax rate",
+  "description": "<p>Retrieves a tax rate with the given ID</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getTaxRatesTaxRate",
+    "path": "/v1/tax_rates/{tax_rate}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathTaxRate": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathTaxRate"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "e4b2bbaab529",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "d22ac2d82347",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "b47b5b37aeea",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "660189b93f69",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "b0c85460613a",
+      "left": "/v1/tax_rates/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "5974ca713e1a",
+        "keyPath": "pathTaxRate",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "57f64fe24ee1",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

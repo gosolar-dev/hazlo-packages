@@ -1,0 +1,110 @@
+{
+  "name": "Report a payment",
+  "description": "<p>Report a new Payment Record. You may report a Payment Record as it is\n initialized and later report updates through the other report_* methods, or report Payment\n Records in a terminal state directly, through this method.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postPaymentRecordsReportPayment",
+    "path": "/v1/payment_records/report_payment",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "amount_requested": {
+        "currency": "<string>",
+        "value": "<number>"
+      },
+      "customer_details": {
+        "customer": "<string>",
+        "email": "<string>",
+        "name": "<string>",
+        "phone": "<string>"
+      },
+      "customer_presence": "off_session",
+      "description": "<string>",
+      "expand": [
+        "<string>"
+      ],
+      "failed": {
+        "failed_at": "<number>"
+      },
+      "guaranteed": {
+        "guaranteed_at": "<number>"
+      },
+      "initiated_at": "<number>",
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "outcome": "failed",
+      "payment_method_details": {
+        "billing_details": {
+          "address": {
+            "city": "<string>",
+            "country": "<string>",
+            "line1": "<string>",
+            "line2": "<string>",
+            "postal_code": "<string>",
+            "state": "<string>"
+          },
+          "email": "<string>",
+          "name": "<string>",
+          "phone": "<string>"
+        },
+        "custom": {
+          "display_name": "<string>",
+          "type": "<string>"
+        },
+        "payment_method": "<string>",
+        "type": "custom"
+      },
+      "processor_details": {
+        "custom": {
+          "payment_reference": "<string>"
+        },
+        "type": "custom"
+      },
+      "shipping_details": {
+        "address": {
+          "city": "<string>",
+          "country": "<string>",
+          "line1": "<string>",
+          "line2": "<string>",
+          "postal_code": "<string>",
+          "state": "<string>"
+        },
+        "name": "<string>",
+        "phone": "<string>"
+      }
+    }
+  },
+  "inputRequired": [
+    "body"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "a352b55cc09a",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "b50913d47a6c",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "1195c6e2cdeb",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "7eea13314a77",
+    "method": "POST",
+    "path": "/v1/payment_records/report_payment",
+    "query": {}
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "name": "Update a reversal",
+  "description": "<p>Updates the specified reversal by setting the values of the parameters passed. Any parameters not provided will be left unchanged.</p>\n\n<p>This request only accepts metadata and description as arguments.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postTransfersTransferReversalsId",
+    "path": "/v1/transfers/{transfer}/reversals/{id}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ],
+      "metadata": {
+        "<key>": "<string>"
+      }
+    },
+    "pathId": "<string>",
+    "pathTransfer": "<string>"
+  },
+  "inputRequired": [
+    "pathId",
+    "pathTransfer"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "f62cf1963598",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "0c4a8dcf3168",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "cc9c7605a886",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "d02f3f2a477d",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "86079cd21549",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "1578dfd983e1",
+        "left": {
+          "_pbd_hazlo_type": "concat",
+          "id": "9852190faa16",
+          "left": "/v1/transfers/",
+          "right": {
+            "_pbd_hazlo_type": "var",
+            "id": "f8989364a545",
+            "keyPath": "pathTransfer",
+            "optional": false
+          }
+        },
+        "right": "/reversals/"
+      },
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "31ebeaca5afa",
+        "keyPath": "pathId",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

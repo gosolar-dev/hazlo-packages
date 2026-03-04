@@ -1,0 +1,59 @@
+{
+  "name": "Immediately invalidate an ephemeral key",
+  "description": "<p>Invalidates a short-lived API key for a given resource.</p>",
+  "meta": {
+    "method": "DELETE",
+    "operationId": "deleteEphemeralKeysKey",
+    "path": "/v1/ephemeral_keys/{key}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ]
+    },
+    "pathKey": "<string>"
+  },
+  "inputRequired": [
+    "pathKey"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "bb4becfc3e0a",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "23ab359802d7",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "e4b3bd0cb0e2",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "350a583bebed",
+    "method": "DELETE",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "194599a6d511",
+      "left": "/v1/ephemeral_keys/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "369edebbc0b0",
+        "keyPath": "pathKey",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "name": "Retrieve settings",
+  "description": "<p>Retrieves Tax <code>Settings</code> for a merchant.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getTaxSettings",
+    "path": "/v1/tax/settings",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryExpand": []
+  },
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "49f16b936f76",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "4ff1893f6c4d",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "75a2f90bb6f6",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "248d07a28b69",
+    "method": "GET",
+    "path": "/v1/tax/settings",
+    "query": {
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "11f66032becb",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "name": "Cancel a subscription",
+  "description": "<p>Cancels a customer’s subscription immediately. The customer won’t be charged again for the subscription. After it’s canceled, you can no longer update the subscription or its <a href=\"/metadata\">metadata</a>.</p>\n\n<p>Any pending invoice items that you’ve created are still charged at the end of the period, unless manually <a href=\"#delete_invoiceitem\">deleted</a>. If you’ve set the subscription to cancel at the end of the period, any pending prorations are also left in place and collected at the end of the period. But if the subscription is set to cancel immediately, pending prorations are removed if <code>invoice_now</code> and <code>prorate</code> are both set to true.</p>\n\n<p>By default, upon subscription cancellation, Stripe stops automatic collection of all finalized invoices for the customer. This is intended to prevent unexpected payment attempts after the customer has canceled a subscription. However, you can resume automatic collection of the invoices manually after subscription cancellation to have us proceed. Or, you could check for unpaid invoices before allowing the customer to cancel the subscription at all.</p>",
+  "meta": {
+    "method": "DELETE",
+    "operationId": "deleteSubscriptionsSubscriptionExposedId",
+    "path": "/v1/subscriptions/{subscription_exposed_id}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "cancellation_details": {
+        "comment": "<string>",
+        "feedback": ""
+      },
+      "expand": [
+        "<string>"
+      ],
+      "invoice_now": "<boolean>",
+      "prorate": "<boolean>"
+    },
+    "pathSubscriptionExposedId": "<string>"
+  },
+  "inputRequired": [
+    "pathSubscriptionExposedId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "16370b06815b",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "270914933297",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "b910852c51a4",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "0399e6182538",
+    "method": "DELETE",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "8be6158f1410",
+      "left": "/v1/subscriptions/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "b71753b44d26",
+        "keyPath": "pathSubscriptionExposedId",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

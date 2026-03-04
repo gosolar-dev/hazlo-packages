@@ -1,0 +1,77 @@
+{
+  "name": "List all Configurations",
+  "description": "<p>Returns a list of <code>Configuration</code> objects.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getTerminalConfigurations",
+    "path": "/v1/terminal/configurations",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryIsAccountDefault": "<boolean>",
+    "queryLimit": "<number>",
+    "queryStartingAfter": "<string>"
+  },
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "b7dfb765d2e9",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "b66d4a50a855",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "124a2821978e",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "64d741b16d81",
+    "method": "GET",
+    "path": "/v1/terminal/configurations",
+    "query": {
+      "ending_before": {
+        "_pbd_hazlo_type": "var",
+        "id": "981916860022",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "4752dfe300cb",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "is_account_default": {
+        "_pbd_hazlo_type": "var",
+        "id": "947e9acfa402",
+        "keyPath": "queryIsAccountDefault",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_hazlo_type": "var",
+        "id": "25e119055fd9",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_hazlo_type": "var",
+        "id": "1743d68f93be",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      }
+    }
+  }
+}

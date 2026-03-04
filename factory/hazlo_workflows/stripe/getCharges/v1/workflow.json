@@ -1,0 +1,98 @@
+{
+  "name": "List all charges",
+  "description": "<p>Returns a list of charges you’ve previously created. The charges are returned in sorted order, with the most recent charges appearing first.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getCharges",
+    "path": "/v1/charges",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryCreated": "<string>",
+    "queryCustomer": "<string>",
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryLimit": "<number>",
+    "queryPaymentIntent": "<string>",
+    "queryStartingAfter": "<string>",
+    "queryTransferGroup": "<string>"
+  },
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "d8b474cf70b7",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "2118b489fcc6",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "9a81723e730c",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "1590b35886b9",
+    "method": "GET",
+    "path": "/v1/charges",
+    "query": {
+      "created": {
+        "_pbd_hazlo_type": "var",
+        "id": "7a7490e61aa7",
+        "keyPath": "queryCreated",
+        "optional": true
+      },
+      "customer": {
+        "_pbd_hazlo_type": "var",
+        "id": "7ebc9ab6024c",
+        "keyPath": "queryCustomer",
+        "optional": true
+      },
+      "ending_before": {
+        "_pbd_hazlo_type": "var",
+        "id": "7ae47971f0a6",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "f2a32a02e124",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_hazlo_type": "var",
+        "id": "bfb5928dab08",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "payment_intent": {
+        "_pbd_hazlo_type": "var",
+        "id": "2efbddc9f2be",
+        "keyPath": "queryPaymentIntent",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_hazlo_type": "var",
+        "id": "776259749298",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      },
+      "transfer_group": {
+        "_pbd_hazlo_type": "var",
+        "id": "49c91e854358",
+        "keyPath": "queryTransferGroup",
+        "optional": true
+      }
+    }
+  }
+}

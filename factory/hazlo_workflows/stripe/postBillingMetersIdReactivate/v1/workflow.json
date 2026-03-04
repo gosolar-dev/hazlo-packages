@@ -1,0 +1,64 @@
+{
+  "name": "Reactivate a billing meter",
+  "description": "<p>When a meter is reactivated, events for this meter can be accepted and you can attach the meter to a price.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postBillingMetersIdReactivate",
+    "path": "/v1/billing/meters/{id}/reactivate",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ]
+    },
+    "pathId": "<string>"
+  },
+  "inputRequired": [
+    "pathId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "0f41a4f65d4c",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "a90758bc7b6c",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "88df77029759",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "8ec301d809f3",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "e69169526f47",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "ddd82839f943",
+        "left": "/v1/billing/meters/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "e6672f8e36ed",
+          "keyPath": "pathId",
+          "optional": false
+        }
+      },
+      "right": "/reactivate"
+    },
+    "query": {}
+  }
+}

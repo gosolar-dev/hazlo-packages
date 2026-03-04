@@ -1,0 +1,91 @@
+{
+  "name": "List all tax rates",
+  "description": "<p>Returns a list of your tax rates. Tax rates are returned sorted by creation date, with the most recently created tax rates appearing first.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getTaxRates",
+    "path": "/v1/tax_rates",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryActive": "<boolean>",
+    "queryCreated": "<string>",
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryInclusive": "<boolean>",
+    "queryLimit": "<number>",
+    "queryStartingAfter": "<string>"
+  },
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "a287cb22dcbc",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "14af0876314e",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "3aa3e2a3fb02",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "c683615942be",
+    "method": "GET",
+    "path": "/v1/tax_rates",
+    "query": {
+      "active": {
+        "_pbd_hazlo_type": "var",
+        "id": "b01f0f886206",
+        "keyPath": "queryActive",
+        "optional": true
+      },
+      "created": {
+        "_pbd_hazlo_type": "var",
+        "id": "6a6cfac9462c",
+        "keyPath": "queryCreated",
+        "optional": true
+      },
+      "ending_before": {
+        "_pbd_hazlo_type": "var",
+        "id": "3a01b8a86f33",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "7d132e0b71b5",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "inclusive": {
+        "_pbd_hazlo_type": "var",
+        "id": "65b86c253275",
+        "keyPath": "queryInclusive",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_hazlo_type": "var",
+        "id": "8e14c58a9cf8",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_hazlo_type": "var",
+        "id": "72f127714f44",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      }
+    }
+  }
+}

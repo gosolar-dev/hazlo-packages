@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve a file",
+  "description": "<p>Retrieves the details of an existing file object. After you supply a unique file ID, Stripe returns the corresponding file object. Learn how to <a href=\"/docs/file-upload#download-file-contents\">access file contents</a>.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getFilesFile",
+    "path": "/v1/files/{file}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathFile": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathFile"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "ad7a8cb554e5",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "ededbac2e9f7",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "fbec72906ef3",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "7a08b1fdc6a8",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "0eaa399a84e6",
+      "left": "/v1/files/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "c7431d34b11b",
+        "keyPath": "pathFile",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "00c9c5192583",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

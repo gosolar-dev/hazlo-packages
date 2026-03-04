@@ -1,0 +1,234 @@
+{
+  "name": "Update a payment link",
+  "description": "<p>Updates a payment link.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postPaymentLinksPaymentLink",
+    "path": "/v1/payment_links/{payment_link}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "active": "<boolean>",
+      "after_completion": {
+        "hosted_confirmation": {
+          "custom_message": "<string>"
+        },
+        "redirect": {
+          "url": "<string>"
+        },
+        "type": "hosted_confirmation"
+      },
+      "allow_promotion_codes": "<boolean>",
+      "automatic_tax": {
+        "enabled": "<boolean>",
+        "liability": {
+          "account": "<string>",
+          "type": "account"
+        }
+      },
+      "billing_address_collection": "auto",
+      "custom_fields": [
+        {
+          "dropdown": {
+            "default_value": "<string>",
+            "options": [
+              {
+                "label": "<string>",
+                "value": "<string>"
+              }
+            ]
+          },
+          "key": "<string>",
+          "label": {
+            "custom": "<string>",
+            "type": "custom"
+          },
+          "numeric": {
+            "default_value": "<string>",
+            "maximum_length": "<number>",
+            "minimum_length": "<number>"
+          },
+          "optional": "<boolean>",
+          "text": {
+            "default_value": "<string>",
+            "maximum_length": "<number>",
+            "minimum_length": "<number>"
+          },
+          "type": "dropdown"
+        }
+      ],
+      "custom_text": {
+        "after_submit": {
+          "message": "<string>"
+        },
+        "shipping_address": {
+          "message": "<string>"
+        },
+        "submit": {
+          "message": "<string>"
+        },
+        "terms_of_service_acceptance": {
+          "message": "<string>"
+        }
+      },
+      "customer_creation": "always",
+      "expand": [
+        "<string>"
+      ],
+      "inactive_message": "<string>",
+      "invoice_creation": {
+        "enabled": "<boolean>",
+        "invoice_data": {
+          "account_tax_ids": [
+            "<string>"
+          ],
+          "custom_fields": [
+            {
+              "name": "<string>",
+              "value": "<string>"
+            }
+          ],
+          "description": "<string>",
+          "footer": "<string>",
+          "issuer": {
+            "account": "<string>",
+            "type": "account"
+          },
+          "metadata": {
+            "<key>": "<string>"
+          },
+          "rendering_options": {
+            "amount_tax_display": "",
+            "template": "<string>"
+          }
+        }
+      },
+      "line_items": [
+        {
+          "adjustable_quantity": {
+            "enabled": "<boolean>",
+            "maximum": "<number>",
+            "minimum": "<number>"
+          },
+          "id": "<string>",
+          "quantity": "<number>"
+        }
+      ],
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "name_collection": {
+        "business": {
+          "enabled": "<boolean>",
+          "optional": "<boolean>"
+        },
+        "individual": {
+          "enabled": "<boolean>",
+          "optional": "<boolean>"
+        }
+      },
+      "optional_items": [
+        {
+          "adjustable_quantity": {
+            "enabled": "<boolean>",
+            "maximum": "<number>",
+            "minimum": "<number>"
+          },
+          "price": "<string>",
+          "quantity": "<number>"
+        }
+      ],
+      "payment_intent_data": {
+        "description": "<string>",
+        "metadata": {
+          "<key>": "<string>"
+        },
+        "statement_descriptor": "<string>",
+        "statement_descriptor_suffix": "<string>",
+        "transfer_group": "<string>"
+      },
+      "payment_method_collection": "always",
+      "payment_method_types": [
+        "affirm"
+      ],
+      "phone_number_collection": {
+        "enabled": "<boolean>"
+      },
+      "restrictions": {
+        "completed_sessions": {
+          "limit": "<number>"
+        }
+      },
+      "shipping_address_collection": {
+        "allowed_countries": [
+          "AC"
+        ]
+      },
+      "submit_type": "auto",
+      "subscription_data": {
+        "invoice_settings": {
+          "issuer": {
+            "account": "<string>",
+            "type": "account"
+          }
+        },
+        "metadata": {
+          "<key>": "<string>"
+        },
+        "trial_period_days": "<number>",
+        "trial_settings": {
+          "end_behavior": {
+            "missing_payment_method": "cancel"
+          }
+        }
+      },
+      "tax_id_collection": {
+        "enabled": "<boolean>",
+        "required": "if_supported"
+      }
+    },
+    "pathPaymentLink": "<string>"
+  },
+  "inputRequired": [
+    "pathPaymentLink"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "2f8f1b0bdb73",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "679058fc2173",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "003241b28585",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "880b2d859057",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "b7af7b12c835",
+      "left": "/v1/payment_links/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "5797dc55a0d1",
+        "keyPath": "pathPaymentLink",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

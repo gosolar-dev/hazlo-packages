@@ -1,0 +1,93 @@
+{
+  "name": "Update a Location",
+  "description": "<p>Updates a <code>Location</code> object by setting the values of the parameters passed. Any parameters not provided will be left unchanged.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postTerminalLocationsLocation",
+    "path": "/v1/terminal/locations/{location}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "address": {
+        "city": "<string>",
+        "country": "<string>",
+        "line1": "<string>",
+        "line2": "<string>",
+        "postal_code": "<string>",
+        "state": "<string>"
+      },
+      "address_kana": {
+        "city": "<string>",
+        "country": "<string>",
+        "line1": "<string>",
+        "line2": "<string>",
+        "postal_code": "<string>",
+        "state": "<string>",
+        "town": "<string>"
+      },
+      "address_kanji": {
+        "city": "<string>",
+        "country": "<string>",
+        "line1": "<string>",
+        "line2": "<string>",
+        "postal_code": "<string>",
+        "state": "<string>",
+        "town": "<string>"
+      },
+      "configuration_overrides": "<string>",
+      "display_name": "<string>",
+      "display_name_kana": "<string>",
+      "display_name_kanji": "<string>",
+      "expand": [
+        "<string>"
+      ],
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "phone": "<string>"
+    },
+    "pathLocation": "<string>"
+  },
+  "inputRequired": [
+    "pathLocation"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "c0ce43e10c3b",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "fed92ce6ac95",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "93b3fffea43a",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "dd3e00d30995",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "ab37003c5ada",
+      "left": "/v1/terminal/locations/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "187ab37c6c09",
+        "keyPath": "pathLocation",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

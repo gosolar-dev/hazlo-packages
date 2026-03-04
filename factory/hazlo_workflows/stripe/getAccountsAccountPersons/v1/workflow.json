@@ -1,0 +1,96 @@
+{
+  "name": "List all persons",
+  "description": "<p>Returns a list of people associated with the account’s legal entity. The people are returned sorted by creation date, with the most recent people appearing first.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getAccountsAccountPersons",
+    "path": "/v1/accounts/{account}/persons",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathAccount": "<string>",
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryLimit": "<number>",
+    "queryRelationship": {},
+    "queryStartingAfter": "<string>"
+  },
+  "inputRequired": [
+    "pathAccount"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "b3507bd61962",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "74bfad4151a4",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "fb31218321eb",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "b2ed9f2d9549",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "e2ad31896cd6",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "08f385434f8b",
+        "left": "/v1/accounts/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "4c494867d083",
+          "keyPath": "pathAccount",
+          "optional": false
+        }
+      },
+      "right": "/persons"
+    },
+    "query": {
+      "ending_before": {
+        "_pbd_hazlo_type": "var",
+        "id": "08b1494b87f3",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "29a70ace02f2",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_hazlo_type": "var",
+        "id": "621cbb7c3096",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "relationship": {
+        "_pbd_hazlo_type": "var",
+        "id": "292f4c370c0c",
+        "keyPath": "queryRelationship",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_hazlo_type": "var",
+        "id": "46a02aa2e30e",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      }
+    }
+  }
+}

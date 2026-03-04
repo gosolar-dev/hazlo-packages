@@ -1,0 +1,333 @@
+{
+  "name": "Create a preview invoice",
+  "description": "<p>At any time, you can preview the upcoming invoice for a subscription or subscription schedule. This will show you all the charges that are pending, including subscription renewal charges, invoice item charges, etc. It will also show you any discounts that are applicable to the invoice.</p>\n\n<p>You can also preview the effects of creating or updating a subscription or subscription schedule, including a preview of any prorations that will take place. To ensure that the actual proration is calculated exactly the same as the previewed proration, you should pass the <code>subscription_details.proration_date</code> parameter when doing the actual subscription update.</p>\n\n<p>The recommended way to get only the prorations being previewed on the invoice is to consider line items where <code>parent.subscription_item_details.proration</code> is <code>true</code>.</p>\n\n<p>Note that when you are viewing an upcoming invoice, you are simply viewing a preview – the invoice has not yet been created. As such, the upcoming invoice will not show up in invoice listing calls, and you cannot use the API to pay or edit the invoice. If you want to change the amount that your customer will be billed, you can add, remove, or update pending invoice items, or update the customer’s discount.</p>\n\n<p>Note: Currency conversion calculations use the latest exchange rates. Exchange rates may vary between the time of the preview and the time of the actual invoice creation. <a href=\"https://docs.stripe.com/currencies/conversions\">Learn more</a></p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postInvoicesCreatePreview",
+    "path": "/v1/invoices/create_preview",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "automatic_tax": {
+        "enabled": "<boolean>",
+        "liability": {
+          "account": "<string>",
+          "type": "account"
+        }
+      },
+      "currency": "<string>",
+      "customer": "<string>",
+      "customer_account": "<string>",
+      "customer_details": {
+        "address": {
+          "city": "<string>",
+          "country": "<string>",
+          "line1": "<string>",
+          "line2": "<string>",
+          "postal_code": "<string>",
+          "state": "<string>"
+        },
+        "shipping": {
+          "address": {
+            "city": "<string>",
+            "country": "<string>",
+            "line1": "<string>",
+            "line2": "<string>",
+            "postal_code": "<string>",
+            "state": "<string>"
+          },
+          "name": "<string>",
+          "phone": "<string>"
+        },
+        "tax": {
+          "ip_address": "<string>"
+        },
+        "tax_exempt": "",
+        "tax_ids": [
+          {
+            "type": "ad_nrt",
+            "value": "<string>"
+          }
+        ]
+      },
+      "discounts": [
+        {
+          "coupon": "<string>",
+          "discount": "<string>",
+          "promotion_code": "<string>"
+        }
+      ],
+      "expand": [
+        "<string>"
+      ],
+      "invoice_items": [
+        {
+          "amount": "<number>",
+          "currency": "<string>",
+          "description": "<string>",
+          "discountable": "<boolean>",
+          "discounts": [
+            {
+              "coupon": "<string>",
+              "discount": "<string>",
+              "promotion_code": "<string>"
+            }
+          ],
+          "invoiceitem": "<string>",
+          "metadata": {
+            "<key>": "<string>"
+          },
+          "period": {
+            "end": "<number>",
+            "start": "<number>"
+          },
+          "price": "<string>",
+          "price_data": {
+            "currency": "<string>",
+            "product": "<string>",
+            "tax_behavior": "exclusive",
+            "unit_amount": "<number>",
+            "unit_amount_decimal": "<string>"
+          },
+          "quantity": "<number>",
+          "tax_behavior": "exclusive",
+          "tax_code": "<string>",
+          "tax_rates": [
+            "<string>"
+          ],
+          "unit_amount": "<number>",
+          "unit_amount_decimal": "<string>"
+        }
+      ],
+      "issuer": {
+        "account": "<string>",
+        "type": "account"
+      },
+      "on_behalf_of": "<string>",
+      "preview_mode": "next",
+      "schedule": "<string>",
+      "schedule_details": {
+        "billing_mode": {
+          "flexible": {
+            "proration_discounts": "included"
+          },
+          "type": "classic"
+        },
+        "end_behavior": "cancel",
+        "phases": [
+          {
+            "add_invoice_items": [
+              {
+                "discounts": [
+                  {
+                    "coupon": "<string>",
+                    "discount": "<string>",
+                    "promotion_code": "<string>"
+                  }
+                ],
+                "metadata": {
+                  "<key>": "<string>"
+                },
+                "period": {
+                  "end": {
+                    "timestamp": "<number>",
+                    "type": "min_item_period_end"
+                  },
+                  "start": {
+                    "timestamp": "<number>",
+                    "type": "max_item_period_start"
+                  }
+                },
+                "price": "<string>",
+                "price_data": {
+                  "currency": "<string>",
+                  "product": "<string>",
+                  "tax_behavior": "exclusive",
+                  "unit_amount": "<number>",
+                  "unit_amount_decimal": "<string>"
+                },
+                "quantity": "<number>",
+                "tax_rates": [
+                  "<string>"
+                ]
+              }
+            ],
+            "application_fee_percent": "<number>",
+            "automatic_tax": {
+              "enabled": "<boolean>",
+              "liability": {
+                "account": "<string>",
+                "type": "account"
+              }
+            },
+            "billing_cycle_anchor": "automatic",
+            "billing_thresholds": {
+              "amount_gte": "<number>",
+              "reset_billing_cycle_anchor": "<boolean>"
+            },
+            "collection_method": "charge_automatically",
+            "default_payment_method": "<string>",
+            "default_tax_rates": [
+              "<string>"
+            ],
+            "description": "<string>",
+            "discounts": [
+              {
+                "coupon": "<string>",
+                "discount": "<string>",
+                "promotion_code": "<string>"
+              }
+            ],
+            "duration": {
+              "interval": "day",
+              "interval_count": "<number>"
+            },
+            "end_date": "<number>",
+            "invoice_settings": {
+              "account_tax_ids": [
+                "<string>"
+              ],
+              "days_until_due": "<number>",
+              "issuer": {
+                "account": "<string>",
+                "type": "account"
+              }
+            },
+            "items": [
+              {
+                "billing_thresholds": {
+                  "usage_gte": "<number>"
+                },
+                "discounts": [
+                  {
+                    "coupon": "<string>",
+                    "discount": "<string>",
+                    "promotion_code": "<string>"
+                  }
+                ],
+                "metadata": {
+                  "<key>": "<string>"
+                },
+                "price": "<string>",
+                "price_data": {
+                  "currency": "<string>",
+                  "product": "<string>",
+                  "recurring": {
+                    "interval": "day",
+                    "interval_count": "<number>"
+                  },
+                  "tax_behavior": "exclusive",
+                  "unit_amount": "<number>",
+                  "unit_amount_decimal": "<string>"
+                },
+                "quantity": "<number>",
+                "tax_rates": [
+                  "<string>"
+                ]
+              }
+            ],
+            "metadata": {
+              "<key>": "<string>"
+            },
+            "on_behalf_of": "<string>",
+            "proration_behavior": "always_invoice",
+            "start_date": "<number>",
+            "transfer_data": {
+              "amount_percent": "<number>",
+              "destination": "<string>"
+            },
+            "trial": "<boolean>",
+            "trial_end": "<number>"
+          }
+        ],
+        "proration_behavior": "always_invoice"
+      },
+      "subscription": "<string>",
+      "subscription_details": {
+        "billing_cycle_anchor": "now",
+        "billing_mode": {
+          "flexible": {
+            "proration_discounts": "included"
+          },
+          "type": "classic"
+        },
+        "cancel_at": "<number>",
+        "cancel_at_period_end": "<boolean>",
+        "cancel_now": "<boolean>",
+        "default_tax_rates": [
+          "<string>"
+        ],
+        "items": [
+          {
+            "billing_thresholds": {
+              "usage_gte": "<number>"
+            },
+            "clear_usage": "<boolean>",
+            "deleted": "<boolean>",
+            "discounts": [
+              {
+                "coupon": "<string>",
+                "discount": "<string>",
+                "promotion_code": "<string>"
+              }
+            ],
+            "id": "<string>",
+            "metadata": {
+              "<key>": "<string>"
+            },
+            "price": "<string>",
+            "price_data": {
+              "currency": "<string>",
+              "product": "<string>",
+              "recurring": {
+                "interval": "day",
+                "interval_count": "<number>"
+              },
+              "tax_behavior": "exclusive",
+              "unit_amount": "<number>",
+              "unit_amount_decimal": "<string>"
+            },
+            "quantity": "<number>",
+            "tax_rates": [
+              "<string>"
+            ]
+          }
+        ],
+        "proration_behavior": "always_invoice",
+        "proration_date": "<number>",
+        "resume_at": "now",
+        "start_date": "<number>",
+        "trial_end": "now"
+      }
+    }
+  },
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "33c347d422d8",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "9752f0f5b08c",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "ff07f4e044a3",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "a621b0afd755",
+    "method": "POST",
+    "path": "/v1/invoices/create_preview",
+    "query": {}
+  }
+}

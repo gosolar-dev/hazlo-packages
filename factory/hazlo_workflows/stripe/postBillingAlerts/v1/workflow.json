@@ -1,0 +1,61 @@
+{
+  "name": "Create a billing alert",
+  "description": "<p>Creates a billing alert</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postBillingAlerts",
+    "path": "/v1/billing/alerts",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "alert_type": "usage_threshold",
+      "expand": [
+        "<string>"
+      ],
+      "title": "<string>",
+      "usage_threshold": {
+        "filters": [
+          {
+            "customer": "<string>",
+            "type": "customer"
+          }
+        ],
+        "gte": "<number>",
+        "meter": "<string>",
+        "recurrence": "one_time"
+      }
+    }
+  },
+  "inputRequired": [
+    "body"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "35cb7f1951dd",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "21a495d8dda2",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "be9cc39743b4",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "56f07aa3fd4a",
+    "method": "POST",
+    "path": "/v1/billing/alerts",
+    "query": {}
+  }
+}

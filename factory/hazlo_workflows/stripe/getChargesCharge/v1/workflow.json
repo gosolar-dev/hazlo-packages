@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve a charge",
+  "description": "<p>Retrieves the details of a charge that has previously been created. Supply the unique charge ID that was returned from your previous request, and Stripe will return the corresponding charge information. The same information is returned when creating or refunding the charge.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getChargesCharge",
+    "path": "/v1/charges/{charge}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathCharge": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathCharge"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "82d4bf6ed115",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "7f61a82230a8",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "7bb1b47fc2d9",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "7d5130c4a53d",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "7291cdd8b4ba",
+      "left": "/v1/charges/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "1d4f9ff86afb",
+        "keyPath": "pathCharge",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "72df0785bf3a",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

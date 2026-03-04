@@ -1,0 +1,72 @@
+{
+  "name": "Create a VerificationSession",
+  "description": "<p>Creates a VerificationSession object.</p>\n\n<p>After the VerificationSession is created, display a verification modal using the session <code>client_secret</code> or send your users to the session’s <code>url</code>.</p>\n\n<p>If your API key is in test mode, verification checks won’t actually process, though everything else will occur as if in live mode.</p>\n\n<p>Related guide: <a href=\"/docs/identity/verify-identity-documents\">Verify your users’ identity documents</a></p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postIdentityVerificationSessions",
+    "path": "/v1/identity/verification_sessions",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "client_reference_id": "<string>",
+      "expand": [
+        "<string>"
+      ],
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "options": {
+        "document": {
+          "allowed_types": [
+            "driving_license"
+          ],
+          "require_id_number": "<boolean>",
+          "require_live_capture": "<boolean>",
+          "require_matching_selfie": "<boolean>"
+        }
+      },
+      "provided_details": {
+        "email": "<string>",
+        "phone": "<string>"
+      },
+      "related_customer": "<string>",
+      "related_customer_account": "<string>",
+      "related_person": {
+        "account": "<string>",
+        "person": "<string>"
+      },
+      "return_url": "<string>",
+      "type": "document",
+      "verification_flow": "<string>"
+    }
+  },
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "bcae3750819d",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "73398942b4d0",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "0c53b4d2ea02",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "687c3bf64cf3",
+    "method": "POST",
+    "path": "/v1/identity/verification_sessions",
+    "query": {}
+  }
+}

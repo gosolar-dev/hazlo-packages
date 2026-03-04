@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve a personalization design",
+  "description": "<p>Retrieves a personalization design object.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getIssuingPersonalizationDesignsPersonalizationDesign",
+    "path": "/v1/issuing/personalization_designs/{personalization_design}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathPersonalizationDesign": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathPersonalizationDesign"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "b3ebc3d4a048",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "b96d0ee69698",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "0b21372ebec6",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "c28b842a01bf",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "490074f35a46",
+      "left": "/v1/issuing/personalization_designs/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "c762d058d907",
+        "keyPath": "pathPersonalizationDesign",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "f0c5ed1c22ed",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

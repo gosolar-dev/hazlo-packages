@@ -1,0 +1,66 @@
+{
+  "name": "Cancel a schedule",
+  "description": "<p>Cancels a subscription schedule and its associated subscription immediately (if the subscription schedule has an active subscription). A subscription schedule can only be canceled if its status is <code>not_started</code> or <code>active</code>.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postSubscriptionSchedulesScheduleCancel",
+    "path": "/v1/subscription_schedules/{schedule}/cancel",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ],
+      "invoice_now": "<boolean>",
+      "prorate": "<boolean>"
+    },
+    "pathSchedule": "<string>"
+  },
+  "inputRequired": [
+    "pathSchedule"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "c57ad13f75dd",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "5c1d45fb687f",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "5b293b4dea73",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "64331d026e24",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "60548555c7a2",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "13ef4868485d",
+        "left": "/v1/subscription_schedules/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "a733c40046ef",
+          "keyPath": "pathSchedule",
+          "optional": false
+        }
+      },
+      "right": "/cancel"
+    },
+    "query": {}
+  }
+}

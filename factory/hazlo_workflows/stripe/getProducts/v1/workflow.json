@@ -1,0 +1,105 @@
+{
+  "name": "List all products",
+  "description": "<p>Returns a list of your products. The products are returned sorted by creation date, with the most recently created products appearing first.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getProducts",
+    "path": "/v1/products",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryActive": "<boolean>",
+    "queryCreated": "<string>",
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryIds": [],
+    "queryLimit": "<number>",
+    "queryShippable": "<boolean>",
+    "queryStartingAfter": "<string>",
+    "queryUrl": "<string>"
+  },
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "0febd7fa517b",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "316257031142",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "88ee7e590917",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "c1137ccaeefc",
+    "method": "GET",
+    "path": "/v1/products",
+    "query": {
+      "active": {
+        "_pbd_hazlo_type": "var",
+        "id": "ef8f7c823240",
+        "keyPath": "queryActive",
+        "optional": true
+      },
+      "created": {
+        "_pbd_hazlo_type": "var",
+        "id": "22780ccfee66",
+        "keyPath": "queryCreated",
+        "optional": true
+      },
+      "ending_before": {
+        "_pbd_hazlo_type": "var",
+        "id": "4629f76ce8a7",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "9438b9b60ebe",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "ids": {
+        "_pbd_hazlo_type": "var",
+        "id": "0d82bd7a8cd1",
+        "keyPath": "queryIds",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_hazlo_type": "var",
+        "id": "a2fa6543e4ba",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "shippable": {
+        "_pbd_hazlo_type": "var",
+        "id": "815baa2abc04",
+        "keyPath": "queryShippable",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_hazlo_type": "var",
+        "id": "1388a0890327",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      },
+      "url": {
+        "_pbd_hazlo_type": "var",
+        "id": "58dcb3daa857",
+        "keyPath": "queryUrl",
+        "optional": true
+      }
+    }
+  }
+}

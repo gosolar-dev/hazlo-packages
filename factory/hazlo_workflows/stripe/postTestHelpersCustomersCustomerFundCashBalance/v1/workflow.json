@@ -1,0 +1,68 @@
+{
+  "name": "Fund a test mode cash balance",
+  "description": "<p>Create an incoming testmode bank transfer</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postTestHelpersCustomersCustomerFundCashBalance",
+    "path": "/v1/test_helpers/customers/{customer}/fund_cash_balance",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "amount": "<number>",
+      "currency": "<string>",
+      "expand": [
+        "<string>"
+      ],
+      "reference": "<string>"
+    },
+    "pathCustomer": "<string>"
+  },
+  "inputRequired": [
+    "body",
+    "pathCustomer"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "915ca36c51b2",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "ff2e3a6b866d",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "929026d87d52",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "52b3486673ab",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "759ada0fd4ac",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "ef163ab63efc",
+        "left": "/v1/test_helpers/customers/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "962fde4fd636",
+          "keyPath": "pathCustomer",
+          "optional": false
+        }
+      },
+      "right": "/fund_cash_balance"
+    },
+    "query": {}
+  }
+}

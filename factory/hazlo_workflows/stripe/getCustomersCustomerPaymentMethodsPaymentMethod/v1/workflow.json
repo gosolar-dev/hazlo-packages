@@ -1,0 +1,80 @@
+{
+  "name": "Retrieve a Customer's PaymentMethod",
+  "description": "<p>Retrieves a PaymentMethod object for a given Customer.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getCustomersCustomerPaymentMethodsPaymentMethod",
+    "path": "/v1/customers/{customer}/payment_methods/{payment_method}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathCustomer": "<string>",
+    "pathPaymentMethod": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathCustomer",
+    "pathPaymentMethod"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "c03558b950c4",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "af7532c051d7",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "2070ec4b7a24",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "b16508919d36",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "3393b503e06e",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "62e49b5458e7",
+        "left": {
+          "_pbd_hazlo_type": "concat",
+          "id": "7e7b355131a7",
+          "left": "/v1/customers/",
+          "right": {
+            "_pbd_hazlo_type": "var",
+            "id": "20e4eb3c2176",
+            "keyPath": "pathCustomer",
+            "optional": false
+          }
+        },
+        "right": "/payment_methods/"
+      },
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "d12ed23b7cb7",
+        "keyPath": "pathPaymentMethod",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "4640fb544a13",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

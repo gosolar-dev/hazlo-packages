@@ -1,0 +1,83 @@
+{
+  "name": "Report a refund",
+  "description": "<p>Report that the most recent payment attempt on the specified Payment Record\n was refunded.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postPaymentRecordsIdReportRefund",
+    "path": "/v1/payment_records/{id}/report_refund",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "amount": {
+        "currency": "<string>",
+        "value": "<number>"
+      },
+      "expand": [
+        "<string>"
+      ],
+      "initiated_at": "<number>",
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "outcome": "refunded",
+      "processor_details": {
+        "custom": {
+          "refund_reference": "<string>"
+        },
+        "type": "custom"
+      },
+      "refunded": {
+        "refunded_at": "<number>"
+      }
+    },
+    "pathId": "<string>"
+  },
+  "inputRequired": [
+    "body",
+    "pathId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "93951546866d",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "f33d2aff76a8",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "a5a2be866f08",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "e5d76930d8f6",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "81163ffec66e",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "76579d526ca0",
+        "left": "/v1/payment_records/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "eee21123179b",
+          "keyPath": "pathId",
+          "optional": false
+        }
+      },
+      "right": "/report_refund"
+    },
+    "query": {}
+  }
+}

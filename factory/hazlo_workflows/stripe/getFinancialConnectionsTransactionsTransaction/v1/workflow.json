@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve a Transaction",
+  "description": "<p>Retrieves the details of a Financial Connections <code>Transaction</code></p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getFinancialConnectionsTransactionsTransaction",
+    "path": "/v1/financial_connections/transactions/{transaction}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathTransaction": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathTransaction"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "e26af9994377",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "d0696f337d4b",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "6981769fd052",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "1e7c1ae7c77c",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "e46385fdd7e0",
+      "left": "/v1/financial_connections/transactions/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "56f9d3cded09",
+        "keyPath": "pathTransaction",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "fbfe61578318",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

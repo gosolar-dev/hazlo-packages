@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve a dispute",
+  "description": "<p>Retrieves the dispute with the given ID.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getDisputesDispute",
+    "path": "/v1/disputes/{dispute}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathDispute": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathDispute"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "7c86562664ce",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "55f300cb490f",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "bbcab8d1f706",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "9b1de813bff1",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "db3748c7bd8b",
+      "left": "/v1/disputes/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "dcdb232b883b",
+        "keyPath": "pathDispute",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "f6f086162cb0",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

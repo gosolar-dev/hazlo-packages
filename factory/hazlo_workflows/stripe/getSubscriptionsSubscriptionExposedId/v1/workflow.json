@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve a subscription",
+  "description": "<p>Retrieves the subscription with the given ID.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getSubscriptionsSubscriptionExposedId",
+    "path": "/v1/subscriptions/{subscription_exposed_id}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathSubscriptionExposedId": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathSubscriptionExposedId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "44f1d5571ac4",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "5ce754185d38",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "312f69ccf560",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "d67cabecaa74",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "08cfe5f51087",
+      "left": "/v1/subscriptions/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "f9cd2d2102be",
+        "keyPath": "pathSubscriptionExposedId",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "7df13bd61dc9",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

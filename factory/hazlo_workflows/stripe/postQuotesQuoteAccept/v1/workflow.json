@@ -1,0 +1,64 @@
+{
+  "name": "Accept a quote",
+  "description": "<p>Accepts the specified quote.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postQuotesQuoteAccept",
+    "path": "/v1/quotes/{quote}/accept",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ]
+    },
+    "pathQuote": "<string>"
+  },
+  "inputRequired": [
+    "pathQuote"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "b2f9c05e9978",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "1e5d7f73b45a",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "b022a02609b3",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "1c31e59eeaf7",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "1f5ba67303cd",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "13f7856d912b",
+        "left": "/v1/quotes/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "360f48a5daf7",
+          "keyPath": "pathQuote",
+          "optional": false
+        }
+      },
+      "right": "/accept"
+    },
+    "query": {}
+  }
+}

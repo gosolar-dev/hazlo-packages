@@ -1,0 +1,233 @@
+{
+  "name": "Schema All Nodes Playground",
+  "description": "Demonstrates every supported schema node type in one workflow.",
+  "meta": {
+    "provider": "examples",
+    "operationId": "schemaAllNodes",
+    "notes": "api_req and err are present but intentionally gated behind false conditions"
+  },
+  "input": {
+    "name": "Optional name",
+    "numbers": "Optional number array for for_each",
+    "needle": "Optional text for contains checks"
+  },
+  "inputRequired": [],
+  "ruleset": {
+    "literalString": {
+      "_pbd_hazlo_type": "str",
+      "val": "hello"
+    },
+    "literalNumber": {
+      "_pbd_hazlo_type": "num",
+      "val": "42"
+    },
+    "literalBool": {
+      "_pbd_hazlo_type": "bool",
+      "val": true
+    },
+    "rawList": [
+      1,
+      "two",
+      false,
+      {
+        "_pbd_hazlo_type": "num",
+        "val": "3.14"
+      }
+    ],
+    "concat": {
+      "_pbd_hazlo_type": "concat",
+      "left": "hello ",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "keyPath": "name",
+        "optional": true
+      }
+    },
+    "math": {
+      "_pbd_hazlo_type": "math",
+      "op": "+",
+      "left": {
+        "_pbd_hazlo_type": "num",
+        "val": 10
+      },
+      "right": {
+        "_pbd_hazlo_type": "num",
+        "val": "5"
+      }
+    },
+    "round": {
+      "_pbd_hazlo_type": "round",
+      "val": {
+        "_pbd_hazlo_type": "num",
+        "val": "3.14159"
+      },
+      "decimals": 2
+    },
+    "conditionNE": {
+      "_pbd_hazlo_type": "condition",
+      "left": {
+        "_pbd_hazlo_type": "var",
+        "keyPath": "name",
+        "optional": true
+      },
+      "op": "NE",
+      "right": "",
+      "then": "has-name",
+      "else": "missing-name"
+    },
+    "conditionContains": {
+      "_pbd_hazlo_type": "condition",
+      "left": {
+        "_pbd_hazlo_type": "var",
+        "keyPath": "needle",
+        "optional": true
+      },
+      "op": "CT",
+      "right": "sun",
+      "then": "contains-sun",
+      "else": "no-sun"
+    },
+    "switch": {
+      "_pbd_hazlo_type": "switch",
+      "this": {
+        "_pbd_hazlo_type": "var",
+        "keyPath": "name",
+        "optional": true
+      },
+      "cases": [
+        {
+          "_pbd_hazlo_type": "case",
+          "that": "",
+          "then": "empty-name"
+        },
+        {
+          "_pbd_hazlo_type": "is",
+          "that": "Ada",
+          "then": "matched-ada"
+        }
+      ],
+      "default": "other-name"
+    },
+    "exists": {
+      "_pbd_hazlo_type": "does_exist",
+      "var": {
+        "_pbd_hazlo_type": "var",
+        "keyPath": "numbers",
+        "optional": true
+      },
+      "then": "numbers-exist",
+      "else": "numbers-missing"
+    },
+    "remember": {
+      "_pbd_hazlo_type": "remember",
+      "as": {
+        "_pbd_hazlo_type": "var",
+        "keyPath": "memo.savedName",
+        "optional": false
+      },
+      "val": {
+        "_pbd_hazlo_type": "var",
+        "keyPath": "name",
+        "optional": true
+      },
+      "then": {
+        "_pbd_hazlo_type": "var",
+        "keyPath": "memo.savedName",
+        "optional": true
+      }
+    },
+    "forEach": {
+      "_pbd_hazlo_type": "for_each",
+      "var": {
+        "_pbd_hazlo_type": "var",
+        "keyPath": "numbers",
+        "optional": true
+      },
+      "as": {
+        "_pbd_hazlo_type": "var",
+        "keyPath": "item",
+        "optional": false
+      },
+      "do": {
+        "_pbd_hazlo_type": "math",
+        "op": "*",
+        "left": {
+          "_pbd_hazlo_type": "var",
+          "keyPath": "item",
+          "optional": false
+        },
+        "right": 2
+      },
+      "then": {
+        "_pbd_hazlo_type": "str",
+        "val": "done-loop"
+      }
+    },
+    "subworkByWorkflow": {
+      "_pbd_hazlo_type": "subwork",
+      "workflow": "examples/schemaHelper/v1",
+      "payload": {
+        "name": {
+          "_pbd_hazlo_type": "var",
+          "keyPath": "name",
+          "optional": true
+        }
+      }
+    },
+    "subworkByWorkflowId": {
+      "_pbd_hazlo_type": "subwork",
+      "workflowId": {
+        "_pbd_hazlo_type": "str",
+        "val": "examples/schemaHelper/v1"
+      },
+      "payload": {
+        "name": "from-workflowId"
+      }
+    },
+    "apiReqSkipped": {
+      "_pbd_hazlo_type": "condition",
+      "left": false,
+      "op": "EQ",
+      "right": true,
+      "then": {
+        "_pbd_hazlo_type": "api_req",
+        "host": "https://httpbin.org",
+        "path": "/anything",
+        "query": {
+          "x": "1",
+          "multi": [
+            "a",
+            "b"
+          ]
+        },
+        "method": "POST",
+        "body": {
+          "note": "this api_req branch is intentionally not executed"
+        },
+        "headers": {
+          "X-Demo": "schema"
+        }
+      },
+      "else": "api_req-not-executed"
+    },
+    "errorNodeSkipped": {
+      "_pbd_hazlo_type": "condition",
+      "left": 1,
+      "op": "EQ",
+      "right": 2,
+      "then": {
+        "_pbd_hazlo_type": "err",
+        "context": {
+          "reason": "example err node"
+        }
+      },
+      "else": "err-not-executed"
+    },
+    "ignoreNode": {
+      "_pbd_hazlo_type": "ignore"
+    }
+  },
+  "output": {
+    "note": "This workflow is for schema coverage and demos, not business logic"
+  }
+}

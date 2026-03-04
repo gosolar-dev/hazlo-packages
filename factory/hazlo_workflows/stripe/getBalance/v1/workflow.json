@@ -1,0 +1,49 @@
+{
+  "name": "Retrieve balance",
+  "description": "<p>Retrieves the current account balance, based on the authentication that was used to make the request.\n For a sample request, see <a href=\"/docs/connect/account-balances#accounting-for-negative-balances\">Accounting for negative balances</a>.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getBalance",
+    "path": "/v1/balance",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryExpand": []
+  },
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "e4fb1a982ff1",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "1c6fe42fbd45",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "26adf87569f8",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "f89344eb3a4e",
+    "method": "GET",
+    "path": "/v1/balance",
+    "query": {
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "7bc56e63cb30",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

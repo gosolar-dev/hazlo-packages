@@ -1,0 +1,89 @@
+{
+  "name": "List active subscriptions",
+  "description": "<p>You can see a list of the customer’s active subscriptions. Note that the 10 most recent active subscriptions are always available by default on the customer object. If you need more than those 10, you can use the limit and starting_after parameters to page through additional subscriptions.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getCustomersCustomerSubscriptions",
+    "path": "/v1/customers/{customer}/subscriptions",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathCustomer": "<string>",
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryLimit": "<number>",
+    "queryStartingAfter": "<string>"
+  },
+  "inputRequired": [
+    "pathCustomer"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "55ef26779ddd",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "a88cb4248df4",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "1024bd759537",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "809f0962d540",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "93f93e944118",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "0c5471b3d1a5",
+        "left": "/v1/customers/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "969c210ff690",
+          "keyPath": "pathCustomer",
+          "optional": false
+        }
+      },
+      "right": "/subscriptions"
+    },
+    "query": {
+      "ending_before": {
+        "_pbd_hazlo_type": "var",
+        "id": "27e9f1abf09c",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "f306ad7d21c2",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_hazlo_type": "var",
+        "id": "288f1768098a",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_hazlo_type": "var",
+        "id": "6fd8f4a886df",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      }
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "name": "Create a Customer tax ID",
+  "description": "<p>Creates a new <code>tax_id</code> object for a customer.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postCustomersCustomerTaxIds",
+    "path": "/v1/customers/{customer}/tax_ids",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ],
+      "type": "ad_nrt",
+      "value": "<string>"
+    },
+    "pathCustomer": "<string>"
+  },
+  "inputRequired": [
+    "body",
+    "pathCustomer"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "15a7f6058fd3",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "1d7af538c126",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "e7f978199bc9",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "3274239b55f2",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "e8deb9f2fc01",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "f096242c50bc",
+        "left": "/v1/customers/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "dc78195474cc",
+          "keyPath": "pathCustomer",
+          "optional": false
+        }
+      },
+      "right": "/tax_ids"
+    },
+    "query": {}
+  }
+}

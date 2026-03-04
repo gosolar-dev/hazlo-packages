@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve a promotion code",
+  "description": "<p>Retrieves the promotion code with the given ID. In order to retrieve a promotion code by the customer-facing <code>code</code> use <a href=\"/docs/api/promotion_codes/list\">list</a> with the desired <code>code</code>.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getPromotionCodesPromotionCode",
+    "path": "/v1/promotion_codes/{promotion_code}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathPromotionCode": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathPromotionCode"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "14d930d6d772",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "41f87e3a5292",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "e5b05bc1a9d1",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "e7ebf2cbcf4e",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "92860c878538",
+      "left": "/v1/promotion_codes/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "d412f5b629c0",
+        "keyPath": "pathPromotionCode",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "09c9f8e2fd6f",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

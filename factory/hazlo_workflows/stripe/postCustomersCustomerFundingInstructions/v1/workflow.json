@@ -1,0 +1,76 @@
+{
+  "name": "Create or retrieve funding instructions for a customer cash balance",
+  "description": "<p>Retrieve funding instructions for a customer cash balance. If funding instructions do not yet exist for the customer, new\nfunding instructions will be created. If funding instructions have already been created for a given customer, the same\nfunding instructions will be retrieved. In other words, we will return the same funding instructions each time.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postCustomersCustomerFundingInstructions",
+    "path": "/v1/customers/{customer}/funding_instructions",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "bank_transfer": {
+        "eu_bank_transfer": {
+          "country": "<string>"
+        },
+        "requested_address_types": [
+          "iban"
+        ],
+        "type": "eu_bank_transfer"
+      },
+      "currency": "<string>",
+      "expand": [
+        "<string>"
+      ],
+      "funding_type": "bank_transfer"
+    },
+    "pathCustomer": "<string>"
+  },
+  "inputRequired": [
+    "body",
+    "pathCustomer"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "9362bb3776e4",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "73b9b6f25bf1",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "063661eb5599",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "2a64dff682bc",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "9b0cb9cca59a",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "704c26831544",
+        "left": "/v1/customers/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "cb0cf683bf00",
+          "keyPath": "pathCustomer",
+          "optional": false
+        }
+      },
+      "right": "/funding_instructions"
+    },
+    "query": {}
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "name": "Close a FinancialAccount",
+  "description": "<p>Closes a FinancialAccount. A FinancialAccount can only be closed if it has a zero balance, has no pending InboundTransfers, and has canceled all attached Issuing cards.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postTreasuryFinancialAccountsFinancialAccountClose",
+    "path": "/v1/treasury/financial_accounts/{financial_account}/close",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ],
+      "forwarding_settings": {
+        "financial_account": "<string>",
+        "payment_method": "<string>",
+        "type": "financial_account"
+      }
+    },
+    "pathFinancialAccount": "<string>"
+  },
+  "inputRequired": [
+    "pathFinancialAccount"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "739e20560854",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "c644c9a15f94",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "5da8cc3f1e28",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "f02083a9f362",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "1220a615e493",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "aade075f0f74",
+        "left": "/v1/treasury/financial_accounts/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "25ebfea10455",
+          "keyPath": "pathFinancialAccount",
+          "optional": false
+        }
+      },
+      "right": "/close"
+    },
+    "query": {}
+  }
+}

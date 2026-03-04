@@ -1,0 +1,72 @@
+{
+  "name": "Remove a feature from a product",
+  "description": "<p>Deletes the feature attachment to a product</p>",
+  "meta": {
+    "method": "DELETE",
+    "operationId": "deleteProductsProductFeaturesId",
+    "path": "/v1/products/{product}/features/{id}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathId": "<string>",
+    "pathProduct": "<string>"
+  },
+  "inputRequired": [
+    "pathId",
+    "pathProduct"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "8a8042580912",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "fedc09945775",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "8a13eb0c1269",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "a2d5fc7fdaed",
+    "method": "DELETE",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "37d0f51dbc5a",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "0c5daf5bfe64",
+        "left": {
+          "_pbd_hazlo_type": "concat",
+          "id": "a7d4b9e07aa5",
+          "left": "/v1/products/",
+          "right": {
+            "_pbd_hazlo_type": "var",
+            "id": "ab86f924018d",
+            "keyPath": "pathProduct",
+            "optional": false
+          }
+        },
+        "right": "/features/"
+      },
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "d3c274d89e78",
+        "keyPath": "pathId",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

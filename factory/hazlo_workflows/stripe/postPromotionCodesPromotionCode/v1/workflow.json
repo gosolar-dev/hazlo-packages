@@ -1,0 +1,70 @@
+{
+  "name": "Update a promotion code",
+  "description": "<p>Updates the specified promotion code by setting the values of the parameters passed. Most fields are, by design, not editable.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postPromotionCodesPromotionCode",
+    "path": "/v1/promotion_codes/{promotion_code}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "active": "<boolean>",
+      "expand": [
+        "<string>"
+      ],
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "restrictions": {
+        "currency_options": {
+          "<key>": {
+            "minimum_amount": "<number>"
+          }
+        }
+      }
+    },
+    "pathPromotionCode": "<string>"
+  },
+  "inputRequired": [
+    "pathPromotionCode"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "18f0e5b5a8a9",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "5963da213fad",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "7c2b4a6f2ecb",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "bf2e89ab0e7b",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "8208a6a57409",
+      "left": "/v1/promotion_codes/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "98be54d09d56",
+        "keyPath": "pathPromotionCode",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

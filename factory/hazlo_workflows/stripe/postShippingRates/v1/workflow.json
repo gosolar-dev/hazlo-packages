@@ -1,0 +1,75 @@
+{
+  "name": "Create a shipping rate",
+  "description": "<p>Creates a new shipping rate object.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postShippingRates",
+    "path": "/v1/shipping_rates",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "delivery_estimate": {
+        "maximum": {
+          "unit": "business_day",
+          "value": "<number>"
+        },
+        "minimum": {
+          "unit": "business_day",
+          "value": "<number>"
+        }
+      },
+      "display_name": "<string>",
+      "expand": [
+        "<string>"
+      ],
+      "fixed_amount": {
+        "amount": "<number>",
+        "currency": "<string>",
+        "currency_options": {
+          "<key>": {
+            "amount": "<number>",
+            "tax_behavior": "exclusive"
+          }
+        }
+      },
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "tax_behavior": "exclusive",
+      "tax_code": "<string>",
+      "type": "fixed_amount"
+    }
+  },
+  "inputRequired": [
+    "body"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "873af53b2cbf",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "15598c979fc4",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "f23b6c05b8c8",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "07d733e815d7",
+    "method": "POST",
+    "path": "/v1/shipping_rates",
+    "query": {}
+  }
+}

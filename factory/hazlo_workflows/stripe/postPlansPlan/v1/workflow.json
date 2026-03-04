@@ -1,0 +1,66 @@
+{
+  "name": "Update a plan",
+  "description": "<p>Updates the specified plan by setting the values of the parameters passed. Any parameters not provided are left unchanged. By design, you cannot change a plan’s ID, amount, currency, or billing cycle.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postPlansPlan",
+    "path": "/v1/plans/{plan}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "active": "<boolean>",
+      "expand": [
+        "<string>"
+      ],
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "nickname": "<string>",
+      "product": "<string>",
+      "trial_period_days": "<number>"
+    },
+    "pathPlan": "<string>"
+  },
+  "inputRequired": [
+    "pathPlan"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "1f73889d9908",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "86389d61b31d",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "d733749fc327",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "e0ef51550375",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "688892abc7f4",
+      "left": "/v1/plans/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "b8c3fd98a542",
+        "keyPath": "pathPlan",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

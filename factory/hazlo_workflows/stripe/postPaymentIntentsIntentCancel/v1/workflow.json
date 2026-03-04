@@ -1,0 +1,65 @@
+{
+  "name": "Cancel a PaymentIntent",
+  "description": "<p>You can cancel a PaymentIntent object when it’s in one of these statuses: <code>requires_payment_method</code>, <code>requires_capture</code>, <code>requires_confirmation</code>, <code>requires_action</code> or, <a href=\"/docs/payments/intents\">in rare cases</a>, <code>processing</code>. </p>\n\n<p>After it’s canceled, no additional charges are made by the PaymentIntent and any operations on the PaymentIntent fail with an error. For PaymentIntents with a <code>status</code> of <code>requires_capture</code>, the remaining <code>amount_capturable</code> is automatically refunded. </p>\n\n<p>You can’t cancel the PaymentIntent for a Checkout Session. <a href=\"/docs/api/checkout/sessions/expire\">Expire the Checkout Session</a> instead.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postPaymentIntentsIntentCancel",
+    "path": "/v1/payment_intents/{intent}/cancel",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "cancellation_reason": "abandoned",
+      "expand": [
+        "<string>"
+      ]
+    },
+    "pathIntent": "<string>"
+  },
+  "inputRequired": [
+    "pathIntent"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "7ba134ec2308",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "4837085478d0",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "b5f02bb2295c",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "c564c3f53f64",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "99a4fb384fc2",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "719dc2e277a0",
+        "left": "/v1/payment_intents/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "de1165edc80e",
+          "keyPath": "pathIntent",
+          "optional": false
+        }
+      },
+      "right": "/cancel"
+    },
+    "query": {}
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "name": "Report payment attempt failed",
+  "description": "<p>Report that the most recent payment attempt on the specified Payment Record\n failed or errored.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postPaymentRecordsIdReportPaymentAttemptFailed",
+    "path": "/v1/payment_records/{id}/report_payment_attempt_failed",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ],
+      "failed_at": "<number>",
+      "metadata": {
+        "<key>": "<string>"
+      }
+    },
+    "pathId": "<string>"
+  },
+  "inputRequired": [
+    "body",
+    "pathId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "dec9f05bf060",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "e67291ab5745",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "d853499b0dd9",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "ce5492245a2d",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "772a5ea54a7c",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "623643a431c1",
+        "left": "/v1/payment_records/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "f93292b23b3f",
+          "keyPath": "pathId",
+          "optional": false
+        }
+      },
+      "right": "/report_payment_attempt_failed"
+    },
+    "query": {}
+  }
+}

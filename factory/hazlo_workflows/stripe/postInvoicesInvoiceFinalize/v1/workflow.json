@@ -1,0 +1,65 @@
+{
+  "name": "Finalize an invoice",
+  "description": "<p>Stripe automatically finalizes drafts before sending and attempting payment on invoices. However, if you’d like to finalize a draft invoice manually, you can do so using this method.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postInvoicesInvoiceFinalize",
+    "path": "/v1/invoices/{invoice}/finalize",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "auto_advance": "<boolean>",
+      "expand": [
+        "<string>"
+      ]
+    },
+    "pathInvoice": "<string>"
+  },
+  "inputRequired": [
+    "pathInvoice"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "3802e1326802",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "19f0b477d2b4",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "e98b508c8b53",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "d754ff9a9b05",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "2f063b11fe0b",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "c6feb2c314d6",
+        "left": "/v1/invoices/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "7f3ea7491335",
+          "keyPath": "pathInvoice",
+          "optional": false
+        }
+      },
+      "right": "/finalize"
+    },
+    "query": {}
+  }
+}

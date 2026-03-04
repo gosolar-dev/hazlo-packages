@@ -1,0 +1,70 @@
+{
+  "name": "Create a transfer reversal",
+  "description": "<p>When you create a new reversal, you must specify a transfer to create it on.</p>\n\n<p>When reversing transfers, you can optionally reverse part of the transfer. You can do so as many times as you wish until the entire transfer has been reversed.</p>\n\n<p>Once entirely reversed, a transfer can’t be reversed again. This method will return an error when called on an already-reversed transfer, or when trying to reverse more money than is left on a transfer.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postTransfersIdReversals",
+    "path": "/v1/transfers/{id}/reversals",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "amount": "<number>",
+      "description": "<string>",
+      "expand": [
+        "<string>"
+      ],
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "refund_application_fee": "<boolean>"
+    },
+    "pathId": "<string>"
+  },
+  "inputRequired": [
+    "pathId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "e3fb1df0ca97",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "98231133ee38",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "53d7775f0967",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "712d5edbb70e",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "7fc20d10a608",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "9ff85e375f8f",
+        "left": "/v1/transfers/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "6dc73e73bee7",
+          "keyPath": "pathId",
+          "optional": false
+        }
+      },
+      "right": "/reversals"
+    },
+    "query": {}
+  }
+}

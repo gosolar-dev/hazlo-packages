@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "v1",
+  "package": "examples",
+  "version": "v1",
+  "provider": "examples",
+  "mode": "full",
+  "description": "Factory example workflows used to validate local authoring, iteration, and publish pipeline behavior.",
+  "defaultInstallRefs": [
+    "examples/schemaHelper/v1",
+    "examples/schemaAllNodes/v1"
+  ],
+  "env": [],
+  "homepage": "https://hazlo.dev",
+  "license": "MIT",
+  "tags": [
+    "examples",
+    "factory",
+    "pipeline"
+  ],
+  "smokeTests": [
+    {
+      "name": "Schema helper deterministic output",
+      "ref": "examples/schemaHelper/v1",
+      "input": "../../../fixtures/inputs/examples.schemaHelper.ada.json",
+      "expected": "../../../fixtures/expected/examples.schemaHelper.ada.json"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "name": "Create an Onboarding Link",
+  "description": "<p>Creates a new <code>OnboardingLink</code> object that contains a redirect_url used for onboarding onto Tap to Pay on iPhone.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postTerminalOnboardingLinks",
+    "path": "/v1/terminal/onboarding_links",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ],
+      "link_options": {
+        "apple_terms_and_conditions": {
+          "allow_relinking": "<boolean>",
+          "merchant_display_name": "<string>"
+        }
+      },
+      "link_type": "apple_terms_and_conditions",
+      "on_behalf_of": "<string>"
+    }
+  },
+  "inputRequired": [
+    "body"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "9c20e18c247a",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "29434fb32fb9",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "c43802af2413",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "221f98154a0e",
+    "method": "POST",
+    "path": "/v1/terminal/onboarding_links",
+    "query": {}
+  }
+}

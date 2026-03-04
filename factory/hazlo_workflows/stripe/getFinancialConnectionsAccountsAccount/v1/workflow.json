@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve an Account",
+  "description": "<p>Retrieves the details of an Financial Connections <code>Account</code>.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getFinancialConnectionsAccountsAccount",
+    "path": "/v1/financial_connections/accounts/{account}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathAccount": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathAccount"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "9905f324721b",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "02c030988d69",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "e9c9aaf7ce12",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "8050c4c24cb8",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "0eb3759484d8",
+      "left": "/v1/financial_connections/accounts/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "cbb246cec7b7",
+        "keyPath": "pathAccount",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_hazlo_type": "var",
+        "id": "e1845e711f16",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

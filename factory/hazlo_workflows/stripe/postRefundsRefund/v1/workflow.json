@@ -1,0 +1,62 @@
+{
+  "name": "Update a refund",
+  "description": "<p>Updates the refund that you specify by setting the values of the passed parameters. Any parameters that you don’t provide remain unchanged.</p>\n\n<p>This request only accepts <code>metadata</code> as an argument.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postRefundsRefund",
+    "path": "/v1/refunds/{refund}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ],
+      "metadata": {
+        "<key>": "<string>"
+      }
+    },
+    "pathRefund": "<string>"
+  },
+  "inputRequired": [
+    "pathRefund"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "11f3fe26d0c6",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "ee641a272b08",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "90ffffd89fb1",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "06731d8d09dd",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "c967960c95ac",
+      "left": "/v1/refunds/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "5b7209af34e2",
+        "keyPath": "pathRefund",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "name": "Update an application fee refund",
+  "description": "<p>Updates the specified application fee refund by setting the values of the parameters passed. Any parameters not provided will be left unchanged.</p>\n\n<p>This request only accepts metadata as an argument.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postApplicationFeesFeeRefundsId",
+    "path": "/v1/application_fees/{fee}/refunds/{id}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ],
+      "metadata": {
+        "<key>": "<string>"
+      }
+    },
+    "pathFee": "<string>",
+    "pathId": "<string>"
+  },
+  "inputRequired": [
+    "pathFee",
+    "pathId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "a0a9e11bc941",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "1ab1636b0772",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "45d5a66aa385",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "616c66fc7353",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "fe452aee92fd",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "1a76ad2f9d2e",
+        "left": {
+          "_pbd_hazlo_type": "concat",
+          "id": "fff008ef4aad",
+          "left": "/v1/application_fees/",
+          "right": {
+            "_pbd_hazlo_type": "var",
+            "id": "ffd6f1b83022",
+            "keyPath": "pathFee",
+            "optional": false
+          }
+        },
+        "right": "/refunds/"
+      },
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "f255667a3e6c",
+        "keyPath": "pathId",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

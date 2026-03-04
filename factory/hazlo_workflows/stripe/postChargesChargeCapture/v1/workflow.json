@@ -1,0 +1,74 @@
+{
+  "name": "Capture a payment",
+  "description": "<p>Capture the payment of an existing, uncaptured charge that was created with the <code>capture</code> option set to false.</p>\n\n<p>Uncaptured payments expire a set number of days after they are created (<a href=\"/docs/charges/placing-a-hold\">7 by default</a>), after which they are marked as refunded and capture attempts will fail.</p>\n\n<p>Don’t use this method to capture a PaymentIntent-initiated charge. Use <a href=\"/docs/api/payment_intents/capture\">Capture a PaymentIntent</a>.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postChargesChargeCapture",
+    "path": "/v1/charges/{charge}/capture",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "amount": "<number>",
+      "application_fee": "<number>",
+      "application_fee_amount": "<number>",
+      "expand": [
+        "<string>"
+      ],
+      "receipt_email": "<string>",
+      "statement_descriptor": "<string>",
+      "statement_descriptor_suffix": "<string>",
+      "transfer_data": {
+        "amount": "<number>"
+      },
+      "transfer_group": "<string>"
+    },
+    "pathCharge": "<string>"
+  },
+  "inputRequired": [
+    "pathCharge"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": {
+      "_pbd_hazlo_type": "var",
+      "id": "aa9c5e091eed",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "dc9fdc25e2d2",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "3b63f671cb4c",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "3bb1a5a47c12",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "924396b43dc3",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "e8ef536abd76",
+        "left": "/v1/charges/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "cea8a64ea251",
+          "keyPath": "pathCharge",
+          "optional": false
+        }
+      },
+      "right": "/capture"
+    },
+    "query": {}
+  }
+}
