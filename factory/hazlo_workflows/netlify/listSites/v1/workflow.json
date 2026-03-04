@@ -1,0 +1,63 @@
+{
+  "name": "listSites",
+  "description": "**Note:** Environment variable keys and values will soon be moved from `build_settings.env` and `repo.env` to a new endpoint. Please use [getEnvVars](#tag/environmentVariables/operation/getEnvVars) to retrieve site environment variables.",
+  "meta": {
+    "method": "GET",
+    "operationId": "listSites",
+    "path": "/sites"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "queryFilter": "<string>",
+    "queryName": "<string>",
+    "queryPage": "<string>",
+    "queryPerPage": "<string>"
+  },
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "94ea01add738",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "6abbdac5e99d",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.netlify.com",
+    "id": "db1cdde1700a",
+    "method": "GET",
+    "path": "/api/v1/sites",
+    "query": {
+      "filter": {
+        "_pbd_hazlo_type": "var",
+        "id": "3213763d02bf",
+        "keyPath": "queryFilter",
+        "optional": true
+      },
+      "name": {
+        "_pbd_hazlo_type": "var",
+        "id": "1e13a3eb07b9",
+        "keyPath": "queryName",
+        "optional": true
+      },
+      "page": {
+        "_pbd_hazlo_type": "var",
+        "id": "b3f31b1461c9",
+        "keyPath": "queryPage",
+        "optional": true
+      },
+      "per_page": {
+        "_pbd_hazlo_type": "var",
+        "id": "487b0c659cf6",
+        "keyPath": "queryPerPage",
+        "optional": true
+      }
+    }
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "name": "deleteServiceInstance",
+  "description": "deleteServiceInstance",
+  "meta": {
+    "method": "DELETE",
+    "operationId": "deleteServiceInstance",
+    "path": "/sites/{site_id}/services/{addon}/instances/{instance_id}"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "pathAddon": "<string>",
+    "pathInstanceId": "<string>",
+    "pathSiteId": "<string>"
+  },
+  "inputRequired": [
+    "pathAddon",
+    "pathInstanceId",
+    "pathSiteId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "38fe05ab173e",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "995792702265",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.netlify.com",
+    "id": "3a7a4a520848",
+    "method": "DELETE",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "822c0ab18a5d",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "31c9c08c7680",
+        "left": {
+          "_pbd_hazlo_type": "concat",
+          "id": "ef9d08214e3a",
+          "left": {
+            "_pbd_hazlo_type": "concat",
+            "id": "427449b14047",
+            "left": {
+              "_pbd_hazlo_type": "concat",
+              "id": "cb4891b8b0ac",
+              "left": "/api/v1/sites/",
+              "right": {
+                "_pbd_hazlo_type": "var",
+                "id": "b19007925548",
+                "keyPath": "pathSiteId",
+                "optional": false
+              }
+            },
+            "right": "/services/"
+          },
+          "right": {
+            "_pbd_hazlo_type": "var",
+            "id": "b9d7606f85bf",
+            "keyPath": "pathAddon",
+            "optional": false
+          }
+        },
+        "right": "/instances/"
+      },
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "0153d124dee3",
+        "keyPath": "pathInstanceId",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "name": "listAccountAuditEvents",
+  "description": "listAccountAuditEvents",
+  "meta": {
+    "method": "GET",
+    "operationId": "listAccountAuditEvents",
+    "path": "/accounts/{account_id}/audit"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "pathAccountId": "<string>",
+    "queryLogType": "<string>",
+    "queryPage": "<string>",
+    "queryPerPage": "<string>",
+    "queryQuery": "<string>"
+  },
+  "inputRequired": [
+    "pathAccountId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "a5883ba23163",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "a100a1748766",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.netlify.com",
+    "id": "b05cd667920b",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "3f0588049c94",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "37e6a0b08c2c",
+        "left": "/api/v1/accounts/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "cfb747008abf",
+          "keyPath": "pathAccountId",
+          "optional": false
+        }
+      },
+      "right": "/audit"
+    },
+    "query": {
+      "log_type": {
+        "_pbd_hazlo_type": "var",
+        "id": "f74f850f35a2",
+        "keyPath": "queryLogType",
+        "optional": true
+      },
+      "page": {
+        "_pbd_hazlo_type": "var",
+        "id": "76d1e5f1c67c",
+        "keyPath": "queryPage",
+        "optional": true
+      },
+      "per_page": {
+        "_pbd_hazlo_type": "var",
+        "id": "4d1bed3bd0ea",
+        "keyPath": "queryPerPage",
+        "optional": true
+      },
+      "query": {
+        "_pbd_hazlo_type": "var",
+        "id": "9b54fbfe5f5e",
+        "keyPath": "queryQuery",
+        "optional": true
+      }
+    }
+  }
+}

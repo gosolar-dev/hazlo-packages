@@ -1,0 +1,53 @@
+{
+  "name": "unlockDeploy",
+  "description": "unlockDeploy",
+  "meta": {
+    "method": "POST",
+    "operationId": "unlockDeploy",
+    "path": "/deploys/{deploy_id}/unlock"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "pathDeployId": "<string>"
+  },
+  "inputRequired": [
+    "pathDeployId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "0a65a148685d",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "c910889180e0",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.netlify.com",
+    "id": "2e989ed76cb0",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "dd066ce5d69f",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "2a08c9678e4e",
+        "left": "/api/v1/deploys/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "71e561d1d6f3",
+          "keyPath": "pathDeployId",
+          "optional": false
+        }
+      },
+      "right": "/unlock"
+    },
+    "query": {}
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "name": "deleteSite",
+  "description": "deleteSite",
+  "meta": {
+    "method": "DELETE",
+    "operationId": "deleteSite",
+    "path": "/sites/{site_id}"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "pathSiteId": "<string>"
+  },
+  "inputRequired": [
+    "pathSiteId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "f3fdd2a4a82b",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "b08d07b44ee4",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.netlify.com",
+    "id": "82ca4d7bacbc",
+    "method": "DELETE",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "73c61e3b8fb1",
+      "left": "/api/v1/sites/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "ad12210b8585",
+        "keyPath": "pathSiteId",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

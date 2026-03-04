@@ -1,0 +1,65 @@
+{
+  "name": "getSiteAssetInfo",
+  "description": "getSiteAssetInfo",
+  "meta": {
+    "method": "GET",
+    "operationId": "getSiteAssetInfo",
+    "path": "/sites/{site_id}/assets/{asset_id}"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "pathAssetId": "<string>",
+    "pathSiteId": "<string>"
+  },
+  "inputRequired": [
+    "pathAssetId",
+    "pathSiteId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "a34be4d40b18",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "3cc6c59a8fb1",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.netlify.com",
+    "id": "48d30d894026",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "2c7f2e8e097d",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "7e428492c9e9",
+        "left": {
+          "_pbd_hazlo_type": "concat",
+          "id": "7e2189564a90",
+          "left": "/api/v1/sites/",
+          "right": {
+            "_pbd_hazlo_type": "var",
+            "id": "490d6e34d659",
+            "keyPath": "pathSiteId",
+            "optional": false
+          }
+        },
+        "right": "/assets/"
+      },
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "816ee1b4cb7f",
+        "keyPath": "pathAssetId",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

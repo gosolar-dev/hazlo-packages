@@ -1,0 +1,53 @@
+{
+  "name": "createPluginRun",
+  "description": "This is an internal-only endpoint.",
+  "meta": {
+    "method": "POST",
+    "operationId": "createPluginRun",
+    "path": "/deploys/{deploy_id}/plugin_runs"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "pathDeployId": "<string>"
+  },
+  "inputRequired": [
+    "pathDeployId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "2fd4376ae181",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "f564b4667e23",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.netlify.com",
+    "id": "8a17e75d068e",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "f8d5fa8829ab",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "c2ca2f8951b3",
+        "left": "/api/v1/deploys/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "cea95ba6ad42",
+          "keyPath": "pathDeployId",
+          "optional": false
+        }
+      },
+      "right": "/plugin_runs"
+    },
+    "query": {}
+  }
+}

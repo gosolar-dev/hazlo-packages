@@ -1,0 +1,48 @@
+{
+  "name": "updateHook",
+  "description": "updateHook",
+  "meta": {
+    "method": "PUT",
+    "operationId": "updateHook",
+    "path": "/hooks/{hook_id}"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "pathHookId": "<string>"
+  },
+  "inputRequired": [
+    "pathHookId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "9f4998c0c0b3",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "4bcaf9645567",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.netlify.com",
+    "id": "e9ec6e0e07f0",
+    "method": "PUT",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "79fed533192d",
+      "left": "/api/v1/hooks/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "9fbc4d2368a7",
+        "keyPath": "pathHookId",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

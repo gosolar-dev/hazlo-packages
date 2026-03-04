@@ -1,0 +1,65 @@
+{
+  "name": "updatePlugin",
+  "description": "This is an internal-only endpoint.",
+  "meta": {
+    "method": "PUT",
+    "operationId": "updatePlugin",
+    "path": "/sites/{site_id}/plugins/{package}"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "pathPackage": "<string>",
+    "pathSiteId": "<string>"
+  },
+  "inputRequired": [
+    "pathPackage",
+    "pathSiteId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "4efd4334fc91",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "c0ce5d8bf3ca",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.netlify.com",
+    "id": "446fea583a8d",
+    "method": "PUT",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "19e75a45d9f2",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "4a98d7425584",
+        "left": {
+          "_pbd_hazlo_type": "concat",
+          "id": "21f8602d6eae",
+          "left": "/api/v1/sites/",
+          "right": {
+            "_pbd_hazlo_type": "var",
+            "id": "22ab699fb7d1",
+            "keyPath": "pathSiteId",
+            "optional": false
+          }
+        },
+        "right": "/plugins/"
+      },
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "d6339d5a5811",
+        "keyPath": "pathPackage",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

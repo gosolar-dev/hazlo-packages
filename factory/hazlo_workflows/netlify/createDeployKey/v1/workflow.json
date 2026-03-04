@@ -1,0 +1,34 @@
+{
+  "name": "createDeployKey",
+  "description": "createDeployKey",
+  "meta": {
+    "method": "POST",
+    "operationId": "createDeployKey",
+    "path": "/deploy_keys"
+  },
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "6dad422e418f",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "8b2f4222564b",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.netlify.com",
+    "id": "c036cf2cc0ce",
+    "method": "POST",
+    "path": "/api/v1/deploy_keys",
+    "query": {}
+  },
+  "input": {
+    "authBearerAuth": "<string>"
+  }
+}

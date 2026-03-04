@@ -1,0 +1,90 @@
+{
+  "name": "deleteEnvVarValue",
+  "description": "Deletes a specific environment variable value. To use this endpoint, your site must no longer be using the <a href=\"https://docs.netlify.com/environment-variables/classic-experience/\">classic environment variables experience</a>.  Migrate now with the Netlify UI.",
+  "meta": {
+    "method": "DELETE",
+    "operationId": "deleteEnvVarValue",
+    "path": "/accounts/{account_id}/env/{key}/value/{id}"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "pathAccountId": "<string>",
+    "pathId": "<string>",
+    "pathKey": "<string>",
+    "querySiteId": "<string>"
+  },
+  "inputRequired": [
+    "pathAccountId",
+    "pathId",
+    "pathKey"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "923365e1f934",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "17fb8c5ee89d",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.netlify.com",
+    "id": "f0eb82b48e34",
+    "method": "DELETE",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "0c5557a13d4a",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "1243917df211",
+        "left": {
+          "_pbd_hazlo_type": "concat",
+          "id": "cb0cd7b8098a",
+          "left": {
+            "_pbd_hazlo_type": "concat",
+            "id": "55d28d159532",
+            "left": {
+              "_pbd_hazlo_type": "concat",
+              "id": "03f6dc0b4900",
+              "left": "/api/v1/accounts/",
+              "right": {
+                "_pbd_hazlo_type": "var",
+                "id": "29721008bc29",
+                "keyPath": "pathAccountId",
+                "optional": false
+              }
+            },
+            "right": "/env/"
+          },
+          "right": {
+            "_pbd_hazlo_type": "var",
+            "id": "c147c89c5559",
+            "keyPath": "pathKey",
+            "optional": false
+          }
+        },
+        "right": "/value/"
+      },
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "9911c68d3750",
+        "keyPath": "pathId",
+        "optional": false
+      }
+    },
+    "query": {
+      "site_id": {
+        "_pbd_hazlo_type": "var",
+        "id": "739f9ca26411",
+        "keyPath": "querySiteId",
+        "optional": true
+      }
+    }
+  }
+}

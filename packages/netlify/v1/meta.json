@@ -1,0 +1,1118 @@
+{
+  "schemaVersion": "v1",
+  "name": "netlify",
+  "version": "v1",
+  "description": "Comprehensive Netlify API workflows generated from OpenAPI, including sites, deploys, builds, DNS, forms, accounts, and team operations.",
+  "workflows": [
+    {
+      "ref": "netlify/addMemberToAccount/v1",
+      "path": "workflows/netlify/addMemberToAccount/v1/workflow.json",
+      "description": "addMemberToAccount",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/BuildApiRequest/v1",
+      "path": "workflows/netlify/BuildApiRequest/v1/workflow.json",
+      "description": "Builds a deterministic Netlify API request envelope for smoke validation and local request-shaping checks.",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/cancelAccount/v1",
+      "path": "workflows/netlify/cancelAccount/v1/workflow.json",
+      "description": "cancelAccount",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/cancelSiteDeploy/v1",
+      "path": "workflows/netlify/cancelSiteDeploy/v1/workflow.json",
+      "description": "cancelSiteDeploy",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/configureDNSForSite/v1",
+      "path": "workflows/netlify/configureDNSForSite/v1/workflow.json",
+      "description": "configureDNSForSite",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/createAccount/v1",
+      "path": "workflows/netlify/createAccount/v1/workflow.json",
+      "description": "createAccount",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/createDeployKey/v1",
+      "path": "workflows/netlify/createDeployKey/v1/workflow.json",
+      "description": "createDeployKey",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/createDnsRecord/v1",
+      "path": "workflows/netlify/createDnsRecord/v1/workflow.json",
+      "description": "createDnsRecord",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/createDnsZone/v1",
+      "path": "workflows/netlify/createDnsZone/v1/workflow.json",
+      "description": "createDnsZone",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/createEnvVars/v1",
+      "path": "workflows/netlify/createEnvVars/v1/workflow.json",
+      "description": "Creates new environment variables. Granular scopes are available on Pro plans and above.  To use this endpoint, your site must no longer be using the <a href=\"https://docs.netlify.com/environment-variables/classic-experience/\">classic environment variables experience</a>.  Migrate now with the Netlify UI.",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/createHookBySiteId/v1",
+      "path": "workflows/netlify/createHookBySiteId/v1/workflow.json",
+      "description": "createHookBySiteId",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/createPluginRun/v1",
+      "path": "workflows/netlify/createPluginRun/v1/workflow.json",
+      "description": "This is an internal-only endpoint.",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/createServiceInstance/v1",
+      "path": "workflows/netlify/createServiceInstance/v1/workflow.json",
+      "description": "createServiceInstance",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/createSite/v1",
+      "path": "workflows/netlify/createSite/v1/workflow.json",
+      "description": "**Note:** Environment variable keys and values will soon be moved from `build_settings.env` and `repo.env` to a new endpoint. Please use [createEnvVars](#tag/environmentVariables/operation/createEnvVars) to create environment variables for a site.",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/createSiteAsset/v1",
+      "path": "workflows/netlify/createSiteAsset/v1/workflow.json",
+      "description": "createSiteAsset",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/createSiteBuild/v1",
+      "path": "workflows/netlify/createSiteBuild/v1/workflow.json",
+      "description": "createSiteBuild",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/createSiteBuildHook/v1",
+      "path": "workflows/netlify/createSiteBuildHook/v1/workflow.json",
+      "description": "createSiteBuildHook",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/createSiteDeploy/v1",
+      "path": "workflows/netlify/createSiteDeploy/v1/workflow.json",
+      "description": "createSiteDeploy",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/createSiteInTeam/v1",
+      "path": "workflows/netlify/createSiteInTeam/v1/workflow.json",
+      "description": "**Note:** Environment variable keys and values will soon be moved from `build_settings.env` and `repo.env` to a new endpoint. Please use [createEnvVars](#tag/environmentVariables/operation/createEnvVars) to create environment variables for a site.",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/createSiteSnippet/v1",
+      "path": "workflows/netlify/createSiteSnippet/v1/workflow.json",
+      "description": "createSiteSnippet",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/createSplitTest/v1",
+      "path": "workflows/netlify/createSplitTest/v1/workflow.json",
+      "description": "createSplitTest",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/createTicket/v1",
+      "path": "workflows/netlify/createTicket/v1/workflow.json",
+      "description": "createTicket",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/deleteDeploy/v1",
+      "path": "workflows/netlify/deleteDeploy/v1/workflow.json",
+      "description": "deleteDeploy",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/deleteDeployKey/v1",
+      "path": "workflows/netlify/deleteDeployKey/v1/workflow.json",
+      "description": "deleteDeployKey",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/deleteDnsRecord/v1",
+      "path": "workflows/netlify/deleteDnsRecord/v1/workflow.json",
+      "description": "deleteDnsRecord",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/deleteDnsZone/v1",
+      "path": "workflows/netlify/deleteDnsZone/v1/workflow.json",
+      "description": "deleteDnsZone",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/deleteEnvVar/v1",
+      "path": "workflows/netlify/deleteEnvVar/v1/workflow.json",
+      "description": "Deletes an environment variable. To use this endpoint, your site must no longer be using the <a href=\"https://docs.netlify.com/environment-variables/classic-experience/\">classic environment variables experience</a>.  Migrate now with the Netlify UI.",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/deleteEnvVarValue/v1",
+      "path": "workflows/netlify/deleteEnvVarValue/v1/workflow.json",
+      "description": "Deletes a specific environment variable value. To use this endpoint, your site must no longer be using the <a href=\"https://docs.netlify.com/environment-variables/classic-experience/\">classic environment variables experience</a>.  Migrate now with the Netlify UI.",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/deleteHook/v1",
+      "path": "workflows/netlify/deleteHook/v1/workflow.json",
+      "description": "deleteHook",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/deleteServiceInstance/v1",
+      "path": "workflows/netlify/deleteServiceInstance/v1/workflow.json",
+      "description": "deleteServiceInstance",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/deleteSite/v1",
+      "path": "workflows/netlify/deleteSite/v1/workflow.json",
+      "description": "deleteSite",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/deleteSiteAsset/v1",
+      "path": "workflows/netlify/deleteSiteAsset/v1/workflow.json",
+      "description": "deleteSiteAsset",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/deleteSiteBuildHook/v1",
+      "path": "workflows/netlify/deleteSiteBuildHook/v1/workflow.json",
+      "description": "deleteSiteBuildHook",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/deleteSiteDeploy/v1",
+      "path": "workflows/netlify/deleteSiteDeploy/v1/workflow.json",
+      "description": "deleteSiteDeploy",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/deleteSiteForm/v1",
+      "path": "workflows/netlify/deleteSiteForm/v1/workflow.json",
+      "description": "deleteSiteForm",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/deleteSiteSnippet/v1",
+      "path": "workflows/netlify/deleteSiteSnippet/v1/workflow.json",
+      "description": "deleteSiteSnippet",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/deleteSubmission/v1",
+      "path": "workflows/netlify/deleteSubmission/v1/workflow.json",
+      "description": "deleteSubmission",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/disableSplitTest/v1",
+      "path": "workflows/netlify/disableSplitTest/v1/workflow.json",
+      "description": "disableSplitTest",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/enableHook/v1",
+      "path": "workflows/netlify/enableHook/v1/workflow.json",
+      "description": "enableHook",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/enableSplitTest/v1",
+      "path": "workflows/netlify/enableSplitTest/v1/workflow.json",
+      "description": "enableSplitTest",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/exchangeTicket/v1",
+      "path": "workflows/netlify/exchangeTicket/v1/workflow.json",
+      "description": "exchangeTicket",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/getAccount/v1",
+      "path": "workflows/netlify/getAccount/v1/workflow.json",
+      "description": "getAccount",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/getAccountBuildStatus/v1",
+      "path": "workflows/netlify/getAccountBuildStatus/v1/workflow.json",
+      "description": "getAccountBuildStatus",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/getAccountMember/v1",
+      "path": "workflows/netlify/getAccountMember/v1/workflow.json",
+      "description": "getAccountMember",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/getCurrentUser/v1",
+      "path": "workflows/netlify/getCurrentUser/v1/workflow.json",
+      "description": "getCurrentUser",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/getDeploy/v1",
+      "path": "workflows/netlify/getDeploy/v1/workflow.json",
+      "description": "getDeploy",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/getDeployKey/v1",
+      "path": "workflows/netlify/getDeployKey/v1/workflow.json",
+      "description": "getDeployKey",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/getDNSForSite/v1",
+      "path": "workflows/netlify/getDNSForSite/v1/workflow.json",
+      "description": "getDNSForSite",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/getDnsRecords/v1",
+      "path": "workflows/netlify/getDnsRecords/v1/workflow.json",
+      "description": "getDnsRecords",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/getDnsZone/v1",
+      "path": "workflows/netlify/getDnsZone/v1/workflow.json",
+      "description": "getDnsZone",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/getDnsZones/v1",
+      "path": "workflows/netlify/getDnsZones/v1/workflow.json",
+      "description": "getDnsZones",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/getEnvVar/v1",
+      "path": "workflows/netlify/getEnvVar/v1/workflow.json",
+      "description": "Returns an individual environment variable. To use this endpoint, your site must no longer be using the <a href=\"https://docs.netlify.com/environment-variables/classic-experience/\">classic environment variables experience</a>.  Migrate now with the Netlify UI.",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/getEnvVars/v1",
+      "path": "workflows/netlify/getEnvVars/v1/workflow.json",
+      "description": "Returns all environment variables for an account or site. An account corresponds to a team in the Netlify UI. To use this endpoint, your site must no longer be using the <a href=\"https://docs.netlify.com/environment-variables/classic-experience/\">classic environment variables experience</a>.  Migrate now with the Netlify UI.",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/getHook/v1",
+      "path": "workflows/netlify/getHook/v1/workflow.json",
+      "description": "getHook",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/getIndividualDnsRecord/v1",
+      "path": "workflows/netlify/getIndividualDnsRecord/v1/workflow.json",
+      "description": "getIndividualDnsRecord",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/getLatestPluginRuns/v1",
+      "path": "workflows/netlify/getLatestPluginRuns/v1/workflow.json",
+      "description": "This is an internal-only endpoint.",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/getServices/v1",
+      "path": "workflows/netlify/getServices/v1/workflow.json",
+      "description": "getServices",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/getSite/v1",
+      "path": "workflows/netlify/getSite/v1/workflow.json",
+      "description": "**Note:** Environment variable keys and values will soon be moved from `build_settings.env` and `repo.env` to a new endpoint. Please use [getEnvVars](#tag/environmentVariables/operation/getEnvVars) to retrieve site environment variables.",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/getSiteAssetInfo/v1",
+      "path": "workflows/netlify/getSiteAssetInfo/v1/workflow.json",
+      "description": "getSiteAssetInfo",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/getSiteAssetPublicSignature/v1",
+      "path": "workflows/netlify/getSiteAssetPublicSignature/v1/workflow.json",
+      "description": "getSiteAssetPublicSignature",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/getSiteBuild/v1",
+      "path": "workflows/netlify/getSiteBuild/v1/workflow.json",
+      "description": "getSiteBuild",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/getSiteBuildHook/v1",
+      "path": "workflows/netlify/getSiteBuildHook/v1/workflow.json",
+      "description": "getSiteBuildHook",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/getSiteDeploy/v1",
+      "path": "workflows/netlify/getSiteDeploy/v1/workflow.json",
+      "description": "getSiteDeploy",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/getSiteFileByPathName/v1",
+      "path": "workflows/netlify/getSiteFileByPathName/v1/workflow.json",
+      "description": "getSiteFileByPathName",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/getSiteMetadata/v1",
+      "path": "workflows/netlify/getSiteMetadata/v1/workflow.json",
+      "description": "getSiteMetadata",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/getSiteSnippet/v1",
+      "path": "workflows/netlify/getSiteSnippet/v1/workflow.json",
+      "description": "getSiteSnippet",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/getSplitTest/v1",
+      "path": "workflows/netlify/getSplitTest/v1/workflow.json",
+      "description": "getSplitTest",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/getSplitTests/v1",
+      "path": "workflows/netlify/getSplitTests/v1/workflow.json",
+      "description": "getSplitTests",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/listAccountAuditEvents/v1",
+      "path": "workflows/netlify/listAccountAuditEvents/v1/workflow.json",
+      "description": "listAccountAuditEvents",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/listAccountsForUser/v1",
+      "path": "workflows/netlify/listAccountsForUser/v1/workflow.json",
+      "description": "listAccountsForUser",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/listAccountTypesForUser/v1",
+      "path": "workflows/netlify/listAccountTypesForUser/v1/workflow.json",
+      "description": "listAccountTypesForUser",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/listDeployKeys/v1",
+      "path": "workflows/netlify/listDeployKeys/v1/workflow.json",
+      "description": "listDeployKeys",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/listFormSubmission/v1",
+      "path": "workflows/netlify/listFormSubmission/v1/workflow.json",
+      "description": "listFormSubmission",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/listFormSubmissions/v1",
+      "path": "workflows/netlify/listFormSubmissions/v1/workflow.json",
+      "description": "listFormSubmissions",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/listHooksBySiteId/v1",
+      "path": "workflows/netlify/listHooksBySiteId/v1/workflow.json",
+      "description": "listHooksBySiteId",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/listHookTypes/v1",
+      "path": "workflows/netlify/listHookTypes/v1/workflow.json",
+      "description": "listHookTypes",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/listMembersForAccount/v1",
+      "path": "workflows/netlify/listMembersForAccount/v1/workflow.json",
+      "description": "listMembersForAccount",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/listPaymentMethodsForUser/v1",
+      "path": "workflows/netlify/listPaymentMethodsForUser/v1/workflow.json",
+      "description": "listPaymentMethodsForUser",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/listServiceInstancesForSite/v1",
+      "path": "workflows/netlify/listServiceInstancesForSite/v1/workflow.json",
+      "description": "listServiceInstancesForSite",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/listSiteAssets/v1",
+      "path": "workflows/netlify/listSiteAssets/v1/workflow.json",
+      "description": "listSiteAssets",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/listSiteBuildHooks/v1",
+      "path": "workflows/netlify/listSiteBuildHooks/v1/workflow.json",
+      "description": "listSiteBuildHooks",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/listSiteBuilds/v1",
+      "path": "workflows/netlify/listSiteBuilds/v1/workflow.json",
+      "description": "listSiteBuilds",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/listSiteDeployedBranches/v1",
+      "path": "workflows/netlify/listSiteDeployedBranches/v1/workflow.json",
+      "description": "listSiteDeployedBranches",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/listSiteDeploys/v1",
+      "path": "workflows/netlify/listSiteDeploys/v1/workflow.json",
+      "description": "listSiteDeploys",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/listSiteFiles/v1",
+      "path": "workflows/netlify/listSiteFiles/v1/workflow.json",
+      "description": "listSiteFiles",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/listSiteForms/v1",
+      "path": "workflows/netlify/listSiteForms/v1/workflow.json",
+      "description": "listSiteForms",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/listSites/v1",
+      "path": "workflows/netlify/listSites/v1/workflow.json",
+      "description": "**Note:** Environment variable keys and values will soon be moved from `build_settings.env` and `repo.env` to a new endpoint. Please use [getEnvVars](#tag/environmentVariables/operation/getEnvVars) to retrieve site environment variables.",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/listSitesForAccount/v1",
+      "path": "workflows/netlify/listSitesForAccount/v1/workflow.json",
+      "description": "**Note:** Environment variable keys and values will soon be moved from `build_settings.env` and `repo.env` to a new endpoint. Please use [getEnvVars](#tag/environmentVariables/operation/getEnvVars) to retrieve site environment variables.",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/listSiteSnippets/v1",
+      "path": "workflows/netlify/listSiteSnippets/v1/workflow.json",
+      "description": "listSiteSnippets",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/listSiteSubmissions/v1",
+      "path": "workflows/netlify/listSiteSubmissions/v1/workflow.json",
+      "description": "listSiteSubmissions",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/lockDeploy/v1",
+      "path": "workflows/netlify/lockDeploy/v1/workflow.json",
+      "description": "lockDeploy",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/notifyBuildStart/v1",
+      "path": "workflows/netlify/notifyBuildStart/v1/workflow.json",
+      "description": "notifyBuildStart",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/provisionSiteTLSCertificate/v1",
+      "path": "workflows/netlify/provisionSiteTLSCertificate/v1/workflow.json",
+      "description": "provisionSiteTLSCertificate",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/removeAccountMember/v1",
+      "path": "workflows/netlify/removeAccountMember/v1/workflow.json",
+      "description": "removeAccountMember",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/restoreSiteDeploy/v1",
+      "path": "workflows/netlify/restoreSiteDeploy/v1/workflow.json",
+      "description": "restoreSiteDeploy",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/rollbackSiteDeploy/v1",
+      "path": "workflows/netlify/rollbackSiteDeploy/v1/workflow.json",
+      "description": "rollbackSiteDeploy",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/setEnvVarValue/v1",
+      "path": "workflows/netlify/setEnvVarValue/v1/workflow.json",
+      "description": "Updates or creates a new value for an existing environment variable. To use this endpoint, your site must no longer be using the <a href=\"https://docs.netlify.com/environment-variables/classic-experience/\">classic environment variables experience</a>.  Migrate now with the Netlify UI.",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/showService/v1",
+      "path": "workflows/netlify/showService/v1/workflow.json",
+      "description": "showService",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/showServiceInstance/v1",
+      "path": "workflows/netlify/showServiceInstance/v1/workflow.json",
+      "description": "showServiceInstance",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/showServiceManifest/v1",
+      "path": "workflows/netlify/showServiceManifest/v1/workflow.json",
+      "description": "showServiceManifest",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/showSiteTLSCertificate/v1",
+      "path": "workflows/netlify/showSiteTLSCertificate/v1/workflow.json",
+      "description": "showSiteTLSCertificate",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/showTicket/v1",
+      "path": "workflows/netlify/showTicket/v1/workflow.json",
+      "description": "showTicket",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/transferDnsZone/v1",
+      "path": "workflows/netlify/transferDnsZone/v1/workflow.json",
+      "description": "transferDnsZone",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/unlinkSiteRepo/v1",
+      "path": "workflows/netlify/unlinkSiteRepo/v1/workflow.json",
+      "description": "[Beta] Unlinks the repo from the site.\n\nThis action will also:\n- Delete associated deploy keys\n- Delete outgoing webhooks for the repo\n- Delete the site's build hooks",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/unlockDeploy/v1",
+      "path": "workflows/netlify/unlockDeploy/v1/workflow.json",
+      "description": "unlockDeploy",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/updateAccount/v1",
+      "path": "workflows/netlify/updateAccount/v1/workflow.json",
+      "description": "updateAccount",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/updateAccountMember/v1",
+      "path": "workflows/netlify/updateAccountMember/v1/workflow.json",
+      "description": "updateAccountMember",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/updateEnvVar/v1",
+      "path": "workflows/netlify/updateEnvVar/v1/workflow.json",
+      "description": "Updates an existing environment variable and all of its values. Existing values will be replaced by values provided. To use this endpoint, your site must no longer be using the <a href=\"https://docs.netlify.com/environment-variables/classic-experience/\">classic environment variables experience</a>.  Migrate now with the Netlify UI.",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/updateHook/v1",
+      "path": "workflows/netlify/updateHook/v1/workflow.json",
+      "description": "updateHook",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/updatePlugin/v1",
+      "path": "workflows/netlify/updatePlugin/v1/workflow.json",
+      "description": "This is an internal-only endpoint.",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/updateServiceInstance/v1",
+      "path": "workflows/netlify/updateServiceInstance/v1/workflow.json",
+      "description": "updateServiceInstance",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/updateSite/v1",
+      "path": "workflows/netlify/updateSite/v1/workflow.json",
+      "description": "**Note:** Environment variable keys and values will soon be moved from `build_settings.env` and `repo.env` to a new endpoint. Please use [updateEnvVar](#tag/environmentVariables/operation/updateEnvVar) to update a site's environment variables.",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/updateSiteAsset/v1",
+      "path": "workflows/netlify/updateSiteAsset/v1/workflow.json",
+      "description": "updateSiteAsset",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/updateSiteBuildHook/v1",
+      "path": "workflows/netlify/updateSiteBuildHook/v1/workflow.json",
+      "description": "updateSiteBuildHook",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/updateSiteBuildLog/v1",
+      "path": "workflows/netlify/updateSiteBuildLog/v1/workflow.json",
+      "description": "updateSiteBuildLog",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/updateSiteDeploy/v1",
+      "path": "workflows/netlify/updateSiteDeploy/v1/workflow.json",
+      "description": "updateSiteDeploy",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/updateSiteMetadata/v1",
+      "path": "workflows/netlify/updateSiteMetadata/v1/workflow.json",
+      "description": "updateSiteMetadata",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/updateSiteSnippet/v1",
+      "path": "workflows/netlify/updateSiteSnippet/v1/workflow.json",
+      "description": "updateSiteSnippet",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/updateSplitTest/v1",
+      "path": "workflows/netlify/updateSplitTest/v1/workflow.json",
+      "description": "updateSplitTest",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/uploadDeployFile/v1",
+      "path": "workflows/netlify/uploadDeployFile/v1/workflow.json",
+      "description": "uploadDeployFile",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "netlify/uploadDeployFunction/v1",
+      "path": "workflows/netlify/uploadDeployFunction/v1/workflow.json",
+      "description": "uploadDeployFunction",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    }
+  ],
+  "defaultInstallRefs": [
+    "netlify/createSiteDeploy/v1",
+    "netlify/getCurrentUser/v1",
+    "netlify/getSite/v1",
+    "netlify/listSiteBuilds/v1",
+    "netlify/listSiteDeploys/v1",
+    "netlify/listSites/v1"
+  ],
+  "env": [],
+  "checksums": {
+    "netlify/addMemberToAccount/v1": "7c382d305f770d36c3cfd72c287e274c4063605bf92cd23dfb723f1578696fd1",
+    "netlify/BuildApiRequest/v1": "65d37daa9ca1a9ba1b17f06754eca232be8e8cbc2451292a5aa8c8ee4acc8241",
+    "netlify/cancelAccount/v1": "2470e244b1764b29e0f0e813296c2bb006da666191c3b609bbcbb393cccab31d",
+    "netlify/cancelSiteDeploy/v1": "0dfa6b25172a1964e1667a1babc69e5867230cf0b580408361854945f2a6ed6e",
+    "netlify/configureDNSForSite/v1": "c842a9c09867e406a115d0ee10a46993f77ca105642c620ddf162f80a4144bae",
+    "netlify/createAccount/v1": "5c5f049be2c4b77eb97aea789c6b6559bfbe306241abcb761837fb06cfb239f5",
+    "netlify/createDeployKey/v1": "d1a12ebbf308398e95809c22d63f28e6cab11fd7bf199a4177ce82584dc004b5",
+    "netlify/createDnsRecord/v1": "7a77060b775a73f4d71426037fbf0948fbf067b6ed586255dd1ba743f1ec9b69",
+    "netlify/createDnsZone/v1": "5fdec9984077cf0da00f590b682417b9c67159f075e2d84661e82b8783d8f082",
+    "netlify/createEnvVars/v1": "a613857a00a8efa132e7e8ae8eefb971d7c5f5ff5f4da42fb218d73374f3434f",
+    "netlify/createHookBySiteId/v1": "75a75a6f82e4610699b512c9b5453ea0d4b9a82482c36839cb27353bf5651f55",
+    "netlify/createPluginRun/v1": "efef4be7eec6a5431f51b7d89e40f8cc91d1f454d7a2959078eae02443ec7a31",
+    "netlify/createServiceInstance/v1": "b19ce4f3938459cefca1a1f920d6410f60930ae0aed60082525e964f9d8f9a92",
+    "netlify/createSite/v1": "a3332a58d418284d1ebd719fe341e82bf7c062bee2a5cdd6226b8cac37e00736",
+    "netlify/createSiteAsset/v1": "1669ef9ff593520a74d3aa8699265dbf4e83f8b0f55f68a02dcb38263dfe773d",
+    "netlify/createSiteBuild/v1": "bb92f57395d32ca5c44561c80e06868ce8027d60c44e113f71807de083de9344",
+    "netlify/createSiteBuildHook/v1": "580f2e153fe9eefe97c19beb3b6aae3ad061ba32c4e9fcd932758595a710718d",
+    "netlify/createSiteDeploy/v1": "0fa4f573f9f3da229cef82af25f8b14630058fefaf59088bfc82ef31fa8d6c1c",
+    "netlify/createSiteInTeam/v1": "5276430d840a10812b534ee8d640b2726bf197bc866fb0d19f831e8a80300049",
+    "netlify/createSiteSnippet/v1": "c58725a518f3a4f52fb50536f2fd6aae21d567927e0c05a816c560d57a18ab79",
+    "netlify/createSplitTest/v1": "a67a246d2b3f932d1e0cf9a06aaed517286f2a20ab041c4c0037dfb504128316",
+    "netlify/createTicket/v1": "e2b5c6784ca66f819561c837c9f3539d76dcb1c08fccde64bcae1912911346c9",
+    "netlify/deleteDeploy/v1": "97f25424d82ebe594e04f8f882ba711074e9f4affc2c3ee1c46050e4186158b8",
+    "netlify/deleteDeployKey/v1": "3b043009b1c952fd96bc763bd765ccab7c6d080dd4460edade4d406569b67a27",
+    "netlify/deleteDnsRecord/v1": "115007ea6f51fbf88179e33653a6d749a04054b14a0af911487c04540da5d56d",
+    "netlify/deleteDnsZone/v1": "71f760fda0ec8d650010c27c4b0c840c7c6505a0c5ac4f8fe2da624daa5d4eb8",
+    "netlify/deleteEnvVar/v1": "2b0b08dcfde549a0a7d3a45f464547e969e98ff452ab82248d7b48eeef233923",
+    "netlify/deleteEnvVarValue/v1": "dd09108d7ffe7c2b26c06ca228bf3b0dc3f04e6760766428dce4a779f62ca901",
+    "netlify/deleteHook/v1": "35ffd42b40432e22c4e767b87e2714816887d377a2b4f3db53bf635e768b4c36",
+    "netlify/deleteServiceInstance/v1": "aa5ea75e104cc6ed630041c808b07ba157e314fbd7af43bec8d0bb6726282704",
+    "netlify/deleteSite/v1": "6327b4c42f8a7b3b121724baed1e4ec84ddbdeee7cfd8258beccb26f061a8e2b",
+    "netlify/deleteSiteAsset/v1": "cadeb171e3fc01f38449e27314533038953942a5bcdcb27208274e6e5d392b9a",
+    "netlify/deleteSiteBuildHook/v1": "adab9ab3f4017b12cb7908ead378e4982a256f350d4bd52404a33662b5ef0648",
+    "netlify/deleteSiteDeploy/v1": "49bff19a3773484b90af5fa6e3c5483fc9036a8a0c31f0f78b7a79fe49fb0e7d",
+    "netlify/deleteSiteForm/v1": "119075b7b5ee0a542b7aa74d770993d58e3e3f7ac775bb26f452705f3d8c1752",
+    "netlify/deleteSiteSnippet/v1": "0ef886351d3a5efe5191b322c056a0cbfe7bbcb22ec226509d080bc35abe5c8c",
+    "netlify/deleteSubmission/v1": "fef5bf771911238d15af41b1cfc3c1d3a3269110f368f504b7fd0a3370961ec2",
+    "netlify/disableSplitTest/v1": "cc42f421474e9176942547e68ec56602608ae4d58451dfa7090d049a01d71866",
+    "netlify/enableHook/v1": "1f2500fafa34aa1bfd5f0511ea594c6ce5defdd4b49c8e161bbae5f8fce34696",
+    "netlify/enableSplitTest/v1": "3b4161acf9c5327d60b41feff35eaf7767e27c66d573feb6fdb33e9e71e55b47",
+    "netlify/exchangeTicket/v1": "8702aab7dd5d986e9eecb305f845c4d3247052703a595150c7c2eeea273a5c79",
+    "netlify/getAccount/v1": "358da7c895fd9d76da05c18e0289a55e3d13f5d640541df17311096e7a17f229",
+    "netlify/getAccountBuildStatus/v1": "37a2d6d75c7466ad28b1f67c8c7ba610e0cc48a95d359024344f64a56f58c9ab",
+    "netlify/getAccountMember/v1": "cc84517d5e350f96c45711615b358c6da20e27d5b00c0bd4f66592437a5bf058",
+    "netlify/getCurrentUser/v1": "30c8cafda4daaa45f5006c82056ede8bc3ef11d9eb27a586be93b7a8fef7726d",
+    "netlify/getDeploy/v1": "36d82bb22f45d6601f0b0bffc8fcb71c283c7247cb91245455502b481842c368",
+    "netlify/getDeployKey/v1": "55db97a4fb412e46191ad9105abd53d3b50d5de32ca85aee1edd40cba6cb0b02",
+    "netlify/getDNSForSite/v1": "743e522396183f3cb330794ad13cea4cc00284c29f331bd18b919deceb6fdf35",
+    "netlify/getDnsRecords/v1": "c85294ce2b586229b2f7e4f4e2cb466418ad39037a9271e89941b753d569fc72",
+    "netlify/getDnsZone/v1": "2063e0a8d6c2e21d7bca8b02f3065e1a04f35b986aa33faa1927c444a45e3682",
+    "netlify/getDnsZones/v1": "fefb8fd323d9bac114540ac3b057336e3db8066e6fe594416f4b58710a416443",
+    "netlify/getEnvVar/v1": "e746c1dcb9d68a53504d447b01018b0193a089de15c9a4e5c37e15d9603e696f",
+    "netlify/getEnvVars/v1": "d082c2055732fd38c17639302fcd512bfa331dfbbb4b36e0761a16e8363c5e8c",
+    "netlify/getHook/v1": "79c24a718b01747f0807941a30e176a43a3beee3b8871227244f2adce9d49cb1",
+    "netlify/getIndividualDnsRecord/v1": "9b37959734db981214d8ab121ffd43f70d937374b853b5205e2a09a1fc49ffe8",
+    "netlify/getLatestPluginRuns/v1": "346d1c6afcb6d39d5d4c1dd8879466319496dbaede333f4434075cf3e5da9cde",
+    "netlify/getServices/v1": "a64e047b5f0f48a0ff7092bf30584b75c6e9f5c898c9b865094977cc2186d183",
+    "netlify/getSite/v1": "0a8475fdc06939f13d5e567953f13c43c60a7ab67b1d20dc2bfa28525462b8c1",
+    "netlify/getSiteAssetInfo/v1": "c77b33a0c84dd8a3b6c06caedb7a9d8bffd315a5e82414f661b5bc3f09094e0d",
+    "netlify/getSiteAssetPublicSignature/v1": "382909001c3da4556f59f8054eeb456c436e0a28c2ca145a9b07652cc2fcbe1c",
+    "netlify/getSiteBuild/v1": "3d79644e1a1ed0667aab3b81cf346c5e7e44d3d7281ad168ba9663ca734b7d15",
+    "netlify/getSiteBuildHook/v1": "6ce43da5013c7c6d1d617c70f8e183accf64d5559389ae7df93555116647c43d",
+    "netlify/getSiteDeploy/v1": "bb9a7ef3abf8178dfb4abfd058429de5683fd31bbda0dffce019aaed440c7ae4",
+    "netlify/getSiteFileByPathName/v1": "f6d1458cca66c59a534c713ad64c93fdba38241a8d43d63548b6a19f05370ff5",
+    "netlify/getSiteMetadata/v1": "77bf46892ca2609b8d78daebaca8e04d6f2038be9aaa021d4ef4a3e79d7d3a0a",
+    "netlify/getSiteSnippet/v1": "07f7eab2ec6d003320b411f89f879f339d510747e5fdee820df40ccb7a785789",
+    "netlify/getSplitTest/v1": "ca3b14d8da9e84d977e60981a53b721fecb8152a66a627d8708a28a023f9edda",
+    "netlify/getSplitTests/v1": "7a06221e6b2fe26aacb01ec70cddfdd4f8f279731c7bf9f211e327f0088717c2",
+    "netlify/listAccountAuditEvents/v1": "73bf535ef3343ad69b4e14362982bf0f40ac600ce487ac4351a072a4376426bd",
+    "netlify/listAccountsForUser/v1": "0c54a598cce991f5930fc8bd487710b790521b06f662cda573d8df62d0fb9400",
+    "netlify/listAccountTypesForUser/v1": "6d450fa9c774acf9b5003fb05037746338752a475cf115a3e1dd0732b0aa25ba",
+    "netlify/listDeployKeys/v1": "3f445857eddd80afd8d2fc0690c81f6aab375381c35a11ede864641931971272",
+    "netlify/listFormSubmission/v1": "a7a6a60093857d2b0c53f158403c56e889eeff84f865e9076d17d54a9dcaa4a5",
+    "netlify/listFormSubmissions/v1": "5158238e91160ae2914d3ff4d0516dc8a9c32e1d72289f0091437b50e9688bd2",
+    "netlify/listHooksBySiteId/v1": "6eb043c68bb8c04fa0908317ee590180ecf31742cb5a72060e43a87753d443bb",
+    "netlify/listHookTypes/v1": "f9e4ee02f3d82a17077cf13359f92791cbc332391aae6390b39aa013c2b87a92",
+    "netlify/listMembersForAccount/v1": "8efbaaea779b4b2783d1ac5de85b10dc80771d3ce1da4cf5ef3a860f88487a21",
+    "netlify/listPaymentMethodsForUser/v1": "1a0d7d99973b10ba1f6adfa90f655d815d6c61e8d4debdfb3b4cfd590ff6ba23",
+    "netlify/listServiceInstancesForSite/v1": "3b027794a5b1aa98cfd65c2a13174479f959a5c5b32e47553e6c153d5a25b7c1",
+    "netlify/listSiteAssets/v1": "2061368b69bcd70947644d0fd16b295be8955a7d8acccff2e00f159b08416f06",
+    "netlify/listSiteBuildHooks/v1": "7e030607214ffb08e2cf7461896c4ca1ff95cfd6cb5de58fa755e339b8587285",
+    "netlify/listSiteBuilds/v1": "663b8235c6c0c2deff7b032df7fc8940d7474c8d7bfdf117d7909efcb5f5fac4",
+    "netlify/listSiteDeployedBranches/v1": "d48b2d207f3f9881833ac06b191768a73668cc20693f6a0fdaef087e10d62e07",
+    "netlify/listSiteDeploys/v1": "c7915a22e201aaf43f4d12b58edc164ff65f6c45c6719a34bfc5631d137997c3",
+    "netlify/listSiteFiles/v1": "e07fd768eed9358ec8a21355beb330d94e1563e5182d9b7f3a5be232d3b7c4e0",
+    "netlify/listSiteForms/v1": "5a9c7df77e95b1334631692d412704f12709ce633639458d43e17a15da401c3e",
+    "netlify/listSites/v1": "873fd58324650b4884e126176638425861bc3390a5a87d32cdadca84bddc3fe1",
+    "netlify/listSitesForAccount/v1": "8d49134669a2fd925c51e8cbac1834e75ff3c44cc8ffd1f4515e0ca2d509280b",
+    "netlify/listSiteSnippets/v1": "74a5a5ce9438f77a42432619f5d69e7046dfa9de8df02b8dc3b706c11deb3c2b",
+    "netlify/listSiteSubmissions/v1": "da0a48c9634840bfa33b61ab697ed336108271dba08f9d2871de7c3d334db93a",
+    "netlify/lockDeploy/v1": "6d7b42fbb6c256263cd6bcde08087e249128afe050f41a7ff479bf86f53e145e",
+    "netlify/notifyBuildStart/v1": "46491084a6f7df485243eccf4747369fac09d5b6683d3538e8a76453b66b7a11",
+    "netlify/provisionSiteTLSCertificate/v1": "eae2fd52303aa7250ee560df962b240d2768ab84dbbdad71d68170b99605df7b",
+    "netlify/removeAccountMember/v1": "e40cc6782f2cda6e1e0446c05cfe0171e0a55d051164ceb161a0780588e56e91",
+    "netlify/restoreSiteDeploy/v1": "296b9e994e728e2f129793455a5af715ea1be8df5cde9a0ca3783b2ba34f1d8f",
+    "netlify/rollbackSiteDeploy/v1": "784ef766b4f18496fa146f202f3d2c7d3a0f2caf34755cfdfe5404a9b20e5838",
+    "netlify/setEnvVarValue/v1": "9d050aba44ddd8819b146284fca7efd1b89b05740ca2e10aeca9753bac02b902",
+    "netlify/showService/v1": "400593c384a1fb7e6fb3886e8b2e79574e4e86a758bd25239d75b6d91dcdbe2f",
+    "netlify/showServiceInstance/v1": "7d6cc052cf91c017c1af5c173e81e368f29ec292269f59f63f19103f534fc515",
+    "netlify/showServiceManifest/v1": "5d9504bfe72bc8af717d5ef4b2ba5ac2a7587616d250fea486e236df194ba198",
+    "netlify/showSiteTLSCertificate/v1": "7a377afb9a9efc9fc9ac13cb69e1cad8a86a356912bf136e4045fcb70b26f492",
+    "netlify/showTicket/v1": "380b6edd081b27b600551d73910658a8ffd6ba85451bb50d021895fff5db7f3c",
+    "netlify/transferDnsZone/v1": "faa52b5f44f993cedb52c43d7a678dc68f37eedada00433da314e23a376fad02",
+    "netlify/unlinkSiteRepo/v1": "9ea3f7cd9fc5577cfc4369efbdfe31ea0486406f9ac466183cca91a2cef8d653",
+    "netlify/unlockDeploy/v1": "86bd35a79c6ab1a85dac3b59a5f200d6f12ca56f8b93d5a3f4f7fc65c1302414",
+    "netlify/updateAccount/v1": "3de9d7faeca85ffd35d7610a6e93acc3bfa29a138ba6b2298dfc3c0279049ba0",
+    "netlify/updateAccountMember/v1": "a63f7e14d0a624d1c32e59b4b9256602255b818e6352f3515536826bad347772",
+    "netlify/updateEnvVar/v1": "93a5eb0cf2128328c44c0e382efb60b54a8e94bab11d928878276d72c66ade7d",
+    "netlify/updateHook/v1": "17cf88b7a10c495c7b4c023a23694183c7ac6d2f8da68d73822512f8e931fe6d",
+    "netlify/updatePlugin/v1": "6bdeb63a0c6e8c8b07b946ec7e28e89fc61b8a3c1184df790e1abfc6b9b11219",
+    "netlify/updateServiceInstance/v1": "ab07be758e219aaf429b0b51b04a33ed5430dfd563cb2890be2fddc26984adbd",
+    "netlify/updateSite/v1": "3420169c2afa257b2ef818c76f3979072b4d27b6ea9a153bdd0e8bd9c84b85ba",
+    "netlify/updateSiteAsset/v1": "52e791be65ea559803f20872d0d913520e982ac4a96b1e60417f81e525260bed",
+    "netlify/updateSiteBuildHook/v1": "bf179b417ef85416185140816fbf7b6e83a80c55ffdc54be601a9db0537b40d6",
+    "netlify/updateSiteBuildLog/v1": "7afe0af803456f0b3d25529c5c8dfe1dfd1b7cb0c5dd2a0a52b7b0f4743b428c",
+    "netlify/updateSiteDeploy/v1": "493694867138df7c01f76a1224dabd03a43909a048c1e8391362802445e9ea77",
+    "netlify/updateSiteMetadata/v1": "46d47c8b5a97176d4e25d2803bbd84cabeda02353f7f6e9fee35266558716a0b",
+    "netlify/updateSiteSnippet/v1": "396318197ade10fce03b22470bb7e19b446f735683bfc545a6d9dcab34d19fae",
+    "netlify/updateSplitTest/v1": "4fb562f6af37431957783c89c5d172aa61030ebb1b541e7f78ded5e63fa87436",
+    "netlify/uploadDeployFile/v1": "6e1a125a5f46a8f1ef9a8d03c382f72c0cf37e82372b77a848fbe3c710fa423f",
+    "netlify/uploadDeployFunction/v1": "4113844c30e52040e8cd207c566fcb312c135866f0d89281c1e98a378229a36f"
+  },
+  "homepage": "https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api/",
+  "license": "MIT",
+  "tags": [
+    "netlify",
+    "hosting",
+    "deploys",
+    "dns",
+    "openapi",
+    "generated"
+  ]
+}

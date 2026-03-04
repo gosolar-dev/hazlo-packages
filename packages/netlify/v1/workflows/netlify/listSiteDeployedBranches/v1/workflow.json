@@ -1,0 +1,53 @@
+{
+  "name": "listSiteDeployedBranches",
+  "description": "listSiteDeployedBranches",
+  "meta": {
+    "method": "GET",
+    "operationId": "listSiteDeployedBranches",
+    "path": "/sites/{site_id}/deployed-branches"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "pathSiteId": "<string>"
+  },
+  "inputRequired": [
+    "pathSiteId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "fd58c9f2ed13",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "8ba7179f3467",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.netlify.com",
+    "id": "ba445f2a2dc8",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "3991f5f2230c",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "2694328acded",
+        "left": "/api/v1/sites/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "e9d647ff8ee5",
+          "keyPath": "pathSiteId",
+          "optional": false
+        }
+      },
+      "right": "/deployed-branches"
+    },
+    "query": {}
+  }
+}

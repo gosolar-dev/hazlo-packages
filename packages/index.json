@@ -1,6 +1,6 @@
 {
   "schemaVersion": "v1",
-  "generatedAt": "2026-03-04T09:58:11.382Z",
+  "generatedAt": "2026-03-04T10:06:46.710Z",
   "packages": [
     {
       "name": "examples",
@@ -19,6 +19,15 @@
       ],
       "description": "GitHub public REST API workflows focused on unauthenticated endpoints for metadata, user and repository discovery.",
       "path": "packages/github"
+    },
+    {
+      "name": "netlify",
+      "latestVersion": "v1",
+      "versions": [
+        "v1"
+      ],
+      "description": "Comprehensive Netlify API workflows generated from OpenAPI, including sites, deploys, builds, DNS, forms, accounts, and team operations.",
+      "path": "packages/netlify"
     },
     {
       "name": "stripe",

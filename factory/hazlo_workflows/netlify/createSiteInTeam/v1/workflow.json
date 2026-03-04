@@ -1,0 +1,61 @@
+{
+  "name": "createSiteInTeam",
+  "description": "**Note:** Environment variable keys and values will soon be moved from `build_settings.env` and `repo.env` to a new endpoint. Please use [createEnvVars](#tag/environmentVariables/operation/createEnvVars) to create environment variables for a site.",
+  "meta": {
+    "method": "POST",
+    "operationId": "createSiteInTeam",
+    "path": "/{account_slug}/sites"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "pathAccountSlug": "<string>",
+    "queryConfigureDns": "<string>"
+  },
+  "inputRequired": [
+    "pathAccountSlug"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "7e28adea0f30",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "38c2ddb570a1",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.netlify.com",
+    "id": "721d47dccbb3",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "b34b421ac5a3",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "f3e589ba0a0a",
+        "left": "/api/v1/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "d49f3e0250f2",
+          "keyPath": "pathAccountSlug",
+          "optional": false
+        }
+      },
+      "right": "/sites"
+    },
+    "query": {
+      "configure_dns": {
+        "_pbd_hazlo_type": "var",
+        "id": "17f52254529d",
+        "keyPath": "queryConfigureDns",
+        "optional": true
+      }
+    }
+  }
+}

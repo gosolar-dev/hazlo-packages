@@ -1,0 +1,48 @@
+{
+  "name": "getHook",
+  "description": "getHook",
+  "meta": {
+    "method": "GET",
+    "operationId": "getHook",
+    "path": "/hooks/{hook_id}"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "pathHookId": "<string>"
+  },
+  "inputRequired": [
+    "pathHookId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "2328a4a21497",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "8c91a29d4ed1",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.netlify.com",
+    "id": "8610590a8958",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "eca25a271e9d",
+      "left": "/api/v1/hooks/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "391830219bc3",
+        "keyPath": "pathHookId",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

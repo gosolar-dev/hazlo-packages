@@ -1,0 +1,53 @@
+{
+  "name": "exchangeTicket",
+  "description": "exchangeTicket",
+  "meta": {
+    "method": "POST",
+    "operationId": "exchangeTicket",
+    "path": "/oauth/tickets/{ticket_id}/exchange"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "pathTicketId": "<string>"
+  },
+  "inputRequired": [
+    "pathTicketId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "df10be788509",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "c0e38ca58b52",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.netlify.com",
+    "id": "f0bd94799adc",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "0e563a45b2fc",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "abda3f94def6",
+        "left": "/api/v1/oauth/tickets/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "97ba351f839c",
+          "keyPath": "pathTicketId",
+          "optional": false
+        }
+      },
+      "right": "/exchange"
+    },
+    "query": {}
+  }
+}

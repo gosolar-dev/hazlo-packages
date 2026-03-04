@@ -1,0 +1,82 @@
+{
+  "name": "updateServiceInstance",
+  "description": "updateServiceInstance",
+  "meta": {
+    "method": "PUT",
+    "operationId": "updateServiceInstance",
+    "path": "/sites/{site_id}/services/{addon}/instances/{instance_id}"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "pathAddon": "<string>",
+    "pathInstanceId": "<string>",
+    "pathSiteId": "<string>"
+  },
+  "inputRequired": [
+    "pathAddon",
+    "pathInstanceId",
+    "pathSiteId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "87d71a13c887",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "38396cfe4011",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.netlify.com",
+    "id": "62d4ff010423",
+    "method": "PUT",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "6c8e2a3a474e",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "17fa4c5cb76d",
+        "left": {
+          "_pbd_hazlo_type": "concat",
+          "id": "5f28213fb61b",
+          "left": {
+            "_pbd_hazlo_type": "concat",
+            "id": "3c980e45e32f",
+            "left": {
+              "_pbd_hazlo_type": "concat",
+              "id": "7baa12247576",
+              "left": "/api/v1/sites/",
+              "right": {
+                "_pbd_hazlo_type": "var",
+                "id": "fa3d3364a075",
+                "keyPath": "pathSiteId",
+                "optional": false
+              }
+            },
+            "right": "/services/"
+          },
+          "right": {
+            "_pbd_hazlo_type": "var",
+            "id": "7a06ff4844d8",
+            "keyPath": "pathAddon",
+            "optional": false
+          }
+        },
+        "right": "/instances/"
+      },
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "acb799a25192",
+        "keyPath": "pathInstanceId",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

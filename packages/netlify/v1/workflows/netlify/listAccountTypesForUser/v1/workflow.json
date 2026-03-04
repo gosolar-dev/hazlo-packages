@@ -1,0 +1,34 @@
+{
+  "name": "listAccountTypesForUser",
+  "description": "listAccountTypesForUser",
+  "meta": {
+    "method": "GET",
+    "operationId": "listAccountTypesForUser",
+    "path": "/accounts/types"
+  },
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "599260ba35f",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "aed51eac8f46",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.netlify.com",
+    "id": "ab3ad50c1d71",
+    "method": "GET",
+    "path": "/api/v1/accounts/types",
+    "query": {}
+  },
+  "input": {
+    "authBearerAuth": "<string>"
+  }
+}

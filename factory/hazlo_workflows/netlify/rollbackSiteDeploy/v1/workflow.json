@@ -1,0 +1,53 @@
+{
+  "name": "rollbackSiteDeploy",
+  "description": "rollbackSiteDeploy",
+  "meta": {
+    "method": "PUT",
+    "operationId": "rollbackSiteDeploy",
+    "path": "/sites/{site_id}/rollback"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "pathSiteId": "<string>"
+  },
+  "inputRequired": [
+    "pathSiteId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "1560e665a47a",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "dda14c120065",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.netlify.com",
+    "id": "9794d0731f76",
+    "method": "PUT",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "f25fdf3b57c6",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "dd267c31adbe",
+        "left": "/api/v1/sites/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "90a65233d324",
+          "keyPath": "pathSiteId",
+          "optional": false
+        }
+      },
+      "right": "/rollback"
+    },
+    "query": {}
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "name": "configureDNSForSite",
+  "description": "configureDNSForSite",
+  "meta": {
+    "method": "PUT",
+    "operationId": "configureDNSForSite",
+    "path": "/sites/{site_id}/dns"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "pathSiteId": "<string>"
+  },
+  "inputRequired": [
+    "pathSiteId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "830be1b6b0bb",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "274ac48fdb4c",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.netlify.com",
+    "id": "9d5a0f34998e",
+    "method": "PUT",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "f76bd164de19",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "b61637c79599",
+        "left": "/api/v1/sites/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "d34b66a2cc2c",
+          "keyPath": "pathSiteId",
+          "optional": false
+        }
+      },
+      "right": "/dns"
+    },
+    "query": {}
+  }
+}

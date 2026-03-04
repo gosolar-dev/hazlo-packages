@@ -1,0 +1,48 @@
+{
+  "name": "showTicket",
+  "description": "showTicket",
+  "meta": {
+    "method": "GET",
+    "operationId": "showTicket",
+    "path": "/oauth/tickets/{ticket_id}"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "pathTicketId": "<string>"
+  },
+  "inputRequired": [
+    "pathTicketId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "2e3c896c7ebb",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "5f2a903479bc",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.netlify.com",
+    "id": "4874a60837a4",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "469c767bf442",
+      "left": "/api/v1/oauth/tickets/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "bd994716052c",
+        "keyPath": "pathTicketId",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

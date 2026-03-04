@@ -1,0 +1,65 @@
+{
+  "name": "deleteDnsRecord",
+  "description": "deleteDnsRecord",
+  "meta": {
+    "method": "DELETE",
+    "operationId": "deleteDnsRecord",
+    "path": "/dns_zones/{zone_id}/dns_records/{dns_record_id}"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "pathDnsRecordId": "<string>",
+    "pathZoneId": "<string>"
+  },
+  "inputRequired": [
+    "pathDnsRecordId",
+    "pathZoneId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "6e60a86dd65e",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "a7ed36375694",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.netlify.com",
+    "id": "c61086517b87",
+    "method": "DELETE",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "c015bb54ee10",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "eb37c194bafc",
+        "left": {
+          "_pbd_hazlo_type": "concat",
+          "id": "4431509b5447",
+          "left": "/api/v1/dns_zones/",
+          "right": {
+            "_pbd_hazlo_type": "var",
+            "id": "8996b3049ceb",
+            "keyPath": "pathZoneId",
+            "optional": false
+          }
+        },
+        "right": "/dns_records/"
+      },
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "d019784a361c",
+        "keyPath": "pathDnsRecordId",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

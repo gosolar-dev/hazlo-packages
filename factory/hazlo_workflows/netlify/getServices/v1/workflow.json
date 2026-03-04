@@ -1,0 +1,42 @@
+{
+  "name": "getServices",
+  "description": "getServices",
+  "meta": {
+    "method": "GET",
+    "operationId": "getServices",
+    "path": "/services/"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "querySearch": "<string>"
+  },
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "443b15659bfb",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "77b302705f5a",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.netlify.com",
+    "id": "cffb39f7a143",
+    "method": "GET",
+    "path": "/api/v1/services/",
+    "query": {
+      "search": {
+        "_pbd_hazlo_type": "var",
+        "id": "9656f80dc99d",
+        "keyPath": "querySearch",
+        "optional": true
+      }
+    }
+  }
+}

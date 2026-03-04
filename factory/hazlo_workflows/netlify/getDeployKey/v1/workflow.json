@@ -1,0 +1,48 @@
+{
+  "name": "getDeployKey",
+  "description": "getDeployKey",
+  "meta": {
+    "method": "GET",
+    "operationId": "getDeployKey",
+    "path": "/deploy_keys/{key_id}"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "pathKeyId": "<string>"
+  },
+  "inputRequired": [
+    "pathKeyId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "e33f3dd4256d",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "7758dd3f62ea",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.netlify.com",
+    "id": "12663c036959",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "f615d4e5eb79",
+      "left": "/api/v1/deploy_keys/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "bd7696eae74e",
+        "keyPath": "pathKeyId",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

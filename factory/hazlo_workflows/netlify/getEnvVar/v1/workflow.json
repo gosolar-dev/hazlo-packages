@@ -1,0 +1,73 @@
+{
+  "name": "getEnvVar",
+  "description": "Returns an individual environment variable. To use this endpoint, your site must no longer be using the <a href=\"https://docs.netlify.com/environment-variables/classic-experience/\">classic environment variables experience</a>.  Migrate now with the Netlify UI.",
+  "meta": {
+    "method": "GET",
+    "operationId": "getEnvVar",
+    "path": "/accounts/{account_id}/env/{key}"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "pathAccountId": "<string>",
+    "pathKey": "<string>",
+    "querySiteId": "<string>"
+  },
+  "inputRequired": [
+    "pathAccountId",
+    "pathKey"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "c68776a2b6a6",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "93e2fd353a68",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.netlify.com",
+    "id": "7f671e2e643a",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "aae5d36a38fc",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "4b00bc77a86b",
+        "left": {
+          "_pbd_hazlo_type": "concat",
+          "id": "dd860ffdeb18",
+          "left": "/api/v1/accounts/",
+          "right": {
+            "_pbd_hazlo_type": "var",
+            "id": "7730a94c427d",
+            "keyPath": "pathAccountId",
+            "optional": false
+          }
+        },
+        "right": "/env/"
+      },
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "f0db229e1beb",
+        "keyPath": "pathKey",
+        "optional": false
+      }
+    },
+    "query": {
+      "site_id": {
+        "_pbd_hazlo_type": "var",
+        "id": "21a81d63f99f",
+        "keyPath": "querySiteId",
+        "optional": true
+      }
+    }
+  }
+}

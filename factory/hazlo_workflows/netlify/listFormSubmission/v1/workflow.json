@@ -1,0 +1,70 @@
+{
+  "name": "listFormSubmission",
+  "description": "listFormSubmission",
+  "meta": {
+    "method": "GET",
+    "operationId": "listFormSubmission",
+    "path": "/submissions/{submission_id}"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "pathSubmissionId": "<string>",
+    "queryPage": "<string>",
+    "queryPerPage": "<string>",
+    "queryQuery": "<string>"
+  },
+  "inputRequired": [
+    "pathSubmissionId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "a878309a138a",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "371de1355a2c",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.netlify.com",
+    "id": "e892df655b2a",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "de3b76312731",
+      "left": "/api/v1/submissions/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "20c33ae9a262",
+        "keyPath": "pathSubmissionId",
+        "optional": false
+      }
+    },
+    "query": {
+      "page": {
+        "_pbd_hazlo_type": "var",
+        "id": "90ebcb805018",
+        "keyPath": "queryPage",
+        "optional": true
+      },
+      "per_page": {
+        "_pbd_hazlo_type": "var",
+        "id": "38c337d57ddf",
+        "keyPath": "queryPerPage",
+        "optional": true
+      },
+      "query": {
+        "_pbd_hazlo_type": "var",
+        "id": "12399654713a",
+        "keyPath": "queryQuery",
+        "optional": true
+      }
+    }
+  }
+}

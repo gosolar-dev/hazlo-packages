@@ -1,0 +1,5 @@
+{
+  "authBearerAuth": "nfpat_testtoken123",
+  "endpoint": "get_site",
+  "pathSiteId": "site_123"
+}

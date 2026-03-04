@@ -1,0 +1,103 @@
+{
+  "name": "listSiteDeploys",
+  "description": "listSiteDeploys",
+  "meta": {
+    "method": "GET",
+    "operationId": "listSiteDeploys",
+    "path": "/sites/{site_id}/deploys"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "pathSiteId": "<string>",
+    "queryBranch": "<string>",
+    "queryDeployPreviews": "<string>",
+    "queryLatestPublished": "<string>",
+    "queryPage": "<string>",
+    "queryPerPage": "<string>",
+    "queryProduction": "<string>",
+    "queryState": "<string>"
+  },
+  "inputRequired": [
+    "pathSiteId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "891d31ffc5a9",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "f6f8e1e8858d",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.netlify.com",
+    "id": "0021dd58da38",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "78efecc5b285",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "50508a2ab6d8",
+        "left": "/api/v1/sites/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "57f43f867ebf",
+          "keyPath": "pathSiteId",
+          "optional": false
+        }
+      },
+      "right": "/deploys"
+    },
+    "query": {
+      "branch": {
+        "_pbd_hazlo_type": "var",
+        "id": "31f2644a6615",
+        "keyPath": "queryBranch",
+        "optional": true
+      },
+      "deploy-previews": {
+        "_pbd_hazlo_type": "var",
+        "id": "b5851f456bb8",
+        "keyPath": "queryDeployPreviews",
+        "optional": true
+      },
+      "latest-published": {
+        "_pbd_hazlo_type": "var",
+        "id": "c7c0083f6502",
+        "keyPath": "queryLatestPublished",
+        "optional": true
+      },
+      "page": {
+        "_pbd_hazlo_type": "var",
+        "id": "02417b33e75b",
+        "keyPath": "queryPage",
+        "optional": true
+      },
+      "per_page": {
+        "_pbd_hazlo_type": "var",
+        "id": "11b2d32f1d43",
+        "keyPath": "queryPerPage",
+        "optional": true
+      },
+      "production": {
+        "_pbd_hazlo_type": "var",
+        "id": "fc1547f7d745",
+        "keyPath": "queryProduction",
+        "optional": true
+      },
+      "state": {
+        "_pbd_hazlo_type": "var",
+        "id": "6c941bb81059",
+        "keyPath": "queryState",
+        "optional": true
+      }
+    }
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "name": "uploadDeployFunction",
+  "description": "uploadDeployFunction",
+  "meta": {
+    "method": "PUT",
+    "operationId": "uploadDeployFunction",
+    "path": "/deploys/{deploy_id}/functions/{name}"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "headerXNfRetryCount": "<string>",
+    "pathDeployId": "<string>",
+    "pathName": "<string>",
+    "queryRuntime": "<string>",
+    "querySize": "<string>"
+  },
+  "inputRequired": [
+    "pathDeployId",
+    "pathName"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {
+      "X-Nf-Retry-Count": {
+        "_pbd_hazlo_type": "var",
+        "id": "9456c03a0b3a",
+        "keyPath": "headerXNfRetryCount",
+        "optional": true
+      },
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "4812b54f3146",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "cd15d6bcb201",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.netlify.com",
+    "id": "f1c6b4168ff0",
+    "method": "PUT",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "bcc74c9c2bae",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "9bfda98f271d",
+        "left": {
+          "_pbd_hazlo_type": "concat",
+          "id": "40d353980a94",
+          "left": "/api/v1/deploys/",
+          "right": {
+            "_pbd_hazlo_type": "var",
+            "id": "9ea006290b06",
+            "keyPath": "pathDeployId",
+            "optional": false
+          }
+        },
+        "right": "/functions/"
+      },
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "c8c683df64eb",
+        "keyPath": "pathName",
+        "optional": false
+      }
+    },
+    "query": {
+      "runtime": {
+        "_pbd_hazlo_type": "var",
+        "id": "c3bf700360d8",
+        "keyPath": "queryRuntime",
+        "optional": true
+      },
+      "size": {
+        "_pbd_hazlo_type": "var",
+        "id": "ff33bdd5fe0d",
+        "keyPath": "querySize",
+        "optional": true
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "name": "getSite",
+  "description": "**Note:** Environment variable keys and values will soon be moved from `build_settings.env` and `repo.env` to a new endpoint. Please use [getEnvVars](#tag/environmentVariables/operation/getEnvVars) to retrieve site environment variables.",
+  "meta": {
+    "method": "GET",
+    "operationId": "getSite",
+    "path": "/sites/{site_id}"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "pathSiteId": "<string>"
+  },
+  "inputRequired": [
+    "pathSiteId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "9b848d501907",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "52ca817dfaf0",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.netlify.com",
+    "id": "bc7c392b44a5",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "23959e354184",
+      "left": "/api/v1/sites/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "9df6feee542b",
+        "keyPath": "pathSiteId",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

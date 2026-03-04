@@ -1,0 +1,7 @@
+{
+  "authBearerAuth": "nfpat_testtoken123",
+  "endpoint": "list_sites",
+  "queryPage": "1",
+  "queryPerPage": "20",
+  "queryName": "demo-site"
+}

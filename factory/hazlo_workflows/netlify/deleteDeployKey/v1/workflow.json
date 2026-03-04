@@ -1,0 +1,48 @@
+{
+  "name": "deleteDeployKey",
+  "description": "deleteDeployKey",
+  "meta": {
+    "method": "DELETE",
+    "operationId": "deleteDeployKey",
+    "path": "/deploy_keys/{key_id}"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "pathKeyId": "<string>"
+  },
+  "inputRequired": [
+    "pathKeyId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "8aad2170b936",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "d2268a6d28fc",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.netlify.com",
+    "id": "fc94766d307c",
+    "method": "DELETE",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "eb461a4f6f18",
+      "left": "/api/v1/deploy_keys/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "c0a00c997d78",
+        "keyPath": "pathKeyId",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

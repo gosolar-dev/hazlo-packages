@@ -1,0 +1,34 @@
+{
+  "name": "listHookTypes",
+  "description": "listHookTypes",
+  "meta": {
+    "method": "GET",
+    "operationId": "listHookTypes",
+    "path": "/hooks/types"
+  },
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "1ac44bb91620",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "0371c7f4df7a",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.netlify.com",
+    "id": "1908dfb1e310",
+    "method": "GET",
+    "path": "/api/v1/hooks/types",
+    "query": {}
+  },
+  "input": {
+    "authBearerAuth": "<string>"
+  }
+}

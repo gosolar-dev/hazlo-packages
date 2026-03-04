@@ -1,0 +1,148 @@
+{
+  "name": "Build Netlify API request",
+  "description": "Builds a deterministic Netlify API request envelope for smoke validation and local request-shaping checks.",
+  "meta": {
+    "provider": "netlify",
+    "operationId": "BuildApiRequest"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "endpoint": "list_sites|get_site|list_site_deploys|get_current_user",
+    "pathSiteId": "<string>",
+    "queryPage": "<string>",
+    "queryPerPage": "<string>",
+    "queryName": "<string>",
+    "queryFilter": "<string>"
+  },
+  "inputRequired": [
+    "endpoint"
+  ],
+  "ruleset": {
+    "method": "GET",
+    "host": "https://api.netlify.com",
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "path": {
+      "_pbd_hazlo_type": "switch",
+      "this": {
+        "_pbd_hazlo_type": "var",
+        "keyPath": "endpoint",
+        "optional": false
+      },
+      "cases": [
+        {
+          "_pbd_hazlo_type": "is",
+          "that": "list_sites",
+          "then": "/api/v1/sites"
+        },
+        {
+          "_pbd_hazlo_type": "is",
+          "that": "get_site",
+          "then": {
+            "_pbd_hazlo_type": "concat",
+            "left": "/api/v1/sites/",
+            "right": {
+              "_pbd_hazlo_type": "var",
+              "keyPath": "pathSiteId",
+              "optional": false
+            }
+          }
+        },
+        {
+          "_pbd_hazlo_type": "is",
+          "that": "list_site_deploys",
+          "then": {
+            "_pbd_hazlo_type": "concat",
+            "left": {
+              "_pbd_hazlo_type": "concat",
+              "left": "/api/v1/sites/",
+              "right": {
+                "_pbd_hazlo_type": "var",
+                "keyPath": "pathSiteId",
+                "optional": false
+              }
+            },
+            "right": "/deploys"
+          }
+        },
+        {
+          "_pbd_hazlo_type": "is",
+          "that": "get_current_user",
+          "then": "/api/v1/user"
+        }
+      ],
+      "default": "/api/v1/sites"
+    },
+    "query": {
+      "_pbd_hazlo_type": "switch",
+      "this": {
+        "_pbd_hazlo_type": "var",
+        "keyPath": "endpoint",
+        "optional": false
+      },
+      "cases": [
+        {
+          "_pbd_hazlo_type": "is",
+          "that": "list_sites",
+          "then": {
+            "page": {
+              "_pbd_hazlo_type": "var",
+              "keyPath": "queryPage",
+              "optional": true
+            },
+            "per_page": {
+              "_pbd_hazlo_type": "var",
+              "keyPath": "queryPerPage",
+              "optional": true
+            },
+            "name": {
+              "_pbd_hazlo_type": "var",
+              "keyPath": "queryName",
+              "optional": true
+            },
+            "filter": {
+              "_pbd_hazlo_type": "var",
+              "keyPath": "queryFilter",
+              "optional": true
+            }
+          }
+        },
+        {
+          "_pbd_hazlo_type": "is",
+          "that": "list_site_deploys",
+          "then": {
+            "page": {
+              "_pbd_hazlo_type": "var",
+              "keyPath": "queryPage",
+              "optional": true
+            },
+            "per_page": {
+              "_pbd_hazlo_type": "var",
+              "keyPath": "queryPerPage",
+              "optional": true
+            }
+          }
+        }
+      ],
+      "default": {}
+    },
+    "summary": {
+      "_pbd_hazlo_type": "concat",
+      "left": "Prepared Netlify request for endpoint ",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "keyPath": "endpoint",
+        "optional": false
+      }
+    }
+  }
+}

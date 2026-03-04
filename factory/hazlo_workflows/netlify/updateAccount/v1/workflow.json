@@ -1,0 +1,48 @@
+{
+  "name": "updateAccount",
+  "description": "updateAccount",
+  "meta": {
+    "method": "PUT",
+    "operationId": "updateAccount",
+    "path": "/accounts/{account_id}"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "pathAccountId": "<string>"
+  },
+  "inputRequired": [
+    "pathAccountId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "0e35139a80b7",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "1a0b57ba5d5e",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.netlify.com",
+    "id": "41cb9b0b3e38",
+    "method": "PUT",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "d19dd6ba8e27",
+      "left": "/api/v1/accounts/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "ea5b1312882a",
+        "keyPath": "pathAccountId",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

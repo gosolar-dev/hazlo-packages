@@ -1,0 +1,61 @@
+{
+  "name": "createEnvVars",
+  "description": "Creates new environment variables. Granular scopes are available on Pro plans and above.  To use this endpoint, your site must no longer be using the <a href=\"https://docs.netlify.com/environment-variables/classic-experience/\">classic environment variables experience</a>.  Migrate now with the Netlify UI.",
+  "meta": {
+    "method": "POST",
+    "operationId": "createEnvVars",
+    "path": "/accounts/{account_id}/env"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "pathAccountId": "<string>",
+    "querySiteId": "<string>"
+  },
+  "inputRequired": [
+    "pathAccountId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "b945d8215081",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "6ca60ac3bde1",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.netlify.com",
+    "id": "bb6501b3d2a9",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "0b8151d07f8f",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "51874164c305",
+        "left": "/api/v1/accounts/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "e6ea130303f6",
+          "keyPath": "pathAccountId",
+          "optional": false
+        }
+      },
+      "right": "/env"
+    },
+    "query": {
+      "site_id": {
+        "_pbd_hazlo_type": "var",
+        "id": "0a0bf774f12f",
+        "keyPath": "querySiteId",
+        "optional": true
+      }
+    }
+  }
+}

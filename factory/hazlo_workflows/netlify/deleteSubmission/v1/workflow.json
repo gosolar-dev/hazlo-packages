@@ -1,0 +1,48 @@
+{
+  "name": "deleteSubmission",
+  "description": "deleteSubmission",
+  "meta": {
+    "method": "DELETE",
+    "operationId": "deleteSubmission",
+    "path": "/submissions/{submission_id}"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "pathSubmissionId": "<string>"
+  },
+  "inputRequired": [
+    "pathSubmissionId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "c6afcdb474ba",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "9ce9c286cf95",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.netlify.com",
+    "id": "78cdf717fff4",
+    "method": "DELETE",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "ac5b997e614c",
+      "left": "/api/v1/submissions/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "feb815104ec8",
+        "keyPath": "pathSubmissionId",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "name": "updateSiteBuildLog",
+  "description": "updateSiteBuildLog",
+  "meta": {
+    "method": "POST",
+    "operationId": "updateSiteBuildLog",
+    "path": "/builds/{build_id}/log"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "pathBuildId": "<string>"
+  },
+  "inputRequired": [
+    "pathBuildId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "7dfdd92c36ea",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "1292f911367b",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.netlify.com",
+    "id": "f16cddc1e7ad",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "845a5b3e7c32",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "23abe9765f29",
+        "left": "/api/v1/builds/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "d4172e61d319",
+          "keyPath": "pathBuildId",
+          "optional": false
+        }
+      },
+      "right": "/log"
+    },
+    "query": {}
+  }
+}

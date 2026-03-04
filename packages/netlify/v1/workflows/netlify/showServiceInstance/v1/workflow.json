@@ -1,0 +1,82 @@
+{
+  "name": "showServiceInstance",
+  "description": "showServiceInstance",
+  "meta": {
+    "method": "GET",
+    "operationId": "showServiceInstance",
+    "path": "/sites/{site_id}/services/{addon}/instances/{instance_id}"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "pathAddon": "<string>",
+    "pathInstanceId": "<string>",
+    "pathSiteId": "<string>"
+  },
+  "inputRequired": [
+    "pathAddon",
+    "pathInstanceId",
+    "pathSiteId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "3c605d0e8764",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "2448c28b4363",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.netlify.com",
+    "id": "9e9c4986280c",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "2c7c71379ac0",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "f485b94cc70c",
+        "left": {
+          "_pbd_hazlo_type": "concat",
+          "id": "cc9d8beaa184",
+          "left": {
+            "_pbd_hazlo_type": "concat",
+            "id": "d6242de6ce68",
+            "left": {
+              "_pbd_hazlo_type": "concat",
+              "id": "c8a2f6f5e3ea",
+              "left": "/api/v1/sites/",
+              "right": {
+                "_pbd_hazlo_type": "var",
+                "id": "b7b4ea4fb47c",
+                "keyPath": "pathSiteId",
+                "optional": false
+              }
+            },
+            "right": "/services/"
+          },
+          "right": {
+            "_pbd_hazlo_type": "var",
+            "id": "ee6110271378",
+            "keyPath": "pathAddon",
+            "optional": false
+          }
+        },
+        "right": "/instances/"
+      },
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "a60b8d76af2e",
+        "keyPath": "pathInstanceId",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

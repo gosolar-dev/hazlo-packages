@@ -1,0 +1,53 @@
+{
+  "name": "cancelSiteDeploy",
+  "description": "cancelSiteDeploy",
+  "meta": {
+    "method": "POST",
+    "operationId": "cancelSiteDeploy",
+    "path": "/deploys/{deploy_id}/cancel"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "pathDeployId": "<string>"
+  },
+  "inputRequired": [
+    "pathDeployId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "bbff233e1ced",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "e3acb32e0bfa",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.netlify.com",
+    "id": "572964adbb94",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "674ddd9c22df",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "a2fa77b6b564",
+        "left": "/api/v1/deploys/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "7725b1049db5",
+          "keyPath": "pathDeployId",
+          "optional": false
+        }
+      },
+      "right": "/cancel"
+    },
+    "query": {}
+  }
+}

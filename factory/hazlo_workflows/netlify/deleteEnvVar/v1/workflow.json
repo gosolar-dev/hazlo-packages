@@ -1,0 +1,73 @@
+{
+  "name": "deleteEnvVar",
+  "description": "Deletes an environment variable. To use this endpoint, your site must no longer be using the <a href=\"https://docs.netlify.com/environment-variables/classic-experience/\">classic environment variables experience</a>.  Migrate now with the Netlify UI.",
+  "meta": {
+    "method": "DELETE",
+    "operationId": "deleteEnvVar",
+    "path": "/accounts/{account_id}/env/{key}"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "pathAccountId": "<string>",
+    "pathKey": "<string>",
+    "querySiteId": "<string>"
+  },
+  "inputRequired": [
+    "pathAccountId",
+    "pathKey"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "c87375e90079",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "aabcbb33ba28",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.netlify.com",
+    "id": "f44bcbce3b5e",
+    "method": "DELETE",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "e06d8a7e91a1",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "fc5d2fbe0f9b",
+        "left": {
+          "_pbd_hazlo_type": "concat",
+          "id": "693dae231eda",
+          "left": "/api/v1/accounts/",
+          "right": {
+            "_pbd_hazlo_type": "var",
+            "id": "c8670fb56b94",
+            "keyPath": "pathAccountId",
+            "optional": false
+          }
+        },
+        "right": "/env/"
+      },
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "7e6d0b1dec2b",
+        "keyPath": "pathKey",
+        "optional": false
+      }
+    },
+    "query": {
+      "site_id": {
+        "_pbd_hazlo_type": "var",
+        "id": "127bbd5b3c81",
+        "keyPath": "querySiteId",
+        "optional": true
+      }
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "name": "getEnvVars",
+  "description": "Returns all environment variables for an account or site. An account corresponds to a team in the Netlify UI. To use this endpoint, your site must no longer be using the <a href=\"https://docs.netlify.com/environment-variables/classic-experience/\">classic environment variables experience</a>.  Migrate now with the Netlify UI.",
+  "meta": {
+    "method": "GET",
+    "operationId": "getEnvVars",
+    "path": "/accounts/{account_id}/env"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "pathAccountId": "<string>",
+    "queryContextName": "<string>",
+    "queryScope": "<string>",
+    "querySiteId": "<string>"
+  },
+  "inputRequired": [
+    "pathAccountId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "933cd98cb2f1",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "e11e0fc38056",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.netlify.com",
+    "id": "7db0cac7b770",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "e0bfdea9299d",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "1204e2902bdd",
+        "left": "/api/v1/accounts/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "762a36d783c5",
+          "keyPath": "pathAccountId",
+          "optional": false
+        }
+      },
+      "right": "/env"
+    },
+    "query": {
+      "context_name": {
+        "_pbd_hazlo_type": "var",
+        "id": "a86d6c132b3d",
+        "keyPath": "queryContextName",
+        "optional": true
+      },
+      "scope": {
+        "_pbd_hazlo_type": "var",
+        "id": "3613c9681455",
+        "keyPath": "queryScope",
+        "optional": true
+      },
+      "site_id": {
+        "_pbd_hazlo_type": "var",
+        "id": "48b6a49d3705",
+        "keyPath": "querySiteId",
+        "optional": true
+      }
+    }
+  }
+}

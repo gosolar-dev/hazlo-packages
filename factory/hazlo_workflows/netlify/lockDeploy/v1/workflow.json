@@ -1,0 +1,53 @@
+{
+  "name": "lockDeploy",
+  "description": "lockDeploy",
+  "meta": {
+    "method": "POST",
+    "operationId": "lockDeploy",
+    "path": "/deploys/{deploy_id}/lock"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "pathDeployId": "<string>"
+  },
+  "inputRequired": [
+    "pathDeployId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "8a5ede763d90",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "5e38186837cd",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.netlify.com",
+    "id": "275819cbecb9",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "4b8874741c9b",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "e34f85458719",
+        "left": "/api/v1/deploys/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "cee4b36a6b0c",
+          "keyPath": "pathDeployId",
+          "optional": false
+        }
+      },
+      "right": "/lock"
+    },
+    "query": {}
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "name": "listServiceInstancesForSite",
+  "description": "listServiceInstancesForSite",
+  "meta": {
+    "method": "GET",
+    "operationId": "listServiceInstancesForSite",
+    "path": "/sites/{site_id}/service-instances"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "pathSiteId": "<string>"
+  },
+  "inputRequired": [
+    "pathSiteId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "65eaf3ef0f42",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "50311a7b2a3e",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.netlify.com",
+    "id": "057d23c8f5c9",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "882b4ffc6434",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "d04b90fe3c26",
+        "left": "/api/v1/sites/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "21c41ff3aa1f",
+          "keyPath": "pathSiteId",
+          "optional": false
+        }
+      },
+      "right": "/service-instances"
+    },
+    "query": {}
+  }
+}

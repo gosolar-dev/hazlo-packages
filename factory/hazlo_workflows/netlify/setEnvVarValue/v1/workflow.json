@@ -1,0 +1,73 @@
+{
+  "name": "setEnvVarValue",
+  "description": "Updates or creates a new value for an existing environment variable. To use this endpoint, your site must no longer be using the <a href=\"https://docs.netlify.com/environment-variables/classic-experience/\">classic environment variables experience</a>.  Migrate now with the Netlify UI.",
+  "meta": {
+    "method": "PATCH",
+    "operationId": "setEnvVarValue",
+    "path": "/accounts/{account_id}/env/{key}"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "pathAccountId": "<string>",
+    "pathKey": "<string>",
+    "querySiteId": "<string>"
+  },
+  "inputRequired": [
+    "pathAccountId",
+    "pathKey"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "e9282043d3dc",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "ba8b651c0426",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.netlify.com",
+    "id": "39096e9d73a4",
+    "method": "PATCH",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "62a8833463bf",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "9a2bbd053d97",
+        "left": {
+          "_pbd_hazlo_type": "concat",
+          "id": "8d0a1084e5ea",
+          "left": "/api/v1/accounts/",
+          "right": {
+            "_pbd_hazlo_type": "var",
+            "id": "1a38fca2378a",
+            "keyPath": "pathAccountId",
+            "optional": false
+          }
+        },
+        "right": "/env/"
+      },
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "0a34f9246afd",
+        "keyPath": "pathKey",
+        "optional": false
+      }
+    },
+    "query": {
+      "site_id": {
+        "_pbd_hazlo_type": "var",
+        "id": "b42f8ad4d153",
+        "keyPath": "querySiteId",
+        "optional": true
+      }
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "name": "removeAccountMember",
+  "description": "removeAccountMember",
+  "meta": {
+    "method": "DELETE",
+    "operationId": "removeAccountMember",
+    "path": "/{account_slug}/members/{member_id}"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "pathAccountSlug": "<string>",
+    "pathMemberId": "<string>"
+  },
+  "inputRequired": [
+    "pathAccountSlug",
+    "pathMemberId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "ba2c18274461",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "7e95f719a5cc",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.netlify.com",
+    "id": "cbe6a2547150",
+    "method": "DELETE",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "b9a1202e8aef",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "33795a564c54",
+        "left": {
+          "_pbd_hazlo_type": "concat",
+          "id": "a4c43565f93a",
+          "left": "/api/v1/",
+          "right": {
+            "_pbd_hazlo_type": "var",
+            "id": "58aebb9e64c8",
+            "keyPath": "pathAccountSlug",
+            "optional": false
+          }
+        },
+        "right": "/members/"
+      },
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "2a843c57428c",
+        "keyPath": "pathMemberId",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

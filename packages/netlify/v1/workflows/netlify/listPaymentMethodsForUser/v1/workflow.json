@@ -1,0 +1,34 @@
+{
+  "name": "listPaymentMethodsForUser",
+  "description": "listPaymentMethodsForUser",
+  "meta": {
+    "method": "GET",
+    "operationId": "listPaymentMethodsForUser",
+    "path": "/billing/payment_methods"
+  },
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "9a23dbb8e266",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "084ec07e376d",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.netlify.com",
+    "id": "78b2b5a29bec",
+    "method": "GET",
+    "path": "/api/v1/billing/payment_methods",
+    "query": {}
+  },
+  "input": {
+    "authBearerAuth": "<string>"
+  }
+}

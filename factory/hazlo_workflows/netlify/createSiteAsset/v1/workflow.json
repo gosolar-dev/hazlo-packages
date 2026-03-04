@@ -1,0 +1,85 @@
+{
+  "name": "createSiteAsset",
+  "description": "createSiteAsset",
+  "meta": {
+    "method": "POST",
+    "operationId": "createSiteAsset",
+    "path": "/sites/{site_id}/assets"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "pathSiteId": "<string>",
+    "queryContentType": "<string>",
+    "queryName": "<string>",
+    "querySize": "<string>",
+    "queryVisibility": "<string>"
+  },
+  "inputRequired": [
+    "pathSiteId",
+    "queryContentType",
+    "queryName",
+    "querySize"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "5774c40a4758",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "fc5e9e57964e",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.netlify.com",
+    "id": "ab56c5ea5923",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "2b0381e16513",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "10d9ed3f061d",
+        "left": "/api/v1/sites/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "610cd1b24834",
+          "keyPath": "pathSiteId",
+          "optional": false
+        }
+      },
+      "right": "/assets"
+    },
+    "query": {
+      "content_type": {
+        "_pbd_hazlo_type": "var",
+        "id": "cc9ec7042209",
+        "keyPath": "queryContentType",
+        "optional": false
+      },
+      "name": {
+        "_pbd_hazlo_type": "var",
+        "id": "6b296400ee29",
+        "keyPath": "queryName",
+        "optional": false
+      },
+      "size": {
+        "_pbd_hazlo_type": "var",
+        "id": "41b3d7a88ce2",
+        "keyPath": "querySize",
+        "optional": false
+      },
+      "visibility": {
+        "_pbd_hazlo_type": "var",
+        "id": "b00af127512e",
+        "keyPath": "queryVisibility",
+        "optional": true
+      }
+    }
+  }
+}

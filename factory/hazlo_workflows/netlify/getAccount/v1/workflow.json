@@ -1,0 +1,48 @@
+{
+  "name": "getAccount",
+  "description": "getAccount",
+  "meta": {
+    "method": "GET",
+    "operationId": "getAccount",
+    "path": "/accounts/{account_id}"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "pathAccountId": "<string>"
+  },
+  "inputRequired": [
+    "pathAccountId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "2d5424654e32",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "b9e9eea8bc61",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.netlify.com",
+    "id": "afc64c06b58b",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "ffeb28cca19f",
+      "left": "/api/v1/accounts/",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "cadd1050cbdd",
+        "keyPath": "pathAccountId",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

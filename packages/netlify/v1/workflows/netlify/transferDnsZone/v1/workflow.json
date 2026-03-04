@@ -1,0 +1,78 @@
+{
+  "name": "transferDnsZone",
+  "description": "transferDnsZone",
+  "meta": {
+    "method": "PUT",
+    "operationId": "transferDnsZone",
+    "path": "/dns_zones/{zone_id}/transfer"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "pathZoneId": "<string>",
+    "queryAccountId": "<string>",
+    "queryTransferAccountId": "<string>",
+    "queryTransferUserId": "<string>"
+  },
+  "inputRequired": [
+    "pathZoneId",
+    "queryAccountId",
+    "queryTransferAccountId",
+    "queryTransferUserId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "e50f01283241",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "3586df1f4626",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.netlify.com",
+    "id": "5a15053ab939",
+    "method": "PUT",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "cb816ab096f7",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "8d16518e99e2",
+        "left": "/api/v1/dns_zones/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "945336cd9b82",
+          "keyPath": "pathZoneId",
+          "optional": false
+        }
+      },
+      "right": "/transfer"
+    },
+    "query": {
+      "account_id": {
+        "_pbd_hazlo_type": "var",
+        "id": "ea16b77b1a24",
+        "keyPath": "queryAccountId",
+        "optional": false
+      },
+      "transfer_account_id": {
+        "_pbd_hazlo_type": "var",
+        "id": "1c5e8abb21ee",
+        "keyPath": "queryTransferAccountId",
+        "optional": false
+      },
+      "transfer_user_id": {
+        "_pbd_hazlo_type": "var",
+        "id": "d98f6f11b2ee",
+        "keyPath": "queryTransferUserId",
+        "optional": false
+      }
+    }
+  }
+}

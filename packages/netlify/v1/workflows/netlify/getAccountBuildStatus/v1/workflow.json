@@ -1,0 +1,53 @@
+{
+  "name": "getAccountBuildStatus",
+  "description": "getAccountBuildStatus",
+  "meta": {
+    "method": "GET",
+    "operationId": "getAccountBuildStatus",
+    "path": "/{account_id}/builds/status"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "pathAccountId": "<string>"
+  },
+  "inputRequired": [
+    "pathAccountId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "6d0e3bf36776",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "61e47f6a0780",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.netlify.com",
+    "id": "576a7aa0452f",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "b8ddf63fd17c",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "3a1d374433ac",
+        "left": "/api/v1/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "f3b61abc987c",
+          "keyPath": "pathAccountId",
+          "optional": false
+        }
+      },
+      "right": "/builds/status"
+    },
+    "query": {}
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "result": {
+    "headers": {
+      "Authorization": "Bearer nfpat_testtoken123"
+    },
+    "host": "https://api.netlify.com",
+    "method": "GET",
+    "path": "/api/v1/sites/site_123",
+    "query": {},
+    "summary": "Prepared Netlify request for endpoint get_site"
+  },
+  "workflowRef": "netlify/BuildApiRequest/v1"
+}

@@ -1,0 +1,53 @@
+{
+  "name": "createDnsRecord",
+  "description": "createDnsRecord",
+  "meta": {
+    "method": "POST",
+    "operationId": "createDnsRecord",
+    "path": "/dns_zones/{zone_id}/dns_records"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "pathZoneId": "<string>"
+  },
+  "inputRequired": [
+    "pathZoneId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "869722c02aa3",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "d38d31bc6aaf",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.netlify.com",
+    "id": "16b20395e5a5",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "6e75c37ffa27",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "ebcc4a843f8a",
+        "left": "/api/v1/dns_zones/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "5584f1c6ca72",
+          "keyPath": "pathZoneId",
+          "optional": false
+        }
+      },
+      "right": "/dns_records"
+    },
+    "query": {}
+  }
+}

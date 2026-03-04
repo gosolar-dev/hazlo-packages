@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "v1",
+  "package": "netlify",
+  "version": "v1",
+  "provider": "netlify",
+  "mode": "full",
+  "description": "Comprehensive Netlify API workflows generated from OpenAPI, including sites, deploys, builds, DNS, forms, accounts, and team operations.",
+  "defaultInstallRefs": [
+    "netlify/getCurrentUser/v1",
+    "netlify/listSites/v1",
+    "netlify/getSite/v1",
+    "netlify/listSiteDeploys/v1",
+    "netlify/createSiteDeploy/v1",
+    "netlify/listSiteBuilds/v1"
+  ],
+  "env": [],
+  "homepage": "https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api/",
+  "license": "MIT",
+  "tags": [
+    "netlify",
+    "hosting",
+    "deploys",
+    "dns",
+    "openapi",
+    "generated"
+  ],
+  "smokeTests": [
+    {
+      "name": "Build list sites request envelope",
+      "ref": "netlify/BuildApiRequest/v1",
+      "input": "../../../fixtures/inputs/netlify.buildApiRequest.listSites.json",
+      "expected": "../../../fixtures/expected/netlify.buildApiRequest.listSites.json"
+    },
+    {
+      "name": "Build get site request envelope",
+      "ref": "netlify/BuildApiRequest/v1",
+      "input": "../../../fixtures/inputs/netlify.buildApiRequest.getSite.json",
+      "expected": "../../../fixtures/expected/netlify.buildApiRequest.getSite.json"
+    }
+  ]
+}

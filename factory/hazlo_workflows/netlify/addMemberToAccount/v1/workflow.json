@@ -1,0 +1,53 @@
+{
+  "name": "addMemberToAccount",
+  "description": "addMemberToAccount",
+  "meta": {
+    "method": "POST",
+    "operationId": "addMemberToAccount",
+    "path": "/{account_slug}/members"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "pathAccountSlug": "<string>"
+  },
+  "inputRequired": [
+    "pathAccountSlug"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "333b6ba43799",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "9a649e850808",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.netlify.com",
+    "id": "c5743a8ea558",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "3b6b926be770",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "8de6ccb04ef8",
+        "left": "/api/v1/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "e7cf2a14ef5c",
+          "keyPath": "pathAccountSlug",
+          "optional": false
+        }
+      },
+      "right": "/members"
+    },
+    "query": {}
+  }
+}

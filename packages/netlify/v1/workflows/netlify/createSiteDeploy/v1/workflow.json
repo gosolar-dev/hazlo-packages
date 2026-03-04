@@ -1,0 +1,96 @@
+{
+  "name": "createSiteDeploy",
+  "description": "createSiteDeploy",
+  "meta": {
+    "method": "POST",
+    "operationId": "createSiteDeploy",
+    "path": "/sites/{site_id}/deploys"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "pathSiteId": "<string>",
+    "queryBranch": "<string>",
+    "queryDeployPreviews": "<string>",
+    "queryLatestPublished": "<string>",
+    "queryProduction": "<string>",
+    "queryState": "<string>",
+    "queryTitle": "<string>"
+  },
+  "inputRequired": [
+    "pathSiteId"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "177d21842de0",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "9c5251d15636",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.netlify.com",
+    "id": "f1c3511846b2",
+    "method": "POST",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "3be05266d698",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "612a935db055",
+        "left": "/api/v1/sites/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "a2531d4e7944",
+          "keyPath": "pathSiteId",
+          "optional": false
+        }
+      },
+      "right": "/deploys"
+    },
+    "query": {
+      "branch": {
+        "_pbd_hazlo_type": "var",
+        "id": "8ea0f83c6676",
+        "keyPath": "queryBranch",
+        "optional": true
+      },
+      "deploy-previews": {
+        "_pbd_hazlo_type": "var",
+        "id": "cc8dc304fa48",
+        "keyPath": "queryDeployPreviews",
+        "optional": true
+      },
+      "latest-published": {
+        "_pbd_hazlo_type": "var",
+        "id": "66c0cd2740a1",
+        "keyPath": "queryLatestPublished",
+        "optional": true
+      },
+      "production": {
+        "_pbd_hazlo_type": "var",
+        "id": "89825d6a5e6c",
+        "keyPath": "queryProduction",
+        "optional": true
+      },
+      "state": {
+        "_pbd_hazlo_type": "var",
+        "id": "1da2ca601d26",
+        "keyPath": "queryState",
+        "optional": true
+      },
+      "title": {
+        "_pbd_hazlo_type": "var",
+        "id": "15e370879984",
+        "keyPath": "queryTitle",
+        "optional": true
+      }
+    }
+  }
+}

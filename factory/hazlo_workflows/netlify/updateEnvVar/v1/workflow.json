@@ -1,0 +1,73 @@
+{
+  "name": "updateEnvVar",
+  "description": "Updates an existing environment variable and all of its values. Existing values will be replaced by values provided. To use this endpoint, your site must no longer be using the <a href=\"https://docs.netlify.com/environment-variables/classic-experience/\">classic environment variables experience</a>.  Migrate now with the Netlify UI.",
+  "meta": {
+    "method": "PUT",
+    "operationId": "updateEnvVar",
+    "path": "/accounts/{account_id}/env/{key}"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "pathAccountId": "<string>",
+    "pathKey": "<string>",
+    "querySiteId": "<string>"
+  },
+  "inputRequired": [
+    "pathAccountId",
+    "pathKey"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "99801029d833",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "66a9aeb768e2",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.netlify.com",
+    "id": "f95a38dcb50e",
+    "method": "PUT",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "bf4929779cb3",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "2cdc0a0603a0",
+        "left": {
+          "_pbd_hazlo_type": "concat",
+          "id": "ed1e0a901bd0",
+          "left": "/api/v1/accounts/",
+          "right": {
+            "_pbd_hazlo_type": "var",
+            "id": "4b6a9f6e487b",
+            "keyPath": "pathAccountId",
+            "optional": false
+          }
+        },
+        "right": "/env/"
+      },
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "af3b78ce4eb1",
+        "keyPath": "pathKey",
+        "optional": false
+      }
+    },
+    "query": {
+      "site_id": {
+        "_pbd_hazlo_type": "var",
+        "id": "9bd7cd9408df",
+        "keyPath": "querySiteId",
+        "optional": true
+      }
+    }
+  }
+}

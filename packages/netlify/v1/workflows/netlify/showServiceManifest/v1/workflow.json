@@ -1,0 +1,53 @@
+{
+  "name": "showServiceManifest",
+  "description": "showServiceManifest",
+  "meta": {
+    "method": "GET",
+    "operationId": "showServiceManifest",
+    "path": "/services/{addonName}/manifest"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "pathAddonName": "<string>"
+  },
+  "inputRequired": [
+    "pathAddonName"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "3379ee56a2fb",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "793004dc0247",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.netlify.com",
+    "id": "c0ab855434c5",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "3f72f9cc4140",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "c6a04919b315",
+        "left": "/api/v1/services/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "477ef150c57b",
+          "keyPath": "pathAddonName",
+          "optional": false
+        }
+      },
+      "right": "/manifest"
+    },
+    "query": {}
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "name": "listSitesForAccount",
+  "description": "**Note:** Environment variable keys and values will soon be moved from `build_settings.env` and `repo.env` to a new endpoint. Please use [getEnvVars](#tag/environmentVariables/operation/getEnvVars) to retrieve site environment variables.",
+  "meta": {
+    "method": "GET",
+    "operationId": "listSitesForAccount",
+    "path": "/{account_slug}/sites"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "pathAccountSlug": "<string>",
+    "queryName": "<string>",
+    "queryPage": "<string>",
+    "queryPerPage": "<string>"
+  },
+  "inputRequired": [
+    "pathAccountSlug"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {
+      "Authorization": {
+        "_pbd_hazlo_type": "concat",
+        "id": "513d5b5ed9fe",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "e07d15b7f713",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.netlify.com",
+    "id": "90c5ecbdde2c",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "a726f0130a9a",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "2e9332ef1811",
+        "left": "/api/v1/",
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "3f99fba46ce3",
+          "keyPath": "pathAccountSlug",
+          "optional": false
+        }
+      },
+      "right": "/sites"
+    },
+    "query": {
+      "name": {
+        "_pbd_hazlo_type": "var",
+        "id": "904d658640eb",
+        "keyPath": "queryName",
+        "optional": true
+      },
+      "page": {
+        "_pbd_hazlo_type": "var",
+        "id": "cfbae9b11a92",
+        "keyPath": "queryPage",
+        "optional": true
+      },
+      "per_page": {
+        "_pbd_hazlo_type": "var",
+        "id": "497dfffffddb",
+        "keyPath": "queryPerPage",
+        "optional": true
+      }
+    }
+  }
+}
