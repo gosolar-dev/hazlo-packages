@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve a Country Spec",
+  "description": "<p>Returns a Country Spec for a given Country code.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getCountrySpecsCountry",
+    "path": "/v1/country_specs/{country}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathCountry": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathCountry"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "42c0b5c0389c",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "363e8f2a3790",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "e1f0ff2d60d4",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "17ece59e8c95",
+    "method": "GET",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "73ab2f41bd65",
+      "left": "/v1/country_specs/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "bc62d6452549",
+        "keyPath": "pathCountry",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "f950b379462d",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

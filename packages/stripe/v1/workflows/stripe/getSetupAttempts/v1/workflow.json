@@ -1,0 +1,87 @@
+{
+  "name": "List all SetupAttempts",
+  "description": "<p>Returns a list of SetupAttempts that associate with a provided SetupIntent.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getSetupAttempts",
+    "path": "/v1/setup_attempts",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryCreated": "<string>",
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryLimit": "<number>",
+    "querySetupIntent": "<string>",
+    "queryStartingAfter": "<string>"
+  },
+  "inputRequired": [
+    "querySetupIntent"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "e20f25fd9155",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "03155ded9457",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "22003088d2ab",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "5045b0e709d1",
+    "method": "GET",
+    "path": "/v1/setup_attempts",
+    "query": {
+      "created": {
+        "_pbd_nebula_type": "var",
+        "id": "c47454c3169c",
+        "keyPath": "queryCreated",
+        "optional": true
+      },
+      "ending_before": {
+        "_pbd_nebula_type": "var",
+        "id": "78968de79837",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "f3603509befd",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_nebula_type": "var",
+        "id": "47b65c9da454",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "setup_intent": {
+        "_pbd_nebula_type": "var",
+        "id": "41ee498c9f14",
+        "keyPath": "querySetupIntent",
+        "optional": false
+      },
+      "starting_after": {
+        "_pbd_nebula_type": "var",
+        "id": "553e6e4df676",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      }
+    }
+  }
+}

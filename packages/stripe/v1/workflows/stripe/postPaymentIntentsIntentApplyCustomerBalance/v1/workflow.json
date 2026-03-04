@@ -1,0 +1,66 @@
+{
+  "name": "Reconcile a customer_balance PaymentIntent",
+  "description": "<p>Manually reconcile the remaining amount for a <code>customer_balance</code> PaymentIntent.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postPaymentIntentsIntentApplyCustomerBalance",
+    "path": "/v1/payment_intents/{intent}/apply_customer_balance",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "amount": "<number>",
+      "currency": "<string>",
+      "expand": [
+        "<string>"
+      ]
+    },
+    "pathIntent": "<string>"
+  },
+  "inputRequired": [
+    "pathIntent"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "bee987cd184c",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "3373c36a71d9",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "115ce858cc36",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "2ecd40755a07",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "5000601e6312",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "294ff53dce84",
+        "left": "/v1/payment_intents/",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "b24618340fc9",
+          "keyPath": "pathIntent",
+          "optional": false
+        }
+      },
+      "right": "/apply_customer_balance"
+    },
+    "query": {}
+  }
+}

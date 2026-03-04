@@ -1,0 +1,67 @@
+{
+  "name": "Find a Secret",
+  "description": "<p>Finds a secret in the secret store by name and scope.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getAppsSecretsFind",
+    "path": "/v1/apps/secrets/find",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryExpand": [],
+    "queryName": "<string>",
+    "queryScope": {}
+  },
+  "inputRequired": [
+    "queryName",
+    "queryScope"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "e3cbbbb9dedd",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "ce522b476b8f",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "68dd0febf36c",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "1e51483583dc",
+    "method": "GET",
+    "path": "/v1/apps/secrets/find",
+    "query": {
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "8b2d735bc720",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "name": {
+        "_pbd_nebula_type": "var",
+        "id": "e8d6237251f4",
+        "keyPath": "queryName",
+        "optional": false
+      },
+      "scope": {
+        "_pbd_nebula_type": "var",
+        "id": "012f593d4958",
+        "keyPath": "queryScope",
+        "optional": false
+      }
+    }
+  }
+}

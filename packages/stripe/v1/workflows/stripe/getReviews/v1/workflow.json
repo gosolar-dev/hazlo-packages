@@ -1,0 +1,77 @@
+{
+  "name": "List all open reviews",
+  "description": "<p>Returns a list of <code>Review</code> objects that have <code>open</code> set to <code>true</code>. The objects are sorted in descending order by creation date, with the most recently created object appearing first.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getReviews",
+    "path": "/v1/reviews",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryCreated": "<string>",
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryLimit": "<number>",
+    "queryStartingAfter": "<string>"
+  },
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "2ebbce60891e",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "20ea86e25563",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "a2b92c60b325",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "706fd5365d0c",
+    "method": "GET",
+    "path": "/v1/reviews",
+    "query": {
+      "created": {
+        "_pbd_nebula_type": "var",
+        "id": "97502dc802e5",
+        "keyPath": "queryCreated",
+        "optional": true
+      },
+      "ending_before": {
+        "_pbd_nebula_type": "var",
+        "id": "337995411d9e",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "ba230e5baa27",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_nebula_type": "var",
+        "id": "ab35ebaf75cf",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_nebula_type": "var",
+        "id": "bf0bf6566fce",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      }
+    }
+  }
+}

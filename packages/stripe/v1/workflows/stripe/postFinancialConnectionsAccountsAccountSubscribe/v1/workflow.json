@@ -1,0 +1,68 @@
+{
+  "name": "Subscribe to data refreshes for an Account",
+  "description": "<p>Subscribes to periodic refreshes of data associated with a Financial Connections <code>Account</code>. When the account status is active, data is typically refreshed once a day.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postFinancialConnectionsAccountsAccountSubscribe",
+    "path": "/v1/financial_connections/accounts/{account}/subscribe",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ],
+      "features": [
+        "transactions"
+      ]
+    },
+    "pathAccount": "<string>"
+  },
+  "inputRequired": [
+    "body",
+    "pathAccount"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "f29da7c53738",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "11e8a820ec46",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "bd5957ef7f8a",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "0a15803caa22",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "a7e0c7e538ed",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "4de28160da8d",
+        "left": "/v1/financial_connections/accounts/",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "8d8bbfbf6cbf",
+          "keyPath": "pathAccount",
+          "optional": false
+        }
+      },
+      "right": "/subscribe"
+    },
+    "query": {}
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve a schedule",
+  "description": "<p>Retrieves the details of an existing subscription schedule. You only need to supply the unique subscription schedule identifier that was returned upon subscription schedule creation.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getSubscriptionSchedulesSchedule",
+    "path": "/v1/subscription_schedules/{schedule}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathSchedule": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathSchedule"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "388795bea3ac",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "8ed242ed5b40",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "05c6804cc5d2",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "918e1e024a1d",
+    "method": "GET",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "651102002d7f",
+      "left": "/v1/subscription_schedules/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "ddccb52240e8",
+        "keyPath": "pathSchedule",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "641e361b14e4",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

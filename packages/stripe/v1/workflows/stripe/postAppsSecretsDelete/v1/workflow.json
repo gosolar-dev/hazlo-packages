@@ -1,0 +1,53 @@
+{
+  "name": "Delete a Secret",
+  "description": "<p>Deletes a secret from the secret store by name and scope.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postAppsSecretsDelete",
+    "path": "/v1/apps/secrets/delete",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ],
+      "name": "<string>",
+      "scope": {
+        "type": "account",
+        "user": "<string>"
+      }
+    }
+  },
+  "inputRequired": [
+    "body"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "47858754afc9",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "91b2c1845a80",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "f1f362c23516",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "e6e3ff649477",
+    "method": "POST",
+    "path": "/v1/apps/secrets/delete",
+    "query": {}
+  }
+}

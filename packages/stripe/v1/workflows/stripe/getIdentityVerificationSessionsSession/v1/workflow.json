@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve a VerificationSession",
+  "description": "<p>Retrieves the details of a VerificationSession that was previously created.</p>\n\n<p>When the session status is <code>requires_input</code>, you can use this method to retrieve a valid\n<code>client_secret</code> or <code>url</code> to allow re-submission.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getIdentityVerificationSessionsSession",
+    "path": "/v1/identity/verification_sessions/{session}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathSession": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathSession"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "b20a08c9857c",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "0a27b0ea7d49",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "8155a3993415",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "9fe4557ae941",
+    "method": "GET",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "04b47f4a1fbb",
+      "left": "/v1/identity/verification_sessions/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "093375e7bb4e",
+        "keyPath": "pathSession",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "3cc3aec393c1",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

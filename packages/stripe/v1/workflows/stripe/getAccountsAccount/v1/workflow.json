@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve account",
+  "description": "<p>Retrieves the details of an account.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getAccountsAccount",
+    "path": "/v1/accounts/{account}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathAccount": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathAccount"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "c33b3654c42b",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "a012701a52db",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "6128ab4de9d4",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "b8c1287b90b9",
+    "method": "GET",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "0ebb0899642d",
+      "left": "/v1/accounts/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "fcee012e658a",
+        "keyPath": "pathAccount",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "ff5f9d28f7da",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

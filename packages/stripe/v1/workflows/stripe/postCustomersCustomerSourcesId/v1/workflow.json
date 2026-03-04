@@ -1,0 +1,103 @@
+{
+  "name": "PostCustomersCustomerSourcesId",
+  "description": "<p>Update a specified source for a given customer.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postCustomersCustomerSourcesId",
+    "path": "/v1/customers/{customer}/sources/{id}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "account_holder_name": "<string>",
+      "account_holder_type": "company",
+      "address_city": "<string>",
+      "address_country": "<string>",
+      "address_line1": "<string>",
+      "address_line2": "<string>",
+      "address_state": "<string>",
+      "address_zip": "<string>",
+      "exp_month": "<string>",
+      "exp_year": "<string>",
+      "expand": [
+        "<string>"
+      ],
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "name": "<string>",
+      "owner": {
+        "address": {
+          "city": "<string>",
+          "country": "<string>",
+          "line1": "<string>",
+          "line2": "<string>",
+          "postal_code": "<string>",
+          "state": "<string>"
+        },
+        "email": "<string>",
+        "name": "<string>",
+        "phone": "<string>"
+      }
+    },
+    "pathCustomer": "<string>",
+    "pathId": "<string>"
+  },
+  "inputRequired": [
+    "pathCustomer",
+    "pathId"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "f052aa28615d",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "7904f328646c",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "9960ca0de524",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "9c0d99b4b301",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "3998cc167711",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "d09e261df371",
+        "left": {
+          "_pbd_nebula_type": "concat",
+          "id": "2d6425635828",
+          "left": "/v1/customers/",
+          "right": {
+            "_pbd_nebula_type": "var",
+            "id": "d038e8a51eee",
+            "keyPath": "pathCustomer",
+            "optional": false
+          }
+        },
+        "right": "/sources/"
+      },
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "5e5bee303837",
+        "keyPath": "pathId",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

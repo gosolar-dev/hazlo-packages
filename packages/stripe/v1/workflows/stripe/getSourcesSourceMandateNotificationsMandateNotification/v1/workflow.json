@@ -1,0 +1,80 @@
+{
+  "name": "Retrieve a Source MandateNotification",
+  "description": "<p>Retrieves a new Source MandateNotification.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getSourcesSourceMandateNotificationsMandateNotification",
+    "path": "/v1/sources/{source}/mandate_notifications/{mandate_notification}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathMandateNotification": "<string>",
+    "pathSource": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathMandateNotification",
+    "pathSource"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "552b8c47c155",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "26873fd0b21f",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "62d9ba138472",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "1451338758e8",
+    "method": "GET",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "e32e917d2e38",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "46827c7bf6d2",
+        "left": {
+          "_pbd_nebula_type": "concat",
+          "id": "d633d04618ae",
+          "left": "/v1/sources/",
+          "right": {
+            "_pbd_nebula_type": "var",
+            "id": "267a87694a2f",
+            "keyPath": "pathSource",
+            "optional": false
+          }
+        },
+        "right": "/mandate_notifications/"
+      },
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "bd1deb6b676c",
+        "keyPath": "pathMandateNotification",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "45d242d45fee",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

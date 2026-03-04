@@ -1,0 +1,64 @@
+{
+  "name": "Cancel an InboundTransfer",
+  "description": "<p>Cancels an InboundTransfer.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postTreasuryInboundTransfersInboundTransferCancel",
+    "path": "/v1/treasury/inbound_transfers/{inbound_transfer}/cancel",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ]
+    },
+    "pathInboundTransfer": "<string>"
+  },
+  "inputRequired": [
+    "pathInboundTransfer"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "a65055367434",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "2bf817f2e2d5",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "1138494617a2",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "0c68f0527bb8",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "2adbf566bdb1",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "54a89263bbff",
+        "left": "/v1/treasury/inbound_transfers/",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "4fb5c26153d6",
+          "keyPath": "pathInboundTransfer",
+          "optional": false
+        }
+      },
+      "right": "/cancel"
+    },
+    "query": {}
+  }
+}

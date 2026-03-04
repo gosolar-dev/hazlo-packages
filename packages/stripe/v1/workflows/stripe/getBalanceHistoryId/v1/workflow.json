@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve a balance transaction",
+  "description": "<p>Retrieves the balance transaction with the given ID.</p>\n\n<p>Note that this endpoint previously used the path <code>/v1/balance/history/:id</code>.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getBalanceHistoryId",
+    "path": "/v1/balance/history/{id}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathId": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathId"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "f949c5376cf5",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "166052b9656d",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "dd1842e7adca",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "16c5a095063d",
+    "method": "GET",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "e6b834291d66",
+      "left": "/v1/balance/history/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "ca62dd7d4c46",
+        "keyPath": "pathId",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "2e301f8a2613",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

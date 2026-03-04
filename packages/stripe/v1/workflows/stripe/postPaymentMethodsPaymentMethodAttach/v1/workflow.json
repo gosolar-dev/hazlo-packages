@@ -1,0 +1,66 @@
+{
+  "name": "Attach a PaymentMethod to a Customer",
+  "description": "<p>Attaches a PaymentMethod object to a Customer.</p>\n\n<p>To attach a new PaymentMethod to a customer for future payments, we recommend you use a <a href=\"/docs/api/setup_intents\">SetupIntent</a>\nor a PaymentIntent with <a href=\"/docs/api/payment_intents/create#create_payment_intent-setup_future_usage\">setup_future_usage</a>.\nThese approaches will perform any necessary steps to set up the PaymentMethod for future payments. Using the <code>/v1/payment_methods/:id/attach</code>\nendpoint without first using a SetupIntent or PaymentIntent with <code>setup_future_usage</code> does not optimize the PaymentMethod for\nfuture use, which makes later declines and payment friction more likely.\nSee <a href=\"/docs/payments/payment-intents#future-usage\">Optimizing cards for future payments</a> for more information about setting up\nfuture payments.</p>\n\n<p>To use this PaymentMethod as the default for invoice or subscription payments,\nset <a href=\"/docs/api/customers/update#update_customer-invoice_settings-default_payment_method\"><code>invoice_settings.default_payment_method</code></a>,\non the Customer to the PaymentMethod’s ID.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postPaymentMethodsPaymentMethodAttach",
+    "path": "/v1/payment_methods/{payment_method}/attach",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "customer": "<string>",
+      "customer_account": "<string>",
+      "expand": [
+        "<string>"
+      ]
+    },
+    "pathPaymentMethod": "<string>"
+  },
+  "inputRequired": [
+    "pathPaymentMethod"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "a921a0789b61",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "6a21a2b7628f",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "009a13dd4221",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "f876fff3ea2f",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "ef1b5f884ec7",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "62ecc5c06e77",
+        "left": "/v1/payment_methods/",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "f6d0b1697178",
+          "keyPath": "pathPaymentMethod",
+          "optional": false
+        }
+      },
+      "right": "/attach"
+    },
+    "query": {}
+  }
+}

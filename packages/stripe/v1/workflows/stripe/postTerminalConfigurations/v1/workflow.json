@@ -1,0 +1,282 @@
+{
+  "name": "Create a Configuration",
+  "description": "<p>Creates a new <code>Configuration</code> object.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postTerminalConfigurations",
+    "path": "/v1/terminal/configurations",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "bbpos_wisepad3": {
+        "splashscreen": "<string>"
+      },
+      "bbpos_wisepos_e": {
+        "splashscreen": "<string>"
+      },
+      "cellular": {
+        "enabled": "<boolean>"
+      },
+      "expand": [
+        "<string>"
+      ],
+      "name": "<string>",
+      "offline": {
+        "enabled": "<boolean>"
+      },
+      "reboot_window": {
+        "end_hour": "<number>",
+        "start_hour": "<number>"
+      },
+      "stripe_s700": {
+        "splashscreen": "<string>"
+      },
+      "stripe_s710": {
+        "splashscreen": "<string>"
+      },
+      "tipping": {
+        "aed": {
+          "fixed_amounts": [
+            "<number>"
+          ],
+          "percentages": [
+            "<number>"
+          ],
+          "smart_tip_threshold": "<number>"
+        },
+        "aud": {
+          "fixed_amounts": [
+            "<number>"
+          ],
+          "percentages": [
+            "<number>"
+          ],
+          "smart_tip_threshold": "<number>"
+        },
+        "cad": {
+          "fixed_amounts": [
+            "<number>"
+          ],
+          "percentages": [
+            "<number>"
+          ],
+          "smart_tip_threshold": "<number>"
+        },
+        "chf": {
+          "fixed_amounts": [
+            "<number>"
+          ],
+          "percentages": [
+            "<number>"
+          ],
+          "smart_tip_threshold": "<number>"
+        },
+        "czk": {
+          "fixed_amounts": [
+            "<number>"
+          ],
+          "percentages": [
+            "<number>"
+          ],
+          "smart_tip_threshold": "<number>"
+        },
+        "dkk": {
+          "fixed_amounts": [
+            "<number>"
+          ],
+          "percentages": [
+            "<number>"
+          ],
+          "smart_tip_threshold": "<number>"
+        },
+        "eur": {
+          "fixed_amounts": [
+            "<number>"
+          ],
+          "percentages": [
+            "<number>"
+          ],
+          "smart_tip_threshold": "<number>"
+        },
+        "gbp": {
+          "fixed_amounts": [
+            "<number>"
+          ],
+          "percentages": [
+            "<number>"
+          ],
+          "smart_tip_threshold": "<number>"
+        },
+        "gip": {
+          "fixed_amounts": [
+            "<number>"
+          ],
+          "percentages": [
+            "<number>"
+          ],
+          "smart_tip_threshold": "<number>"
+        },
+        "hkd": {
+          "fixed_amounts": [
+            "<number>"
+          ],
+          "percentages": [
+            "<number>"
+          ],
+          "smart_tip_threshold": "<number>"
+        },
+        "huf": {
+          "fixed_amounts": [
+            "<number>"
+          ],
+          "percentages": [
+            "<number>"
+          ],
+          "smart_tip_threshold": "<number>"
+        },
+        "jpy": {
+          "fixed_amounts": [
+            "<number>"
+          ],
+          "percentages": [
+            "<number>"
+          ],
+          "smart_tip_threshold": "<number>"
+        },
+        "mxn": {
+          "fixed_amounts": [
+            "<number>"
+          ],
+          "percentages": [
+            "<number>"
+          ],
+          "smart_tip_threshold": "<number>"
+        },
+        "myr": {
+          "fixed_amounts": [
+            "<number>"
+          ],
+          "percentages": [
+            "<number>"
+          ],
+          "smart_tip_threshold": "<number>"
+        },
+        "nok": {
+          "fixed_amounts": [
+            "<number>"
+          ],
+          "percentages": [
+            "<number>"
+          ],
+          "smart_tip_threshold": "<number>"
+        },
+        "nzd": {
+          "fixed_amounts": [
+            "<number>"
+          ],
+          "percentages": [
+            "<number>"
+          ],
+          "smart_tip_threshold": "<number>"
+        },
+        "pln": {
+          "fixed_amounts": [
+            "<number>"
+          ],
+          "percentages": [
+            "<number>"
+          ],
+          "smart_tip_threshold": "<number>"
+        },
+        "ron": {
+          "fixed_amounts": [
+            "<number>"
+          ],
+          "percentages": [
+            "<number>"
+          ],
+          "smart_tip_threshold": "<number>"
+        },
+        "sek": {
+          "fixed_amounts": [
+            "<number>"
+          ],
+          "percentages": [
+            "<number>"
+          ],
+          "smart_tip_threshold": "<number>"
+        },
+        "sgd": {
+          "fixed_amounts": [
+            "<number>"
+          ],
+          "percentages": [
+            "<number>"
+          ],
+          "smart_tip_threshold": "<number>"
+        },
+        "usd": {
+          "fixed_amounts": [
+            "<number>"
+          ],
+          "percentages": [
+            "<number>"
+          ],
+          "smart_tip_threshold": "<number>"
+        }
+      },
+      "verifone_p400": {
+        "splashscreen": "<string>"
+      },
+      "wifi": {
+        "enterprise_eap_peap": {
+          "ca_certificate_file": "<string>",
+          "password": "<string>",
+          "ssid": "<string>",
+          "username": "<string>"
+        },
+        "enterprise_eap_tls": {
+          "ca_certificate_file": "<string>",
+          "client_certificate_file": "<string>",
+          "private_key_file": "<string>",
+          "private_key_file_password": "<string>",
+          "ssid": "<string>"
+        },
+        "personal_psk": {
+          "password": "<string>",
+          "ssid": "<string>"
+        },
+        "type": "enterprise_eap_peap"
+      }
+    }
+  },
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "f3174c6de838",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "bf497abb123c",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "0a86adc4638c",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "48a0faa8de3e",
+    "method": "POST",
+    "path": "/v1/terminal/configurations",
+    "query": {}
+  }
+}

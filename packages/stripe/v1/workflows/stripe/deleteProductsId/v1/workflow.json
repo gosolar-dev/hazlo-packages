@@ -1,0 +1,55 @@
+{
+  "name": "Delete a product",
+  "description": "<p>Delete a product. Deleting a product is only possible if it has no prices associated with it. Additionally, deleting a product with <code>type=good</code> is only possible if it has no SKUs associated with it.</p>",
+  "meta": {
+    "method": "DELETE",
+    "operationId": "deleteProductsId",
+    "path": "/v1/products/{id}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathId": "<string>"
+  },
+  "inputRequired": [
+    "pathId"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "942cd0cb3a8e",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "84512f8321eb",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "4a9cc96103a1",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "350bee57e2f4",
+    "method": "DELETE",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "a7b232004075",
+      "left": "/v1/products/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "27075ee5cee7",
+        "keyPath": "pathId",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

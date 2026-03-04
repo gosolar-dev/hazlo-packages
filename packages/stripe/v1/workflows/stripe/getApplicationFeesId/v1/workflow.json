@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve an application fee",
+  "description": "<p>Retrieves the details of an application fee that your account has collected. The same information is returned when refunding the application fee.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getApplicationFeesId",
+    "path": "/v1/application_fees/{id}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathId": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathId"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "1b0e2833a8c1",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "e1e6dfaf4a4d",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "9728e158f26c",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "a6a7c41636ad",
+    "method": "GET",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "41f0f69b7209",
+      "left": "/v1/application_fees/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "d97bb3ec68e8",
+        "keyPath": "pathId",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "af71cafce48f",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

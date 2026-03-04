@@ -1,0 +1,126 @@
+{
+  "name": "List all Checkout Sessions",
+  "description": "<p>Returns a list of Checkout Sessions.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getCheckoutSessions",
+    "path": "/v1/checkout/sessions",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryCreated": "<string>",
+    "queryCustomer": "<string>",
+    "queryCustomerAccount": "<string>",
+    "queryCustomerDetails": {},
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryLimit": "<number>",
+    "queryPaymentIntent": "<string>",
+    "queryPaymentLink": "<string>",
+    "queryStartingAfter": "<string>",
+    "queryStatus": "<string>",
+    "querySubscription": "<string>"
+  },
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "54bd7f1754f0",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "70a26860981a",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "2dab29325485",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "f9613361f962",
+    "method": "GET",
+    "path": "/v1/checkout/sessions",
+    "query": {
+      "created": {
+        "_pbd_nebula_type": "var",
+        "id": "f9fe0220505e",
+        "keyPath": "queryCreated",
+        "optional": true
+      },
+      "customer": {
+        "_pbd_nebula_type": "var",
+        "id": "0e323bdd6261",
+        "keyPath": "queryCustomer",
+        "optional": true
+      },
+      "customer_account": {
+        "_pbd_nebula_type": "var",
+        "id": "6902739d6d81",
+        "keyPath": "queryCustomerAccount",
+        "optional": true
+      },
+      "customer_details": {
+        "_pbd_nebula_type": "var",
+        "id": "2b432398a006",
+        "keyPath": "queryCustomerDetails",
+        "optional": true
+      },
+      "ending_before": {
+        "_pbd_nebula_type": "var",
+        "id": "981e38fe2b83",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "cbd02dbeadf8",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_nebula_type": "var",
+        "id": "32b552d77294",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "payment_intent": {
+        "_pbd_nebula_type": "var",
+        "id": "a9069f6a2f1e",
+        "keyPath": "queryPaymentIntent",
+        "optional": true
+      },
+      "payment_link": {
+        "_pbd_nebula_type": "var",
+        "id": "524f59f1ca6e",
+        "keyPath": "queryPaymentLink",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_nebula_type": "var",
+        "id": "1edadaa7c569",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      },
+      "status": {
+        "_pbd_nebula_type": "var",
+        "id": "fbfd0fbbbdd6",
+        "keyPath": "queryStatus",
+        "optional": true
+      },
+      "subscription": {
+        "_pbd_nebula_type": "var",
+        "id": "60daaba93ce5",
+        "keyPath": "querySubscription",
+        "optional": true
+      }
+    }
+  }
+}

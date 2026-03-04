@@ -1,0 +1,64 @@
+{
+  "name": "Expire a test-mode authorization",
+  "description": "<p>Expire a test-mode Authorization.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postTestHelpersIssuingAuthorizationsAuthorizationExpire",
+    "path": "/v1/test_helpers/issuing/authorizations/{authorization}/expire",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ]
+    },
+    "pathAuthorization": "<string>"
+  },
+  "inputRequired": [
+    "pathAuthorization"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "7346068e6c7c",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "aab06b6b7bd5",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "9ffbf8c41f20",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "dabe32a3a724",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "fe1982a640dd",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "022ea55f430a",
+        "left": "/v1/test_helpers/issuing/authorizations/",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "4bfba057163f",
+          "keyPath": "pathAuthorization",
+          "optional": false
+        }
+      },
+      "right": "/expire"
+    },
+    "query": {}
+  }
+}

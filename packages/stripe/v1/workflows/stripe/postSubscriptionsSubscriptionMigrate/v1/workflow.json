@@ -1,0 +1,71 @@
+{
+  "name": "Migrate a subscription",
+  "description": "<p>Upgrade the billing_mode of an existing subscription.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postSubscriptionsSubscriptionMigrate",
+    "path": "/v1/subscriptions/{subscription}/migrate",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "billing_mode": {
+        "flexible": {
+          "proration_discounts": "included"
+        },
+        "type": "flexible"
+      },
+      "expand": [
+        "<string>"
+      ]
+    },
+    "pathSubscription": "<string>"
+  },
+  "inputRequired": [
+    "body",
+    "pathSubscription"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "f2294e84c199",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "34f24f6d4afe",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "3d6d7e784fa6",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "fbfadbd67ccf",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "411ffeee7a3f",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "5abe65ace879",
+        "left": "/v1/subscriptions/",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "4f804b9f4c44",
+          "keyPath": "pathSubscription",
+          "optional": false
+        }
+      },
+      "right": "/migrate"
+    },
+    "query": {}
+  }
+}

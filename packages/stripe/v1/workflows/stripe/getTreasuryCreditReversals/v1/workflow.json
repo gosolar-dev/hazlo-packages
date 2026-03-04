@@ -1,0 +1,94 @@
+{
+  "name": "List all CreditReversals",
+  "description": "<p>Returns a list of CreditReversals.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getTreasuryCreditReversals",
+    "path": "/v1/treasury/credit_reversals",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryFinancialAccount": "<string>",
+    "queryLimit": "<number>",
+    "queryReceivedCredit": "<string>",
+    "queryStartingAfter": "<string>",
+    "queryStatus": "<string>"
+  },
+  "inputRequired": [
+    "queryFinancialAccount"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "8e5b4879fcc6",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "45f8019d8129",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "d2f27aba8893",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "8795948865dc",
+    "method": "GET",
+    "path": "/v1/treasury/credit_reversals",
+    "query": {
+      "ending_before": {
+        "_pbd_nebula_type": "var",
+        "id": "07cf24ab459c",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "86238d421b6f",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "financial_account": {
+        "_pbd_nebula_type": "var",
+        "id": "b61e3d0dc3b2",
+        "keyPath": "queryFinancialAccount",
+        "optional": false
+      },
+      "limit": {
+        "_pbd_nebula_type": "var",
+        "id": "ab13bb0a501e",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "received_credit": {
+        "_pbd_nebula_type": "var",
+        "id": "866614873bc9",
+        "keyPath": "queryReceivedCredit",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_nebula_type": "var",
+        "id": "ffa68a1bba54",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      },
+      "status": {
+        "_pbd_nebula_type": "var",
+        "id": "b430ad02d44f",
+        "keyPath": "queryStatus",
+        "optional": true
+      }
+    }
+  }
+}

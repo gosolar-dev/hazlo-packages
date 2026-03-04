@@ -1,0 +1,72 @@
+{
+  "name": "Delete an external account",
+  "description": "<p>Delete a specified external account for a given account.</p>",
+  "meta": {
+    "method": "DELETE",
+    "operationId": "deleteAccountsAccountExternalAccountsId",
+    "path": "/v1/accounts/{account}/external_accounts/{id}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathAccount": "<string>",
+    "pathId": "<string>"
+  },
+  "inputRequired": [
+    "pathAccount",
+    "pathId"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "32a62cb90a00",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "a93a07e1c181",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "602fe5027f55",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "9492158557d1",
+    "method": "DELETE",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "88d2cc3ec724",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "bbf90c78d2e2",
+        "left": {
+          "_pbd_nebula_type": "concat",
+          "id": "a5619c8074cb",
+          "left": "/v1/accounts/",
+          "right": {
+            "_pbd_nebula_type": "var",
+            "id": "206b921d3b17",
+            "keyPath": "pathAccount",
+            "optional": false
+          }
+        },
+        "right": "/external_accounts/"
+      },
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "5285c4cc3dfe",
+        "keyPath": "pathId",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

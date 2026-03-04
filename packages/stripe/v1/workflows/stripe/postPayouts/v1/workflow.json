@@ -1,0 +1,59 @@
+{
+  "name": "Create a payout",
+  "description": "<p>To send funds to your own bank account, create a new payout object. Your <a href=\"#balance\">Stripe balance</a> must cover the payout amount. If it doesn’t, you receive an “Insufficient Funds” error.</p>\n\n<p>If your API key is in test mode, money won’t actually be sent, though every other action occurs as if you’re in live mode.</p>\n\n<p>If you create a manual payout on a Stripe account that uses multiple payment source types, you need to specify the source type balance that the payout draws from. The <a href=\"#balance_object\">balance object</a> details available and pending amounts by source type.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postPayouts",
+    "path": "/v1/payouts",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "amount": "<number>",
+      "currency": "<string>",
+      "description": "<string>",
+      "destination": "<string>",
+      "expand": [
+        "<string>"
+      ],
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "method": "instant",
+      "payout_method": "<string>",
+      "source_type": "bank_account",
+      "statement_descriptor": "<string>"
+    }
+  },
+  "inputRequired": [
+    "body"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "3c2457b8d1ee",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "b4b05964f049",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "0e575740d826",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "285acb78061c",
+    "method": "POST",
+    "path": "/v1/payouts",
+    "query": {}
+  }
+}

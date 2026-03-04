@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve a product",
+  "description": "<p>Retrieves the details of an existing product. Supply the unique product ID from either a product creation request or the product list, and Stripe will return the corresponding product information.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getProductsId",
+    "path": "/v1/products/{id}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathId": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathId"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "ce63c6f7313d",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "100697447d6a",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "c4ebc7f5ed85",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "b953de110528",
+    "method": "GET",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "c1329c6bfd18",
+      "left": "/v1/products/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "7c24e01fac47",
+        "keyPath": "pathId",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "f745f28354b8",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

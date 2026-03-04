@@ -1,0 +1,65 @@
+{
+  "name": "Cancel a SetupIntent",
+  "description": "<p>You can cancel a SetupIntent object when it’s in one of these statuses: <code>requires_payment_method</code>, <code>requires_confirmation</code>, or <code>requires_action</code>. </p>\n\n<p>After you cancel it, setup is abandoned and any operations on the SetupIntent fail with an error. You can’t cancel the SetupIntent for a Checkout Session. <a href=\"/docs/api/checkout/sessions/expire\">Expire the Checkout Session</a> instead.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postSetupIntentsIntentCancel",
+    "path": "/v1/setup_intents/{intent}/cancel",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "cancellation_reason": "abandoned",
+      "expand": [
+        "<string>"
+      ]
+    },
+    "pathIntent": "<string>"
+  },
+  "inputRequired": [
+    "pathIntent"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "d1e33c1270d2",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "631bb66fb4e9",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "1342f450da6a",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "247501533781",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "d86da9e4e745",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "95816a3d8009",
+        "left": "/v1/setup_intents/",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "630a362ebab1",
+          "keyPath": "pathIntent",
+          "optional": false
+        }
+      },
+      "right": "/cancel"
+    },
+    "query": {}
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "name": "List all invoice rendering templates",
+  "description": "<p>List all templates, ordered by creation date, with the most recently created template appearing first.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getInvoiceRenderingTemplates",
+    "path": "/v1/invoice_rendering_templates",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryLimit": "<number>",
+    "queryStartingAfter": "<string>",
+    "queryStatus": "<string>"
+  },
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "43fef59cd902",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "3c1c93a5a8a2",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "8e70e5284d91",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "b6f9fd43e6ae",
+    "method": "GET",
+    "path": "/v1/invoice_rendering_templates",
+    "query": {
+      "ending_before": {
+        "_pbd_nebula_type": "var",
+        "id": "f5609535095c",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "f7a59957ab3a",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_nebula_type": "var",
+        "id": "88cfea6e9950",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_nebula_type": "var",
+        "id": "01fc14df76ac",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      },
+      "status": {
+        "_pbd_nebula_type": "var",
+        "id": "aabd7b0c20f5",
+        "keyPath": "queryStatus",
+        "optional": true
+      }
+    }
+  }
+}

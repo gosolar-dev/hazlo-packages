@@ -1,0 +1,88 @@
+{
+  "name": "Create a plan",
+  "description": "<p>You can now model subscriptions more flexibly using the <a href=\"#prices\">Prices API</a>. It replaces the Plans API and is backwards compatible to simplify your migration.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postPlans",
+    "path": "/v1/plans",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "active": "<boolean>",
+      "amount": "<number>",
+      "amount_decimal": "<string>",
+      "billing_scheme": "per_unit",
+      "currency": "<string>",
+      "expand": [
+        "<string>"
+      ],
+      "id": "<string>",
+      "interval": "day",
+      "interval_count": "<number>",
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "meter": "<string>",
+      "nickname": "<string>",
+      "product": {
+        "active": "<boolean>",
+        "id": "<string>",
+        "metadata": {
+          "<key>": "<string>"
+        },
+        "name": "<string>",
+        "statement_descriptor": "<string>",
+        "tax_code": "<string>",
+        "unit_label": "<string>"
+      },
+      "tiers": [
+        {
+          "flat_amount": "<number>",
+          "flat_amount_decimal": "<string>",
+          "unit_amount": "<number>",
+          "unit_amount_decimal": "<string>",
+          "up_to": "inf"
+        }
+      ],
+      "tiers_mode": "graduated",
+      "transform_usage": {
+        "divide_by": "<number>",
+        "round": "down"
+      },
+      "trial_period_days": "<number>",
+      "usage_type": "licensed"
+    }
+  },
+  "inputRequired": [
+    "body"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "06fe6143e12a",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "0cd581516c53",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "fe1ff101c8bd",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "c70eb8859884",
+    "method": "POST",
+    "path": "/v1/plans",
+    "query": {}
+  }
+}

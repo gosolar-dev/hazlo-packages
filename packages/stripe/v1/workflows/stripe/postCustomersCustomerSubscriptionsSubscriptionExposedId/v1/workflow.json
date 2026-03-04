@@ -1,0 +1,275 @@
+{
+  "name": "Update a subscription on a customer",
+  "description": "<p>Updates an existing subscription on a customer to match the specified parameters. When changing plans or quantities, we will optionally prorate the price we charge next month to make up for any price changes. To preview how the proration will be calculated, use the <a href=\"#upcoming_invoice\">upcoming invoice</a> endpoint.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postCustomersCustomerSubscriptionsSubscriptionExposedId",
+    "path": "/v1/customers/{customer}/subscriptions/{subscription_exposed_id}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "add_invoice_items": [
+        {
+          "discounts": [
+            {
+              "coupon": "<string>",
+              "discount": "<string>",
+              "promotion_code": "<string>"
+            }
+          ],
+          "metadata": {
+            "<key>": "<string>"
+          },
+          "period": {
+            "end": {
+              "timestamp": "<number>",
+              "type": "min_item_period_end"
+            },
+            "start": {
+              "timestamp": "<number>",
+              "type": "max_item_period_start"
+            }
+          },
+          "price": "<string>",
+          "price_data": {
+            "currency": "<string>",
+            "product": "<string>",
+            "tax_behavior": "exclusive",
+            "unit_amount": "<number>",
+            "unit_amount_decimal": "<string>"
+          },
+          "quantity": "<number>",
+          "tax_rates": [
+            "<string>"
+          ]
+        }
+      ],
+      "application_fee_percent": "<number>",
+      "automatic_tax": {
+        "enabled": "<boolean>",
+        "liability": {
+          "account": "<string>",
+          "type": "account"
+        }
+      },
+      "billing_cycle_anchor": "now",
+      "billing_thresholds": {
+        "amount_gte": "<number>",
+        "reset_billing_cycle_anchor": "<boolean>"
+      },
+      "cancel_at": "<number>",
+      "cancel_at_period_end": "<boolean>",
+      "cancellation_details": {
+        "comment": "<string>",
+        "feedback": ""
+      },
+      "collection_method": "charge_automatically",
+      "days_until_due": "<number>",
+      "default_payment_method": "<string>",
+      "default_source": "<string>",
+      "default_tax_rates": [
+        "<string>"
+      ],
+      "discounts": [
+        {
+          "coupon": "<string>",
+          "discount": "<string>",
+          "promotion_code": "<string>"
+        }
+      ],
+      "expand": [
+        "<string>"
+      ],
+      "invoice_settings": {
+        "account_tax_ids": [
+          "<string>"
+        ],
+        "issuer": {
+          "account": "<string>",
+          "type": "account"
+        }
+      },
+      "items": [
+        {
+          "billing_thresholds": {
+            "usage_gte": "<number>"
+          },
+          "clear_usage": "<boolean>",
+          "deleted": "<boolean>",
+          "discounts": [
+            {
+              "coupon": "<string>",
+              "discount": "<string>",
+              "promotion_code": "<string>"
+            }
+          ],
+          "id": "<string>",
+          "metadata": {
+            "<key>": "<string>"
+          },
+          "price": "<string>",
+          "price_data": {
+            "currency": "<string>",
+            "product": "<string>",
+            "recurring": {
+              "interval": "day",
+              "interval_count": "<number>"
+            },
+            "tax_behavior": "exclusive",
+            "unit_amount": "<number>",
+            "unit_amount_decimal": "<string>"
+          },
+          "quantity": "<number>",
+          "tax_rates": [
+            "<string>"
+          ]
+        }
+      ],
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "off_session": "<boolean>",
+      "pause_collection": {
+        "behavior": "keep_as_draft",
+        "resumes_at": "<number>"
+      },
+      "payment_behavior": "allow_incomplete",
+      "payment_settings": {
+        "payment_method_options": {
+          "acss_debit": {
+            "mandate_options": {
+              "transaction_type": "business"
+            },
+            "verification_method": "automatic"
+          },
+          "bancontact": {
+            "preferred_language": "de"
+          },
+          "card": {
+            "mandate_options": {
+              "amount": "<number>",
+              "amount_type": "fixed",
+              "description": "<string>"
+            },
+            "network": "amex",
+            "request_three_d_secure": "any"
+          },
+          "customer_balance": {
+            "bank_transfer": {
+              "eu_bank_transfer": {
+                "country": "<string>"
+              },
+              "type": "<string>"
+            },
+            "funding_type": "<string>"
+          },
+          "konbini": {},
+          "payto": {
+            "mandate_options": {
+              "amount": "<number>",
+              "purpose": "dependant_support"
+            }
+          },
+          "sepa_debit": {},
+          "us_bank_account": {
+            "financial_connections": {
+              "filters": {
+                "account_subcategories": [
+                  "checking"
+                ]
+              },
+              "permissions": [
+                "balances"
+              ],
+              "prefetch": [
+                "balances"
+              ]
+            },
+            "verification_method": "automatic"
+          }
+        },
+        "payment_method_types": [
+          "ach_credit_transfer"
+        ],
+        "save_default_payment_method": "off"
+      },
+      "pending_invoice_item_interval": {
+        "interval": "day",
+        "interval_count": "<number>"
+      },
+      "proration_behavior": "always_invoice",
+      "proration_date": "<number>",
+      "transfer_data": {
+        "amount_percent": "<number>",
+        "destination": "<string>"
+      },
+      "trial_end": "now",
+      "trial_from_plan": "<boolean>",
+      "trial_settings": {
+        "end_behavior": {
+          "missing_payment_method": "cancel"
+        }
+      }
+    },
+    "pathCustomer": "<string>",
+    "pathSubscriptionExposedId": "<string>"
+  },
+  "inputRequired": [
+    "pathCustomer",
+    "pathSubscriptionExposedId"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "1fe0f054633f",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "e26f516ac3a9",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "53799418b149",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "46d62debef17",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "dc598531d3fe",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "fd59af446baa",
+        "left": {
+          "_pbd_nebula_type": "concat",
+          "id": "9ca369272581",
+          "left": "/v1/customers/",
+          "right": {
+            "_pbd_nebula_type": "var",
+            "id": "c2ab1276e119",
+            "keyPath": "pathCustomer",
+            "optional": false
+          }
+        },
+        "right": "/subscriptions/"
+      },
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "a5be6719008b",
+        "keyPath": "pathSubscriptionExposedId",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

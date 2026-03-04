@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve payment method configuration",
+  "description": "<p>Retrieve payment method configuration</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getPaymentMethodConfigurationsConfiguration",
+    "path": "/v1/payment_method_configurations/{configuration}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathConfiguration": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathConfiguration"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "d74aa2063afe",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "dc8607d11ca9",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "d02f6031e6df",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "ec874893a2c7",
+    "method": "GET",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "98009e375a65",
+      "left": "/v1/payment_method_configurations/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "b0b3ff2e3865",
+        "keyPath": "pathConfiguration",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "921bf3776d42",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "name": "List all reversals",
+  "description": "<p>You can see a list of the reversals belonging to a specific transfer. Note that the 10 most recent reversals are always available by default on the transfer object. If you need more than those 10, you can use this API method and the <code>limit</code> and <code>starting_after</code> parameters to page through additional reversals.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getTransfersIdReversals",
+    "path": "/v1/transfers/{id}/reversals",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathId": "<string>",
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryLimit": "<number>",
+    "queryStartingAfter": "<string>"
+  },
+  "inputRequired": [
+    "pathId"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "dfe18ea76cdc",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "aed13165488e",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "3c87876bb70f",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "378531a68d46",
+    "method": "GET",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "70553f84fb9e",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "4ffb94b31a87",
+        "left": "/v1/transfers/",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "6e36d62ab62e",
+          "keyPath": "pathId",
+          "optional": false
+        }
+      },
+      "right": "/reversals"
+    },
+    "query": {
+      "ending_before": {
+        "_pbd_nebula_type": "var",
+        "id": "f429ac010c40",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "1fabf0f8d31e",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_nebula_type": "var",
+        "id": "2ee86c702424",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_nebula_type": "var",
+        "id": "df704e774f73",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      }
+    }
+  }
+}

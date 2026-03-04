@@ -1,0 +1,46 @@
+{
+  "name": "Create a Connection Token",
+  "description": "<p>To connect to a reader the Stripe Terminal SDK needs to retrieve a short-lived connection token from Stripe, proxied through your server. On your backend, add an endpoint that creates and returns a connection token.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postTerminalConnectionTokens",
+    "path": "/v1/terminal/connection_tokens",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ],
+      "location": "<string>"
+    }
+  },
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "d78874912f13",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "29a38cbc08c6",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "1891b7305e2b",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "769ad3a1aa15",
+    "method": "POST",
+    "path": "/v1/terminal/connection_tokens",
+    "query": {}
+  }
+}

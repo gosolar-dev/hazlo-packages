@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve a credit grant",
+  "description": "<p>Retrieves a credit grant.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getBillingCreditGrantsId",
+    "path": "/v1/billing/credit_grants/{id}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathId": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathId"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "843e72bea4e3",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "72e7ae4e9b0d",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "6884dcaa47f5",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "2e06e2875f9a",
+    "method": "GET",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "983ea84e5eda",
+      "left": "/v1/billing/credit_grants/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "5395738a08b5",
+        "keyPath": "pathId",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "4eacf99b9992",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

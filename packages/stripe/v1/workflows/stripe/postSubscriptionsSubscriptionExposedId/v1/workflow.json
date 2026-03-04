@@ -1,0 +1,260 @@
+{
+  "name": "Update a subscription",
+  "description": "<p>Updates an existing subscription to match the specified parameters.\nWhen changing prices or quantities, we optionally prorate the price we charge next month to make up for any price changes.\nTo preview how the proration is calculated, use the <a href=\"/docs/api/invoices/create_preview\">create preview</a> endpoint.</p>\n\n<p>By default, we prorate subscription changes. For example, if a customer signs up on May 1 for a <currency>100</currency> price, they’ll be billed <currency>100</currency> immediately. If on May 15 they switch to a <currency>200</currency> price, then on June 1 they’ll be billed <currency>250</currency> (<currency>200</currency> for a renewal of her subscription, plus a <currency>50</currency> prorating adjustment for half of the previous month’s <currency>100</currency> difference). Similarly, a downgrade generates a credit that is applied to the next invoice. We also prorate when you make quantity changes.</p>\n\n<p>Switching prices does not normally change the billing date or generate an immediate charge unless:</p>\n\n<ul>\n<li>The billing interval is changed (for example, from monthly to yearly).</li>\n<li>The subscription moves from free to paid.</li>\n<li>A trial starts or ends.</li>\n</ul>\n\n<p>In these cases, we apply a credit for the unused time on the previous price, immediately charge the customer using the new price, and reset the billing date. Learn about how <a href=\"/docs/billing/subscriptions/upgrade-downgrade#immediate-payment\">Stripe immediately attempts payment for subscription changes</a>.</p>\n\n<p>If you want to charge for an upgrade immediately, pass <code>proration_behavior</code> as <code>always_invoice</code> to create prorations, automatically invoice the customer for those proration adjustments, and attempt to collect payment. If you pass <code>create_prorations</code>, the prorations are created but not automatically invoiced. If you want to bill the customer for the prorations before the subscription’s renewal date, you need to manually <a href=\"/docs/api/invoices/create\">invoice the customer</a>.</p>\n\n<p>If you don’t want to prorate, set the <code>proration_behavior</code> option to <code>none</code>. With this option, the customer is billed <currency>100</currency> on May 1 and <currency>200</currency> on June 1. Similarly, if you set <code>proration_behavior</code> to <code>none</code> when switching between different billing intervals (for example, from monthly to yearly), we don’t generate any credits for the old subscription’s unused time. We still reset the billing date and bill immediately for the new subscription.</p>\n\n<p>Updating the quantity on a subscription many times in an hour may result in <a href=\"/docs/rate-limits\">rate limiting</a>. If you need to bill for a frequently changing quantity, consider integrating <a href=\"/docs/billing/subscriptions/usage-based\">usage-based billing</a> instead.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postSubscriptionsSubscriptionExposedId",
+    "path": "/v1/subscriptions/{subscription_exposed_id}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "add_invoice_items": [
+        {
+          "discounts": [
+            {
+              "coupon": "<string>",
+              "discount": "<string>",
+              "promotion_code": "<string>"
+            }
+          ],
+          "metadata": {
+            "<key>": "<string>"
+          },
+          "period": {
+            "end": {
+              "timestamp": "<number>",
+              "type": "min_item_period_end"
+            },
+            "start": {
+              "timestamp": "<number>",
+              "type": "max_item_period_start"
+            }
+          },
+          "price": "<string>",
+          "price_data": {
+            "currency": "<string>",
+            "product": "<string>",
+            "tax_behavior": "exclusive",
+            "unit_amount": "<number>",
+            "unit_amount_decimal": "<string>"
+          },
+          "quantity": "<number>",
+          "tax_rates": [
+            "<string>"
+          ]
+        }
+      ],
+      "application_fee_percent": "<number>",
+      "automatic_tax": {
+        "enabled": "<boolean>",
+        "liability": {
+          "account": "<string>",
+          "type": "account"
+        }
+      },
+      "billing_cycle_anchor": "now",
+      "billing_thresholds": {
+        "amount_gte": "<number>",
+        "reset_billing_cycle_anchor": "<boolean>"
+      },
+      "cancel_at": "<number>",
+      "cancel_at_period_end": "<boolean>",
+      "cancellation_details": {
+        "comment": "<string>",
+        "feedback": ""
+      },
+      "collection_method": "charge_automatically",
+      "days_until_due": "<number>",
+      "default_payment_method": "<string>",
+      "default_source": "<string>",
+      "default_tax_rates": [
+        "<string>"
+      ],
+      "description": "<string>",
+      "discounts": [
+        {
+          "coupon": "<string>",
+          "discount": "<string>",
+          "promotion_code": "<string>"
+        }
+      ],
+      "expand": [
+        "<string>"
+      ],
+      "invoice_settings": {
+        "account_tax_ids": [
+          "<string>"
+        ],
+        "issuer": {
+          "account": "<string>",
+          "type": "account"
+        }
+      },
+      "items": [
+        {
+          "billing_thresholds": {
+            "usage_gte": "<number>"
+          },
+          "clear_usage": "<boolean>",
+          "deleted": "<boolean>",
+          "discounts": [
+            {
+              "coupon": "<string>",
+              "discount": "<string>",
+              "promotion_code": "<string>"
+            }
+          ],
+          "id": "<string>",
+          "metadata": {
+            "<key>": "<string>"
+          },
+          "price": "<string>",
+          "price_data": {
+            "currency": "<string>",
+            "product": "<string>",
+            "recurring": {
+              "interval": "day",
+              "interval_count": "<number>"
+            },
+            "tax_behavior": "exclusive",
+            "unit_amount": "<number>",
+            "unit_amount_decimal": "<string>"
+          },
+          "quantity": "<number>",
+          "tax_rates": [
+            "<string>"
+          ]
+        }
+      ],
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "off_session": "<boolean>",
+      "on_behalf_of": "<string>",
+      "pause_collection": {
+        "behavior": "keep_as_draft",
+        "resumes_at": "<number>"
+      },
+      "payment_behavior": "allow_incomplete",
+      "payment_settings": {
+        "payment_method_options": {
+          "acss_debit": {
+            "mandate_options": {
+              "transaction_type": "business"
+            },
+            "verification_method": "automatic"
+          },
+          "bancontact": {
+            "preferred_language": "de"
+          },
+          "card": {
+            "mandate_options": {
+              "amount": "<number>",
+              "amount_type": "fixed",
+              "description": "<string>"
+            },
+            "network": "amex",
+            "request_three_d_secure": "any"
+          },
+          "customer_balance": {
+            "bank_transfer": {
+              "eu_bank_transfer": {
+                "country": "<string>"
+              },
+              "type": "<string>"
+            },
+            "funding_type": "<string>"
+          },
+          "konbini": {},
+          "payto": {
+            "mandate_options": {
+              "amount": "<number>",
+              "purpose": "dependant_support"
+            }
+          },
+          "sepa_debit": {},
+          "us_bank_account": {
+            "financial_connections": {
+              "filters": {
+                "account_subcategories": [
+                  "checking"
+                ]
+              },
+              "permissions": [
+                "balances"
+              ],
+              "prefetch": [
+                "balances"
+              ]
+            },
+            "verification_method": "automatic"
+          }
+        },
+        "payment_method_types": [
+          "ach_credit_transfer"
+        ],
+        "save_default_payment_method": "off"
+      },
+      "pending_invoice_item_interval": {
+        "interval": "day",
+        "interval_count": "<number>"
+      },
+      "proration_behavior": "always_invoice",
+      "proration_date": "<number>",
+      "transfer_data": {
+        "amount_percent": "<number>",
+        "destination": "<string>"
+      },
+      "trial_end": "now",
+      "trial_from_plan": "<boolean>",
+      "trial_settings": {
+        "end_behavior": {
+          "missing_payment_method": "cancel"
+        }
+      }
+    },
+    "pathSubscriptionExposedId": "<string>"
+  },
+  "inputRequired": [
+    "pathSubscriptionExposedId"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "f4e1333cbc73",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "d5845501cd3d",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "74d8ae162d7a",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "082bd3c5046a",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "880599e4e008",
+      "left": "/v1/subscriptions/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "eea4b8f55f89",
+        "keyPath": "pathSubscriptionExposedId",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

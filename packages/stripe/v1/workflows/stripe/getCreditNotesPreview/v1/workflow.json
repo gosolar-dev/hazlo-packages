@@ -1,0 +1,143 @@
+{
+  "name": "Preview a credit note",
+  "description": "<p>Get a preview of a credit note without creating it.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getCreditNotesPreview",
+    "path": "/v1/credit_notes/preview",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryAmount": "<number>",
+    "queryCreditAmount": "<number>",
+    "queryEffectiveAt": "<number>",
+    "queryEmailType": "<string>",
+    "queryExpand": [],
+    "queryInvoice": "<string>",
+    "queryLines": [],
+    "queryMemo": "<string>",
+    "queryMetadata": {},
+    "queryOutOfBandAmount": "<number>",
+    "queryReason": "<string>",
+    "queryRefundAmount": "<number>",
+    "queryRefunds": [],
+    "queryShippingCost": {}
+  },
+  "inputRequired": [
+    "queryInvoice"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "1f96d5846fca",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "2a00eb5676ac",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "1ca5e94bc547",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "849315cb2f50",
+    "method": "GET",
+    "path": "/v1/credit_notes/preview",
+    "query": {
+      "amount": {
+        "_pbd_nebula_type": "var",
+        "id": "b9d5ae530afd",
+        "keyPath": "queryAmount",
+        "optional": true
+      },
+      "credit_amount": {
+        "_pbd_nebula_type": "var",
+        "id": "1c051b7e8440",
+        "keyPath": "queryCreditAmount",
+        "optional": true
+      },
+      "effective_at": {
+        "_pbd_nebula_type": "var",
+        "id": "e9c872b2c7b8",
+        "keyPath": "queryEffectiveAt",
+        "optional": true
+      },
+      "email_type": {
+        "_pbd_nebula_type": "var",
+        "id": "3497c022b63e",
+        "keyPath": "queryEmailType",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "9efa7c5c065d",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "invoice": {
+        "_pbd_nebula_type": "var",
+        "id": "3f3d6884b1ec",
+        "keyPath": "queryInvoice",
+        "optional": false
+      },
+      "lines": {
+        "_pbd_nebula_type": "var",
+        "id": "0ed28d8d38cc",
+        "keyPath": "queryLines",
+        "optional": true
+      },
+      "memo": {
+        "_pbd_nebula_type": "var",
+        "id": "5d0b6515c6ec",
+        "keyPath": "queryMemo",
+        "optional": true
+      },
+      "metadata": {
+        "_pbd_nebula_type": "var",
+        "id": "0ba2cd2369e6",
+        "keyPath": "queryMetadata",
+        "optional": true
+      },
+      "out_of_band_amount": {
+        "_pbd_nebula_type": "var",
+        "id": "a444f6ed67d0",
+        "keyPath": "queryOutOfBandAmount",
+        "optional": true
+      },
+      "reason": {
+        "_pbd_nebula_type": "var",
+        "id": "be04b4142ed8",
+        "keyPath": "queryReason",
+        "optional": true
+      },
+      "refund_amount": {
+        "_pbd_nebula_type": "var",
+        "id": "79b11faf3799",
+        "keyPath": "queryRefundAmount",
+        "optional": true
+      },
+      "refunds": {
+        "_pbd_nebula_type": "var",
+        "id": "48dd2b1afff2",
+        "keyPath": "queryRefunds",
+        "optional": true
+      },
+      "shipping_cost": {
+        "_pbd_nebula_type": "var",
+        "id": "90ec54c2ae12",
+        "keyPath": "queryShippingCost",
+        "optional": true
+      }
+    }
+  }
+}

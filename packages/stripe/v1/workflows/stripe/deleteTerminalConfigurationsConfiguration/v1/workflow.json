@@ -1,0 +1,55 @@
+{
+  "name": "Delete a Configuration",
+  "description": "<p>Deletes a <code>Configuration</code> object.</p>",
+  "meta": {
+    "method": "DELETE",
+    "operationId": "deleteTerminalConfigurationsConfiguration",
+    "path": "/v1/terminal/configurations/{configuration}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathConfiguration": "<string>"
+  },
+  "inputRequired": [
+    "pathConfiguration"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "1ff0e3b2b133",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "5da115e7a7e5",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "701c6d4e8ad9",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "cfc48e03d069",
+    "method": "DELETE",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "ff542cf4f280",
+      "left": "/v1/terminal/configurations/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "8d33028c6b40",
+        "keyPath": "pathConfiguration",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

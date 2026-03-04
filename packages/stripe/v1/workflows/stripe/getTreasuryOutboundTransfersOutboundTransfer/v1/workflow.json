@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve an OutboundTransfer",
+  "description": "<p>Retrieves the details of an existing OutboundTransfer by passing the unique OutboundTransfer ID from either the OutboundTransfer creation request or OutboundTransfer list.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getTreasuryOutboundTransfersOutboundTransfer",
+    "path": "/v1/treasury/outbound_transfers/{outbound_transfer}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathOutboundTransfer": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathOutboundTransfer"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "df0772768482",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "96c549f581e4",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "60083539280e",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "55a5168292bf",
+    "method": "GET",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "263e659a5851",
+      "left": "/v1/treasury/outbound_transfers/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "83bb17fd8b96",
+        "keyPath": "pathOutboundTransfer",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "0dd7582c4699",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

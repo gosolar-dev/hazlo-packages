@@ -1,0 +1,116 @@
+{
+  "name": "Create a portal configuration",
+  "description": "<p>Creates a configuration that describes the functionality and behavior of a PortalSession</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postBillingPortalConfigurations",
+    "path": "/v1/billing_portal/configurations",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "business_profile": {
+        "headline": "<string>",
+        "privacy_policy_url": "<string>",
+        "terms_of_service_url": "<string>"
+      },
+      "default_return_url": "<string>",
+      "expand": [
+        "<string>"
+      ],
+      "features": {
+        "customer_update": {
+          "allowed_updates": [
+            "address"
+          ],
+          "enabled": "<boolean>"
+        },
+        "invoice_history": {
+          "enabled": "<boolean>"
+        },
+        "payment_method_update": {
+          "enabled": "<boolean>",
+          "payment_method_configuration": "<string>"
+        },
+        "subscription_cancel": {
+          "cancellation_reason": {
+            "enabled": "<boolean>",
+            "options": [
+              "customer_service"
+            ]
+          },
+          "enabled": "<boolean>",
+          "mode": "at_period_end",
+          "proration_behavior": "always_invoice"
+        },
+        "subscription_update": {
+          "billing_cycle_anchor": "now",
+          "default_allowed_updates": [
+            "price"
+          ],
+          "enabled": "<boolean>",
+          "products": [
+            {
+              "adjustable_quantity": {
+                "enabled": "<boolean>",
+                "maximum": "<number>",
+                "minimum": "<number>"
+              },
+              "prices": [
+                "<string>"
+              ],
+              "product": "<string>"
+            }
+          ],
+          "proration_behavior": "always_invoice",
+          "schedule_at_period_end": {
+            "conditions": [
+              {
+                "type": "decreasing_item_amount"
+              }
+            ]
+          },
+          "trial_update_behavior": "continue_trial"
+        }
+      },
+      "login_page": {
+        "enabled": "<boolean>"
+      },
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "name": "<string>"
+    }
+  },
+  "inputRequired": [
+    "body"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "1b3671c67f32",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "adef9f7da85c",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "180b2df0a4ee",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "c3b31e79f690",
+    "method": "POST",
+    "path": "/v1/billing_portal/configurations",
+    "query": {}
+  }
+}

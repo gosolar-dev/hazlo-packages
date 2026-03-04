@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve an authorization",
+  "description": "<p>Retrieves an Issuing <code>Authorization</code> object.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getIssuingAuthorizationsAuthorization",
+    "path": "/v1/issuing/authorizations/{authorization}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathAuthorization": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathAuthorization"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "ca79a8fabd31",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "5d4f70488870",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "6737800a62f8",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "7dfd5493603e",
+    "method": "GET",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "a9f0f03712b0",
+      "left": "/v1/issuing/authorizations/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "3792776e5fe9",
+        "keyPath": "pathAuthorization",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "5d1bf5807f04",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

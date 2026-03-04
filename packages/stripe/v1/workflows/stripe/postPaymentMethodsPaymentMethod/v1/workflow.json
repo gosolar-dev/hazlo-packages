@@ -1,0 +1,93 @@
+{
+  "name": "Update a PaymentMethod",
+  "description": "<p>Updates a PaymentMethod object. A PaymentMethod must be attached to a customer to be updated.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postPaymentMethodsPaymentMethod",
+    "path": "/v1/payment_methods/{payment_method}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "allow_redisplay": "always",
+      "billing_details": {
+        "address": {
+          "city": "<string>",
+          "country": "<string>",
+          "line1": "<string>",
+          "line2": "<string>",
+          "postal_code": "<string>",
+          "state": "<string>"
+        },
+        "email": "<string>",
+        "name": "<string>",
+        "phone": "<string>",
+        "tax_id": "<string>"
+      },
+      "card": {
+        "exp_month": "<number>",
+        "exp_year": "<number>",
+        "networks": {
+          "preferred": ""
+        }
+      },
+      "expand": [
+        "<string>"
+      ],
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "payto": {
+        "account_number": "<string>",
+        "bsb_number": "<string>",
+        "pay_id": "<string>"
+      },
+      "us_bank_account": {
+        "account_holder_type": "company",
+        "account_type": "checking"
+      }
+    },
+    "pathPaymentMethod": "<string>"
+  },
+  "inputRequired": [
+    "pathPaymentMethod"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "eae51dc2756c",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "ade791f0c505",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "8fbd23c8fa51",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "cad944076def",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "3d1bc8ae204a",
+      "left": "/v1/payment_methods/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "1b7e5d78c161",
+        "keyPath": "pathPaymentMethod",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

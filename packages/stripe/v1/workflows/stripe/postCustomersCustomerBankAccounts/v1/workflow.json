@@ -1,0 +1,95 @@
+{
+  "name": "Create a card",
+  "description": "<p>When you create a new credit card, you must specify a customer or recipient on which to create it.</p>\n\n<p>If the card’s owner has no default card, then the new card will become the default.\nHowever, if the owner already has a default, then it will not change.\nTo change the default, you should <a href=\"/docs/api#update_customer\">update the customer</a> to have a new <code>default_source</code>.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postCustomersCustomerBankAccounts",
+    "path": "/v1/customers/{customer}/bank_accounts",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "alipay_account": "<string>",
+      "bank_account": {
+        "account_holder_name": "<string>",
+        "account_holder_type": "company",
+        "account_number": "<string>",
+        "country": "<string>",
+        "currency": "<string>",
+        "object": "bank_account",
+        "routing_number": "<string>"
+      },
+      "card": {
+        "address_city": "<string>",
+        "address_country": "<string>",
+        "address_line1": "<string>",
+        "address_line2": "<string>",
+        "address_state": "<string>",
+        "address_zip": "<string>",
+        "cvc": "<string>",
+        "exp_month": "<number>",
+        "exp_year": "<number>",
+        "metadata": {
+          "<key>": "<string>"
+        },
+        "name": "<string>",
+        "number": "<string>",
+        "object": "card"
+      },
+      "expand": [
+        "<string>"
+      ],
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "source": "<string>"
+    },
+    "pathCustomer": "<string>"
+  },
+  "inputRequired": [
+    "pathCustomer"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "f9e81f0d83d9",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "76255b822ab5",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "dc95e896359f",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "b39d552028ce",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "c03c2b36744d",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "eb43a147a7e3",
+        "left": "/v1/customers/",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "c580d715844c",
+          "keyPath": "pathCustomer",
+          "optional": false
+        }
+      },
+      "right": "/bank_accounts"
+    },
+    "query": {}
+  }
+}

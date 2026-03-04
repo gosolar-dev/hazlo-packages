@@ -1,0 +1,64 @@
+{
+  "name": "Cancel an OutboundPayment",
+  "description": "<p>Cancel an OutboundPayment.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postTreasuryOutboundPaymentsIdCancel",
+    "path": "/v1/treasury/outbound_payments/{id}/cancel",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ]
+    },
+    "pathId": "<string>"
+  },
+  "inputRequired": [
+    "pathId"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "98b23eeedf74",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "4e526f147687",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "bfdf1ef93511",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "adb3b0609a0c",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "bbcbd2d6779f",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "867e0ec5676d",
+        "left": "/v1/treasury/outbound_payments/",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "237259079377",
+          "keyPath": "pathId",
+          "optional": false
+        }
+      },
+      "right": "/cancel"
+    },
+    "query": {}
+  }
+}

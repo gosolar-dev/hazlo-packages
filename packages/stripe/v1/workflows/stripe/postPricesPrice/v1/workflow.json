@@ -1,0 +1,89 @@
+{
+  "name": "Update a price",
+  "description": "<p>Updates the specified price by setting the values of the parameters passed. Any parameters not provided are left unchanged.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postPricesPrice",
+    "path": "/v1/prices/{price}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "active": "<boolean>",
+      "currency_options": {
+        "<key>": {
+          "custom_unit_amount": {
+            "enabled": "<boolean>",
+            "maximum": "<number>",
+            "minimum": "<number>",
+            "preset": "<number>"
+          },
+          "tax_behavior": "exclusive",
+          "tiers": [
+            {
+              "flat_amount": "<number>",
+              "flat_amount_decimal": "<string>",
+              "unit_amount": "<number>",
+              "unit_amount_decimal": "<string>",
+              "up_to": "inf"
+            }
+          ],
+          "unit_amount": "<number>",
+          "unit_amount_decimal": "<string>"
+        }
+      },
+      "expand": [
+        "<string>"
+      ],
+      "lookup_key": "<string>",
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "nickname": "<string>",
+      "tax_behavior": "exclusive",
+      "transfer_lookup_key": "<boolean>"
+    },
+    "pathPrice": "<string>"
+  },
+  "inputRequired": [
+    "pathPrice"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "2c0570182b45",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "0ac149184c59",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "d440d5c6d63c",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "69d883052cf4",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "3d64006a95df",
+      "left": "/v1/prices/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "e97e1a4fa56b",
+        "keyPath": "pathPrice",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve a Location",
+  "description": "<p>Retrieves a <code>Location</code> object.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getTerminalLocationsLocation",
+    "path": "/v1/terminal/locations/{location}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathLocation": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathLocation"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "0d5624891030",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "79803ae40279",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "ebd577ea67d6",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "8eb2fedeb7bf",
+    "method": "GET",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "1c834d74a791",
+      "left": "/v1/terminal/locations/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "2c9f7c289fb4",
+        "keyPath": "pathLocation",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "4ccfcbd91afa",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

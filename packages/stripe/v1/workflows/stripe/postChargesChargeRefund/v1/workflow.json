@@ -1,0 +1,73 @@
+{
+  "name": "Create a refund",
+  "description": "<p>When you create a new refund, you must specify either a Charge or a PaymentIntent object.</p>\n\n<p>This action refunds a previously created charge that’s not refunded yet.\nFunds are refunded to the credit or debit card that’s originally charged.</p>\n\n<p>You can optionally refund only part of a charge.\nYou can repeat this until the entire charge is refunded.</p>\n\n<p>After you entirely refund a charge, you can’t refund it again.\nThis method raises an error when it’s called on an already-refunded charge,\nor when you attempt to refund more money than is left on a charge.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postChargesChargeRefund",
+    "path": "/v1/charges/{charge}/refund",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "amount": "<number>",
+      "expand": [
+        "<string>"
+      ],
+      "instructions_email": "<string>",
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "payment_intent": "<string>",
+      "reason": "duplicate",
+      "refund_application_fee": "<boolean>",
+      "reverse_transfer": "<boolean>"
+    },
+    "pathCharge": "<string>"
+  },
+  "inputRequired": [
+    "pathCharge"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "86ec626244a7",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "e00fa4dc0ca4",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "b6addfc5023d",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "5e6dfcc5694e",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "04510b7c876c",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "17282c269bb5",
+        "left": "/v1/charges/",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "a466d5facf0e",
+          "keyPath": "pathCharge",
+          "optional": false
+        }
+      },
+      "right": "/refund"
+    },
+    "query": {}
+  }
+}

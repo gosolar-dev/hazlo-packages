@@ -1,0 +1,64 @@
+{
+  "name": "Complete a test-mode settlement",
+  "description": "<p>Allows the user to mark an Issuing settlement as complete.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postTestHelpersIssuingSettlementsSettlementComplete",
+    "path": "/v1/test_helpers/issuing/settlements/{settlement}/complete",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ]
+    },
+    "pathSettlement": "<string>"
+  },
+  "inputRequired": [
+    "pathSettlement"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "ca9eb1625c0e",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "f85324c32a55",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "cf66992fed5d",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "461421bf82ac",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "5540c2c2c61b",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "d132bb642b83",
+        "left": "/v1/test_helpers/issuing/settlements/",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "dc356b397c64",
+          "keyPath": "pathSettlement",
+          "optional": false
+        }
+      },
+      "right": "/complete"
+    },
+    "query": {}
+  }
+}

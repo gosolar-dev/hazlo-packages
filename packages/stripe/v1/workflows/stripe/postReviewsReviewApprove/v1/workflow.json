@@ -1,0 +1,64 @@
+{
+  "name": "Approve a review",
+  "description": "<p>Approves a <code>Review</code> object, closing it and removing it from the list of reviews.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postReviewsReviewApprove",
+    "path": "/v1/reviews/{review}/approve",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ]
+    },
+    "pathReview": "<string>"
+  },
+  "inputRequired": [
+    "pathReview"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "6da63a617d6c",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "3aeb26ed0100",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "6b2c4cc0b0bf",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "9d0e896ed07c",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "7955296f897e",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "82245b160281",
+        "left": "/v1/reviews/",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "69f5f5432943",
+          "keyPath": "pathReview",
+          "optional": false
+        }
+      },
+      "right": "/approve"
+    },
+    "query": {}
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "name": "Return a testmode card",
+  "description": "<p>Updates the shipping status of the specified Issuing <code>Card</code> object to <code>returned</code>.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postTestHelpersIssuingCardsCardShippingReturn",
+    "path": "/v1/test_helpers/issuing/cards/{card}/shipping/return",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ]
+    },
+    "pathCard": "<string>"
+  },
+  "inputRequired": [
+    "pathCard"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "c98acb325be3",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "100f820888e1",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "dff8723f90a1",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "46f8c064c83b",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "8e512b294ae0",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "124ae74c99f3",
+        "left": "/v1/test_helpers/issuing/cards/",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "f6ad25cd743b",
+          "keyPath": "pathCard",
+          "optional": false
+        }
+      },
+      "right": "/shipping/return"
+    },
+    "query": {}
+  }
+}

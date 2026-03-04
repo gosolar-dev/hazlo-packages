@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve a CreditReversal",
+  "description": "<p>Retrieves the details of an existing CreditReversal by passing the unique CreditReversal ID from either the CreditReversal creation request or CreditReversal list</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getTreasuryCreditReversalsCreditReversal",
+    "path": "/v1/treasury/credit_reversals/{credit_reversal}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathCreditReversal": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathCreditReversal"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "8b501a04c628",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "c9a00e6cb7ef",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "03cb1d9e6955",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "5882cc90801c",
+    "method": "GET",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "cd389ef4e298",
+      "left": "/v1/treasury/credit_reversals/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "97e9305a2dfe",
+        "keyPath": "pathCreditReversal",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "aff8bba07206",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

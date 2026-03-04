@@ -1,0 +1,91 @@
+{
+  "name": "List all file links",
+  "description": "<p>Returns a list of file links.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getFileLinks",
+    "path": "/v1/file_links",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryCreated": "<string>",
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryExpired": "<boolean>",
+    "queryFile": "<string>",
+    "queryLimit": "<number>",
+    "queryStartingAfter": "<string>"
+  },
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "b0b3b5504c45",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "f92694ee8b92",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "2ec01e7775d5",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "8da5ba63823b",
+    "method": "GET",
+    "path": "/v1/file_links",
+    "query": {
+      "created": {
+        "_pbd_nebula_type": "var",
+        "id": "0ae041327e86",
+        "keyPath": "queryCreated",
+        "optional": true
+      },
+      "ending_before": {
+        "_pbd_nebula_type": "var",
+        "id": "c173185f8a37",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "47dc3efb8851",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "expired": {
+        "_pbd_nebula_type": "var",
+        "id": "b46af7983627",
+        "keyPath": "queryExpired",
+        "optional": true
+      },
+      "file": {
+        "_pbd_nebula_type": "var",
+        "id": "340f5dbadd77",
+        "keyPath": "queryFile",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_nebula_type": "var",
+        "id": "0ad88708c432",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_nebula_type": "var",
+        "id": "a2fbf3652b86",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      }
+    }
+  }
+}

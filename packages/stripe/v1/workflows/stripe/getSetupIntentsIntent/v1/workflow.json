@@ -1,0 +1,70 @@
+{
+  "name": "Retrieve a SetupIntent",
+  "description": "<p>Retrieves the details of a SetupIntent that has previously been created. </p>\n\n<p>Client-side retrieval using a publishable key is allowed when the <code>client_secret</code> is provided in the query string. </p>\n\n<p>When retrieved with a publishable key, only a subset of properties will be returned. Please refer to the <a href=\"#setup_intent_object\">SetupIntent</a> object reference for more details.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getSetupIntentsIntent",
+    "path": "/v1/setup_intents/{intent}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathIntent": "<string>",
+    "queryClientSecret": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathIntent"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "6ad975b58eeb",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "cf5a45da530a",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "cb06f3a186bb",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "539585e5c683",
+    "method": "GET",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "152a7cff09bd",
+      "left": "/v1/setup_intents/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "850775cf33bf",
+        "keyPath": "pathIntent",
+        "optional": false
+      }
+    },
+    "query": {
+      "client_secret": {
+        "_pbd_nebula_type": "var",
+        "id": "1b138980006a",
+        "keyPath": "queryClientSecret",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "2c9c684fab54",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

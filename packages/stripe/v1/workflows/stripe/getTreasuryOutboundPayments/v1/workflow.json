@@ -1,0 +1,101 @@
+{
+  "name": "List all OutboundPayments",
+  "description": "<p>Returns a list of OutboundPayments sent from the specified FinancialAccount.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getTreasuryOutboundPayments",
+    "path": "/v1/treasury/outbound_payments",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryCreated": "<string>",
+    "queryCustomer": "<string>",
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryFinancialAccount": "<string>",
+    "queryLimit": "<number>",
+    "queryStartingAfter": "<string>",
+    "queryStatus": "<string>"
+  },
+  "inputRequired": [
+    "queryFinancialAccount"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "52777f3942b7",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "2a16494dd2a8",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "5070ba1b4d8e",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "48967d685e84",
+    "method": "GET",
+    "path": "/v1/treasury/outbound_payments",
+    "query": {
+      "created": {
+        "_pbd_nebula_type": "var",
+        "id": "20c1ca142b5b",
+        "keyPath": "queryCreated",
+        "optional": true
+      },
+      "customer": {
+        "_pbd_nebula_type": "var",
+        "id": "5b7aca3fe423",
+        "keyPath": "queryCustomer",
+        "optional": true
+      },
+      "ending_before": {
+        "_pbd_nebula_type": "var",
+        "id": "0fadea1c2d12",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "6e4f3f2f1dbe",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "financial_account": {
+        "_pbd_nebula_type": "var",
+        "id": "b0fe9eee5eab",
+        "keyPath": "queryFinancialAccount",
+        "optional": false
+      },
+      "limit": {
+        "_pbd_nebula_type": "var",
+        "id": "3e8637f7e5d9",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_nebula_type": "var",
+        "id": "4f3cfd203b9d",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      },
+      "status": {
+        "_pbd_nebula_type": "var",
+        "id": "2056cb6764d2",
+        "keyPath": "queryStatus",
+        "optional": true
+      }
+    }
+  }
+}

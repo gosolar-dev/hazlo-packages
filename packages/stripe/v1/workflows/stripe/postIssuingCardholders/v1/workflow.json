@@ -1,0 +1,118 @@
+{
+  "name": "Create a cardholder",
+  "description": "<p>Creates a new Issuing <code>Cardholder</code> object that can be issued cards.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postIssuingCardholders",
+    "path": "/v1/issuing/cardholders",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "billing": {
+        "address": {
+          "city": "<string>",
+          "country": "<string>",
+          "line1": "<string>",
+          "line2": "<string>",
+          "postal_code": "<string>",
+          "state": "<string>"
+        }
+      },
+      "company": {
+        "tax_id": "<string>"
+      },
+      "email": "<string>",
+      "expand": [
+        "<string>"
+      ],
+      "individual": {
+        "card_issuing": {
+          "user_terms_acceptance": {
+            "date": "<number>",
+            "ip": "<string>",
+            "user_agent": "<string>"
+          }
+        },
+        "dob": {
+          "day": "<number>",
+          "month": "<number>",
+          "year": "<number>"
+        },
+        "first_name": "<string>",
+        "last_name": "<string>",
+        "verification": {
+          "document": {
+            "back": "<string>",
+            "front": "<string>"
+          }
+        }
+      },
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "name": "<string>",
+      "phone_number": "<string>",
+      "preferred_locales": [
+        "de"
+      ],
+      "spending_controls": {
+        "allowed_categories": [
+          "ac_refrigeration_repair"
+        ],
+        "allowed_merchant_countries": [
+          "<string>"
+        ],
+        "blocked_categories": [
+          "ac_refrigeration_repair"
+        ],
+        "blocked_merchant_countries": [
+          "<string>"
+        ],
+        "spending_limits": [
+          {
+            "amount": "<number>",
+            "categories": [
+              "ac_refrigeration_repair"
+            ],
+            "interval": "all_time"
+          }
+        ],
+        "spending_limits_currency": "<string>"
+      },
+      "status": "active",
+      "type": "company"
+    }
+  },
+  "inputRequired": [
+    "body"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "aa66b8da7256",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "cced2021dc82",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "b1269c590a26",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "13955df6ed7a",
+    "method": "POST",
+    "path": "/v1/issuing/cardholders",
+    "query": {}
+  }
+}

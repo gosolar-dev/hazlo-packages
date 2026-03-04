@@ -1,0 +1,130 @@
+{
+  "name": "Increment an authorization",
+  "description": "<p>Perform an incremental authorization on an eligible\n<a href=\"/docs/api/payment_intents/object\">PaymentIntent</a>. To be eligible, the\nPaymentIntent’s status must be <code>requires_capture</code> and\n<a href=\"/docs/api/charges/object#charge_object-payment_method_details-card_present-incremental_authorization_supported\">incremental_authorization_supported</a>\nmust be <code>true</code>.</p>\n\n<p>Incremental authorizations attempt to increase the authorized amount on\nyour customer’s card to the new, higher <code>amount</code> provided. Similar to the\ninitial authorization, incremental authorizations can be declined. A\nsingle PaymentIntent can call this endpoint multiple times to further\nincrease the authorized amount.</p>\n\n<p>If the incremental authorization succeeds, the PaymentIntent object\nreturns with the updated\n<a href=\"/docs/api/payment_intents/object#payment_intent_object-amount\">amount</a>.\nIf the incremental authorization fails, a\n<a href=\"/docs/error-codes#card-declined\">card_declined</a> error returns, and no other\nfields on the PaymentIntent or Charge update. The PaymentIntent\nobject remains capturable for the previously authorized amount.</p>\n\n<p>Each PaymentIntent can have a maximum of 10 incremental authorization attempts, including declines.\nAfter it’s captured, a PaymentIntent can no longer be incremented.</p>\n\n<p>Learn more about <a href=\"/docs/terminal/features/incremental-authorizations\">incremental authorizations</a>.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postPaymentIntentsIntentIncrementAuthorization",
+    "path": "/v1/payment_intents/{intent}/increment_authorization",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "amount": "<number>",
+      "amount_details": {
+        "discount_amount": "<number>",
+        "enforce_arithmetic_validation": "<boolean>",
+        "line_items": [
+          {
+            "discount_amount": "<number>",
+            "payment_method_options": {
+              "card": {
+                "commodity_code": "<string>"
+              },
+              "card_present": {
+                "commodity_code": "<string>"
+              },
+              "klarna": {
+                "image_url": "<string>",
+                "product_url": "<string>",
+                "reference": "<string>",
+                "subscription_reference": "<string>"
+              },
+              "paypal": {
+                "category": "digital_goods",
+                "description": "<string>",
+                "sold_by": "<string>"
+              }
+            },
+            "product_code": "<string>",
+            "product_name": "<string>",
+            "quantity": "<number>",
+            "tax": {
+              "total_tax_amount": "<number>"
+            },
+            "unit_cost": "<number>",
+            "unit_of_measure": "<string>"
+          }
+        ],
+        "shipping": {
+          "amount": "<number>",
+          "from_postal_code": "<string>",
+          "to_postal_code": "<string>"
+        },
+        "tax": {
+          "total_tax_amount": "<number>"
+        }
+      },
+      "application_fee_amount": "<number>",
+      "description": "<string>",
+      "expand": [
+        "<string>"
+      ],
+      "hooks": {
+        "inputs": {
+          "tax": {
+            "calculation": "<string>"
+          }
+        }
+      },
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "payment_details": {
+        "customer_reference": "<string>",
+        "order_reference": "<string>"
+      },
+      "statement_descriptor": "<string>",
+      "transfer_data": {
+        "amount": "<number>"
+      }
+    },
+    "pathIntent": "<string>"
+  },
+  "inputRequired": [
+    "body",
+    "pathIntent"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "41789e8bab19",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "62866d6d94f2",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "479bf6e9e83a",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "f117a1dc497a",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "9174dd66c428",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "eb506a40cbeb",
+        "left": "/v1/payment_intents/",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "2a88a882de54",
+          "keyPath": "pathIntent",
+          "optional": false
+        }
+      },
+      "right": "/increment_authorization"
+    },
+    "query": {}
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "name": "Refresh Account data",
+  "description": "<p>Refreshes the data associated with a Financial Connections <code>Account</code>.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postFinancialConnectionsAccountsAccountRefresh",
+    "path": "/v1/financial_connections/accounts/{account}/refresh",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ],
+      "features": [
+        "balance"
+      ]
+    },
+    "pathAccount": "<string>"
+  },
+  "inputRequired": [
+    "body",
+    "pathAccount"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "2533c4d6d249",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "7cafce7d35a1",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "8d7fb9a867a0",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "d19701a82fa3",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "2cbbc98157a6",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "e1ddf97de90f",
+        "left": "/v1/financial_connections/accounts/",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "c50900d07796",
+          "keyPath": "pathAccount",
+          "optional": false
+        }
+      },
+      "right": "/refresh"
+    },
+    "query": {}
+  }
+}

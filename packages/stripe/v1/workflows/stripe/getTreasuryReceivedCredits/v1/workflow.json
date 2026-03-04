@@ -1,0 +1,94 @@
+{
+  "name": "List all ReceivedCredits",
+  "description": "<p>Returns a list of ReceivedCredits.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getTreasuryReceivedCredits",
+    "path": "/v1/treasury/received_credits",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryFinancialAccount": "<string>",
+    "queryLimit": "<number>",
+    "queryLinkedFlows": {},
+    "queryStartingAfter": "<string>",
+    "queryStatus": "<string>"
+  },
+  "inputRequired": [
+    "queryFinancialAccount"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "6e0aa72fb241",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "1ea67a0686b7",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "e19918108d28",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "8bf0dc0f8caa",
+    "method": "GET",
+    "path": "/v1/treasury/received_credits",
+    "query": {
+      "ending_before": {
+        "_pbd_nebula_type": "var",
+        "id": "f6041f0b9b24",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "a601f1d7873b",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "financial_account": {
+        "_pbd_nebula_type": "var",
+        "id": "c050a680019a",
+        "keyPath": "queryFinancialAccount",
+        "optional": false
+      },
+      "limit": {
+        "_pbd_nebula_type": "var",
+        "id": "78cea22c1389",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "linked_flows": {
+        "_pbd_nebula_type": "var",
+        "id": "4873de2a05e8",
+        "keyPath": "queryLinkedFlows",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_nebula_type": "var",
+        "id": "38b3a29beb79",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      },
+      "status": {
+        "_pbd_nebula_type": "var",
+        "id": "e30b605ed778",
+        "keyPath": "queryStatus",
+        "optional": true
+      }
+    }
+  }
+}

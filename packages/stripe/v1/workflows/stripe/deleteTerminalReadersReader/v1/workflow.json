@@ -1,0 +1,55 @@
+{
+  "name": "Delete a Reader",
+  "description": "<p>Deletes a <code>Reader</code> object.</p>",
+  "meta": {
+    "method": "DELETE",
+    "operationId": "deleteTerminalReadersReader",
+    "path": "/v1/terminal/readers/{reader}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathReader": "<string>"
+  },
+  "inputRequired": [
+    "pathReader"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "0589983529e7",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "8e2bbe10c295",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "5c71f1d24a04",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "5c2f3142cfa4",
+    "method": "DELETE",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "7ca4aea4272c",
+      "left": "/v1/terminal/readers/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "c911c7d0e73c",
+        "keyPath": "pathReader",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

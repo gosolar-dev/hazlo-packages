@@ -1,0 +1,108 @@
+{
+  "name": "List all Transactions",
+  "description": "<p>Retrieves a list of Transaction objects.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getTreasuryTransactions",
+    "path": "/v1/treasury/transactions",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryCreated": "<string>",
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryFinancialAccount": "<string>",
+    "queryLimit": "<number>",
+    "queryOrderBy": "<string>",
+    "queryStartingAfter": "<string>",
+    "queryStatus": "<string>",
+    "queryStatusTransitions": {}
+  },
+  "inputRequired": [
+    "queryFinancialAccount"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "2f69b2384ff0",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "e4cc5d3efa10",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "19578ed71285",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "bd4e967361dc",
+    "method": "GET",
+    "path": "/v1/treasury/transactions",
+    "query": {
+      "created": {
+        "_pbd_nebula_type": "var",
+        "id": "0b0d68782730",
+        "keyPath": "queryCreated",
+        "optional": true
+      },
+      "ending_before": {
+        "_pbd_nebula_type": "var",
+        "id": "4c7053565e43",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "39021b70497b",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "financial_account": {
+        "_pbd_nebula_type": "var",
+        "id": "d32d235e41cb",
+        "keyPath": "queryFinancialAccount",
+        "optional": false
+      },
+      "limit": {
+        "_pbd_nebula_type": "var",
+        "id": "fc46630fea93",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "order_by": {
+        "_pbd_nebula_type": "var",
+        "id": "4422437b11cd",
+        "keyPath": "queryOrderBy",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_nebula_type": "var",
+        "id": "23e631d060e5",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      },
+      "status": {
+        "_pbd_nebula_type": "var",
+        "id": "1a8c92536848",
+        "keyPath": "queryStatus",
+        "optional": true
+      },
+      "status_transitions": {
+        "_pbd_nebula_type": "var",
+        "id": "6a7933d5b7f2",
+        "keyPath": "queryStatusTransitions",
+        "optional": true
+      }
+    }
+  }
+}

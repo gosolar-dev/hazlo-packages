@@ -1,0 +1,53 @@
+{
+  "name": "Create a feature",
+  "description": "<p>Creates a feature</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postEntitlementsFeatures",
+    "path": "/v1/entitlements/features",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ],
+      "lookup_key": "<string>",
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "name": "<string>"
+    }
+  },
+  "inputRequired": [
+    "body"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "6f82d6210da8",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "3569b726a486",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "abbd66a40b6b",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "cf8ded5997a9",
+    "method": "POST",
+    "path": "/v1/entitlements/features",
+    "query": {}
+  }
+}

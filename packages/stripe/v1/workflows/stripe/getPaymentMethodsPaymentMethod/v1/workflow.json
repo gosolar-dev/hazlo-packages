@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve a PaymentMethod",
+  "description": "<p>Retrieves a PaymentMethod object attached to the StripeAccount. To retrieve a payment method attached to a Customer, you should use <a href=\"/docs/api/payment_methods/customer\">Retrieve a Customer’s PaymentMethods</a></p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getPaymentMethodsPaymentMethod",
+    "path": "/v1/payment_methods/{payment_method}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathPaymentMethod": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathPaymentMethod"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "a7ffd44c13c4",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "85f2e3b33272",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "7a04e1884f81",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "9e764093d6de",
+    "method": "GET",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "387bfebeff52",
+      "left": "/v1/payment_methods/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "2b3683f24f7d",
+        "keyPath": "pathPaymentMethod",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "94e6db4ff942",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

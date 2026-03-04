@@ -1,0 +1,60 @@
+{
+  "name": "Update a payment method domain",
+  "description": "<p>Updates an existing payment method domain.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postPaymentMethodDomainsPaymentMethodDomain",
+    "path": "/v1/payment_method_domains/{payment_method_domain}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "enabled": "<boolean>",
+      "expand": [
+        "<string>"
+      ]
+    },
+    "pathPaymentMethodDomain": "<string>"
+  },
+  "inputRequired": [
+    "pathPaymentMethodDomain"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "ae63f408f339",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "0adfa747601f",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "26de9b2e243e",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "c5f391e614ab",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "910a35b21e0e",
+      "left": "/v1/payment_method_domains/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "098e6eb29195",
+        "keyPath": "pathPaymentMethodDomain",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

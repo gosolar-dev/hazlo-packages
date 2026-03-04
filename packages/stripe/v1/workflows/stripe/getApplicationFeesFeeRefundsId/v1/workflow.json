@@ -1,0 +1,80 @@
+{
+  "name": "Retrieve an application fee refund",
+  "description": "<p>By default, you can see the 10 most recent refunds stored directly on the application fee object, but you can also retrieve details about a specific refund stored on the application fee.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getApplicationFeesFeeRefundsId",
+    "path": "/v1/application_fees/{fee}/refunds/{id}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathFee": "<string>",
+    "pathId": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathFee",
+    "pathId"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "31303df24113",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "9c7a064522d5",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "ccefd535ddb6",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "172234e0e337",
+    "method": "GET",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "e5aaed5475e5",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "d97e03262c57",
+        "left": {
+          "_pbd_nebula_type": "concat",
+          "id": "58a443cf1726",
+          "left": "/v1/application_fees/",
+          "right": {
+            "_pbd_nebula_type": "var",
+            "id": "aac8236069ac",
+            "keyPath": "pathFee",
+            "optional": false
+          }
+        },
+        "right": "/refunds/"
+      },
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "5779ea55d0bb",
+        "keyPath": "pathId",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "956ff377c33e",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

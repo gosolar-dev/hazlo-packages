@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve an InvoicePayment",
+  "description": "<p>Retrieves the invoice payment with the given ID.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getInvoicePaymentsInvoicePayment",
+    "path": "/v1/invoice_payments/{invoice_payment}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathInvoicePayment": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathInvoicePayment"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "62186f1d83f7",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "5a9300991876",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "40ce5d5d0030",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "62807b9fbb4d",
+    "method": "GET",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "adab1c9f4836",
+      "left": "/v1/invoice_payments/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "b1a8a604f0f5",
+        "keyPath": "pathInvoicePayment",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "e086830a3107",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

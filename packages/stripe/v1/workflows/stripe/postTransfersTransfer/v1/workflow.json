@@ -1,0 +1,63 @@
+{
+  "name": "Update a transfer",
+  "description": "<p>Updates the specified transfer by setting the values of the parameters passed. Any parameters not provided will be left unchanged.</p>\n\n<p>This request accepts only metadata as an argument.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postTransfersTransfer",
+    "path": "/v1/transfers/{transfer}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "description": "<string>",
+      "expand": [
+        "<string>"
+      ],
+      "metadata": {
+        "<key>": "<string>"
+      }
+    },
+    "pathTransfer": "<string>"
+  },
+  "inputRequired": [
+    "pathTransfer"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "1f78c4020a30",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "3c967c722189",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "1c25172098fb",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "e20cec18dfe5",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "eef256d7e45e",
+      "left": "/v1/transfers/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "50cfe2d62369",
+        "keyPath": "pathTransfer",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

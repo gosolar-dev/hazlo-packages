@@ -1,0 +1,66 @@
+{
+  "name": "Create an OutboundTransfer",
+  "description": "<p>Creates an OutboundTransfer.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postTreasuryOutboundTransfers",
+    "path": "/v1/treasury/outbound_transfers",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "amount": "<number>",
+      "currency": "<string>",
+      "description": "<string>",
+      "destination_payment_method": "<string>",
+      "destination_payment_method_data": {
+        "financial_account": "<string>",
+        "type": "financial_account"
+      },
+      "destination_payment_method_options": {
+        "us_bank_account": {
+          "network": "ach"
+        }
+      },
+      "expand": [
+        "<string>"
+      ],
+      "financial_account": "<string>",
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "statement_descriptor": "<string>"
+    }
+  },
+  "inputRequired": [
+    "body"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "2352079a12e1",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "ab39d9d937d5",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "ad578c1c23b3",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "3aa5e265f352",
+    "method": "POST",
+    "path": "/v1/treasury/outbound_transfers",
+    "query": {}
+  }
+}

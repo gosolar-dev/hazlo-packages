@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve a Payment Record",
+  "description": "<p>Retrieves a Payment Record with the given ID</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getPaymentRecordsId",
+    "path": "/v1/payment_records/{id}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathId": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathId"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "4173aad98d7f",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "f2f0067ec673",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "1d5bccb5cef1",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "4f557a57ee9c",
+    "method": "GET",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "d81c4193a6d2",
+      "left": "/v1/payment_records/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "900a7a2bea78",
+        "keyPath": "pathId",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "8b1ff124edcb",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

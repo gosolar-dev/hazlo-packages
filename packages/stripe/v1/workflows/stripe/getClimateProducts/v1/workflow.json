@@ -1,0 +1,70 @@
+{
+  "name": "List products",
+  "description": "<p>Lists all available Climate product objects.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getClimateProducts",
+    "path": "/v1/climate/products",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryLimit": "<number>",
+    "queryStartingAfter": "<string>"
+  },
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "38188759ce42",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "3409be100830",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "ee1ba9ffc6d9",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "d351df6ef001",
+    "method": "GET",
+    "path": "/v1/climate/products",
+    "query": {
+      "ending_before": {
+        "_pbd_nebula_type": "var",
+        "id": "026c97a0a7c3",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "d2899d5b9232",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_nebula_type": "var",
+        "id": "5d87d40eb36a",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_nebula_type": "var",
+        "id": "ff78e933286a",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      }
+    }
+  }
+}

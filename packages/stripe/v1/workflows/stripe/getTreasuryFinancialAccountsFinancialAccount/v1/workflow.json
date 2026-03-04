@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve a FinancialAccount",
+  "description": "<p>Retrieves the details of a FinancialAccount.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getTreasuryFinancialAccountsFinancialAccount",
+    "path": "/v1/treasury/financial_accounts/{financial_account}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathFinancialAccount": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathFinancialAccount"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "c4ce86577da5",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "f5259fda4048",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "b101e764e499",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "0ee4f79c4724",
+    "method": "GET",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "582a23874f5a",
+      "left": "/v1/treasury/financial_accounts/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "91577c785d7d",
+        "keyPath": "pathFinancialAccount",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "bea12e99444c",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

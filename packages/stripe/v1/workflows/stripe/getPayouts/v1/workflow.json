@@ -1,0 +1,98 @@
+{
+  "name": "List all payouts",
+  "description": "<p>Returns a list of existing payouts sent to third-party bank accounts or payouts that Stripe sent to you. The payouts return in sorted order, with the most recently created payouts appearing first.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getPayouts",
+    "path": "/v1/payouts",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryArrivalDate": "<string>",
+    "queryCreated": "<string>",
+    "queryDestination": "<string>",
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryLimit": "<number>",
+    "queryStartingAfter": "<string>",
+    "queryStatus": "<string>"
+  },
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "4bc7554a035d",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "66d145ce75a4",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "2e147c0692e9",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "218d5c5aa6da",
+    "method": "GET",
+    "path": "/v1/payouts",
+    "query": {
+      "arrival_date": {
+        "_pbd_nebula_type": "var",
+        "id": "f736faa3a120",
+        "keyPath": "queryArrivalDate",
+        "optional": true
+      },
+      "created": {
+        "_pbd_nebula_type": "var",
+        "id": "26931fa9d048",
+        "keyPath": "queryCreated",
+        "optional": true
+      },
+      "destination": {
+        "_pbd_nebula_type": "var",
+        "id": "6c5ff5c3ed56",
+        "keyPath": "queryDestination",
+        "optional": true
+      },
+      "ending_before": {
+        "_pbd_nebula_type": "var",
+        "id": "3563dafdec8d",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "e89f9dbc5dda",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_nebula_type": "var",
+        "id": "3fc300dc5d4a",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_nebula_type": "var",
+        "id": "74d7388a6d3d",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      },
+      "status": {
+        "_pbd_nebula_type": "var",
+        "id": "ef5e740e5ea4",
+        "keyPath": "queryStatus",
+        "optional": true
+      }
+    }
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "name": "List all quotes",
+  "description": "<p>Returns a list of your quotes.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getQuotes",
+    "path": "/v1/quotes",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryCustomer": "<string>",
+    "queryCustomerAccount": "<string>",
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryLimit": "<number>",
+    "queryStartingAfter": "<string>",
+    "queryStatus": "<string>",
+    "queryTestClock": "<string>"
+  },
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "1c7736ba2b34",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "f6dc87986ccb",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "696c966aef9f",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "b1116add7178",
+    "method": "GET",
+    "path": "/v1/quotes",
+    "query": {
+      "customer": {
+        "_pbd_nebula_type": "var",
+        "id": "8db59c21d8be",
+        "keyPath": "queryCustomer",
+        "optional": true
+      },
+      "customer_account": {
+        "_pbd_nebula_type": "var",
+        "id": "4a10de9f7430",
+        "keyPath": "queryCustomerAccount",
+        "optional": true
+      },
+      "ending_before": {
+        "_pbd_nebula_type": "var",
+        "id": "76f8bf1a5f5b",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "28ae0f9e1c79",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_nebula_type": "var",
+        "id": "fb8c49e09507",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_nebula_type": "var",
+        "id": "65e9a50bbc93",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      },
+      "status": {
+        "_pbd_nebula_type": "var",
+        "id": "2790bd29bd76",
+        "keyPath": "queryStatus",
+        "optional": true
+      },
+      "test_clock": {
+        "_pbd_nebula_type": "var",
+        "id": "1b8923caeacc",
+        "keyPath": "queryTestClock",
+        "optional": true
+      }
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "name": "Create a file",
+  "description": "<p>To upload a file to Stripe, you need to send a request of type <code>multipart/form-data</code>. Include the file you want to upload in the request, and the parameters for creating a file.</p>\n\n<p>All of Stripe’s officially supported Client libraries support sending <code>multipart/form-data</code>.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postFiles",
+    "path": "/v1/files",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ],
+      "file": "<string>",
+      "file_link_data": {
+        "create": "<boolean>",
+        "expires_at": "<number>",
+        "metadata": {
+          "<key>": "<string>"
+        }
+      },
+      "purpose": "account_requirement"
+    }
+  },
+  "inputRequired": [
+    "body"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "0618cad42080",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "c9b13d83a3c5",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "ef8a8a2b8f5b",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "c6a0b807264f",
+    "method": "POST",
+    "path": "/v1/files",
+    "query": {}
+  }
+}

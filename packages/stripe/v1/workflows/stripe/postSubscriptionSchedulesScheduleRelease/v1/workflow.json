@@ -1,0 +1,65 @@
+{
+  "name": "Release a schedule",
+  "description": "<p>Releases the subscription schedule immediately, which will stop scheduling of its phases, but leave any existing subscription in place. A schedule can only be released if its status is <code>not_started</code> or <code>active</code>. If the subscription schedule is currently associated with a subscription, releasing it will remove its <code>subscription</code> property and set the subscription’s ID to the <code>released_subscription</code> property.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postSubscriptionSchedulesScheduleRelease",
+    "path": "/v1/subscription_schedules/{schedule}/release",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ],
+      "preserve_cancel_date": "<boolean>"
+    },
+    "pathSchedule": "<string>"
+  },
+  "inputRequired": [
+    "pathSchedule"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "9b8b6042dab2",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "586b5d145e91",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "4997e9eac873",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "fe73e6b95ac6",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "d4ec0817778f",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "61213b50e9b6",
+        "left": "/v1/subscription_schedules/",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "ce6d697f267a",
+          "keyPath": "pathSchedule",
+          "optional": false
+        }
+      },
+      "right": "/release"
+    },
+    "query": {}
+  }
+}

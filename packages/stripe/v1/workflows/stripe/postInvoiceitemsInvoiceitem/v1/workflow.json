@@ -1,0 +1,93 @@
+{
+  "name": "Update an invoice item",
+  "description": "<p>Updates the amount or description of an invoice item on an upcoming invoice. Updating an invoice item is only possible before the invoice it’s attached to is closed.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postInvoiceitemsInvoiceitem",
+    "path": "/v1/invoiceitems/{invoiceitem}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "amount": "<number>",
+      "description": "<string>",
+      "discountable": "<boolean>",
+      "discounts": [
+        {
+          "coupon": "<string>",
+          "discount": "<string>",
+          "promotion_code": "<string>"
+        }
+      ],
+      "expand": [
+        "<string>"
+      ],
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "period": {
+        "end": "<number>",
+        "start": "<number>"
+      },
+      "price_data": {
+        "currency": "<string>",
+        "product": "<string>",
+        "tax_behavior": "exclusive",
+        "unit_amount": "<number>",
+        "unit_amount_decimal": "<string>"
+      },
+      "pricing": {
+        "price": "<string>"
+      },
+      "quantity": "<number>",
+      "tax_behavior": "exclusive",
+      "tax_code": "<string>",
+      "tax_rates": [
+        "<string>"
+      ],
+      "unit_amount_decimal": "<string>"
+    },
+    "pathInvoiceitem": "<string>"
+  },
+  "inputRequired": [
+    "pathInvoiceitem"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "8c72cb9c2828",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "ce7e8a581758",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "cf1da5469bcf",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "ef3a7570cd35",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "2b44f99bc18d",
+      "left": "/v1/invoiceitems/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "5a40862100f9",
+        "keyPath": "pathInvoiceitem",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

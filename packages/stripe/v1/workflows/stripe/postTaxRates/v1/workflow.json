@@ -1,0 +1,60 @@
+{
+  "name": "Create a tax rate",
+  "description": "<p>Creates a new tax rate.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postTaxRates",
+    "path": "/v1/tax_rates",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "active": "<boolean>",
+      "country": "<string>",
+      "description": "<string>",
+      "display_name": "<string>",
+      "expand": [
+        "<string>"
+      ],
+      "inclusive": "<boolean>",
+      "jurisdiction": "<string>",
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "percentage": "<number>",
+      "state": "<string>",
+      "tax_type": "amusement_tax"
+    }
+  },
+  "inputRequired": [
+    "body"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "07c3cbe0ab9b",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "716540cc5c7b",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "737deccbd2db",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "9edb60ab7a06",
+    "method": "POST",
+    "path": "/v1/tax_rates",
+    "query": {}
+  }
+}

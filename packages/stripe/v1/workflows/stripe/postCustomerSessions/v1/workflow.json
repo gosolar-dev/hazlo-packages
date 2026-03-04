@@ -1,0 +1,92 @@
+{
+  "name": "Create a Customer Session",
+  "description": "<p>Creates a Customer Session object that includes a single-use client secret that you can use on your front-end to grant client-side API access for certain customer resources.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postCustomerSessions",
+    "path": "/v1/customer_sessions",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "components": {
+        "buy_button": {
+          "enabled": "<boolean>"
+        },
+        "customer_sheet": {
+          "enabled": "<boolean>",
+          "features": {
+            "payment_method_allow_redisplay_filters": [
+              "always"
+            ],
+            "payment_method_remove": "disabled"
+          }
+        },
+        "mobile_payment_element": {
+          "enabled": "<boolean>",
+          "features": {
+            "payment_method_allow_redisplay_filters": [
+              "always"
+            ],
+            "payment_method_redisplay": "disabled",
+            "payment_method_remove": "disabled",
+            "payment_method_save": "disabled",
+            "payment_method_save_allow_redisplay_override": "always"
+          }
+        },
+        "payment_element": {
+          "enabled": "<boolean>",
+          "features": {
+            "payment_method_allow_redisplay_filters": [
+              "always"
+            ],
+            "payment_method_redisplay": "disabled",
+            "payment_method_redisplay_limit": "<number>",
+            "payment_method_remove": "disabled",
+            "payment_method_save": "disabled",
+            "payment_method_save_usage": "off_session"
+          }
+        },
+        "pricing_table": {
+          "enabled": "<boolean>"
+        }
+      },
+      "customer": "<string>",
+      "customer_account": "<string>",
+      "expand": [
+        "<string>"
+      ]
+    }
+  },
+  "inputRequired": [
+    "body"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "01a92852ff7f",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "e850070f9ef2",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "8c7ae5a82a0b",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "43f6b07b6bc9",
+    "method": "POST",
+    "path": "/v1/customer_sessions",
+    "query": {}
+  }
+}

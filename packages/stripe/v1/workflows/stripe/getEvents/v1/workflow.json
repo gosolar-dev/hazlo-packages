@@ -1,0 +1,98 @@
+{
+  "name": "List all events",
+  "description": "<p>List events, going back up to 30 days. Each event data is rendered according to Stripe API version at its creation time, specified in <a href=\"https://docs.stripe.com/api/events/object\">event object</a> <code>api_version</code> attribute (not according to your current Stripe API version or <code>Stripe-Version</code> header).</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getEvents",
+    "path": "/v1/events",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryCreated": "<string>",
+    "queryDeliverySuccess": "<boolean>",
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryLimit": "<number>",
+    "queryStartingAfter": "<string>",
+    "queryType": "<string>",
+    "queryTypes": []
+  },
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "6a7ea381a320",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "1e1bee823059",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "658b8cb8d195",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "614772ed3842",
+    "method": "GET",
+    "path": "/v1/events",
+    "query": {
+      "created": {
+        "_pbd_nebula_type": "var",
+        "id": "09ab5bfbe16a",
+        "keyPath": "queryCreated",
+        "optional": true
+      },
+      "delivery_success": {
+        "_pbd_nebula_type": "var",
+        "id": "f9ba94ce525d",
+        "keyPath": "queryDeliverySuccess",
+        "optional": true
+      },
+      "ending_before": {
+        "_pbd_nebula_type": "var",
+        "id": "8036f9c4d45d",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "a4f0ee8df533",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_nebula_type": "var",
+        "id": "7b85e369da01",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_nebula_type": "var",
+        "id": "02d6d165be91",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      },
+      "type": {
+        "_pbd_nebula_type": "var",
+        "id": "7157b4685f61",
+        "keyPath": "queryType",
+        "optional": true
+      },
+      "types": {
+        "_pbd_nebula_type": "var",
+        "id": "10fa93631678",
+        "keyPath": "queryTypes",
+        "optional": true
+      }
+    }
+  }
+}

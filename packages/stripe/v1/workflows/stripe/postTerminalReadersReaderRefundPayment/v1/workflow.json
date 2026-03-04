@@ -1,0 +1,75 @@
+{
+  "name": "Refund a Charge or a PaymentIntent in-person",
+  "description": "<p>Initiates an in-person refund on a Reader. See <a href=\"/docs/terminal/payments/regional?integration-country=CA#refund-an-interac-payment\">Refund an Interac Payment</a> for more details.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postTerminalReadersReaderRefundPayment",
+    "path": "/v1/terminal/readers/{reader}/refund_payment",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "amount": "<number>",
+      "charge": "<string>",
+      "expand": [
+        "<string>"
+      ],
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "payment_intent": "<string>",
+      "refund_application_fee": "<boolean>",
+      "refund_payment_config": {
+        "enable_customer_cancellation": "<boolean>"
+      },
+      "reverse_transfer": "<boolean>"
+    },
+    "pathReader": "<string>"
+  },
+  "inputRequired": [
+    "pathReader"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "54264dd88e21",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "670349dc982c",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "964cc4ddd82c",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "5b66fee0b8ba",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "42173a8ca802",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "0508c496c08d",
+        "left": "/v1/terminal/readers/",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "f9f9f23a54c2",
+          "keyPath": "pathReader",
+          "optional": false
+        }
+      },
+      "right": "/refund_payment"
+    },
+    "query": {}
+  }
+}

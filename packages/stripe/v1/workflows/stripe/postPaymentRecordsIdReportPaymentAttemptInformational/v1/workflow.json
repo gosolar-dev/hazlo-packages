@@ -1,0 +1,86 @@
+{
+  "name": "Report payment attempt informational",
+  "description": "<p>Report informational updates on the specified Payment Record.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postPaymentRecordsIdReportPaymentAttemptInformational",
+    "path": "/v1/payment_records/{id}/report_payment_attempt_informational",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "customer_details": {
+        "customer": "<string>",
+        "email": "<string>",
+        "name": "<string>",
+        "phone": "<string>"
+      },
+      "description": "<string>",
+      "expand": [
+        "<string>"
+      ],
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "shipping_details": {
+        "address": {
+          "city": "<string>",
+          "country": "<string>",
+          "line1": "<string>",
+          "line2": "<string>",
+          "postal_code": "<string>",
+          "state": "<string>"
+        },
+        "name": "<string>",
+        "phone": "<string>"
+      }
+    },
+    "pathId": "<string>"
+  },
+  "inputRequired": [
+    "pathId"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "35edd4118183",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "5ecef6d087ea",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "d69c3ae66c05",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "ee8e9438150b",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "71a608925679",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "ad40fdf9739a",
+        "left": "/v1/payment_records/",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "ac6e8d96bbb1",
+          "keyPath": "pathId",
+          "optional": false
+        }
+      },
+      "right": "/report_payment_attempt_informational"
+    },
+    "query": {}
+  }
+}

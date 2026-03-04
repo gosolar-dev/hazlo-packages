@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve a transfer",
+  "description": "<p>Retrieves the details of an existing transfer. Supply the unique transfer ID from either a transfer creation request or the transfer list, and Stripe will return the corresponding transfer information.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getTransfersTransfer",
+    "path": "/v1/transfers/{transfer}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathTransfer": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathTransfer"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "b3770172dc45",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "1890d9393dae",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "512ef7006076",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "19d4c59b1b97",
+    "method": "GET",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "21dd103ae0b3",
+      "left": "/v1/transfers/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "06feab5b220d",
+        "keyPath": "pathTransfer",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "213e2ed97798",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

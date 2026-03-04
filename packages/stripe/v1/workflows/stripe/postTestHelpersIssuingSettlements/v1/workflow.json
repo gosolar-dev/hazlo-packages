@@ -1,0 +1,57 @@
+{
+  "name": "Create a test-mode settlement",
+  "description": "<p>Allows the user to create an Issuing settlement.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postTestHelpersIssuingSettlements",
+    "path": "/v1/test_helpers/issuing/settlements",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "bin": "<string>",
+      "clearing_date": "<number>",
+      "currency": "<string>",
+      "expand": [
+        "<string>"
+      ],
+      "interchange_fees_amount": "<number>",
+      "net_total_amount": "<number>",
+      "network": "maestro",
+      "network_settlement_identifier": "<string>",
+      "transaction_amount": "<number>",
+      "transaction_count": "<number>"
+    }
+  },
+  "inputRequired": [
+    "body"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "4eeb2d16fbfe",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "0cfec7fff1eb",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "510109a325f5",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "f7bba88b837e",
+    "method": "POST",
+    "path": "/v1/test_helpers/issuing/settlements",
+    "query": {}
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "name": "List VerificationSessions",
+  "description": "<p>Returns a list of VerificationSessions</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getIdentityVerificationSessions",
+    "path": "/v1/identity/verification_sessions",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryClientReferenceId": "<string>",
+    "queryCreated": "<string>",
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryLimit": "<number>",
+    "queryRelatedCustomer": "<string>",
+    "queryRelatedCustomerAccount": "<string>",
+    "queryStartingAfter": "<string>",
+    "queryStatus": "<string>"
+  },
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "fe42a05a919e",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "bf29133738a8",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "e40ec09713b7",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "edc8ead13c46",
+    "method": "GET",
+    "path": "/v1/identity/verification_sessions",
+    "query": {
+      "client_reference_id": {
+        "_pbd_nebula_type": "var",
+        "id": "bafab104ad2a",
+        "keyPath": "queryClientReferenceId",
+        "optional": true
+      },
+      "created": {
+        "_pbd_nebula_type": "var",
+        "id": "6cb68bf77b01",
+        "keyPath": "queryCreated",
+        "optional": true
+      },
+      "ending_before": {
+        "_pbd_nebula_type": "var",
+        "id": "5228baa94ab0",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "55e349080adf",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_nebula_type": "var",
+        "id": "df5e124e66e7",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "related_customer": {
+        "_pbd_nebula_type": "var",
+        "id": "c7ee96537b0b",
+        "keyPath": "queryRelatedCustomer",
+        "optional": true
+      },
+      "related_customer_account": {
+        "_pbd_nebula_type": "var",
+        "id": "6050d294b68e",
+        "keyPath": "queryRelatedCustomerAccount",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_nebula_type": "var",
+        "id": "9a152695f77b",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      },
+      "status": {
+        "_pbd_nebula_type": "var",
+        "id": "204e5e9fd4f3",
+        "keyPath": "queryStatus",
+        "optional": true
+      }
+    }
+  }
+}

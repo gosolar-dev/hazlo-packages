@@ -1,0 +1,67 @@
+{
+  "name": "Decline an authorization",
+  "description": "<p>[Deprecated] Declines a pending Issuing <code>Authorization</code> object. This request should be made within the timeout window of the <a href=\"/docs/issuing/controls/real-time-authorizations\">real time authorization</a> flow.\nThis method is deprecated. Instead, <a href=\"/docs/issuing/controls/real-time-authorizations#authorization-handling\">respond directly to the webhook request to decline an authorization</a>.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postIssuingAuthorizationsAuthorizationDecline",
+    "path": "/v1/issuing/authorizations/{authorization}/decline",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ],
+      "metadata": {
+        "<key>": "<string>"
+      }
+    },
+    "pathAuthorization": "<string>"
+  },
+  "inputRequired": [
+    "pathAuthorization"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "664c1077084c",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "8d84755f9570",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "06f1bef0ac7f",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "ad1f5ad4caef",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "9d46b1323633",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "19cb48c204e6",
+        "left": "/v1/issuing/authorizations/",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "60948da09e95",
+          "keyPath": "pathAuthorization",
+          "optional": false
+        }
+      },
+      "right": "/decline"
+    },
+    "query": {}
+  }
+}

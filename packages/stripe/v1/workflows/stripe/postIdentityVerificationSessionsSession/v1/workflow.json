@@ -1,0 +1,77 @@
+{
+  "name": "Update a VerificationSession",
+  "description": "<p>Updates a VerificationSession object.</p>\n\n<p>When the session status is <code>requires_input</code>, you can use this method to update the\nverification check and options.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postIdentityVerificationSessionsSession",
+    "path": "/v1/identity/verification_sessions/{session}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ],
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "options": {
+        "document": {
+          "allowed_types": [
+            "driving_license"
+          ],
+          "require_id_number": "<boolean>",
+          "require_live_capture": "<boolean>",
+          "require_matching_selfie": "<boolean>"
+        }
+      },
+      "provided_details": {
+        "email": "<string>",
+        "phone": "<string>"
+      },
+      "type": "document"
+    },
+    "pathSession": "<string>"
+  },
+  "inputRequired": [
+    "pathSession"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "ed5a2063c428",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "8758c2a375ed",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "b7d86f4008e0",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "a6e2fd7c1d6d",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "4216b6a640a4",
+      "left": "/v1/identity/verification_sessions/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "786ffbfbe312",
+        "keyPath": "pathSession",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

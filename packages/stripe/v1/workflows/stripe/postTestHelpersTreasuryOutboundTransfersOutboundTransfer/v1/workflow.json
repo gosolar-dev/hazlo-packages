@@ -1,0 +1,71 @@
+{
+  "name": "Test mode: Update an OutboundTransfer",
+  "description": "<p>Updates a test mode created OutboundTransfer with tracking details. The OutboundTransfer must not be cancelable, and cannot be in the <code>canceled</code> or <code>failed</code> states.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postTestHelpersTreasuryOutboundTransfersOutboundTransfer",
+    "path": "/v1/test_helpers/treasury/outbound_transfers/{outbound_transfer}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ],
+      "tracking_details": {
+        "ach": {
+          "trace_id": "<string>"
+        },
+        "type": "ach",
+        "us_domestic_wire": {
+          "chips": "<string>",
+          "imad": "<string>",
+          "omad": "<string>"
+        }
+      }
+    },
+    "pathOutboundTransfer": "<string>"
+  },
+  "inputRequired": [
+    "body",
+    "pathOutboundTransfer"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "001dea8f47e2",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "ea5358b94a20",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "313f6b4ce10a",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "6d4b9bbf80ea",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "0e98fc25bec0",
+      "left": "/v1/test_helpers/treasury/outbound_transfers/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "c5f21d81f665",
+        "keyPath": "pathOutboundTransfer",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

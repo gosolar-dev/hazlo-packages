@@ -1,0 +1,66 @@
+{
+  "name": "Advance a test clock",
+  "description": "<p>Starts advancing a test clock to a specified time in the future. Advancement is done when status changes to <code>Ready</code>.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postTestHelpersTestClocksTestClockAdvance",
+    "path": "/v1/test_helpers/test_clocks/{test_clock}/advance",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ],
+      "frozen_time": "<number>"
+    },
+    "pathTestClock": "<string>"
+  },
+  "inputRequired": [
+    "body",
+    "pathTestClock"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "e41e657725be",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "658aa4c37281",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "c61a39300079",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "8224ad933056",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "a121678851ae",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "b348b3d22e46",
+        "left": "/v1/test_helpers/test_clocks/",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "d13aa5e2afe3",
+          "keyPath": "pathTestClock",
+          "optional": false
+        }
+      },
+      "right": "/advance"
+    },
+    "query": {}
+  }
+}

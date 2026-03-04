@@ -1,0 +1,57 @@
+{
+  "name": "Create an account link",
+  "description": "<p>Creates an AccountLink object that includes a single-use Stripe URL that the platform can redirect their user to in order to take them through the Connect Onboarding flow.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postAccountLinks",
+    "path": "/v1/account_links",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "account": "<string>",
+      "collect": "currently_due",
+      "collection_options": {
+        "fields": "currently_due",
+        "future_requirements": "include"
+      },
+      "expand": [
+        "<string>"
+      ],
+      "refresh_url": "<string>",
+      "return_url": "<string>",
+      "type": "account_onboarding"
+    }
+  },
+  "inputRequired": [
+    "body"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "a709e49dbad4",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "51bae73e1d4a",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "5a2b3077afc5",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "2311d0437c98",
+    "method": "POST",
+    "path": "/v1/account_links",
+    "query": {}
+  }
+}

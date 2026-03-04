@@ -1,0 +1,72 @@
+{
+  "name": "Update a shipping rate",
+  "description": "<p>Updates an existing shipping rate object.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postShippingRatesShippingRateToken",
+    "path": "/v1/shipping_rates/{shipping_rate_token}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "active": "<boolean>",
+      "expand": [
+        "<string>"
+      ],
+      "fixed_amount": {
+        "currency_options": {
+          "<key>": {
+            "amount": "<number>",
+            "tax_behavior": "exclusive"
+          }
+        }
+      },
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "tax_behavior": "exclusive"
+    },
+    "pathShippingRateToken": "<string>"
+  },
+  "inputRequired": [
+    "pathShippingRateToken"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "408cd829eeae",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "708966cb3cac",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "fd6685e832ec",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "547215e7b1ee",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "8f38b3abe066",
+      "left": "/v1/shipping_rates/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "af8db948c02c",
+        "keyPath": "pathShippingRateToken",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

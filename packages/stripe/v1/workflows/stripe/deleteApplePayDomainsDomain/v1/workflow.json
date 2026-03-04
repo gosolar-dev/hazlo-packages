@@ -1,0 +1,55 @@
+{
+  "name": "DeleteApplePayDomainsDomain",
+  "description": "<p>Delete an apple pay domain.</p>",
+  "meta": {
+    "method": "DELETE",
+    "operationId": "deleteApplePayDomainsDomain",
+    "path": "/v1/apple_pay/domains/{domain}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathDomain": "<string>"
+  },
+  "inputRequired": [
+    "pathDomain"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "1ebb19ab18cc",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "7a3726023094",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "8b7eb818fc8c",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "c4470fa95941",
+    "method": "DELETE",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "09c6626e7f12",
+      "left": "/v1/apple_pay/domains/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "30ecf3b9a84c",
+        "keyPath": "pathDomain",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

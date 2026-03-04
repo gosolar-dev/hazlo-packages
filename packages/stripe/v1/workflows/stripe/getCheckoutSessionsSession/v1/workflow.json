@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve a Checkout Session",
+  "description": "<p>Retrieves a Checkout Session object.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getCheckoutSessionsSession",
+    "path": "/v1/checkout/sessions/{session}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathSession": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathSession"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "3af74a43a98d",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "8ee51f0fa370",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "4d3ca2a397c6",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "4776836ab1a8",
+    "method": "GET",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "ea9ae9a16bdb",
+      "left": "/v1/checkout/sessions/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "105c022b24d3",
+        "keyPath": "pathSession",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "404361655a64",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

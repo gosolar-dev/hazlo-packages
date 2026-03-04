@@ -1,0 +1,71 @@
+{
+  "name": "Create a reversal transaction",
+  "description": "<p>Partially or fully reverses a previously created <code>Transaction</code>.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postTaxTransactionsCreateReversal",
+    "path": "/v1/tax/transactions/create_reversal",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ],
+      "flat_amount": "<number>",
+      "line_items": [
+        {
+          "amount": "<number>",
+          "amount_tax": "<number>",
+          "metadata": {
+            "<key>": "<string>"
+          },
+          "original_line_item": "<string>",
+          "quantity": "<number>",
+          "reference": "<string>"
+        }
+      ],
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "mode": "full",
+      "original_transaction": "<string>",
+      "reference": "<string>",
+      "shipping_cost": {
+        "amount": "<number>",
+        "amount_tax": "<number>"
+      }
+    }
+  },
+  "inputRequired": [
+    "body"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "c59d55ad90bd",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "7566add10e33",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "934d0b5eef81",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "b33e821f6b57",
+    "method": "POST",
+    "path": "/v1/tax/transactions/create_reversal",
+    "query": {}
+  }
+}

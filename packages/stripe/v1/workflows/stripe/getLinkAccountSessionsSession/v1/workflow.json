@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve a Session",
+  "description": "<p>Retrieves the details of a Financial Connections <code>Session</code></p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getLinkAccountSessionsSession",
+    "path": "/v1/link_account_sessions/{session}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathSession": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathSession"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "6a15c410b9ef",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "b9bbbe8c41af",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "5b879342e6be",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "427b8b9740c6",
+    "method": "GET",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "8d34cf35c1ba",
+      "left": "/v1/link_account_sessions/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "9cbca1a3451d",
+        "keyPath": "pathSession",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "30d3949821ce",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

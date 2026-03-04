@@ -1,0 +1,60 @@
+{
+  "name": "Delete a subscription item",
+  "description": "<p>Deletes an item from the subscription. Removing a subscription item from a subscription will not cancel the subscription.</p>",
+  "meta": {
+    "method": "DELETE",
+    "operationId": "deleteSubscriptionItemsItem",
+    "path": "/v1/subscription_items/{item}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "clear_usage": "<boolean>",
+      "payment_behavior": "allow_incomplete",
+      "proration_behavior": "always_invoice",
+      "proration_date": "<number>"
+    },
+    "pathItem": "<string>"
+  },
+  "inputRequired": [
+    "pathItem"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "25fc17eb2f5f",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "978d31a02453",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "a7281db5b914",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "fc7cf61ef2c1",
+    "method": "DELETE",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "a83278dd8c15",
+      "left": "/v1/subscription_items/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "f4ccf1da2d12",
+        "keyPath": "pathItem",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

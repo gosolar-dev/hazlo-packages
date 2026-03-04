@@ -1,0 +1,84 @@
+{
+  "name": "Verify a bank account",
+  "description": "<p>Verify a specified bank account for a given customer.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postCustomersCustomerBankAccountsIdVerify",
+    "path": "/v1/customers/{customer}/bank_accounts/{id}/verify",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "amounts": [
+        "<number>"
+      ],
+      "expand": [
+        "<string>"
+      ]
+    },
+    "pathCustomer": "<string>",
+    "pathId": "<string>"
+  },
+  "inputRequired": [
+    "pathCustomer",
+    "pathId"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "3c775850aa99",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "b0123ffd4b5f",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "ebc27b16e3f3",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "7df606c9e53a",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "50601c14a349",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "eb2e99b89015",
+        "left": {
+          "_pbd_nebula_type": "concat",
+          "id": "551fd9fad05f",
+          "left": {
+            "_pbd_nebula_type": "concat",
+            "id": "f742d71789ca",
+            "left": "/v1/customers/",
+            "right": {
+              "_pbd_nebula_type": "var",
+              "id": "5a44524b08e3",
+              "keyPath": "pathCustomer",
+              "optional": false
+            }
+          },
+          "right": "/bank_accounts/"
+        },
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "4e49d989897a",
+          "keyPath": "pathId",
+          "optional": false
+        }
+      },
+      "right": "/verify"
+    },
+    "query": {}
+  }
+}

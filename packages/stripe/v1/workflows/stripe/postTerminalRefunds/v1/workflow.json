@@ -1,0 +1,54 @@
+{
+  "name": "Create a refund using a Terminal-supported device.",
+  "description": "<p>Internal endpoint for terminal use to create a refund for a card_present charge.\nThis endpoint only supports card_present payment method types (excludes interac_present).</p>\n\n<p>You can optionally refund only part of a charge.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postTerminalRefunds",
+    "path": "/v1/terminal/refunds",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "amount": "<number>",
+      "charge": "<string>",
+      "expand": [
+        "<string>"
+      ],
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "payment_intent": "<string>",
+      "reason": "duplicate",
+      "refund_application_fee": "<boolean>",
+      "reverse_transfer": "<boolean>"
+    }
+  },
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "99b1164ac2b1",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "66df3b41ce3f",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "564d8885a58e",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "439f63fe4cbd",
+    "method": "POST",
+    "path": "/v1/terminal/refunds",
+    "query": {}
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve a portal configuration",
+  "description": "<p>Retrieves a configuration that describes the functionality of the customer portal.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getBillingPortalConfigurationsConfiguration",
+    "path": "/v1/billing_portal/configurations/{configuration}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathConfiguration": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathConfiguration"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "695349290e10",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "d323404ef16a",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "14f89a86ebaa",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "76eb529322bf",
+    "method": "GET",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "fd192ac97438",
+      "left": "/v1/billing_portal/configurations/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "5ffffffbd0d4",
+        "keyPath": "pathConfiguration",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "f7fd78af540f",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

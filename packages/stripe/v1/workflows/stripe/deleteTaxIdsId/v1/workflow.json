@@ -1,0 +1,55 @@
+{
+  "name": "Delete a tax ID",
+  "description": "<p>Deletes an existing account or customer <code>tax_id</code> object.</p>",
+  "meta": {
+    "method": "DELETE",
+    "operationId": "deleteTaxIdsId",
+    "path": "/v1/tax_ids/{id}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathId": "<string>"
+  },
+  "inputRequired": [
+    "pathId"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "e3ec0ae9dbcf",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "f6b24add6046",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "cf7599dd4e82",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "18ec7480b156",
+    "method": "DELETE",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "a7195248e02a",
+      "left": "/v1/tax_ids/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "fea2aa38cdfb",
+        "keyPath": "pathId",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

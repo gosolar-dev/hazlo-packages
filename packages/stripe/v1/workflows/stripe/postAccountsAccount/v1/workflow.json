@@ -1,0 +1,552 @@
+{
+  "name": "Update an account",
+  "description": "<p>Updates a <a href=\"/connect/accounts\">connected account</a> by setting the values of the parameters passed. Any parameters not provided are\nleft unchanged.</p>\n\n<p>For accounts where <a href=\"/api/accounts/object#account_object-controller-requirement_collection\">controller.requirement_collection</a>\nis <code>application</code>, which includes Custom accounts, you can update any information on the account.</p>\n\n<p>For accounts where <a href=\"/api/accounts/object#account_object-controller-requirement_collection\">controller.requirement_collection</a>\nis <code>stripe</code>, which includes Standard and Express accounts, you can update all information until you create\nan <a href=\"/api/account_links\">Account Link</a> or <a href=\"/api/account_sessions\">Account Session</a> to start Connect onboarding,\nafter which some properties can no longer be updated.</p>\n\n<p>To update your own account, use the <a href=\"https://dashboard.stripe.com/settings/account\">Dashboard</a>. Refer to our\n<a href=\"/docs/connect/updating-accounts\">Connect</a> documentation to learn more about updating accounts.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postAccountsAccount",
+    "path": "/v1/accounts/{account}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "account_token": "<string>",
+      "business_profile": {
+        "annual_revenue": {
+          "amount": "<number>",
+          "currency": "<string>",
+          "fiscal_year_end": "<string>"
+        },
+        "estimated_worker_count": "<number>",
+        "mcc": "<string>",
+        "minority_owned_business_designation": [
+          "lgbtqi_owned_business"
+        ],
+        "monthly_estimated_revenue": {
+          "amount": "<number>",
+          "currency": "<string>"
+        },
+        "name": "<string>",
+        "product_description": "<string>",
+        "support_address": {
+          "city": "<string>",
+          "country": "<string>",
+          "line1": "<string>",
+          "line2": "<string>",
+          "postal_code": "<string>",
+          "state": "<string>"
+        },
+        "support_email": "<string>",
+        "support_phone": "<string>",
+        "support_url": "<string>",
+        "url": "<string>"
+      },
+      "business_type": "company",
+      "capabilities": {
+        "acss_debit_payments": {
+          "requested": "<boolean>"
+        },
+        "affirm_payments": {
+          "requested": "<boolean>"
+        },
+        "afterpay_clearpay_payments": {
+          "requested": "<boolean>"
+        },
+        "alma_payments": {
+          "requested": "<boolean>"
+        },
+        "amazon_pay_payments": {
+          "requested": "<boolean>"
+        },
+        "au_becs_debit_payments": {
+          "requested": "<boolean>"
+        },
+        "bacs_debit_payments": {
+          "requested": "<boolean>"
+        },
+        "bancontact_payments": {
+          "requested": "<boolean>"
+        },
+        "bank_transfer_payments": {
+          "requested": "<boolean>"
+        },
+        "billie_payments": {
+          "requested": "<boolean>"
+        },
+        "blik_payments": {
+          "requested": "<boolean>"
+        },
+        "boleto_payments": {
+          "requested": "<boolean>"
+        },
+        "card_issuing": {
+          "requested": "<boolean>"
+        },
+        "card_payments": {
+          "requested": "<boolean>"
+        },
+        "cartes_bancaires_payments": {
+          "requested": "<boolean>"
+        },
+        "cashapp_payments": {
+          "requested": "<boolean>"
+        },
+        "crypto_payments": {
+          "requested": "<boolean>"
+        },
+        "eps_payments": {
+          "requested": "<boolean>"
+        },
+        "fpx_payments": {
+          "requested": "<boolean>"
+        },
+        "gb_bank_transfer_payments": {
+          "requested": "<boolean>"
+        },
+        "giropay_payments": {
+          "requested": "<boolean>"
+        },
+        "grabpay_payments": {
+          "requested": "<boolean>"
+        },
+        "ideal_payments": {
+          "requested": "<boolean>"
+        },
+        "india_international_payments": {
+          "requested": "<boolean>"
+        },
+        "jcb_payments": {
+          "requested": "<boolean>"
+        },
+        "jp_bank_transfer_payments": {
+          "requested": "<boolean>"
+        },
+        "kakao_pay_payments": {
+          "requested": "<boolean>"
+        },
+        "klarna_payments": {
+          "requested": "<boolean>"
+        },
+        "konbini_payments": {
+          "requested": "<boolean>"
+        },
+        "kr_card_payments": {
+          "requested": "<boolean>"
+        },
+        "legacy_payments": {
+          "requested": "<boolean>"
+        },
+        "link_payments": {
+          "requested": "<boolean>"
+        },
+        "mb_way_payments": {
+          "requested": "<boolean>"
+        },
+        "mobilepay_payments": {
+          "requested": "<boolean>"
+        },
+        "multibanco_payments": {
+          "requested": "<boolean>"
+        },
+        "mx_bank_transfer_payments": {
+          "requested": "<boolean>"
+        },
+        "naver_pay_payments": {
+          "requested": "<boolean>"
+        },
+        "nz_bank_account_becs_debit_payments": {
+          "requested": "<boolean>"
+        },
+        "oxxo_payments": {
+          "requested": "<boolean>"
+        },
+        "p24_payments": {
+          "requested": "<boolean>"
+        },
+        "pay_by_bank_payments": {
+          "requested": "<boolean>"
+        },
+        "payco_payments": {
+          "requested": "<boolean>"
+        },
+        "paynow_payments": {
+          "requested": "<boolean>"
+        },
+        "payto_payments": {
+          "requested": "<boolean>"
+        },
+        "pix_payments": {
+          "requested": "<boolean>"
+        },
+        "promptpay_payments": {
+          "requested": "<boolean>"
+        },
+        "revolut_pay_payments": {
+          "requested": "<boolean>"
+        },
+        "samsung_pay_payments": {
+          "requested": "<boolean>"
+        },
+        "satispay_payments": {
+          "requested": "<boolean>"
+        },
+        "sepa_bank_transfer_payments": {
+          "requested": "<boolean>"
+        },
+        "sepa_debit_payments": {
+          "requested": "<boolean>"
+        },
+        "sofort_payments": {
+          "requested": "<boolean>"
+        },
+        "swish_payments": {
+          "requested": "<boolean>"
+        },
+        "tax_reporting_us_1099_k": {
+          "requested": "<boolean>"
+        },
+        "tax_reporting_us_1099_misc": {
+          "requested": "<boolean>"
+        },
+        "transfers": {
+          "requested": "<boolean>"
+        },
+        "treasury": {
+          "requested": "<boolean>"
+        },
+        "twint_payments": {
+          "requested": "<boolean>"
+        },
+        "us_bank_account_ach_payments": {
+          "requested": "<boolean>"
+        },
+        "us_bank_transfer_payments": {
+          "requested": "<boolean>"
+        },
+        "zip_payments": {
+          "requested": "<boolean>"
+        }
+      },
+      "company": {
+        "address": {
+          "city": "<string>",
+          "country": "<string>",
+          "line1": "<string>",
+          "line2": "<string>",
+          "postal_code": "<string>",
+          "state": "<string>"
+        },
+        "address_kana": {
+          "city": "<string>",
+          "country": "<string>",
+          "line1": "<string>",
+          "line2": "<string>",
+          "postal_code": "<string>",
+          "state": "<string>",
+          "town": "<string>"
+        },
+        "address_kanji": {
+          "city": "<string>",
+          "country": "<string>",
+          "line1": "<string>",
+          "line2": "<string>",
+          "postal_code": "<string>",
+          "state": "<string>",
+          "town": "<string>"
+        },
+        "directors_provided": "<boolean>",
+        "directorship_declaration": {
+          "date": "<number>",
+          "ip": "<string>",
+          "user_agent": "<string>"
+        },
+        "executives_provided": "<boolean>",
+        "export_license_id": "<string>",
+        "export_purpose_code": "<string>",
+        "name": "<string>",
+        "name_kana": "<string>",
+        "name_kanji": "<string>",
+        "owners_provided": "<boolean>",
+        "ownership_declaration": {
+          "date": "<number>",
+          "ip": "<string>",
+          "user_agent": "<string>"
+        },
+        "ownership_exemption_reason": "",
+        "phone": "<string>",
+        "registration_date": {
+          "day": "<number>",
+          "month": "<number>",
+          "year": "<number>"
+        },
+        "registration_number": "<string>",
+        "representative_declaration": {
+          "date": "<number>",
+          "ip": "<string>",
+          "user_agent": "<string>"
+        },
+        "structure": "",
+        "tax_id": "<string>",
+        "tax_id_registrar": "<string>",
+        "vat_id": "<string>",
+        "verification": {
+          "document": {
+            "back": "<string>",
+            "front": "<string>"
+          }
+        }
+      },
+      "default_currency": "<string>",
+      "documents": {
+        "bank_account_ownership_verification": {
+          "files": [
+            "<string>"
+          ]
+        },
+        "company_license": {
+          "files": [
+            "<string>"
+          ]
+        },
+        "company_memorandum_of_association": {
+          "files": [
+            "<string>"
+          ]
+        },
+        "company_ministerial_decree": {
+          "files": [
+            "<string>"
+          ]
+        },
+        "company_registration_verification": {
+          "files": [
+            "<string>"
+          ]
+        },
+        "company_tax_id_verification": {
+          "files": [
+            "<string>"
+          ]
+        },
+        "proof_of_address": {
+          "files": [
+            "<string>"
+          ]
+        },
+        "proof_of_registration": {
+          "files": [
+            "<string>"
+          ],
+          "signer": {
+            "person": "<string>"
+          }
+        },
+        "proof_of_ultimate_beneficial_ownership": {
+          "files": [
+            "<string>"
+          ],
+          "signer": {
+            "person": "<string>"
+          }
+        }
+      },
+      "email": "<string>",
+      "expand": [
+        "<string>"
+      ],
+      "external_account": "<string>",
+      "groups": {
+        "payments_pricing": "<string>"
+      },
+      "individual": {
+        "address": {
+          "city": "<string>",
+          "country": "<string>",
+          "line1": "<string>",
+          "line2": "<string>",
+          "postal_code": "<string>",
+          "state": "<string>"
+        },
+        "address_kana": {
+          "city": "<string>",
+          "country": "<string>",
+          "line1": "<string>",
+          "line2": "<string>",
+          "postal_code": "<string>",
+          "state": "<string>",
+          "town": "<string>"
+        },
+        "address_kanji": {
+          "city": "<string>",
+          "country": "<string>",
+          "line1": "<string>",
+          "line2": "<string>",
+          "postal_code": "<string>",
+          "state": "<string>",
+          "town": "<string>"
+        },
+        "dob": {
+          "day": "<number>",
+          "month": "<number>",
+          "year": "<number>"
+        },
+        "email": "<string>",
+        "first_name": "<string>",
+        "first_name_kana": "<string>",
+        "first_name_kanji": "<string>",
+        "full_name_aliases": [
+          "<string>"
+        ],
+        "gender": "<string>",
+        "id_number": "<string>",
+        "id_number_secondary": "<string>",
+        "last_name": "<string>",
+        "last_name_kana": "<string>",
+        "last_name_kanji": "<string>",
+        "maiden_name": "<string>",
+        "metadata": {
+          "<key>": "<string>"
+        },
+        "phone": "<string>",
+        "political_exposure": "existing",
+        "registered_address": {
+          "city": "<string>",
+          "country": "<string>",
+          "line1": "<string>",
+          "line2": "<string>",
+          "postal_code": "<string>",
+          "state": "<string>"
+        },
+        "relationship": {
+          "director": "<boolean>",
+          "executive": "<boolean>",
+          "owner": "<boolean>",
+          "percent_ownership": "<number>",
+          "title": "<string>"
+        },
+        "ssn_last_4": "<string>",
+        "verification": {
+          "additional_document": {
+            "back": "<string>",
+            "front": "<string>"
+          },
+          "document": {
+            "back": "<string>",
+            "front": "<string>"
+          }
+        }
+      },
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "settings": {
+        "bacs_debit_payments": {
+          "display_name": "<string>"
+        },
+        "branding": {
+          "icon": "<string>",
+          "logo": "<string>",
+          "primary_color": "<string>",
+          "secondary_color": "<string>"
+        },
+        "card_issuing": {
+          "tos_acceptance": {
+            "date": "<number>",
+            "ip": "<string>",
+            "user_agent": "<string>"
+          }
+        },
+        "card_payments": {
+          "decline_on": {
+            "avs_failure": "<boolean>",
+            "cvc_failure": "<boolean>"
+          },
+          "statement_descriptor_prefix": "<string>",
+          "statement_descriptor_prefix_kana": "<string>",
+          "statement_descriptor_prefix_kanji": "<string>"
+        },
+        "invoices": {
+          "default_account_tax_ids": [
+            "<string>"
+          ],
+          "hosted_payment_method_save": "always"
+        },
+        "payments": {
+          "statement_descriptor": "<string>",
+          "statement_descriptor_kana": "<string>",
+          "statement_descriptor_kanji": "<string>"
+        },
+        "payouts": {
+          "debit_negative_balances": "<boolean>",
+          "schedule": {
+            "delay_days": "minimum",
+            "interval": "daily",
+            "monthly_anchor": "<number>",
+            "monthly_payout_days": [
+              "<number>"
+            ],
+            "weekly_anchor": "friday",
+            "weekly_payout_days": [
+              "friday"
+            ]
+          },
+          "statement_descriptor": "<string>"
+        },
+        "treasury": {
+          "tos_acceptance": {
+            "date": "<number>",
+            "ip": "<string>",
+            "user_agent": "<string>"
+          }
+        }
+      },
+      "tos_acceptance": {
+        "date": "<number>",
+        "ip": "<string>",
+        "service_agreement": "<string>",
+        "user_agent": "<string>"
+      }
+    },
+    "pathAccount": "<string>"
+  },
+  "inputRequired": [
+    "pathAccount"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "28db89851a2f",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "46bfddf9ae2e",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "5e0bd72d501d",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "7e9b5ec96e5d",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "631f89a4bbf4",
+      "left": "/v1/accounts/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "5cd1696483f5",
+        "keyPath": "pathAccount",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "name": "Retrieve a quote's line items",
+  "description": "<p>When retrieving a quote, there is an includable <strong>line_items</strong> property containing the first handful of those items. There is also a URL where you can retrieve the full (paginated) list of line items.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getQuotesQuoteLineItems",
+    "path": "/v1/quotes/{quote}/line_items",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathQuote": "<string>",
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryLimit": "<number>",
+    "queryStartingAfter": "<string>"
+  },
+  "inputRequired": [
+    "pathQuote"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "d84bc4ad09a8",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "4fd0460fd9ab",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "190d41a184d5",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "bdba2fa8876c",
+    "method": "GET",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "7941804479a6",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "40bc8591b89e",
+        "left": "/v1/quotes/",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "97b38a80c422",
+          "keyPath": "pathQuote",
+          "optional": false
+        }
+      },
+      "right": "/line_items"
+    },
+    "query": {
+      "ending_before": {
+        "_pbd_nebula_type": "var",
+        "id": "8bc8bad1672e",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "d453ab711a10",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_nebula_type": "var",
+        "id": "227b91c14e76",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_nebula_type": "var",
+        "id": "6be666f00b83",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      }
+    }
+  }
+}

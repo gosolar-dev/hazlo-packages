@@ -1,0 +1,55 @@
+{
+  "name": "Delete a Location",
+  "description": "<p>Deletes a <code>Location</code> object.</p>",
+  "meta": {
+    "method": "DELETE",
+    "operationId": "deleteTerminalLocationsLocation",
+    "path": "/v1/terminal/locations/{location}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathLocation": "<string>"
+  },
+  "inputRequired": [
+    "pathLocation"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "839836f8074e",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "a3f84256ff0c",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "d4888bfe2dfb",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "0cf6d6d480e5",
+    "method": "DELETE",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "e7825851c712",
+      "left": "/v1/terminal/locations/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "11a86c94e4e8",
+        "keyPath": "pathLocation",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

@@ -1,0 +1,150 @@
+{
+  "name": "Update a Checkout Session",
+  "description": "<p>Updates a Checkout Session object.</p>\n\n<p>Related guide: <a href=\"/payments/advanced/dynamic-updates\">Dynamically update a Checkout Session</a></p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postCheckoutSessionsSession",
+    "path": "/v1/checkout/sessions/{session}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "collected_information": {
+        "shipping_details": {
+          "address": {
+            "city": "<string>",
+            "country": "<string>",
+            "line1": "<string>",
+            "line2": "<string>",
+            "postal_code": "<string>",
+            "state": "<string>"
+          },
+          "name": "<string>"
+        }
+      },
+      "expand": [
+        "<string>"
+      ],
+      "line_items": [
+        {
+          "adjustable_quantity": {
+            "enabled": "<boolean>",
+            "maximum": "<number>",
+            "minimum": "<number>"
+          },
+          "id": "<string>",
+          "metadata": {
+            "<key>": "<string>"
+          },
+          "price": "<string>",
+          "price_data": {
+            "currency": "<string>",
+            "product": "<string>",
+            "product_data": {
+              "description": "<string>",
+              "images": [
+                "<string>"
+              ],
+              "metadata": {
+                "<key>": "<string>"
+              },
+              "name": "<string>",
+              "tax_code": "<string>",
+              "unit_label": "<string>"
+            },
+            "recurring": {
+              "interval": "day",
+              "interval_count": "<number>"
+            },
+            "tax_behavior": "exclusive",
+            "unit_amount": "<number>",
+            "unit_amount_decimal": "<string>"
+          },
+          "quantity": "<number>",
+          "tax_rates": [
+            "<string>"
+          ]
+        }
+      ],
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "shipping_options": [
+        {
+          "shipping_rate": "<string>",
+          "shipping_rate_data": {
+            "delivery_estimate": {
+              "maximum": {
+                "unit": "business_day",
+                "value": "<number>"
+              },
+              "minimum": {
+                "unit": "business_day",
+                "value": "<number>"
+              }
+            },
+            "display_name": "<string>",
+            "fixed_amount": {
+              "amount": "<number>",
+              "currency": "<string>",
+              "currency_options": {
+                "<key>": {
+                  "amount": "<number>",
+                  "tax_behavior": "exclusive"
+                }
+              }
+            },
+            "metadata": {
+              "<key>": "<string>"
+            },
+            "tax_behavior": "exclusive",
+            "tax_code": "<string>",
+            "type": "fixed_amount"
+          }
+        }
+      ]
+    },
+    "pathSession": "<string>"
+  },
+  "inputRequired": [
+    "pathSession"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "09d508fda258",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "2a5c5a79eefb",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "165b30111d88",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "57b57982a43f",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "200314399e6e",
+      "left": "/v1/checkout/sessions/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "a06d5f0c99c8",
+        "keyPath": "pathSession",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

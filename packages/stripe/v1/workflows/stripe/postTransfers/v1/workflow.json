@@ -1,0 +1,58 @@
+{
+  "name": "Create a transfer",
+  "description": "<p>To send funds from your Stripe account to a connected account, you create a new transfer object. Your <a href=\"#balance\">Stripe balance</a> must be able to cover the transfer amount, or you’ll receive an “Insufficient Funds” error.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postTransfers",
+    "path": "/v1/transfers",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "amount": "<number>",
+      "currency": "<string>",
+      "description": "<string>",
+      "destination": "<string>",
+      "expand": [
+        "<string>"
+      ],
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "source_transaction": "<string>",
+      "source_type": "bank_account",
+      "transfer_group": "<string>"
+    }
+  },
+  "inputRequired": [
+    "body"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "a15c167e9f3e",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "8cc9b36c36ab",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "255772e14515",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "91c28f3cc58f",
+    "method": "POST",
+    "path": "/v1/transfers",
+    "query": {}
+  }
+}

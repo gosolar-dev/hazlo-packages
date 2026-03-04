@@ -1,0 +1,73 @@
+{
+  "name": "Search invoices",
+  "description": "<p>Search for invoices you’ve previously created using Stripe’s <a href=\"/docs/search#search-query-language\">Search Query Language</a>.\nDon’t use search in read-after-write flows where strict consistency is necessary. Under normal operating\nconditions, data is searchable in less than a minute. Occasionally, propagation of new or updated data can be up\nto an hour behind during outages. Search functionality is not available to merchants in India.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getInvoicesSearch",
+    "path": "/v1/invoices/search",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryExpand": [],
+    "queryLimit": "<number>",
+    "queryPage": "<string>",
+    "queryQuery": "<string>"
+  },
+  "inputRequired": [
+    "queryQuery"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "fd3ffd3ca564",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "11370d9bde77",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "380ea387cac1",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "149be61e40a5",
+    "method": "GET",
+    "path": "/v1/invoices/search",
+    "query": {
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "8b3b6d3ada20",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_nebula_type": "var",
+        "id": "439a24235efc",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "page": {
+        "_pbd_nebula_type": "var",
+        "id": "5a281cec6b2f",
+        "keyPath": "queryPage",
+        "optional": true
+      },
+      "query": {
+        "_pbd_nebula_type": "var",
+        "id": "341b7cc60085",
+        "keyPath": "queryQuery",
+        "optional": false
+      }
+    }
+  }
+}

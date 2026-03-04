@@ -1,0 +1,70 @@
+{
+  "name": "Retrieve a PaymentIntent",
+  "description": "<p>Retrieves the details of a PaymentIntent that has previously been created. </p>\n\n<p>You can retrieve a PaymentIntent client-side using a publishable key when the <code>client_secret</code> is in the query string. </p>\n\n<p>If you retrieve a PaymentIntent with a publishable key, it only returns a subset of properties. Refer to the <a href=\"#payment_intent_object\">payment intent</a> object reference for more details.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getPaymentIntentsIntent",
+    "path": "/v1/payment_intents/{intent}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathIntent": "<string>",
+    "queryClientSecret": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathIntent"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "d81c133d6ac0",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "317f882d7ded",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "2b31aa65de24",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "a87e5e349804",
+    "method": "GET",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "b228d64f3670",
+      "left": "/v1/payment_intents/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "9cac6bd395b2",
+        "keyPath": "pathIntent",
+        "optional": false
+      }
+    },
+    "query": {
+      "client_secret": {
+        "_pbd_nebula_type": "var",
+        "id": "d23a8399926c",
+        "keyPath": "queryClientSecret",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "2675d451ff97",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

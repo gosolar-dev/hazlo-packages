@@ -1,0 +1,95 @@
+{
+  "name": "Create a card",
+  "description": "<p>When you create a new credit card, you must specify a customer or recipient on which to create it.</p>\n\n<p>If the card’s owner has no default card, then the new card will become the default.\nHowever, if the owner already has a default, then it will not change.\nTo change the default, you should <a href=\"/docs/api#update_customer\">update the customer</a> to have a new <code>default_source</code>.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postCustomersCustomerSources",
+    "path": "/v1/customers/{customer}/sources",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "alipay_account": "<string>",
+      "bank_account": {
+        "account_holder_name": "<string>",
+        "account_holder_type": "company",
+        "account_number": "<string>",
+        "country": "<string>",
+        "currency": "<string>",
+        "object": "bank_account",
+        "routing_number": "<string>"
+      },
+      "card": {
+        "address_city": "<string>",
+        "address_country": "<string>",
+        "address_line1": "<string>",
+        "address_line2": "<string>",
+        "address_state": "<string>",
+        "address_zip": "<string>",
+        "cvc": "<string>",
+        "exp_month": "<number>",
+        "exp_year": "<number>",
+        "metadata": {
+          "<key>": "<string>"
+        },
+        "name": "<string>",
+        "number": "<string>",
+        "object": "card"
+      },
+      "expand": [
+        "<string>"
+      ],
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "source": "<string>"
+    },
+    "pathCustomer": "<string>"
+  },
+  "inputRequired": [
+    "pathCustomer"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "1892cd47dc4b",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "c32367ec017f",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "c87b1e21db8f",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "e1ffecbb7767",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "7985974ea633",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "964d3a1c97a8",
+        "left": "/v1/customers/",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "ac97a91bc88d",
+          "keyPath": "pathCustomer",
+          "optional": false
+        }
+      },
+      "right": "/sources"
+    },
+    "query": {}
+  }
+}

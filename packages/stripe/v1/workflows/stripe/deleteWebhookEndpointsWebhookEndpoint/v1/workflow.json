@@ -1,0 +1,55 @@
+{
+  "name": "Delete a webhook endpoint",
+  "description": "<p>You can also delete webhook endpoints via the <a href=\"https://dashboard.stripe.com/account/webhooks\">webhook endpoint management</a> page of the Stripe dashboard.</p>",
+  "meta": {
+    "method": "DELETE",
+    "operationId": "deleteWebhookEndpointsWebhookEndpoint",
+    "path": "/v1/webhook_endpoints/{webhook_endpoint}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathWebhookEndpoint": "<string>"
+  },
+  "inputRequired": [
+    "pathWebhookEndpoint"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "9471a4745b24",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "b67365049b8c",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "88adc617143f",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "58e8b9017003",
+    "method": "DELETE",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "104d72027aac",
+      "left": "/v1/webhook_endpoints/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "0a4db1768fbd",
+        "keyPath": "pathWebhookEndpoint",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

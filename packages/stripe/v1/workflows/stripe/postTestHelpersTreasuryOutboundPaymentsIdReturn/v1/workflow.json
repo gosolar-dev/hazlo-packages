@@ -1,0 +1,67 @@
+{
+  "name": "Test mode: Return an OutboundPayment",
+  "description": "<p>Transitions a test mode created OutboundPayment to the <code>returned</code> status. The OutboundPayment must already be in the <code>processing</code> state.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postTestHelpersTreasuryOutboundPaymentsIdReturn",
+    "path": "/v1/test_helpers/treasury/outbound_payments/{id}/return",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ],
+      "returned_details": {
+        "code": "account_closed"
+      }
+    },
+    "pathId": "<string>"
+  },
+  "inputRequired": [
+    "pathId"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "8086a428037b",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "f422f66a78a1",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "02e4af0c7424",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "5562b78da27e",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "d5dd669d1640",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "73f2dcfe65be",
+        "left": "/v1/test_helpers/treasury/outbound_payments/",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "3207f8489b41",
+          "keyPath": "pathId",
+          "optional": false
+        }
+      },
+      "right": "/return"
+    },
+    "query": {}
+  }
+}

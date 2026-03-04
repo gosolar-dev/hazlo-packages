@@ -1,0 +1,78 @@
+{
+  "name": "Set reader display",
+  "description": "<p>Sets the reader display to show <a href=\"/docs/terminal/features/display\">cart details</a>.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postTerminalReadersReaderSetReaderDisplay",
+    "path": "/v1/terminal/readers/{reader}/set_reader_display",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "cart": {
+        "currency": "<string>",
+        "line_items": [
+          {
+            "amount": "<number>",
+            "description": "<string>",
+            "quantity": "<number>"
+          }
+        ],
+        "tax": "<number>",
+        "total": "<number>"
+      },
+      "expand": [
+        "<string>"
+      ],
+      "type": "cart"
+    },
+    "pathReader": "<string>"
+  },
+  "inputRequired": [
+    "body",
+    "pathReader"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "848ae17c8eb2",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "0c07c4fcad4e",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "dd8e27a2bf3f",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "161f5154f543",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "aa525cd308d4",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "edf40d70a5b9",
+        "left": "/v1/terminal/readers/",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "7573352460a7",
+          "keyPath": "pathReader",
+          "optional": false
+        }
+      },
+      "right": "/set_reader_display"
+    },
+    "query": {}
+  }
+}

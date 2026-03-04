@@ -1,0 +1,105 @@
+{
+  "name": "List all balance transactions",
+  "description": "<p>Returns a list of transactions that have contributed to the Stripe account balance (e.g., charges, transfers, and so forth). The transactions are returned in sorted order, with the most recent transactions appearing first.</p>\n\n<p>Note that this endpoint was previously called “Balance history” and used the path <code>/v1/balance/history</code>.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getBalanceHistory",
+    "path": "/v1/balance/history",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryCreated": "<string>",
+    "queryCurrency": "<string>",
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryLimit": "<number>",
+    "queryPayout": "<string>",
+    "querySource": "<string>",
+    "queryStartingAfter": "<string>",
+    "queryType": "<string>"
+  },
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "b81c2fec576d",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "1bd7188ae72d",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "45511589f5a7",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "c6558aca6e21",
+    "method": "GET",
+    "path": "/v1/balance/history",
+    "query": {
+      "created": {
+        "_pbd_nebula_type": "var",
+        "id": "9640853080a2",
+        "keyPath": "queryCreated",
+        "optional": true
+      },
+      "currency": {
+        "_pbd_nebula_type": "var",
+        "id": "6a292582765a",
+        "keyPath": "queryCurrency",
+        "optional": true
+      },
+      "ending_before": {
+        "_pbd_nebula_type": "var",
+        "id": "3e33164d20ed",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "f98deb768427",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_nebula_type": "var",
+        "id": "24fc65d25d66",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "payout": {
+        "_pbd_nebula_type": "var",
+        "id": "6aae918b28db",
+        "keyPath": "queryPayout",
+        "optional": true
+      },
+      "source": {
+        "_pbd_nebula_type": "var",
+        "id": "d5fe319e5cf5",
+        "keyPath": "querySource",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_nebula_type": "var",
+        "id": "a810b3bf146d",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      },
+      "type": {
+        "_pbd_nebula_type": "var",
+        "id": "9c9a03e24515",
+        "keyPath": "queryType",
+        "optional": true
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "name": "Create a customer balance transaction",
+  "description": "<p>Creates an immutable transaction that updates the customer’s credit <a href=\"/docs/billing/customer/balance\">balance</a>.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postCustomersCustomerBalanceTransactions",
+    "path": "/v1/customers/{customer}/balance_transactions",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "amount": "<number>",
+      "currency": "<string>",
+      "description": "<string>",
+      "expand": [
+        "<string>"
+      ],
+      "metadata": {
+        "<key>": "<string>"
+      }
+    },
+    "pathCustomer": "<string>"
+  },
+  "inputRequired": [
+    "body",
+    "pathCustomer"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "61bb61d1193a",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "47a3213ab385",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "923bc83606e1",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "1556e0de37d2",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "eb8c5ddf30a2",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "2ac56d4eabc4",
+        "left": "/v1/customers/",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "b37f9ce77493",
+          "keyPath": "pathCustomer",
+          "optional": false
+        }
+      },
+      "right": "/balance_transactions"
+    },
+    "query": {}
+  }
+}

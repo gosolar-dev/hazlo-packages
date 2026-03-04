@@ -1,0 +1,61 @@
+{
+  "name": "Create a Report Run",
+  "description": "<p>Creates a new object and begin running the report. (Certain report types require a <a href=\"https://stripe.com/docs/keys#test-live-modes\">live-mode API key</a>.)</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postReportingReportRuns",
+    "path": "/v1/reporting/report_runs",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ],
+      "parameters": {
+        "columns": [
+          "<string>"
+        ],
+        "connected_account": "<string>",
+        "currency": "<string>",
+        "interval_end": "<number>",
+        "interval_start": "<number>",
+        "payout": "<string>",
+        "reporting_category": "advance",
+        "timezone": "Africa/Abidjan"
+      },
+      "report_type": "<string>"
+    }
+  },
+  "inputRequired": [
+    "body"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "83f506c1610a",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "ba74cdf00000",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "fd1b2f03c359",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "652258a1cd80",
+    "method": "POST",
+    "path": "/v1/reporting/report_runs",
+    "query": {}
+  }
+}

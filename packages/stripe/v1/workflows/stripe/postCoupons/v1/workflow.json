@@ -1,0 +1,67 @@
+{
+  "name": "Create a coupon",
+  "description": "<p>You can create coupons easily via the <a href=\"https://dashboard.stripe.com/coupons\">coupon management</a> page of the Stripe dashboard. Coupon creation is also accessible via the API if you need to create coupons on the fly.</p>\n\n<p>A coupon has either a <code>percent_off</code> or an <code>amount_off</code> and <code>currency</code>. If you set an <code>amount_off</code>, that amount will be subtracted from any invoice’s subtotal. For example, an invoice with a subtotal of <currency>100</currency> will have a final total of <currency>0</currency> if a coupon with an <code>amount_off</code> of <amount>200</amount> is applied to it and an invoice with a subtotal of <currency>300</currency> will have a final total of <currency>100</currency> if a coupon with an <code>amount_off</code> of <amount>200</amount> is applied to it.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postCoupons",
+    "path": "/v1/coupons",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "amount_off": "<number>",
+      "applies_to": {
+        "products": [
+          "<string>"
+        ]
+      },
+      "currency": "<string>",
+      "currency_options": {
+        "<key>": {
+          "amount_off": "<number>"
+        }
+      },
+      "duration": "forever",
+      "duration_in_months": "<number>",
+      "expand": [
+        "<string>"
+      ],
+      "id": "<string>",
+      "max_redemptions": "<number>",
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "name": "<string>",
+      "percent_off": "<number>",
+      "redeem_by": "<number>"
+    }
+  },
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "f702cc27addd",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "19e20439b41f",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "b79d09aa36da",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "329671e96576",
+    "method": "POST",
+    "path": "/v1/coupons",
+    "query": {}
+  }
+}

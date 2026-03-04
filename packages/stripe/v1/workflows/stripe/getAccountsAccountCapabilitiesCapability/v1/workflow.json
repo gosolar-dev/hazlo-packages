@@ -1,0 +1,80 @@
+{
+  "name": "Retrieve an Account Capability",
+  "description": "<p>Retrieves information about the specified Account Capability.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getAccountsAccountCapabilitiesCapability",
+    "path": "/v1/accounts/{account}/capabilities/{capability}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathAccount": "<string>",
+    "pathCapability": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathAccount",
+    "pathCapability"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "d87e655ab316",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "654ba88916ad",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "73f19930c572",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "eda452bfdb3a",
+    "method": "GET",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "39b795925fa0",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "1366c8f7f85d",
+        "left": {
+          "_pbd_nebula_type": "concat",
+          "id": "524007cf5f2a",
+          "left": "/v1/accounts/",
+          "right": {
+            "_pbd_nebula_type": "var",
+            "id": "3d6f26f8b327",
+            "keyPath": "pathAccount",
+            "optional": false
+          }
+        },
+        "right": "/capabilities/"
+      },
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "b36da8366b45",
+        "keyPath": "pathCapability",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "006b0be28bf1",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

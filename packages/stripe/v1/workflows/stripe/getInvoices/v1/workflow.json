@@ -1,0 +1,119 @@
+{
+  "name": "List all invoices",
+  "description": "<p>You can list all invoices, or list the invoices for a specific customer. The invoices are returned sorted by creation date, with the most recently created invoices appearing first.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getInvoices",
+    "path": "/v1/invoices",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryCollectionMethod": "<string>",
+    "queryCreated": "<string>",
+    "queryCustomer": "<string>",
+    "queryCustomerAccount": "<string>",
+    "queryDueDate": "<string>",
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryLimit": "<number>",
+    "queryStartingAfter": "<string>",
+    "queryStatus": "<string>",
+    "querySubscription": "<string>"
+  },
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "f1c5551218a8",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "a7ddfc6b9510",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "1cac215c40d3",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "d987ee719357",
+    "method": "GET",
+    "path": "/v1/invoices",
+    "query": {
+      "collection_method": {
+        "_pbd_nebula_type": "var",
+        "id": "a3315cf54fbc",
+        "keyPath": "queryCollectionMethod",
+        "optional": true
+      },
+      "created": {
+        "_pbd_nebula_type": "var",
+        "id": "17e5f0a0d40d",
+        "keyPath": "queryCreated",
+        "optional": true
+      },
+      "customer": {
+        "_pbd_nebula_type": "var",
+        "id": "db6a4491c3b5",
+        "keyPath": "queryCustomer",
+        "optional": true
+      },
+      "customer_account": {
+        "_pbd_nebula_type": "var",
+        "id": "7b8ec78b2eca",
+        "keyPath": "queryCustomerAccount",
+        "optional": true
+      },
+      "due_date": {
+        "_pbd_nebula_type": "var",
+        "id": "bc45c0d8570a",
+        "keyPath": "queryDueDate",
+        "optional": true
+      },
+      "ending_before": {
+        "_pbd_nebula_type": "var",
+        "id": "73cbb46a34f1",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "7e18e48e9ee2",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_nebula_type": "var",
+        "id": "d91f8603f412",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_nebula_type": "var",
+        "id": "9f0d32799a22",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      },
+      "status": {
+        "_pbd_nebula_type": "var",
+        "id": "636be9356e4a",
+        "keyPath": "queryStatus",
+        "optional": true
+      },
+      "subscription": {
+        "_pbd_nebula_type": "var",
+        "id": "4ac317d310d0",
+        "keyPath": "querySubscription",
+        "optional": true
+      }
+    }
+  }
+}

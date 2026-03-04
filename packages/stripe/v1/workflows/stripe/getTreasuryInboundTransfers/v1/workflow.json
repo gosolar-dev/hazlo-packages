@@ -1,0 +1,87 @@
+{
+  "name": "List all InboundTransfers",
+  "description": "<p>Returns a list of InboundTransfers sent from the specified FinancialAccount.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getTreasuryInboundTransfers",
+    "path": "/v1/treasury/inbound_transfers",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryFinancialAccount": "<string>",
+    "queryLimit": "<number>",
+    "queryStartingAfter": "<string>",
+    "queryStatus": "<string>"
+  },
+  "inputRequired": [
+    "queryFinancialAccount"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "bfb41b092da4",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "468ff44cef49",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "ebf87b674005",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "776dbef706aa",
+    "method": "GET",
+    "path": "/v1/treasury/inbound_transfers",
+    "query": {
+      "ending_before": {
+        "_pbd_nebula_type": "var",
+        "id": "e5e0022c35f0",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "0f5101e88029",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "financial_account": {
+        "_pbd_nebula_type": "var",
+        "id": "f07d6216060f",
+        "keyPath": "queryFinancialAccount",
+        "optional": false
+      },
+      "limit": {
+        "_pbd_nebula_type": "var",
+        "id": "01467fdf2311",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_nebula_type": "var",
+        "id": "0ccce1dc2348",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      },
+      "status": {
+        "_pbd_nebula_type": "var",
+        "id": "3b15645dab04",
+        "keyPath": "queryStatus",
+        "optional": true
+      }
+    }
+  }
+}

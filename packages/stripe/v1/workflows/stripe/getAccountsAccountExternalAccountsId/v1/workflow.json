@@ -1,0 +1,80 @@
+{
+  "name": "Retrieve an external account",
+  "description": "<p>Retrieve a specified external account for a given account.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getAccountsAccountExternalAccountsId",
+    "path": "/v1/accounts/{account}/external_accounts/{id}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathAccount": "<string>",
+    "pathId": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathAccount",
+    "pathId"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "73d2dce2b233",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "7e42557a1a22",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "dc544934f432",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "4efaac423bd3",
+    "method": "GET",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "805531b5c310",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "0469866e3fd7",
+        "left": {
+          "_pbd_nebula_type": "concat",
+          "id": "381078195177",
+          "left": "/v1/accounts/",
+          "right": {
+            "_pbd_nebula_type": "var",
+            "id": "8f014a5336b7",
+            "keyPath": "pathAccount",
+            "optional": false
+          }
+        },
+        "right": "/external_accounts/"
+      },
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "98eff8d1f3ed",
+        "keyPath": "pathId",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "a85f14578743",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

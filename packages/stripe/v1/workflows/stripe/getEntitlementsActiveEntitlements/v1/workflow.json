@@ -1,0 +1,80 @@
+{
+  "name": "List all active entitlements",
+  "description": "<p>Retrieve a list of active entitlements for a customer</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getEntitlementsActiveEntitlements",
+    "path": "/v1/entitlements/active_entitlements",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryCustomer": "<string>",
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryLimit": "<number>",
+    "queryStartingAfter": "<string>"
+  },
+  "inputRequired": [
+    "queryCustomer"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "df1475305253",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "34d0f79098ae",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "3d64a50228a9",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "cc830d07c1fc",
+    "method": "GET",
+    "path": "/v1/entitlements/active_entitlements",
+    "query": {
+      "customer": {
+        "_pbd_nebula_type": "var",
+        "id": "d0c0c0c40377",
+        "keyPath": "queryCustomer",
+        "optional": false
+      },
+      "ending_before": {
+        "_pbd_nebula_type": "var",
+        "id": "39bd69f5ca3e",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "4e6c82befffa",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_nebula_type": "var",
+        "id": "dba16bccb8ec",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_nebula_type": "var",
+        "id": "b1bcf5906207",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      }
+    }
+  }
+}

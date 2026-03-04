@@ -1,0 +1,65 @@
+{
+  "name": "Update an order",
+  "description": "<p>Updates the specified order by setting the values of the parameters passed.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postClimateOrdersOrder",
+    "path": "/v1/climate/orders/{order}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "beneficiary": {
+        "public_name": "<string>"
+      },
+      "expand": [
+        "<string>"
+      ],
+      "metadata": {
+        "<key>": "<string>"
+      }
+    },
+    "pathOrder": "<string>"
+  },
+  "inputRequired": [
+    "pathOrder"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "8ab5c4a4008b",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "721850be5589",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "531de039dacb",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "f0f25de3c568",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "8827cee61ad8",
+      "left": "/v1/climate/orders/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "51bc3289273f",
+        "keyPath": "pathOrder",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

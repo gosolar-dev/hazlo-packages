@@ -1,0 +1,64 @@
+{
+  "name": "Void a credit note",
+  "description": "<p>Marks a credit note as void. Learn more about <a href=\"/docs/billing/invoices/credit-notes#voiding\">voiding credit notes</a>.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postCreditNotesIdVoid",
+    "path": "/v1/credit_notes/{id}/void",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ]
+    },
+    "pathId": "<string>"
+  },
+  "inputRequired": [
+    "pathId"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "ae7550543bb3",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "bc8aed026c99",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "0258056b57cb",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "9414d3f2face",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "4bfee1ee9272",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "920763c503ad",
+        "left": "/v1/credit_notes/",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "1ddff13b573c",
+          "keyPath": "pathId",
+          "optional": false
+        }
+      },
+      "right": "/void"
+    },
+    "query": {}
+  }
+}

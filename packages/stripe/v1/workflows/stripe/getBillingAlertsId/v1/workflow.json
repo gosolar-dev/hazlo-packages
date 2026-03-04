@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve a billing alert",
+  "description": "<p>Retrieves a billing alert given an ID</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getBillingAlertsId",
+    "path": "/v1/billing/alerts/{id}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathId": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathId"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "fd942293b3b6",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "98bc7fe15973",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "d8b387165ead",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "873f582516c9",
+    "method": "GET",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "c074e049ff03",
+      "left": "/v1/billing/alerts/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "efb64c22cbc8",
+        "keyPath": "pathId",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "bd8c0f71df1d",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

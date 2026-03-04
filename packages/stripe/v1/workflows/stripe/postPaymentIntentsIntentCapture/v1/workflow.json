@@ -1,0 +1,130 @@
+{
+  "name": "Capture a PaymentIntent",
+  "description": "<p>Capture the funds of an existing uncaptured PaymentIntent when its status is <code>requires_capture</code>.</p>\n\n<p>Uncaptured PaymentIntents are cancelled a set number of days (7 by default) after their creation.</p>\n\n<p>Learn more about <a href=\"/docs/payments/capture-later\">separate authorization and capture</a>.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postPaymentIntentsIntentCapture",
+    "path": "/v1/payment_intents/{intent}/capture",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "amount_details": {
+        "discount_amount": "<number>",
+        "enforce_arithmetic_validation": "<boolean>",
+        "line_items": [
+          {
+            "discount_amount": "<number>",
+            "payment_method_options": {
+              "card": {
+                "commodity_code": "<string>"
+              },
+              "card_present": {
+                "commodity_code": "<string>"
+              },
+              "klarna": {
+                "image_url": "<string>",
+                "product_url": "<string>",
+                "reference": "<string>",
+                "subscription_reference": "<string>"
+              },
+              "paypal": {
+                "category": "digital_goods",
+                "description": "<string>",
+                "sold_by": "<string>"
+              }
+            },
+            "product_code": "<string>",
+            "product_name": "<string>",
+            "quantity": "<number>",
+            "tax": {
+              "total_tax_amount": "<number>"
+            },
+            "unit_cost": "<number>",
+            "unit_of_measure": "<string>"
+          }
+        ],
+        "shipping": {
+          "amount": "<number>",
+          "from_postal_code": "<string>",
+          "to_postal_code": "<string>"
+        },
+        "tax": {
+          "total_tax_amount": "<number>"
+        }
+      },
+      "amount_to_capture": "<number>",
+      "application_fee_amount": "<number>",
+      "expand": [
+        "<string>"
+      ],
+      "final_capture": "<boolean>",
+      "hooks": {
+        "inputs": {
+          "tax": {
+            "calculation": "<string>"
+          }
+        }
+      },
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "payment_details": {
+        "customer_reference": "<string>",
+        "order_reference": "<string>"
+      },
+      "statement_descriptor": "<string>",
+      "statement_descriptor_suffix": "<string>",
+      "transfer_data": {
+        "amount": "<number>"
+      }
+    },
+    "pathIntent": "<string>"
+  },
+  "inputRequired": [
+    "pathIntent"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "e4f7c0bfd533",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "7e79ec7b4c9e",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "cd47498a3806",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "5e78ff758e5a",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "d7a4624d4617",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "bf6006d0bc8b",
+        "left": "/v1/payment_intents/",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "cbfb6cf59b3d",
+          "keyPath": "pathIntent",
+          "optional": false
+        }
+      },
+      "right": "/capture"
+    },
+    "query": {}
+  }
+}

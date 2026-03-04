@@ -1,0 +1,64 @@
+{
+  "name": "Cancel a VerificationSession",
+  "description": "<p>A VerificationSession object can be canceled when it is in <code>requires_input</code> <a href=\"/docs/identity/how-sessions-work\">status</a>.</p>\n\n<p>Once canceled, future submission attempts are disabled. This cannot be undone. <a href=\"/docs/identity/verification-sessions#cancel\">Learn more</a>.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postIdentityVerificationSessionsSessionCancel",
+    "path": "/v1/identity/verification_sessions/{session}/cancel",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ]
+    },
+    "pathSession": "<string>"
+  },
+  "inputRequired": [
+    "pathSession"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "1f982eac8c1d",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "5e7040e56024",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "511c3b8b1a57",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "c72d7490a87f",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "902e2a934614",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "c3540fc44acd",
+        "left": "/v1/identity/verification_sessions/",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "a9235ba6dee2",
+          "keyPath": "pathSession",
+          "optional": false
+        }
+      },
+      "right": "/cancel"
+    },
+    "query": {}
+  }
+}

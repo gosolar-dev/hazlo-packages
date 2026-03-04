@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve a Tax Calculation",
+  "description": "<p>Retrieves a Tax <code>Calculation</code> object, if the calculation hasn’t expired.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getTaxCalculationsCalculation",
+    "path": "/v1/tax/calculations/{calculation}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathCalculation": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathCalculation"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "0dca7594fd9f",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "9598667e5285",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "f7fe5f246be1",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "26ae4eccce46",
+    "method": "GET",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "ffdca61f716d",
+      "left": "/v1/tax/calculations/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "879d3c690f0f",
+        "keyPath": "pathCalculation",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "73b0d37e9d1c",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

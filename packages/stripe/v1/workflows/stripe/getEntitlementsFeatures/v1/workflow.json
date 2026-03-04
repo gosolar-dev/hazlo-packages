@@ -1,0 +1,84 @@
+{
+  "name": "List all features",
+  "description": "<p>Retrieve a list of features</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getEntitlementsFeatures",
+    "path": "/v1/entitlements/features",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryArchived": "<boolean>",
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryLimit": "<number>",
+    "queryLookupKey": "<string>",
+    "queryStartingAfter": "<string>"
+  },
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "245dd57bcba1",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "9c714d852b0a",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "38e8860e7da4",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "45d1e74f393a",
+    "method": "GET",
+    "path": "/v1/entitlements/features",
+    "query": {
+      "archived": {
+        "_pbd_nebula_type": "var",
+        "id": "b32d413fb7a4",
+        "keyPath": "queryArchived",
+        "optional": true
+      },
+      "ending_before": {
+        "_pbd_nebula_type": "var",
+        "id": "f0b772824d83",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "7e5a86154987",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_nebula_type": "var",
+        "id": "a684b12ef58e",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "lookup_key": {
+        "_pbd_nebula_type": "var",
+        "id": "1d6a4f8d6bb7",
+        "keyPath": "queryLookupKey",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_nebula_type": "var",
+        "id": "b1edce75fd0b",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      }
+    }
+  }
+}

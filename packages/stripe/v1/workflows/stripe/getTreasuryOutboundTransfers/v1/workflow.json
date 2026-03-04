@@ -1,0 +1,87 @@
+{
+  "name": "List all OutboundTransfers",
+  "description": "<p>Returns a list of OutboundTransfers sent from the specified FinancialAccount.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getTreasuryOutboundTransfers",
+    "path": "/v1/treasury/outbound_transfers",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryFinancialAccount": "<string>",
+    "queryLimit": "<number>",
+    "queryStartingAfter": "<string>",
+    "queryStatus": "<string>"
+  },
+  "inputRequired": [
+    "queryFinancialAccount"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "f2a5d1026449",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "e8b1d7c671bf",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "d848d6637e68",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "155b84850d9f",
+    "method": "GET",
+    "path": "/v1/treasury/outbound_transfers",
+    "query": {
+      "ending_before": {
+        "_pbd_nebula_type": "var",
+        "id": "0c1a3160a7c7",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "0a1474fb9c74",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "financial_account": {
+        "_pbd_nebula_type": "var",
+        "id": "70c21d00400e",
+        "keyPath": "queryFinancialAccount",
+        "optional": false
+      },
+      "limit": {
+        "_pbd_nebula_type": "var",
+        "id": "8352984820d7",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_nebula_type": "var",
+        "id": "f199ba1691ea",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      },
+      "status": {
+        "_pbd_nebula_type": "var",
+        "id": "dcc6a6cb1e23",
+        "keyPath": "queryStatus",
+        "optional": true
+      }
+    }
+  }
+}

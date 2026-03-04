@@ -1,0 +1,70 @@
+{
+  "name": "List orders",
+  "description": "<p>Lists all Climate order objects. The orders are returned sorted by creation date, with the\nmost recently created orders appearing first.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getClimateOrders",
+    "path": "/v1/climate/orders",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryLimit": "<number>",
+    "queryStartingAfter": "<string>"
+  },
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "332e1184d9b7",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "33fb5b5608b2",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "49a2f4629499",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "ba5959cbabba",
+    "method": "GET",
+    "path": "/v1/climate/orders",
+    "query": {
+      "ending_before": {
+        "_pbd_nebula_type": "var",
+        "id": "ce274d6e612d",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "e0081cac69e5",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_nebula_type": "var",
+        "id": "b868d73130f6",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_nebula_type": "var",
+        "id": "fe67f1d3597c",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      }
+    }
+  }
+}

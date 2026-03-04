@@ -1,0 +1,54 @@
+{
+  "name": "Create a billing meter event",
+  "description": "<p>Creates a billing meter event.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postBillingMeterEvents",
+    "path": "/v1/billing/meter_events",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "event_name": "<string>",
+      "expand": [
+        "<string>"
+      ],
+      "identifier": "<string>",
+      "payload": {
+        "<key>": "<string>"
+      },
+      "timestamp": "<number>"
+    }
+  },
+  "inputRequired": [
+    "body"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "078c27500965",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "ca195ef8c262",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "541993a92beb",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "75a026313914",
+    "method": "POST",
+    "path": "/v1/billing/meter_events",
+    "query": {}
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "name": "List billing meter event summaries",
+  "description": "<p>Retrieve a list of billing meter event summaries.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getBillingMetersIdEventSummaries",
+    "path": "/v1/billing/meters/{id}/event_summaries",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathId": "<string>",
+    "queryCustomer": "<string>",
+    "queryEndTime": "<number>",
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryLimit": "<number>",
+    "queryStartTime": "<number>",
+    "queryStartingAfter": "<string>",
+    "queryValueGroupingWindow": "<string>"
+  },
+  "inputRequired": [
+    "pathId",
+    "queryCustomer",
+    "queryEndTime",
+    "queryStartTime"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "74d82696557d",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "3e2a3acb453e",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "2ba6cfd8c967",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "423c4c3f92a3",
+    "method": "GET",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "127b4c6cb673",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "bbcbe627f109",
+        "left": "/v1/billing/meters/",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "2d7b74bda349",
+          "keyPath": "pathId",
+          "optional": false
+        }
+      },
+      "right": "/event_summaries"
+    },
+    "query": {
+      "customer": {
+        "_pbd_nebula_type": "var",
+        "id": "02f552b61ef5",
+        "keyPath": "queryCustomer",
+        "optional": false
+      },
+      "end_time": {
+        "_pbd_nebula_type": "var",
+        "id": "d1a724aacc20",
+        "keyPath": "queryEndTime",
+        "optional": false
+      },
+      "ending_before": {
+        "_pbd_nebula_type": "var",
+        "id": "bd218d35e855",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "b53cebc04585",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_nebula_type": "var",
+        "id": "ed4b139b7237",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "start_time": {
+        "_pbd_nebula_type": "var",
+        "id": "c644da115d4e",
+        "keyPath": "queryStartTime",
+        "optional": false
+      },
+      "starting_after": {
+        "_pbd_nebula_type": "var",
+        "id": "9d9f85849b00",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      },
+      "value_grouping_window": {
+        "_pbd_nebula_type": "var",
+        "id": "af307c6a5ddf",
+        "keyPath": "queryValueGroupingWindow",
+        "optional": true
+      }
+    }
+  }
+}

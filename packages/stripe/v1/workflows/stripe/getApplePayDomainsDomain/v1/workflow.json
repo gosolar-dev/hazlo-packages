@@ -1,0 +1,63 @@
+{
+  "name": "GetApplePayDomainsDomain",
+  "description": "<p>Retrieve an apple pay domain.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getApplePayDomainsDomain",
+    "path": "/v1/apple_pay/domains/{domain}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathDomain": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathDomain"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "083fd3a635f4",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "220745c562f8",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "bfb7e7e74bc4",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "361704680a49",
+    "method": "GET",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "fa205d64c9aa",
+      "left": "/v1/apple_pay/domains/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "ec632ec565f3",
+        "keyPath": "pathDomain",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "5661c85461fd",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

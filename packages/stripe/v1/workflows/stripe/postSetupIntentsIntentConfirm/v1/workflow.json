@@ -1,0 +1,326 @@
+{
+  "name": "Confirm a SetupIntent",
+  "description": "<p>Confirm that your customer intends to set up the current or\nprovided payment method. For example, you would confirm a SetupIntent\nwhen a customer hits the “Save” button on a payment method management\npage on your website.</p>\n\n<p>If the selected payment method does not require any additional\nsteps from the customer, the SetupIntent will transition to the\n<code>succeeded</code> status.</p>\n\n<p>Otherwise, it will transition to the <code>requires_action</code> status and\nsuggest additional actions via <code>next_action</code>. If setup fails,\nthe SetupIntent will transition to the\n<code>requires_payment_method</code> status or the <code>canceled</code> status if the\nconfirmation limit is reached.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postSetupIntentsIntentConfirm",
+    "path": "/v1/setup_intents/{intent}/confirm",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "client_secret": "<string>",
+      "confirmation_token": "<string>",
+      "expand": [
+        "<string>"
+      ],
+      "mandate_data": {
+        "customer_acceptance": {
+          "accepted_at": "<number>",
+          "offline": {},
+          "online": {
+            "ip_address": "<string>",
+            "user_agent": "<string>"
+          },
+          "type": "offline"
+        }
+      },
+      "payment_method": "<string>",
+      "payment_method_data": {
+        "acss_debit": {
+          "account_number": "<string>",
+          "institution_number": "<string>",
+          "transit_number": "<string>"
+        },
+        "affirm": {},
+        "afterpay_clearpay": {},
+        "alipay": {},
+        "allow_redisplay": "always",
+        "alma": {},
+        "amazon_pay": {},
+        "au_becs_debit": {
+          "account_number": "<string>",
+          "bsb_number": "<string>"
+        },
+        "bacs_debit": {
+          "account_number": "<string>",
+          "sort_code": "<string>"
+        },
+        "bancontact": {},
+        "billie": {},
+        "billing_details": {
+          "address": {
+            "city": "<string>",
+            "country": "<string>",
+            "line1": "<string>",
+            "line2": "<string>",
+            "postal_code": "<string>",
+            "state": "<string>"
+          },
+          "email": "<string>",
+          "name": "<string>",
+          "phone": "<string>",
+          "tax_id": "<string>"
+        },
+        "blik": {},
+        "boleto": {
+          "tax_id": "<string>"
+        },
+        "cashapp": {},
+        "crypto": {},
+        "customer_balance": {},
+        "eps": {
+          "bank": "arzte_und_apotheker_bank"
+        },
+        "fpx": {
+          "bank": "affin_bank"
+        },
+        "giropay": {},
+        "grabpay": {},
+        "ideal": {
+          "bank": "abn_amro"
+        },
+        "interac_present": {},
+        "kakao_pay": {},
+        "klarna": {
+          "dob": {
+            "day": "<number>",
+            "month": "<number>",
+            "year": "<number>"
+          }
+        },
+        "konbini": {},
+        "kr_card": {},
+        "link": {},
+        "mb_way": {},
+        "metadata": {
+          "<key>": "<string>"
+        },
+        "mobilepay": {},
+        "multibanco": {},
+        "naver_pay": {
+          "funding": "card"
+        },
+        "nz_bank_account": {
+          "account_holder_name": "<string>",
+          "account_number": "<string>",
+          "bank_code": "<string>",
+          "branch_code": "<string>",
+          "reference": "<string>",
+          "suffix": "<string>"
+        },
+        "oxxo": {},
+        "p24": {
+          "bank": "alior_bank"
+        },
+        "pay_by_bank": {},
+        "payco": {},
+        "paynow": {},
+        "paypal": {},
+        "payto": {
+          "account_number": "<string>",
+          "bsb_number": "<string>",
+          "pay_id": "<string>"
+        },
+        "pix": {},
+        "promptpay": {},
+        "radar_options": {
+          "session": "<string>"
+        },
+        "revolut_pay": {},
+        "samsung_pay": {},
+        "satispay": {},
+        "sepa_debit": {
+          "iban": "<string>"
+        },
+        "sofort": {
+          "country": "AT"
+        },
+        "swish": {},
+        "twint": {},
+        "type": "acss_debit",
+        "us_bank_account": {
+          "account_holder_type": "company",
+          "account_number": "<string>",
+          "account_type": "checking",
+          "financial_connections_account": "<string>",
+          "routing_number": "<string>"
+        },
+        "wechat_pay": {},
+        "zip": {}
+      },
+      "payment_method_options": {
+        "acss_debit": {
+          "currency": "cad",
+          "mandate_options": {
+            "custom_mandate_url": "<string>",
+            "default_for": [
+              "invoice"
+            ],
+            "interval_description": "<string>",
+            "payment_schedule": "combined",
+            "transaction_type": "business"
+          },
+          "verification_method": "automatic"
+        },
+        "amazon_pay": {},
+        "bacs_debit": {
+          "mandate_options": {
+            "reference_prefix": "<string>"
+          }
+        },
+        "card": {
+          "mandate_options": {
+            "amount": "<number>",
+            "amount_type": "fixed",
+            "currency": "<string>",
+            "description": "<string>",
+            "end_date": "<number>",
+            "interval": "day",
+            "interval_count": "<number>",
+            "reference": "<string>",
+            "start_date": "<number>",
+            "supported_types": [
+              "india"
+            ]
+          },
+          "network": "amex",
+          "request_three_d_secure": "any",
+          "three_d_secure": {
+            "ares_trans_status": "A",
+            "cryptogram": "<string>",
+            "electronic_commerce_indicator": "01",
+            "network_options": {
+              "cartes_bancaires": {
+                "cb_avalgo": "0",
+                "cb_exemption": "<string>",
+                "cb_score": "<number>"
+              }
+            },
+            "requestor_challenge_indicator": "<string>",
+            "transaction_id": "<string>",
+            "version": "1.0.2"
+          }
+        },
+        "card_present": {},
+        "klarna": {
+          "currency": "<string>",
+          "on_demand": {
+            "average_amount": "<number>",
+            "maximum_amount": "<number>",
+            "minimum_amount": "<number>",
+            "purchase_interval": "day",
+            "purchase_interval_count": "<number>"
+          },
+          "preferred_locale": "cs-CZ",
+          "subscriptions": [
+            {
+              "interval": "day",
+              "interval_count": "<number>",
+              "name": "<string>",
+              "next_billing": {
+                "amount": "<number>",
+                "date": "<string>"
+              },
+              "reference": "<string>"
+            }
+          ]
+        },
+        "link": {},
+        "paypal": {
+          "billing_agreement_id": "<string>"
+        },
+        "payto": {
+          "mandate_options": {
+            "amount": "<number>",
+            "amount_type": "",
+            "end_date": "<string>",
+            "payment_schedule": "",
+            "payments_per_period": "<number>",
+            "purpose": "",
+            "start_date": "<string>"
+          }
+        },
+        "sepa_debit": {
+          "mandate_options": {
+            "reference_prefix": "<string>"
+          }
+        },
+        "us_bank_account": {
+          "financial_connections": {
+            "filters": {
+              "account_subcategories": [
+                "checking"
+              ]
+            },
+            "permissions": [
+              "balances"
+            ],
+            "prefetch": [
+              "balances"
+            ],
+            "return_url": "<string>"
+          },
+          "mandate_options": {
+            "collection_method": ""
+          },
+          "networks": {
+            "requested": [
+              "ach"
+            ]
+          },
+          "verification_method": "automatic"
+        }
+      },
+      "return_url": "<string>",
+      "use_stripe_sdk": "<boolean>"
+    },
+    "pathIntent": "<string>"
+  },
+  "inputRequired": [
+    "pathIntent"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "454ee089a85b",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "0c305d3657ae",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "1228a44d3d11",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "d9d594d2d21c",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "74216b700b66",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "632c0848e32e",
+        "left": "/v1/setup_intents/",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "bea851b87c9b",
+          "keyPath": "pathIntent",
+          "optional": false
+        }
+      },
+      "right": "/confirm"
+    },
+    "query": {}
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "name": "Update a customer credit balance transaction",
+  "description": "<p>Most credit balance transaction fields are immutable, but you may update its <code>description</code> and <code>metadata</code>.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postCustomersCustomerBalanceTransactionsTransaction",
+    "path": "/v1/customers/{customer}/balance_transactions/{transaction}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "description": "<string>",
+      "expand": [
+        "<string>"
+      ],
+      "metadata": {
+        "<key>": "<string>"
+      }
+    },
+    "pathCustomer": "<string>",
+    "pathTransaction": "<string>"
+  },
+  "inputRequired": [
+    "pathCustomer",
+    "pathTransaction"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "6c18561821a5",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "457fb1e46862",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "518b80b1d45c",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "69216b9d19fb",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "cb3130592af2",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "bb09ac1d2c0e",
+        "left": {
+          "_pbd_nebula_type": "concat",
+          "id": "0dfbb266fbbc",
+          "left": "/v1/customers/",
+          "right": {
+            "_pbd_nebula_type": "var",
+            "id": "45ae81ab6171",
+            "keyPath": "pathCustomer",
+            "optional": false
+          }
+        },
+        "right": "/balance_transactions/"
+      },
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "94b98aba9880",
+        "keyPath": "pathTransaction",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

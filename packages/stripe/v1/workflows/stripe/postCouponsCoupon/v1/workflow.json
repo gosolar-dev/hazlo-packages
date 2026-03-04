@@ -1,0 +1,68 @@
+{
+  "name": "Update a coupon",
+  "description": "<p>Updates the metadata of a coupon. Other coupon details (currency, duration, amount_off) are, by design, not editable.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postCouponsCoupon",
+    "path": "/v1/coupons/{coupon}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "currency_options": {
+        "<key>": {
+          "amount_off": "<number>"
+        }
+      },
+      "expand": [
+        "<string>"
+      ],
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "name": "<string>"
+    },
+    "pathCoupon": "<string>"
+  },
+  "inputRequired": [
+    "pathCoupon"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "300c69ef2e06",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "f495f7679b4b",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "86acc9911047",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "52287a124294",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "9968d8b27662",
+      "left": "/v1/coupons/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "d87787ff99b6",
+        "keyPath": "pathCoupon",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

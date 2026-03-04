@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve a Report Type",
+  "description": "<p>Retrieves the details of a Report Type. (Certain report types require a <a href=\"https://stripe.com/docs/keys#test-live-modes\">live-mode API key</a>.)</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getReportingReportTypesReportType",
+    "path": "/v1/reporting/report_types/{report_type}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathReportType": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathReportType"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "708b5589c087",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "bc0eba1cb78e",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "ae3f548ef2a7",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "e8718d26ec80",
+    "method": "GET",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "91285e9da819",
+      "left": "/v1/reporting/report_types/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "6139599c9244",
+        "keyPath": "pathReportType",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "e6906f2807de",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

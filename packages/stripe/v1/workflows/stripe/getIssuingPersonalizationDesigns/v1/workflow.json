@@ -1,0 +1,91 @@
+{
+  "name": "List all personalization designs",
+  "description": "<p>Returns a list of personalization design objects. The objects are sorted in descending order by creation date, with the most recently created object appearing first.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getIssuingPersonalizationDesigns",
+    "path": "/v1/issuing/personalization_designs",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryLimit": "<number>",
+    "queryLookupKeys": [],
+    "queryPreferences": {},
+    "queryStartingAfter": "<string>",
+    "queryStatus": "<string>"
+  },
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "c3e5fae34a48",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "5e846ee3451e",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "04ef816d318f",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "d0b7e133ffc6",
+    "method": "GET",
+    "path": "/v1/issuing/personalization_designs",
+    "query": {
+      "ending_before": {
+        "_pbd_nebula_type": "var",
+        "id": "40a58c19643c",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "ae338c29bd1d",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_nebula_type": "var",
+        "id": "12e76c826a12",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "lookup_keys": {
+        "_pbd_nebula_type": "var",
+        "id": "b279839815bc",
+        "keyPath": "queryLookupKeys",
+        "optional": true
+      },
+      "preferences": {
+        "_pbd_nebula_type": "var",
+        "id": "7f7c26abd411",
+        "keyPath": "queryPreferences",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_nebula_type": "var",
+        "id": "90a49cbb1d71",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      },
+      "status": {
+        "_pbd_nebula_type": "var",
+        "id": "92880c20f5f8",
+        "keyPath": "queryStatus",
+        "optional": true
+      }
+    }
+  }
+}

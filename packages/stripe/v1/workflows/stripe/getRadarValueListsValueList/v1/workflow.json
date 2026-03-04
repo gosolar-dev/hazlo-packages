@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve a value list",
+  "description": "<p>Retrieves a <code>ValueList</code> object.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getRadarValueListsValueList",
+    "path": "/v1/radar/value_lists/{value_list}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathValueList": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathValueList"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "102e9302c7cd",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "73ffd5bb75a8",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "7719a6f3ccee",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "5a4824723683",
+    "method": "GET",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "0ed9c3207255",
+      "left": "/v1/radar/value_lists/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "161e38bc0bef",
+        "keyPath": "pathValueList",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "4b098bffdc83",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

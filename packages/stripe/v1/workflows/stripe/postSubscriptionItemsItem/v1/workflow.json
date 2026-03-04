@@ -1,0 +1,92 @@
+{
+  "name": "Update a subscription item",
+  "description": "<p>Updates the plan or quantity of an item on a current subscription.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postSubscriptionItemsItem",
+    "path": "/v1/subscription_items/{item}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "billing_thresholds": {
+        "usage_gte": "<number>"
+      },
+      "discounts": [
+        {
+          "coupon": "<string>",
+          "discount": "<string>",
+          "promotion_code": "<string>"
+        }
+      ],
+      "expand": [
+        "<string>"
+      ],
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "off_session": "<boolean>",
+      "payment_behavior": "allow_incomplete",
+      "price": "<string>",
+      "price_data": {
+        "currency": "<string>",
+        "product": "<string>",
+        "recurring": {
+          "interval": "day",
+          "interval_count": "<number>"
+        },
+        "tax_behavior": "exclusive",
+        "unit_amount": "<number>",
+        "unit_amount_decimal": "<string>"
+      },
+      "proration_behavior": "always_invoice",
+      "proration_date": "<number>",
+      "quantity": "<number>",
+      "tax_rates": [
+        "<string>"
+      ]
+    },
+    "pathItem": "<string>"
+  },
+  "inputRequired": [
+    "pathItem"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "c22e27b60101",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "e8de3063b145",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "0796c795140a",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "e2744c487b7b",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "d87b5ce4fe04",
+      "left": "/v1/subscription_items/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "2a5b4c0bb460",
+        "keyPath": "pathItem",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

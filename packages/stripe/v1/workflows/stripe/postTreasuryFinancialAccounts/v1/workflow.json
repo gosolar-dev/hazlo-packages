@@ -1,0 +1,96 @@
+{
+  "name": "Create a FinancialAccount",
+  "description": "<p>Creates a new FinancialAccount. Each connected account can have up to three FinancialAccounts by default.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postTreasuryFinancialAccounts",
+    "path": "/v1/treasury/financial_accounts",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ],
+      "features": {
+        "card_issuing": {
+          "requested": "<boolean>"
+        },
+        "deposit_insurance": {
+          "requested": "<boolean>"
+        },
+        "financial_addresses": {
+          "aba": {
+            "requested": "<boolean>"
+          }
+        },
+        "inbound_transfers": {
+          "ach": {
+            "requested": "<boolean>"
+          }
+        },
+        "intra_stripe_flows": {
+          "requested": "<boolean>"
+        },
+        "outbound_payments": {
+          "ach": {
+            "requested": "<boolean>"
+          },
+          "us_domestic_wire": {
+            "requested": "<boolean>"
+          }
+        },
+        "outbound_transfers": {
+          "ach": {
+            "requested": "<boolean>"
+          },
+          "us_domestic_wire": {
+            "requested": "<boolean>"
+          }
+        }
+      },
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "nickname": "<string>",
+      "platform_restrictions": {
+        "inbound_flows": "restricted",
+        "outbound_flows": "restricted"
+      },
+      "supported_currencies": [
+        "<string>"
+      ]
+    }
+  },
+  "inputRequired": [
+    "body"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "39d959a3acdf",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "85441936b36d",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "aed558ebd5c8",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "b01408fbe972",
+    "method": "POST",
+    "path": "/v1/treasury/financial_accounts",
+    "query": {}
+  }
+}

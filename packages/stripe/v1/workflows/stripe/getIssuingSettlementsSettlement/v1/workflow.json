@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve a settlement",
+  "description": "<p>Retrieves an Issuing <code>Settlement</code> object.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getIssuingSettlementsSettlement",
+    "path": "/v1/issuing/settlements/{settlement}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathSettlement": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathSettlement"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "9203910104fd",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "425f0c6b2c81",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "739d2bcc9e4b",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "1082c5bbe4d0",
+    "method": "GET",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "4fb36e8b2649",
+      "left": "/v1/issuing/settlements/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "30b4c0b9fbaa",
+        "keyPath": "pathSettlement",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "9eaae57daef7",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

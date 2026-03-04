@@ -1,0 +1,55 @@
+{
+  "name": "Delete an account",
+  "description": "<p>With <a href=\"/connect\">Connect</a>, you can delete accounts you manage.</p>\n\n<p>Test-mode accounts can be deleted at any time.</p>\n\n<p>Live-mode accounts that have access to the standard dashboard and Stripe is responsible for negative account balances cannot be deleted, which includes Standard accounts. All other Live-mode accounts, can be deleted when all <a href=\"/api/balance/balance_object\">balances</a> are zero.</p>\n\n<p>If you want to delete your own account, use the <a href=\"https://dashboard.stripe.com/settings/account\">account information tab in your account settings</a> instead.</p>",
+  "meta": {
+    "method": "DELETE",
+    "operationId": "deleteAccountsAccount",
+    "path": "/v1/accounts/{account}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathAccount": "<string>"
+  },
+  "inputRequired": [
+    "pathAccount"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "2a9695e9100c",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "3b41aef2df53",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "785aee81c2ab",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "ceaa858e5946",
+    "method": "DELETE",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "bc161fd263ab",
+      "left": "/v1/accounts/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "01b180248b08",
+        "keyPath": "pathAccount",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

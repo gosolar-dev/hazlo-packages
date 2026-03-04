@@ -1,0 +1,70 @@
+{
+  "name": "Hand-off a SetupIntent to a Reader",
+  "description": "<p>Initiates a SetupIntent flow on a Reader. See <a href=\"/docs/terminal/features/saving-payment-details/save-directly\">Save directly without charging</a> for more details.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postTerminalReadersReaderProcessSetupIntent",
+    "path": "/v1/terminal/readers/{reader}/process_setup_intent",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "allow_redisplay": "always",
+      "expand": [
+        "<string>"
+      ],
+      "process_config": {
+        "enable_customer_cancellation": "<boolean>"
+      },
+      "setup_intent": "<string>"
+    },
+    "pathReader": "<string>"
+  },
+  "inputRequired": [
+    "body",
+    "pathReader"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "60c175545b76",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "f4c9ac78170d",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "8a3218b09a5f",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "a89b80874f60",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "4dd4e2bc9f52",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "5952f76149aa",
+        "left": "/v1/terminal/readers/",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "642929b63290",
+          "keyPath": "pathReader",
+          "optional": false
+        }
+      },
+      "right": "/process_setup_intent"
+    },
+    "query": {}
+  }
+}

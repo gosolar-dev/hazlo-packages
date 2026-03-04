@@ -1,0 +1,64 @@
+{
+  "name": "Cancel the current reader action",
+  "description": "<p>Cancels the current reader action. See <a href=\"/docs/terminal/payments/collect-card-payment?terminal-sdk-platform=server-driven#programmatic-cancellation\">Programmatic Cancellation</a> for more details.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postTerminalReadersReaderCancelAction",
+    "path": "/v1/terminal/readers/{reader}/cancel_action",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ]
+    },
+    "pathReader": "<string>"
+  },
+  "inputRequired": [
+    "pathReader"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "e8860959360f",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "0ac16389edd8",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "629dad4e6a94",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "8f382c7d2e1c",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "6072488c61a1",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "11eea41804ec",
+        "left": "/v1/terminal/readers/",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "4c17253a6fb8",
+          "keyPath": "pathReader",
+          "optional": false
+        }
+      },
+      "right": "/cancel_action"
+    },
+    "query": {}
+  }
+}

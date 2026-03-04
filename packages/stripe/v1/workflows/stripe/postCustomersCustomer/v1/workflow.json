@@ -1,0 +1,149 @@
+{
+  "name": "Update a customer",
+  "description": "<p>Updates the specified customer by setting the values of the parameters passed. Any parameters not provided are left unchanged. For example, if you pass the <strong>source</strong> parameter, that becomes the customer’s active source (such as a card) to be used for all charges in the future. When you update a customer to a new valid card source by passing the <strong>source</strong> parameter: for each of the customer’s current subscriptions, if the subscription bills automatically and is in the <code>past_due</code> state, then the latest open invoice for the subscription with automatic collection enabled is retried. This retry doesn’t count as an automatic retry, and doesn’t affect the next regularly scheduled payment for the invoice. Changing the <strong>default_source</strong> for a customer doesn’t trigger this behavior.</p>\n\n<p>This request accepts mostly the same arguments as the customer creation call.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postCustomersCustomer",
+    "path": "/v1/customers/{customer}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "address": {
+        "city": "<string>",
+        "country": "<string>",
+        "line1": "<string>",
+        "line2": "<string>",
+        "postal_code": "<string>",
+        "state": "<string>"
+      },
+      "balance": "<number>",
+      "bank_account": {
+        "account_holder_name": "<string>",
+        "account_holder_type": "company",
+        "account_number": "<string>",
+        "country": "<string>",
+        "currency": "<string>",
+        "object": "bank_account",
+        "routing_number": "<string>"
+      },
+      "business_name": "<string>",
+      "card": {
+        "address_city": "<string>",
+        "address_country": "<string>",
+        "address_line1": "<string>",
+        "address_line2": "<string>",
+        "address_state": "<string>",
+        "address_zip": "<string>",
+        "cvc": "<string>",
+        "exp_month": "<number>",
+        "exp_year": "<number>",
+        "metadata": {
+          "<key>": "<string>"
+        },
+        "name": "<string>",
+        "number": "<string>",
+        "object": "card"
+      },
+      "cash_balance": {
+        "settings": {
+          "reconciliation_mode": "automatic"
+        }
+      },
+      "default_alipay_account": "<string>",
+      "default_bank_account": "<string>",
+      "default_card": "<string>",
+      "default_source": "<string>",
+      "description": "<string>",
+      "email": "<string>",
+      "expand": [
+        "<string>"
+      ],
+      "individual_name": "<string>",
+      "invoice_prefix": "<string>",
+      "invoice_settings": {
+        "custom_fields": [
+          {
+            "name": "<string>",
+            "value": "<string>"
+          }
+        ],
+        "default_payment_method": "<string>",
+        "footer": "<string>",
+        "rendering_options": {
+          "amount_tax_display": "",
+          "template": "<string>"
+        }
+      },
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "name": "<string>",
+      "next_invoice_sequence": "<number>",
+      "phone": "<string>",
+      "preferred_locales": [
+        "<string>"
+      ],
+      "shipping": {
+        "address": {
+          "city": "<string>",
+          "country": "<string>",
+          "line1": "<string>",
+          "line2": "<string>",
+          "postal_code": "<string>",
+          "state": "<string>"
+        },
+        "name": "<string>",
+        "phone": "<string>"
+      },
+      "source": "<string>",
+      "tax": {
+        "ip_address": "<string>",
+        "validate_location": "auto"
+      },
+      "tax_exempt": ""
+    },
+    "pathCustomer": "<string>"
+  },
+  "inputRequired": [
+    "pathCustomer"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "81f73557996e",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "fbe4fd57ad99",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "1388e93b58f4",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "a72f257e19f5",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "7a18c6d3fe59",
+      "left": "/v1/customers/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "f4fb5d1764b9",
+        "keyPath": "pathCustomer",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

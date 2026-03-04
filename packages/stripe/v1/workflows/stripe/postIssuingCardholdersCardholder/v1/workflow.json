@@ -1,0 +1,127 @@
+{
+  "name": "Update a cardholder",
+  "description": "<p>Updates the specified Issuing <code>Cardholder</code> object by setting the values of the parameters passed. Any parameters not provided will be left unchanged.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postIssuingCardholdersCardholder",
+    "path": "/v1/issuing/cardholders/{cardholder}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "billing": {
+        "address": {
+          "city": "<string>",
+          "country": "<string>",
+          "line1": "<string>",
+          "line2": "<string>",
+          "postal_code": "<string>",
+          "state": "<string>"
+        }
+      },
+      "company": {
+        "tax_id": "<string>"
+      },
+      "email": "<string>",
+      "expand": [
+        "<string>"
+      ],
+      "individual": {
+        "card_issuing": {
+          "user_terms_acceptance": {
+            "date": "<number>",
+            "ip": "<string>",
+            "user_agent": "<string>"
+          }
+        },
+        "dob": {
+          "day": "<number>",
+          "month": "<number>",
+          "year": "<number>"
+        },
+        "first_name": "<string>",
+        "last_name": "<string>",
+        "verification": {
+          "document": {
+            "back": "<string>",
+            "front": "<string>"
+          }
+        }
+      },
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "phone_number": "<string>",
+      "preferred_locales": [
+        "de"
+      ],
+      "spending_controls": {
+        "allowed_categories": [
+          "ac_refrigeration_repair"
+        ],
+        "allowed_merchant_countries": [
+          "<string>"
+        ],
+        "blocked_categories": [
+          "ac_refrigeration_repair"
+        ],
+        "blocked_merchant_countries": [
+          "<string>"
+        ],
+        "spending_limits": [
+          {
+            "amount": "<number>",
+            "categories": [
+              "ac_refrigeration_repair"
+            ],
+            "interval": "all_time"
+          }
+        ],
+        "spending_limits_currency": "<string>"
+      },
+      "status": "active"
+    },
+    "pathCardholder": "<string>"
+  },
+  "inputRequired": [
+    "pathCardholder"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "172992377958",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "9e8744a82e9d",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "4c6312f89220",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "aeb80e96e2e9",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "e24e0fd2a8a9",
+      "left": "/v1/issuing/cardholders/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "cfff9c7cb35a",
+        "keyPath": "pathCardholder",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

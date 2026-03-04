@@ -1,0 +1,126 @@
+{
+  "name": "List all cards",
+  "description": "<p>Returns a list of Issuing <code>Card</code> objects. The objects are sorted in descending order by creation date, with the most recently created object appearing first.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getIssuingCards",
+    "path": "/v1/issuing/cards",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryCardholder": "<string>",
+    "queryCreated": "<string>",
+    "queryEndingBefore": "<string>",
+    "queryExpMonth": "<number>",
+    "queryExpYear": "<number>",
+    "queryExpand": [],
+    "queryLast4": "<string>",
+    "queryLimit": "<number>",
+    "queryPersonalizationDesign": "<string>",
+    "queryStartingAfter": "<string>",
+    "queryStatus": "<string>",
+    "queryType": "<string>"
+  },
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "fc00038fce0d",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "15bf5a58b31a",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "7a874eaba323",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "100142afe0a9",
+    "method": "GET",
+    "path": "/v1/issuing/cards",
+    "query": {
+      "cardholder": {
+        "_pbd_nebula_type": "var",
+        "id": "1fc4d6372d38",
+        "keyPath": "queryCardholder",
+        "optional": true
+      },
+      "created": {
+        "_pbd_nebula_type": "var",
+        "id": "ede00380e564",
+        "keyPath": "queryCreated",
+        "optional": true
+      },
+      "ending_before": {
+        "_pbd_nebula_type": "var",
+        "id": "826b0628d3e1",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "exp_month": {
+        "_pbd_nebula_type": "var",
+        "id": "65cd2aab3746",
+        "keyPath": "queryExpMonth",
+        "optional": true
+      },
+      "exp_year": {
+        "_pbd_nebula_type": "var",
+        "id": "27727b235eda",
+        "keyPath": "queryExpYear",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "350f3dee4956",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "last4": {
+        "_pbd_nebula_type": "var",
+        "id": "5cb215f7b066",
+        "keyPath": "queryLast4",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_nebula_type": "var",
+        "id": "0b016d445cc4",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "personalization_design": {
+        "_pbd_nebula_type": "var",
+        "id": "8784d4cfb138",
+        "keyPath": "queryPersonalizationDesign",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_nebula_type": "var",
+        "id": "9207b96ba518",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      },
+      "status": {
+        "_pbd_nebula_type": "var",
+        "id": "63637b652422",
+        "keyPath": "queryStatus",
+        "optional": true
+      },
+      "type": {
+        "_pbd_nebula_type": "var",
+        "id": "a5302c44a856",
+        "keyPath": "queryType",
+        "optional": true
+      }
+    }
+  }
+}

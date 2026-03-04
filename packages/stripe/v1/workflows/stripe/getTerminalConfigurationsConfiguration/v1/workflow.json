@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve a Configuration",
+  "description": "<p>Retrieves a <code>Configuration</code> object.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getTerminalConfigurationsConfiguration",
+    "path": "/v1/terminal/configurations/{configuration}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathConfiguration": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathConfiguration"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "b553c49eb0af",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "dc3664bba0c7",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "fb1fa07a7cc0",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "5b1e509e2c83",
+    "method": "GET",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "aa12a5d834d0",
+      "left": "/v1/terminal/configurations/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "d2c97dbb2510",
+        "keyPath": "pathConfiguration",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "9a8702909e0e",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

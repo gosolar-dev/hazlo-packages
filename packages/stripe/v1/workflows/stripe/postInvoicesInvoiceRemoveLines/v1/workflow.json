@@ -1,0 +1,74 @@
+{
+  "name": "Bulk remove invoice line items",
+  "description": "<p>Removes multiple line items from an invoice. This is only possible when an invoice is still a draft.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postInvoicesInvoiceRemoveLines",
+    "path": "/v1/invoices/{invoice}/remove_lines",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ],
+      "invoice_metadata": {
+        "<key>": "<string>"
+      },
+      "lines": [
+        {
+          "behavior": "delete",
+          "id": "<string>"
+        }
+      ]
+    },
+    "pathInvoice": "<string>"
+  },
+  "inputRequired": [
+    "body",
+    "pathInvoice"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "aab7fa981c35",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "7187b4c7de3d",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "329dfeebe061",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "20fb04b57750",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "148e963ccc98",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "cb5488b239b6",
+        "left": "/v1/invoices/",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "90404d1ff8f3",
+          "keyPath": "pathInvoice",
+          "optional": false
+        }
+      },
+      "right": "/remove_lines"
+    },
+    "query": {}
+  }
+}

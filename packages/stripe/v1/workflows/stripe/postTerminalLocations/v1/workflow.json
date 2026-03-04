@@ -1,0 +1,79 @@
+{
+  "name": "Create a Location",
+  "description": "<p>Creates a new <code>Location</code> object.\nFor further details, including which address fields are required in each country, see the <a href=\"/docs/terminal/fleet/locations\">Manage locations</a> guide.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postTerminalLocations",
+    "path": "/v1/terminal/locations",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "address": {
+        "city": "<string>",
+        "country": "<string>",
+        "line1": "<string>",
+        "line2": "<string>",
+        "postal_code": "<string>",
+        "state": "<string>"
+      },
+      "address_kana": {
+        "city": "<string>",
+        "country": "<string>",
+        "line1": "<string>",
+        "line2": "<string>",
+        "postal_code": "<string>",
+        "state": "<string>",
+        "town": "<string>"
+      },
+      "address_kanji": {
+        "city": "<string>",
+        "country": "<string>",
+        "line1": "<string>",
+        "line2": "<string>",
+        "postal_code": "<string>",
+        "state": "<string>",
+        "town": "<string>"
+      },
+      "configuration_overrides": "<string>",
+      "display_name": "<string>",
+      "display_name_kana": "<string>",
+      "display_name_kanji": "<string>",
+      "expand": [
+        "<string>"
+      ],
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "phone": "<string>"
+    }
+  },
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "fc7e68ecacd6",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "7160a2275e1c",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "a00ca49375f4",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "18c10ae245b7",
+    "method": "POST",
+    "path": "/v1/terminal/locations",
+    "query": {}
+  }
+}

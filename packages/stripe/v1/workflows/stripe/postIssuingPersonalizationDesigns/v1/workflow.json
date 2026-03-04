@@ -1,0 +1,65 @@
+{
+  "name": "Create a personalization design",
+  "description": "<p>Creates a personalization design object.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postIssuingPersonalizationDesigns",
+    "path": "/v1/issuing/personalization_designs",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "card_logo": "<string>",
+      "carrier_text": {
+        "footer_body": "<string>",
+        "footer_title": "<string>",
+        "header_body": "<string>",
+        "header_title": "<string>"
+      },
+      "expand": [
+        "<string>"
+      ],
+      "lookup_key": "<string>",
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "name": "<string>",
+      "physical_bundle": "<string>",
+      "preferences": {
+        "is_default": "<boolean>"
+      },
+      "transfer_lookup_key": "<boolean>"
+    }
+  },
+  "inputRequired": [
+    "body"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "34607da6cb49",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "0cb83df8a59e",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "ced4cc0f6f63",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "04676d003027",
+    "method": "POST",
+    "path": "/v1/issuing/personalization_designs",
+    "query": {}
+  }
+}

@@ -1,0 +1,254 @@
+{
+  "name": "Create a subscription",
+  "description": "<p>Creates a new subscription on an existing customer.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postCustomersCustomerSubscriptions",
+    "path": "/v1/customers/{customer}/subscriptions",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "add_invoice_items": [
+        {
+          "discounts": [
+            {
+              "coupon": "<string>",
+              "discount": "<string>",
+              "promotion_code": "<string>"
+            }
+          ],
+          "metadata": {
+            "<key>": "<string>"
+          },
+          "period": {
+            "end": {
+              "timestamp": "<number>",
+              "type": "min_item_period_end"
+            },
+            "start": {
+              "timestamp": "<number>",
+              "type": "max_item_period_start"
+            }
+          },
+          "price": "<string>",
+          "price_data": {
+            "currency": "<string>",
+            "product": "<string>",
+            "tax_behavior": "exclusive",
+            "unit_amount": "<number>",
+            "unit_amount_decimal": "<string>"
+          },
+          "quantity": "<number>",
+          "tax_rates": [
+            "<string>"
+          ]
+        }
+      ],
+      "application_fee_percent": "<number>",
+      "automatic_tax": {
+        "enabled": "<boolean>",
+        "liability": {
+          "account": "<string>",
+          "type": "account"
+        }
+      },
+      "backdate_start_date": "<number>",
+      "billing_cycle_anchor": "<number>",
+      "billing_thresholds": {
+        "amount_gte": "<number>",
+        "reset_billing_cycle_anchor": "<boolean>"
+      },
+      "cancel_at": "<number>",
+      "cancel_at_period_end": "<boolean>",
+      "collection_method": "charge_automatically",
+      "currency": "<string>",
+      "days_until_due": "<number>",
+      "default_payment_method": "<string>",
+      "default_source": "<string>",
+      "default_tax_rates": [
+        "<string>"
+      ],
+      "discounts": [
+        {
+          "coupon": "<string>",
+          "discount": "<string>",
+          "promotion_code": "<string>"
+        }
+      ],
+      "expand": [
+        "<string>"
+      ],
+      "invoice_settings": {
+        "account_tax_ids": [
+          "<string>"
+        ],
+        "issuer": {
+          "account": "<string>",
+          "type": "account"
+        }
+      },
+      "items": [
+        {
+          "billing_thresholds": {
+            "usage_gte": "<number>"
+          },
+          "discounts": [
+            {
+              "coupon": "<string>",
+              "discount": "<string>",
+              "promotion_code": "<string>"
+            }
+          ],
+          "metadata": {
+            "<key>": "<string>"
+          },
+          "price": "<string>",
+          "price_data": {
+            "currency": "<string>",
+            "product": "<string>",
+            "recurring": {
+              "interval": "day",
+              "interval_count": "<number>"
+            },
+            "tax_behavior": "exclusive",
+            "unit_amount": "<number>",
+            "unit_amount_decimal": "<string>"
+          },
+          "quantity": "<number>",
+          "tax_rates": [
+            "<string>"
+          ]
+        }
+      ],
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "off_session": "<boolean>",
+      "payment_behavior": "allow_incomplete",
+      "payment_settings": {
+        "payment_method_options": {
+          "acss_debit": {
+            "mandate_options": {
+              "transaction_type": "business"
+            },
+            "verification_method": "automatic"
+          },
+          "bancontact": {
+            "preferred_language": "de"
+          },
+          "card": {
+            "mandate_options": {
+              "amount": "<number>",
+              "amount_type": "fixed",
+              "description": "<string>"
+            },
+            "network": "amex",
+            "request_three_d_secure": "any"
+          },
+          "customer_balance": {
+            "bank_transfer": {
+              "eu_bank_transfer": {
+                "country": "<string>"
+              },
+              "type": "<string>"
+            },
+            "funding_type": "<string>"
+          },
+          "konbini": {},
+          "payto": {
+            "mandate_options": {
+              "amount": "<number>",
+              "purpose": "dependant_support"
+            }
+          },
+          "sepa_debit": {},
+          "us_bank_account": {
+            "financial_connections": {
+              "filters": {
+                "account_subcategories": [
+                  "checking"
+                ]
+              },
+              "permissions": [
+                "balances"
+              ],
+              "prefetch": [
+                "balances"
+              ]
+            },
+            "verification_method": "automatic"
+          }
+        },
+        "payment_method_types": [
+          "ach_credit_transfer"
+        ],
+        "save_default_payment_method": "off"
+      },
+      "pending_invoice_item_interval": {
+        "interval": "day",
+        "interval_count": "<number>"
+      },
+      "proration_behavior": "always_invoice",
+      "transfer_data": {
+        "amount_percent": "<number>",
+        "destination": "<string>"
+      },
+      "trial_end": "now",
+      "trial_from_plan": "<boolean>",
+      "trial_period_days": "<number>",
+      "trial_settings": {
+        "end_behavior": {
+          "missing_payment_method": "cancel"
+        }
+      }
+    },
+    "pathCustomer": "<string>"
+  },
+  "inputRequired": [
+    "pathCustomer"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "fc6dd0386cee",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "f2d35e7f3cda",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "2266766149f0",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "9c2b3ebf8988",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "c20cfef9be68",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "8744435a9651",
+        "left": "/v1/customers/",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "58f1cbecf14a",
+          "keyPath": "pathCustomer",
+          "optional": false
+        }
+      },
+      "right": "/subscriptions"
+    },
+    "query": {}
+  }
+}

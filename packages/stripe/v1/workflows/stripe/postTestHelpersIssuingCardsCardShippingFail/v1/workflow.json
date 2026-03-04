@@ -1,0 +1,64 @@
+{
+  "name": "Fail a testmode card",
+  "description": "<p>Updates the shipping status of the specified Issuing <code>Card</code> object to <code>failure</code>.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postTestHelpersIssuingCardsCardShippingFail",
+    "path": "/v1/test_helpers/issuing/cards/{card}/shipping/fail",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ]
+    },
+    "pathCard": "<string>"
+  },
+  "inputRequired": [
+    "pathCard"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "332f0d15870f",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "8c13cc6c92ae",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "4ffca23ea6ca",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "bdc3f6fa6d8b",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "5d42398a16bf",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "872ed9fa505d",
+        "left": "/v1/test_helpers/issuing/cards/",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "f0fbf9aac8fe",
+          "keyPath": "pathCard",
+          "optional": false
+        }
+      },
+      "right": "/shipping/fail"
+    },
+    "query": {}
+  }
+}

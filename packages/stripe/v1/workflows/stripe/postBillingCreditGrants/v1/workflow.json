@@ -1,0 +1,75 @@
+{
+  "name": "Create a credit grant",
+  "description": "<p>Creates a credit grant.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postBillingCreditGrants",
+    "path": "/v1/billing/credit_grants",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "amount": {
+        "monetary": {
+          "currency": "<string>",
+          "value": "<number>"
+        },
+        "type": "monetary"
+      },
+      "applicability_config": {
+        "scope": {
+          "price_type": "metered",
+          "prices": [
+            {
+              "id": "<string>"
+            }
+          ]
+        }
+      },
+      "category": "paid",
+      "customer": "<string>",
+      "customer_account": "<string>",
+      "effective_at": "<number>",
+      "expand": [
+        "<string>"
+      ],
+      "expires_at": "<number>",
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "name": "<string>",
+      "priority": "<number>"
+    }
+  },
+  "inputRequired": [
+    "body"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "87c799d1a041",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "3bfa56638f84",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "0488647e7c8c",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "368ba6c01a17",
+    "method": "POST",
+    "path": "/v1/billing/credit_grants",
+    "query": {}
+  }
+}

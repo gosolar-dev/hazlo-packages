@@ -1,0 +1,97 @@
+{
+  "name": "List Account Owners",
+  "description": "<p>Lists all owners for a given <code>Account</code></p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getFinancialConnectionsAccountsAccountOwners",
+    "path": "/v1/financial_connections/accounts/{account}/owners",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathAccount": "<string>",
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryLimit": "<number>",
+    "queryOwnership": "<string>",
+    "queryStartingAfter": "<string>"
+  },
+  "inputRequired": [
+    "pathAccount",
+    "queryOwnership"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "c05afbe19642",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "3045a126e010",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "2cd5e1c761f5",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "8dd4bbd67095",
+    "method": "GET",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "7a440370dd49",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "636a0f919a6d",
+        "left": "/v1/financial_connections/accounts/",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "07c9ec242202",
+          "keyPath": "pathAccount",
+          "optional": false
+        }
+      },
+      "right": "/owners"
+    },
+    "query": {
+      "ending_before": {
+        "_pbd_nebula_type": "var",
+        "id": "af5b3511124f",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "1d1aa1c9e00f",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_nebula_type": "var",
+        "id": "29e841344ac9",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "ownership": {
+        "_pbd_nebula_type": "var",
+        "id": "17b7b36dc85e",
+        "keyPath": "queryOwnership",
+        "optional": false
+      },
+      "starting_after": {
+        "_pbd_nebula_type": "var",
+        "id": "9877c2702752",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      }
+    }
+  }
+}

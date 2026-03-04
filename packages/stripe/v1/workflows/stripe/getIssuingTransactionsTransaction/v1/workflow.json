@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve a transaction",
+  "description": "<p>Retrieves an Issuing <code>Transaction</code> object.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getIssuingTransactionsTransaction",
+    "path": "/v1/issuing/transactions/{transaction}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathTransaction": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathTransaction"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "f17ab869ecdf",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "631b9ff10191",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "040096e54483",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "71515b7fab90",
+    "method": "GET",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "31ba75808154",
+      "left": "/v1/issuing/transactions/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "b2c799a9944f",
+        "keyPath": "pathTransaction",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "bb9fc3972da4",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

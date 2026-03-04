@@ -1,0 +1,268 @@
+{
+  "name": "Create a payment link",
+  "description": "<p>Creates a payment link.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postPaymentLinks",
+    "path": "/v1/payment_links",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "after_completion": {
+        "hosted_confirmation": {
+          "custom_message": "<string>"
+        },
+        "redirect": {
+          "url": "<string>"
+        },
+        "type": "hosted_confirmation"
+      },
+      "allow_promotion_codes": "<boolean>",
+      "application_fee_amount": "<number>",
+      "application_fee_percent": "<number>",
+      "automatic_tax": {
+        "enabled": "<boolean>",
+        "liability": {
+          "account": "<string>",
+          "type": "account"
+        }
+      },
+      "billing_address_collection": "auto",
+      "consent_collection": {
+        "payment_method_reuse_agreement": {
+          "position": "auto"
+        },
+        "promotions": "auto",
+        "terms_of_service": "none"
+      },
+      "currency": "<string>",
+      "custom_fields": [
+        {
+          "dropdown": {
+            "default_value": "<string>",
+            "options": [
+              {
+                "label": "<string>",
+                "value": "<string>"
+              }
+            ]
+          },
+          "key": "<string>",
+          "label": {
+            "custom": "<string>",
+            "type": "custom"
+          },
+          "numeric": {
+            "default_value": "<string>",
+            "maximum_length": "<number>",
+            "minimum_length": "<number>"
+          },
+          "optional": "<boolean>",
+          "text": {
+            "default_value": "<string>",
+            "maximum_length": "<number>",
+            "minimum_length": "<number>"
+          },
+          "type": "dropdown"
+        }
+      ],
+      "custom_text": {
+        "after_submit": {
+          "message": "<string>"
+        },
+        "shipping_address": {
+          "message": "<string>"
+        },
+        "submit": {
+          "message": "<string>"
+        },
+        "terms_of_service_acceptance": {
+          "message": "<string>"
+        }
+      },
+      "customer_creation": "always",
+      "expand": [
+        "<string>"
+      ],
+      "inactive_message": "<string>",
+      "invoice_creation": {
+        "enabled": "<boolean>",
+        "invoice_data": {
+          "account_tax_ids": [
+            "<string>"
+          ],
+          "custom_fields": [
+            {
+              "name": "<string>",
+              "value": "<string>"
+            }
+          ],
+          "description": "<string>",
+          "footer": "<string>",
+          "issuer": {
+            "account": "<string>",
+            "type": "account"
+          },
+          "metadata": {
+            "<key>": "<string>"
+          },
+          "rendering_options": {
+            "amount_tax_display": "",
+            "template": "<string>"
+          }
+        }
+      },
+      "line_items": [
+        {
+          "adjustable_quantity": {
+            "enabled": "<boolean>",
+            "maximum": "<number>",
+            "minimum": "<number>"
+          },
+          "price": "<string>",
+          "price_data": {
+            "currency": "<string>",
+            "product": "<string>",
+            "product_data": {
+              "description": "<string>",
+              "images": [
+                "<string>"
+              ],
+              "metadata": {
+                "<key>": "<string>"
+              },
+              "name": "<string>",
+              "tax_code": "<string>",
+              "unit_label": "<string>"
+            },
+            "recurring": {
+              "interval": "day",
+              "interval_count": "<number>"
+            },
+            "tax_behavior": "exclusive",
+            "unit_amount": "<number>",
+            "unit_amount_decimal": "<string>"
+          },
+          "quantity": "<number>"
+        }
+      ],
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "name_collection": {
+        "business": {
+          "enabled": "<boolean>",
+          "optional": "<boolean>"
+        },
+        "individual": {
+          "enabled": "<boolean>",
+          "optional": "<boolean>"
+        }
+      },
+      "on_behalf_of": "<string>",
+      "optional_items": [
+        {
+          "adjustable_quantity": {
+            "enabled": "<boolean>",
+            "maximum": "<number>",
+            "minimum": "<number>"
+          },
+          "price": "<string>",
+          "quantity": "<number>"
+        }
+      ],
+      "payment_intent_data": {
+        "capture_method": "automatic",
+        "description": "<string>",
+        "metadata": {
+          "<key>": "<string>"
+        },
+        "setup_future_usage": "off_session",
+        "statement_descriptor": "<string>",
+        "statement_descriptor_suffix": "<string>",
+        "transfer_group": "<string>"
+      },
+      "payment_method_collection": "always",
+      "payment_method_types": [
+        "affirm"
+      ],
+      "phone_number_collection": {
+        "enabled": "<boolean>"
+      },
+      "restrictions": {
+        "completed_sessions": {
+          "limit": "<number>"
+        }
+      },
+      "shipping_address_collection": {
+        "allowed_countries": [
+          "AC"
+        ]
+      },
+      "shipping_options": [
+        {
+          "shipping_rate": "<string>"
+        }
+      ],
+      "submit_type": "auto",
+      "subscription_data": {
+        "description": "<string>",
+        "invoice_settings": {
+          "issuer": {
+            "account": "<string>",
+            "type": "account"
+          }
+        },
+        "metadata": {
+          "<key>": "<string>"
+        },
+        "trial_period_days": "<number>",
+        "trial_settings": {
+          "end_behavior": {
+            "missing_payment_method": "cancel"
+          }
+        }
+      },
+      "tax_id_collection": {
+        "enabled": "<boolean>",
+        "required": "if_supported"
+      },
+      "transfer_data": {
+        "amount": "<number>",
+        "destination": "<string>"
+      }
+    }
+  },
+  "inputRequired": [
+    "body"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "b8abc1308cfe",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "5942a6d6cef8",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "cc8033761f96",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "33fa52ba4b82",
+    "method": "POST",
+    "path": "/v1/payment_links",
+    "query": {}
+  }
+}

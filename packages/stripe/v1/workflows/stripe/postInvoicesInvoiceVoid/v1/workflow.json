@@ -1,0 +1,64 @@
+{
+  "name": "Void an invoice",
+  "description": "<p>Mark a finalized invoice as void. This cannot be undone. Voiding an invoice is similar to <a href=\"#delete_invoice\">deletion</a>, however it only applies to finalized invoices and maintains a papertrail where the invoice can still be found.</p>\n\n<p>Consult with local regulations to determine whether and how an invoice might be amended, canceled, or voided in the jurisdiction you’re doing business in. You might need to <a href=\"#create_invoice\">issue another invoice</a> or <a href=\"#create_credit_note\">credit note</a> instead. Stripe recommends that you consult with your legal counsel for advice specific to your business.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postInvoicesInvoiceVoid",
+    "path": "/v1/invoices/{invoice}/void",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ]
+    },
+    "pathInvoice": "<string>"
+  },
+  "inputRequired": [
+    "pathInvoice"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "91c2feb49906",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "6bcaa321c776",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "860f8f5e5bcf",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "6f80b84c5d69",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "d7e780f6c640",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "fd2ddc8e9de4",
+        "left": "/v1/invoices/",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "50fad921c444",
+          "keyPath": "pathInvoice",
+          "optional": false
+        }
+      },
+      "right": "/void"
+    },
+    "query": {}
+  }
+}

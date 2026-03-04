@@ -1,0 +1,55 @@
+{
+  "name": "Delete a coupon",
+  "description": "<p>You can delete coupons via the <a href=\"https://dashboard.stripe.com/coupons\">coupon management</a> page of the Stripe dashboard. However, deleting a coupon does not affect any customers who have already applied the coupon; it means that new customers can’t redeem the coupon. You can also delete coupons via the API.</p>",
+  "meta": {
+    "method": "DELETE",
+    "operationId": "deleteCouponsCoupon",
+    "path": "/v1/coupons/{coupon}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathCoupon": "<string>"
+  },
+  "inputRequired": [
+    "pathCoupon"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "d9a750da35f9",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "0168b769f378",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "b5f9da7d22f4",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "0d6e5d5fa110",
+    "method": "DELETE",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "3e2121975409",
+      "left": "/v1/coupons/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "ef622ad140bb",
+        "keyPath": "pathCoupon",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

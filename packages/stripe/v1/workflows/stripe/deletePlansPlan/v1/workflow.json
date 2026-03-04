@@ -1,0 +1,55 @@
+{
+  "name": "Delete a plan",
+  "description": "<p>Deleting plans means new subscribers can’t be added. Existing subscribers aren’t affected.</p>",
+  "meta": {
+    "method": "DELETE",
+    "operationId": "deletePlansPlan",
+    "path": "/v1/plans/{plan}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathPlan": "<string>"
+  },
+  "inputRequired": [
+    "pathPlan"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "1b047f2f2419",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "3d0239f8ed4a",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "5070eec83314",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "6cc90651ed58",
+    "method": "DELETE",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "131eee849f84",
+      "left": "/v1/plans/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "0062aa9ce297",
+        "keyPath": "pathPlan",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

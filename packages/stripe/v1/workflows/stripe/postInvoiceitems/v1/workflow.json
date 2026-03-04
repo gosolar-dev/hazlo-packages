@@ -1,0 +1,84 @@
+{
+  "name": "Create an invoice item",
+  "description": "<p>Creates an item to be added to a draft invoice (up to 250 items per invoice). If no invoice is specified, the item will be on the next invoice created for the customer specified.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postInvoiceitems",
+    "path": "/v1/invoiceitems",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "amount": "<number>",
+      "currency": "<string>",
+      "customer": "<string>",
+      "customer_account": "<string>",
+      "description": "<string>",
+      "discountable": "<boolean>",
+      "discounts": [
+        {
+          "coupon": "<string>",
+          "discount": "<string>",
+          "promotion_code": "<string>"
+        }
+      ],
+      "expand": [
+        "<string>"
+      ],
+      "invoice": "<string>",
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "period": {
+        "end": "<number>",
+        "start": "<number>"
+      },
+      "price_data": {
+        "currency": "<string>",
+        "product": "<string>",
+        "tax_behavior": "exclusive",
+        "unit_amount": "<number>",
+        "unit_amount_decimal": "<string>"
+      },
+      "pricing": {
+        "price": "<string>"
+      },
+      "quantity": "<number>",
+      "subscription": "<string>",
+      "tax_behavior": "exclusive",
+      "tax_code": "<string>",
+      "tax_rates": [
+        "<string>"
+      ],
+      "unit_amount_decimal": "<string>"
+    }
+  },
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "39cb57d99042",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "6192b99087a9",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "6b68118af3dd",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "e4dda0b85270",
+    "method": "POST",
+    "path": "/v1/invoiceitems",
+    "query": {}
+  }
+}

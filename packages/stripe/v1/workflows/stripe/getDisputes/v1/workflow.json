@@ -1,0 +1,91 @@
+{
+  "name": "List all disputes",
+  "description": "<p>Returns a list of your disputes.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getDisputes",
+    "path": "/v1/disputes",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryCharge": "<string>",
+    "queryCreated": "<string>",
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryLimit": "<number>",
+    "queryPaymentIntent": "<string>",
+    "queryStartingAfter": "<string>"
+  },
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "58508b8a524e",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "33a4392a1632",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "a62c499c6218",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "5a87ee0e4ea6",
+    "method": "GET",
+    "path": "/v1/disputes",
+    "query": {
+      "charge": {
+        "_pbd_nebula_type": "var",
+        "id": "022855b2a92f",
+        "keyPath": "queryCharge",
+        "optional": true
+      },
+      "created": {
+        "_pbd_nebula_type": "var",
+        "id": "35fc4ff0a669",
+        "keyPath": "queryCreated",
+        "optional": true
+      },
+      "ending_before": {
+        "_pbd_nebula_type": "var",
+        "id": "77f39943ea04",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "966ce239b456",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_nebula_type": "var",
+        "id": "5ddb9740c7ee",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "payment_intent": {
+        "_pbd_nebula_type": "var",
+        "id": "d5b9113b4c11",
+        "keyPath": "queryPaymentIntent",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_nebula_type": "var",
+        "id": "d3414861b7d8",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      }
+    }
+  }
+}

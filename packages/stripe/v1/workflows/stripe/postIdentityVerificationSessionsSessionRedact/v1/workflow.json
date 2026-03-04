@@ -1,0 +1,64 @@
+{
+  "name": "Redact a VerificationSession",
+  "description": "<p>Redact a VerificationSession to remove all collected information from Stripe. This will redact\nthe VerificationSession and all objects related to it, including VerificationReports, Events,\nrequest logs, etc.</p>\n\n<p>A VerificationSession object can be redacted when it is in <code>requires_input</code> or <code>verified</code>\n<a href=\"/docs/identity/how-sessions-work\">status</a>. Redacting a VerificationSession in <code>requires_action</code>\nstate will automatically cancel it.</p>\n\n<p>The redaction process may take up to four days. When the redaction process is in progress, the\nVerificationSession’s <code>redaction.status</code> field will be set to <code>processing</code>; when the process is\nfinished, it will change to <code>redacted</code> and an <code>identity.verification_session.redacted</code> event\nwill be emitted.</p>\n\n<p>Redaction is irreversible. Redacted objects are still accessible in the Stripe API, but all the\nfields that contain personal data will be replaced by the string <code>[redacted]</code> or a similar\nplaceholder. The <code>metadata</code> field will also be erased. Redacted objects cannot be updated or\nused for any purpose.</p>\n\n<p><a href=\"/docs/identity/verification-sessions#redact\">Learn more</a>.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postIdentityVerificationSessionsSessionRedact",
+    "path": "/v1/identity/verification_sessions/{session}/redact",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ]
+    },
+    "pathSession": "<string>"
+  },
+  "inputRequired": [
+    "pathSession"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "1365ef31bfda",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "faa365488c70",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "daad54ca7e52",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "86842197ad66",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "8d737164291c",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "4f54e715d9f1",
+        "left": "/v1/identity/verification_sessions/",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "90a17010e83e",
+          "keyPath": "pathSession",
+          "optional": false
+        }
+      },
+      "right": "/redact"
+    },
+    "query": {}
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "name": "Create a Session",
+  "description": "<p>To launch the Financial Connections authorization flow, create a <code>Session</code>. The session’s <code>client_secret</code> can be used to launch the flow using Stripe.js.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postLinkAccountSessions",
+    "path": "/v1/link_account_sessions",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "account_holder": {
+        "account": "<string>",
+        "customer": "<string>",
+        "customer_account": "<string>",
+        "type": "account"
+      },
+      "expand": [
+        "<string>"
+      ],
+      "filters": {
+        "account_subcategories": [
+          "checking"
+        ],
+        "countries": [
+          "<string>"
+        ]
+      },
+      "permissions": [
+        "balances"
+      ],
+      "prefetch": [
+        "balances"
+      ],
+      "return_url": "<string>"
+    }
+  },
+  "inputRequired": [
+    "body"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "5f5dc7b4c2c8",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "0f34bc69d999",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "9b447e30acec",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "4515e35a10f3",
+    "method": "POST",
+    "path": "/v1/link_account_sessions",
+    "query": {}
+  }
+}

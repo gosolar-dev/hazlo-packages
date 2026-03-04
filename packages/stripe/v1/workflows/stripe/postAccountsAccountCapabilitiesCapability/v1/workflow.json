@@ -1,0 +1,77 @@
+{
+  "name": "Update an Account Capability",
+  "description": "<p>Updates an existing Account Capability. Request or remove a capability by updating its <code>requested</code> parameter.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postAccountsAccountCapabilitiesCapability",
+    "path": "/v1/accounts/{account}/capabilities/{capability}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ],
+      "requested": "<boolean>"
+    },
+    "pathAccount": "<string>",
+    "pathCapability": "<string>"
+  },
+  "inputRequired": [
+    "pathAccount",
+    "pathCapability"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "854e650daca3",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "83cd334f0579",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "980fdca5ab39",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "5505adf9d4b8",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "c2b51f9d8563",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "565f96f142a5",
+        "left": {
+          "_pbd_nebula_type": "concat",
+          "id": "76775cb90644",
+          "left": "/v1/accounts/",
+          "right": {
+            "_pbd_nebula_type": "var",
+            "id": "dc22bde0b150",
+            "keyPath": "pathAccount",
+            "optional": false
+          }
+        },
+        "right": "/capabilities/"
+      },
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "50adbb4a2830",
+        "keyPath": "pathCapability",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

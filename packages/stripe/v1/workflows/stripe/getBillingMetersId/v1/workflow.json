@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve a billing meter",
+  "description": "<p>Retrieves a billing meter given an ID.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getBillingMetersId",
+    "path": "/v1/billing/meters/{id}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathId": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathId"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "af76304ae2c0",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "b27d295161ef",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "60d186b7f7dc",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "96942ab600dc",
+    "method": "GET",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "73a4483530f5",
+      "left": "/v1/billing/meters/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "35e9057b2aaa",
+        "keyPath": "pathId",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "3f62ac7487b2",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

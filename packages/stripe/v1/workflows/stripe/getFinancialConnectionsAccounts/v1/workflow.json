@@ -1,0 +1,84 @@
+{
+  "name": "List Accounts",
+  "description": "<p>Returns a list of Financial Connections <code>Account</code> objects.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getFinancialConnectionsAccounts",
+    "path": "/v1/financial_connections/accounts",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryAccountHolder": {},
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryLimit": "<number>",
+    "querySession": "<string>",
+    "queryStartingAfter": "<string>"
+  },
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "987e475f66ba",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "bc49a0521a19",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "930d83a483e1",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "4c4aac1cc7c6",
+    "method": "GET",
+    "path": "/v1/financial_connections/accounts",
+    "query": {
+      "account_holder": {
+        "_pbd_nebula_type": "var",
+        "id": "5ba45d11d66e",
+        "keyPath": "queryAccountHolder",
+        "optional": true
+      },
+      "ending_before": {
+        "_pbd_nebula_type": "var",
+        "id": "6b08a43ba14c",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "dfa7f6f1ecf8",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_nebula_type": "var",
+        "id": "02f0f439410e",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "session": {
+        "_pbd_nebula_type": "var",
+        "id": "909b18475412",
+        "keyPath": "querySession",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_nebula_type": "var",
+        "id": "04fd23864fd8",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      }
+    }
+  }
+}

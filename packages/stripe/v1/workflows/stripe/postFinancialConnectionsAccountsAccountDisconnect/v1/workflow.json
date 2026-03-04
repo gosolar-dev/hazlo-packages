@@ -1,0 +1,64 @@
+{
+  "name": "Disconnect an Account",
+  "description": "<p>Disables your access to a Financial Connections <code>Account</code>. You will no longer be able to access data associated with the account (e.g. balances, transactions).</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postFinancialConnectionsAccountsAccountDisconnect",
+    "path": "/v1/financial_connections/accounts/{account}/disconnect",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ]
+    },
+    "pathAccount": "<string>"
+  },
+  "inputRequired": [
+    "pathAccount"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "a3851259e884",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "9fefd812027c",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "375a4a460449",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "1288ca5fc635",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "3824572f7b0b",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "b72bf1f5b68c",
+        "left": "/v1/financial_connections/accounts/",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "1047ff4ecda6",
+          "keyPath": "pathAccount",
+          "optional": false
+        }
+      },
+      "right": "/disconnect"
+    },
+    "query": {}
+  }
+}

@@ -1,0 +1,545 @@
+{
+  "name": "Create a registration",
+  "description": "<p>Creates a new Tax <code>Registration</code> object.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postTaxRegistrations",
+    "path": "/v1/tax/registrations",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "active_from": "now",
+      "country": "<string>",
+      "country_options": {
+        "ae": {
+          "standard": {
+            "place_of_supply_scheme": "inbound_goods"
+          },
+          "type": "standard"
+        },
+        "al": {
+          "standard": {
+            "place_of_supply_scheme": "inbound_goods"
+          },
+          "type": "standard"
+        },
+        "am": {
+          "type": "simplified"
+        },
+        "ao": {
+          "standard": {
+            "place_of_supply_scheme": "inbound_goods"
+          },
+          "type": "standard"
+        },
+        "at": {
+          "standard": {
+            "place_of_supply_scheme": "inbound_goods"
+          },
+          "type": "ioss"
+        },
+        "au": {
+          "standard": {
+            "place_of_supply_scheme": "inbound_goods"
+          },
+          "type": "standard"
+        },
+        "aw": {
+          "standard": {
+            "place_of_supply_scheme": "inbound_goods"
+          },
+          "type": "standard"
+        },
+        "az": {
+          "type": "simplified"
+        },
+        "ba": {
+          "standard": {
+            "place_of_supply_scheme": "inbound_goods"
+          },
+          "type": "standard"
+        },
+        "bb": {
+          "standard": {
+            "place_of_supply_scheme": "inbound_goods"
+          },
+          "type": "standard"
+        },
+        "bd": {
+          "standard": {
+            "place_of_supply_scheme": "inbound_goods"
+          },
+          "type": "standard"
+        },
+        "be": {
+          "standard": {
+            "place_of_supply_scheme": "inbound_goods"
+          },
+          "type": "ioss"
+        },
+        "bf": {
+          "standard": {
+            "place_of_supply_scheme": "inbound_goods"
+          },
+          "type": "standard"
+        },
+        "bg": {
+          "standard": {
+            "place_of_supply_scheme": "inbound_goods"
+          },
+          "type": "ioss"
+        },
+        "bh": {
+          "standard": {
+            "place_of_supply_scheme": "inbound_goods"
+          },
+          "type": "standard"
+        },
+        "bj": {
+          "type": "simplified"
+        },
+        "bs": {
+          "standard": {
+            "place_of_supply_scheme": "inbound_goods"
+          },
+          "type": "standard"
+        },
+        "by": {
+          "type": "simplified"
+        },
+        "ca": {
+          "province_standard": {
+            "province": "<string>"
+          },
+          "type": "province_standard"
+        },
+        "cd": {
+          "standard": {
+            "place_of_supply_scheme": "inbound_goods"
+          },
+          "type": "standard"
+        },
+        "ch": {
+          "standard": {
+            "place_of_supply_scheme": "inbound_goods"
+          },
+          "type": "standard"
+        },
+        "cl": {
+          "type": "simplified"
+        },
+        "cm": {
+          "type": "simplified"
+        },
+        "co": {
+          "type": "simplified"
+        },
+        "cr": {
+          "type": "simplified"
+        },
+        "cv": {
+          "type": "simplified"
+        },
+        "cy": {
+          "standard": {
+            "place_of_supply_scheme": "inbound_goods"
+          },
+          "type": "ioss"
+        },
+        "cz": {
+          "standard": {
+            "place_of_supply_scheme": "inbound_goods"
+          },
+          "type": "ioss"
+        },
+        "de": {
+          "standard": {
+            "place_of_supply_scheme": "inbound_goods"
+          },
+          "type": "ioss"
+        },
+        "dk": {
+          "standard": {
+            "place_of_supply_scheme": "inbound_goods"
+          },
+          "type": "ioss"
+        },
+        "ec": {
+          "type": "simplified"
+        },
+        "ee": {
+          "standard": {
+            "place_of_supply_scheme": "inbound_goods"
+          },
+          "type": "ioss"
+        },
+        "eg": {
+          "type": "simplified"
+        },
+        "es": {
+          "standard": {
+            "place_of_supply_scheme": "inbound_goods"
+          },
+          "type": "ioss"
+        },
+        "et": {
+          "standard": {
+            "place_of_supply_scheme": "inbound_goods"
+          },
+          "type": "standard"
+        },
+        "fi": {
+          "standard": {
+            "place_of_supply_scheme": "inbound_goods"
+          },
+          "type": "ioss"
+        },
+        "fr": {
+          "standard": {
+            "place_of_supply_scheme": "inbound_goods"
+          },
+          "type": "ioss"
+        },
+        "gb": {
+          "standard": {
+            "place_of_supply_scheme": "inbound_goods"
+          },
+          "type": "standard"
+        },
+        "ge": {
+          "type": "simplified"
+        },
+        "gn": {
+          "standard": {
+            "place_of_supply_scheme": "inbound_goods"
+          },
+          "type": "standard"
+        },
+        "gr": {
+          "standard": {
+            "place_of_supply_scheme": "inbound_goods"
+          },
+          "type": "ioss"
+        },
+        "hr": {
+          "standard": {
+            "place_of_supply_scheme": "inbound_goods"
+          },
+          "type": "ioss"
+        },
+        "hu": {
+          "standard": {
+            "place_of_supply_scheme": "inbound_goods"
+          },
+          "type": "ioss"
+        },
+        "id": {
+          "type": "simplified"
+        },
+        "ie": {
+          "standard": {
+            "place_of_supply_scheme": "inbound_goods"
+          },
+          "type": "ioss"
+        },
+        "in": {
+          "type": "simplified"
+        },
+        "is": {
+          "standard": {
+            "place_of_supply_scheme": "inbound_goods"
+          },
+          "type": "standard"
+        },
+        "it": {
+          "standard": {
+            "place_of_supply_scheme": "inbound_goods"
+          },
+          "type": "ioss"
+        },
+        "jp": {
+          "standard": {
+            "place_of_supply_scheme": "inbound_goods"
+          },
+          "type": "standard"
+        },
+        "ke": {
+          "type": "simplified"
+        },
+        "kg": {
+          "type": "simplified"
+        },
+        "kh": {
+          "type": "simplified"
+        },
+        "kr": {
+          "type": "simplified"
+        },
+        "kz": {
+          "type": "simplified"
+        },
+        "la": {
+          "type": "simplified"
+        },
+        "lk": {
+          "type": "simplified"
+        },
+        "lt": {
+          "standard": {
+            "place_of_supply_scheme": "inbound_goods"
+          },
+          "type": "ioss"
+        },
+        "lu": {
+          "standard": {
+            "place_of_supply_scheme": "inbound_goods"
+          },
+          "type": "ioss"
+        },
+        "lv": {
+          "standard": {
+            "place_of_supply_scheme": "inbound_goods"
+          },
+          "type": "ioss"
+        },
+        "ma": {
+          "type": "simplified"
+        },
+        "md": {
+          "type": "simplified"
+        },
+        "me": {
+          "standard": {
+            "place_of_supply_scheme": "inbound_goods"
+          },
+          "type": "standard"
+        },
+        "mk": {
+          "standard": {
+            "place_of_supply_scheme": "inbound_goods"
+          },
+          "type": "standard"
+        },
+        "mr": {
+          "standard": {
+            "place_of_supply_scheme": "inbound_goods"
+          },
+          "type": "standard"
+        },
+        "mt": {
+          "standard": {
+            "place_of_supply_scheme": "inbound_goods"
+          },
+          "type": "ioss"
+        },
+        "mx": {
+          "type": "simplified"
+        },
+        "my": {
+          "type": "simplified"
+        },
+        "ng": {
+          "type": "simplified"
+        },
+        "nl": {
+          "standard": {
+            "place_of_supply_scheme": "inbound_goods"
+          },
+          "type": "ioss"
+        },
+        "no": {
+          "standard": {
+            "place_of_supply_scheme": "inbound_goods"
+          },
+          "type": "standard"
+        },
+        "np": {
+          "type": "simplified"
+        },
+        "nz": {
+          "standard": {
+            "place_of_supply_scheme": "inbound_goods"
+          },
+          "type": "standard"
+        },
+        "om": {
+          "standard": {
+            "place_of_supply_scheme": "inbound_goods"
+          },
+          "type": "standard"
+        },
+        "pe": {
+          "type": "simplified"
+        },
+        "ph": {
+          "type": "simplified"
+        },
+        "pl": {
+          "standard": {
+            "place_of_supply_scheme": "inbound_goods"
+          },
+          "type": "ioss"
+        },
+        "pt": {
+          "standard": {
+            "place_of_supply_scheme": "inbound_goods"
+          },
+          "type": "ioss"
+        },
+        "ro": {
+          "standard": {
+            "place_of_supply_scheme": "inbound_goods"
+          },
+          "type": "ioss"
+        },
+        "rs": {
+          "standard": {
+            "place_of_supply_scheme": "inbound_goods"
+          },
+          "type": "standard"
+        },
+        "ru": {
+          "type": "simplified"
+        },
+        "sa": {
+          "type": "simplified"
+        },
+        "se": {
+          "standard": {
+            "place_of_supply_scheme": "inbound_goods"
+          },
+          "type": "ioss"
+        },
+        "sg": {
+          "standard": {
+            "place_of_supply_scheme": "inbound_goods"
+          },
+          "type": "standard"
+        },
+        "si": {
+          "standard": {
+            "place_of_supply_scheme": "inbound_goods"
+          },
+          "type": "ioss"
+        },
+        "sk": {
+          "standard": {
+            "place_of_supply_scheme": "inbound_goods"
+          },
+          "type": "ioss"
+        },
+        "sn": {
+          "type": "simplified"
+        },
+        "sr": {
+          "standard": {
+            "place_of_supply_scheme": "inbound_goods"
+          },
+          "type": "standard"
+        },
+        "th": {
+          "type": "simplified"
+        },
+        "tj": {
+          "type": "simplified"
+        },
+        "tr": {
+          "type": "simplified"
+        },
+        "tw": {
+          "type": "simplified"
+        },
+        "tz": {
+          "type": "simplified"
+        },
+        "ua": {
+          "type": "simplified"
+        },
+        "ug": {
+          "type": "simplified"
+        },
+        "us": {
+          "local_amusement_tax": {
+            "jurisdiction": "<string>"
+          },
+          "local_lease_tax": {
+            "jurisdiction": "<string>"
+          },
+          "state": "<string>",
+          "state_sales_tax": {
+            "elections": [
+              {
+                "jurisdiction": "<string>",
+                "type": "local_use_tax"
+              }
+            ]
+          },
+          "type": "local_amusement_tax"
+        },
+        "uy": {
+          "standard": {
+            "place_of_supply_scheme": "inbound_goods"
+          },
+          "type": "standard"
+        },
+        "uz": {
+          "type": "simplified"
+        },
+        "vn": {
+          "type": "simplified"
+        },
+        "za": {
+          "standard": {
+            "place_of_supply_scheme": "inbound_goods"
+          },
+          "type": "standard"
+        },
+        "zm": {
+          "type": "simplified"
+        },
+        "zw": {
+          "standard": {
+            "place_of_supply_scheme": "inbound_goods"
+          },
+          "type": "standard"
+        }
+      },
+      "expand": [
+        "<string>"
+      ],
+      "expires_at": "<number>"
+    }
+  },
+  "inputRequired": [
+    "body"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "b363c9d2e4ca",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "54d888ba7a06",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "166d36c1b5e5",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "d3953fca8fce",
+    "method": "POST",
+    "path": "/v1/tax/registrations",
+    "query": {}
+  }
+}

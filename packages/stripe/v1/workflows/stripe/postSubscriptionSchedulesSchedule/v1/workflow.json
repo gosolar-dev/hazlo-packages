@@ -1,0 +1,223 @@
+{
+  "name": "Update a schedule",
+  "description": "<p>Updates an existing subscription schedule.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postSubscriptionSchedulesSchedule",
+    "path": "/v1/subscription_schedules/{schedule}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "default_settings": {
+        "application_fee_percent": "<number>",
+        "automatic_tax": {
+          "enabled": "<boolean>",
+          "liability": {
+            "account": "<string>",
+            "type": "account"
+          }
+        },
+        "billing_cycle_anchor": "automatic",
+        "billing_thresholds": {
+          "amount_gte": "<number>",
+          "reset_billing_cycle_anchor": "<boolean>"
+        },
+        "collection_method": "charge_automatically",
+        "default_payment_method": "<string>",
+        "description": "<string>",
+        "invoice_settings": {
+          "account_tax_ids": [
+            "<string>"
+          ],
+          "days_until_due": "<number>",
+          "issuer": {
+            "account": "<string>",
+            "type": "account"
+          }
+        },
+        "on_behalf_of": "<string>",
+        "transfer_data": {
+          "amount_percent": "<number>",
+          "destination": "<string>"
+        }
+      },
+      "end_behavior": "cancel",
+      "expand": [
+        "<string>"
+      ],
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "phases": [
+        {
+          "add_invoice_items": [
+            {
+              "discounts": [
+                {
+                  "coupon": "<string>",
+                  "discount": "<string>",
+                  "promotion_code": "<string>"
+                }
+              ],
+              "metadata": {
+                "<key>": "<string>"
+              },
+              "period": {
+                "end": {
+                  "timestamp": "<number>",
+                  "type": "min_item_period_end"
+                },
+                "start": {
+                  "timestamp": "<number>",
+                  "type": "max_item_period_start"
+                }
+              },
+              "price": "<string>",
+              "price_data": {
+                "currency": "<string>",
+                "product": "<string>",
+                "tax_behavior": "exclusive",
+                "unit_amount": "<number>",
+                "unit_amount_decimal": "<string>"
+              },
+              "quantity": "<number>",
+              "tax_rates": [
+                "<string>"
+              ]
+            }
+          ],
+          "application_fee_percent": "<number>",
+          "automatic_tax": {
+            "enabled": "<boolean>",
+            "liability": {
+              "account": "<string>",
+              "type": "account"
+            }
+          },
+          "billing_cycle_anchor": "automatic",
+          "billing_thresholds": {
+            "amount_gte": "<number>",
+            "reset_billing_cycle_anchor": "<boolean>"
+          },
+          "collection_method": "charge_automatically",
+          "default_payment_method": "<string>",
+          "default_tax_rates": [
+            "<string>"
+          ],
+          "description": "<string>",
+          "discounts": [
+            {
+              "coupon": "<string>",
+              "discount": "<string>",
+              "promotion_code": "<string>"
+            }
+          ],
+          "duration": {
+            "interval": "day",
+            "interval_count": "<number>"
+          },
+          "end_date": "<number>",
+          "invoice_settings": {
+            "account_tax_ids": [
+              "<string>"
+            ],
+            "days_until_due": "<number>",
+            "issuer": {
+              "account": "<string>",
+              "type": "account"
+            }
+          },
+          "items": [
+            {
+              "billing_thresholds": {
+                "usage_gte": "<number>"
+              },
+              "discounts": [
+                {
+                  "coupon": "<string>",
+                  "discount": "<string>",
+                  "promotion_code": "<string>"
+                }
+              ],
+              "metadata": {
+                "<key>": "<string>"
+              },
+              "price": "<string>",
+              "price_data": {
+                "currency": "<string>",
+                "product": "<string>",
+                "recurring": {
+                  "interval": "day",
+                  "interval_count": "<number>"
+                },
+                "tax_behavior": "exclusive",
+                "unit_amount": "<number>",
+                "unit_amount_decimal": "<string>"
+              },
+              "quantity": "<number>",
+              "tax_rates": [
+                "<string>"
+              ]
+            }
+          ],
+          "metadata": {
+            "<key>": "<string>"
+          },
+          "on_behalf_of": "<string>",
+          "proration_behavior": "always_invoice",
+          "start_date": "<number>",
+          "transfer_data": {
+            "amount_percent": "<number>",
+            "destination": "<string>"
+          },
+          "trial": "<boolean>",
+          "trial_end": "<number>"
+        }
+      ],
+      "proration_behavior": "always_invoice"
+    },
+    "pathSchedule": "<string>"
+  },
+  "inputRequired": [
+    "pathSchedule"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "63d5703700d0",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "d0c261f15488",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "722e95f4b665",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "d3b2738249ff",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "89672620b08f",
+      "left": "/v1/subscription_schedules/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "c88b09d2ce76",
+        "keyPath": "pathSchedule",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

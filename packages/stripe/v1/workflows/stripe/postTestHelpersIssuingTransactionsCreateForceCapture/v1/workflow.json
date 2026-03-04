@@ -1,0 +1,123 @@
+{
+  "name": "Create a test-mode force capture",
+  "description": "<p>Allows the user to capture an arbitrary amount, also known as a forced capture.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postTestHelpersIssuingTransactionsCreateForceCapture",
+    "path": "/v1/test_helpers/issuing/transactions/create_force_capture",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "amount": "<number>",
+      "card": "<string>",
+      "currency": "<string>",
+      "expand": [
+        "<string>"
+      ],
+      "merchant_data": {
+        "category": "ac_refrigeration_repair",
+        "city": "<string>",
+        "country": "<string>",
+        "name": "<string>",
+        "network_id": "<string>",
+        "postal_code": "<string>",
+        "state": "<string>",
+        "terminal_id": "<string>",
+        "url": "<string>"
+      },
+      "purchase_details": {
+        "fleet": {
+          "cardholder_prompt_data": {
+            "driver_id": "<string>",
+            "odometer": "<number>",
+            "unspecified_id": "<string>",
+            "user_id": "<string>",
+            "vehicle_number": "<string>"
+          },
+          "purchase_type": "fuel_and_non_fuel_purchase",
+          "reported_breakdown": {
+            "fuel": {
+              "gross_amount_decimal": "<string>"
+            },
+            "non_fuel": {
+              "gross_amount_decimal": "<string>"
+            },
+            "tax": {
+              "local_amount_decimal": "<string>",
+              "national_amount_decimal": "<string>"
+            }
+          },
+          "service_type": "full_service"
+        },
+        "flight": {
+          "departure_at": "<number>",
+          "passenger_name": "<string>",
+          "refundable": "<boolean>",
+          "segments": [
+            {
+              "arrival_airport_code": "<string>",
+              "carrier": "<string>",
+              "departure_airport_code": "<string>",
+              "flight_number": "<string>",
+              "service_class": "<string>",
+              "stopover_allowed": "<boolean>"
+            }
+          ],
+          "travel_agency": "<string>"
+        },
+        "fuel": {
+          "industry_product_code": "<string>",
+          "quantity_decimal": "<string>",
+          "type": "diesel",
+          "unit": "charging_minute",
+          "unit_cost_decimal": "<string>"
+        },
+        "lodging": {
+          "check_in_at": "<number>",
+          "nights": "<number>"
+        },
+        "receipt": [
+          {
+            "description": "<string>",
+            "quantity": "<string>",
+            "total": "<number>",
+            "unit_cost": "<number>"
+          }
+        ],
+        "reference": "<string>"
+      }
+    }
+  },
+  "inputRequired": [
+    "body"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "20b9f5f90b1d",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "e888566d17f6",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "de864ccd17db",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "7499a0a5f702",
+    "method": "POST",
+    "path": "/v1/test_helpers/issuing/transactions/create_force_capture",
+    "query": {}
+  }
+}

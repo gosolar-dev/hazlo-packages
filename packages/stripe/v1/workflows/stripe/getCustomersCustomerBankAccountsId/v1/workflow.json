@@ -1,0 +1,80 @@
+{
+  "name": "Retrieve a bank account",
+  "description": "<p>By default, you can see the 10 most recent sources stored on a Customer directly on the object, but you can also retrieve details about a specific bank account stored on the Stripe account.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getCustomersCustomerBankAccountsId",
+    "path": "/v1/customers/{customer}/bank_accounts/{id}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathCustomer": "<string>",
+    "pathId": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathCustomer",
+    "pathId"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "a78b2759ac1e",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "31cdcce001ec",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "2a76e27e1ba2",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "92e3915d4476",
+    "method": "GET",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "8b7175258e52",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "bf56877ad52c",
+        "left": {
+          "_pbd_nebula_type": "concat",
+          "id": "68f2e2231796",
+          "left": "/v1/customers/",
+          "right": {
+            "_pbd_nebula_type": "var",
+            "id": "83a25533b62a",
+            "keyPath": "pathCustomer",
+            "optional": false
+          }
+        },
+        "right": "/bank_accounts/"
+      },
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "40cca01f5dff",
+        "keyPath": "pathId",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "48c0cc4f5d90",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

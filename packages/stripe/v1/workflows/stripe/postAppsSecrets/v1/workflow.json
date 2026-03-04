@@ -1,0 +1,55 @@
+{
+  "name": "Set a Secret",
+  "description": "<p>Create or replace a secret in the secret store.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postAppsSecrets",
+    "path": "/v1/apps/secrets",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ],
+      "expires_at": "<number>",
+      "name": "<string>",
+      "payload": "<string>",
+      "scope": {
+        "type": "account",
+        "user": "<string>"
+      }
+    }
+  },
+  "inputRequired": [
+    "body"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "83c4cf91ded3",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "ee5e22b65c39",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "dbc42cdc5407",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "f3c0e3133529",
+    "method": "POST",
+    "path": "/v1/apps/secrets",
+    "query": {}
+  }
+}

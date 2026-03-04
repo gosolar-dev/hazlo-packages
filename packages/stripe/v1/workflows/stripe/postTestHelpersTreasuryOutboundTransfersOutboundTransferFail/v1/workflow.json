@@ -1,0 +1,64 @@
+{
+  "name": "Test mode: Fail an OutboundTransfer",
+  "description": "<p>Transitions a test mode created OutboundTransfer to the <code>failed</code> status. The OutboundTransfer must already be in the <code>processing</code> state.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postTestHelpersTreasuryOutboundTransfersOutboundTransferFail",
+    "path": "/v1/test_helpers/treasury/outbound_transfers/{outbound_transfer}/fail",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ]
+    },
+    "pathOutboundTransfer": "<string>"
+  },
+  "inputRequired": [
+    "pathOutboundTransfer"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "99f278decd91",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "1cf7a12dc26c",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "dd14e6fbcc2a",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "736fb8183adb",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "533595b5bc46",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "b9d4b897368e",
+        "left": "/v1/test_helpers/treasury/outbound_transfers/",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "3182847d4e9e",
+          "keyPath": "pathOutboundTransfer",
+          "optional": false
+        }
+      },
+      "right": "/fail"
+    },
+    "query": {}
+  }
+}

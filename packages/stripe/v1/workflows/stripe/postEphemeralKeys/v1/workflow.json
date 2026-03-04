@@ -1,0 +1,49 @@
+{
+  "name": "Create an ephemeral key",
+  "description": "<p>Creates a short-lived API key for a given resource.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postEphemeralKeys",
+    "path": "/v1/ephemeral_keys",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "customer": "<string>",
+      "expand": [
+        "<string>"
+      ],
+      "issuing_card": "<string>",
+      "nonce": "<string>",
+      "verification_session": "<string>"
+    }
+  },
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "64080d164223",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "80a2b8136c62",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "cb1791212253",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "2a95d5b3a86c",
+    "method": "POST",
+    "path": "/v1/ephemeral_keys",
+    "query": {}
+  }
+}

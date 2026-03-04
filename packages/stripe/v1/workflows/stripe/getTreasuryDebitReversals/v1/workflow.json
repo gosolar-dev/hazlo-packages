@@ -1,0 +1,101 @@
+{
+  "name": "List all DebitReversals",
+  "description": "<p>Returns a list of DebitReversals.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getTreasuryDebitReversals",
+    "path": "/v1/treasury/debit_reversals",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryFinancialAccount": "<string>",
+    "queryLimit": "<number>",
+    "queryReceivedDebit": "<string>",
+    "queryResolution": "<string>",
+    "queryStartingAfter": "<string>",
+    "queryStatus": "<string>"
+  },
+  "inputRequired": [
+    "queryFinancialAccount"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "ca2d5c4ee5e2",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "487b53b3a8cd",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "2027ede7a307",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "d3ed5a6ca337",
+    "method": "GET",
+    "path": "/v1/treasury/debit_reversals",
+    "query": {
+      "ending_before": {
+        "_pbd_nebula_type": "var",
+        "id": "18d0f2237969",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "12c6944d9f10",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "financial_account": {
+        "_pbd_nebula_type": "var",
+        "id": "15442a410611",
+        "keyPath": "queryFinancialAccount",
+        "optional": false
+      },
+      "limit": {
+        "_pbd_nebula_type": "var",
+        "id": "2df47e9aabfd",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "received_debit": {
+        "_pbd_nebula_type": "var",
+        "id": "f79b718a1bbc",
+        "keyPath": "queryReceivedDebit",
+        "optional": true
+      },
+      "resolution": {
+        "_pbd_nebula_type": "var",
+        "id": "e77855ec0fb2",
+        "keyPath": "queryResolution",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_nebula_type": "var",
+        "id": "e26adf5043ee",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      },
+      "status": {
+        "_pbd_nebula_type": "var",
+        "id": "8d2f5eb1e8ef",
+        "keyPath": "queryStatus",
+        "optional": true
+      }
+    }
+  }
+}

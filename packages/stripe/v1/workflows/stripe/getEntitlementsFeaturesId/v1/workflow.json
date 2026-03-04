@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve a feature",
+  "description": "<p>Retrieves a feature</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getEntitlementsFeaturesId",
+    "path": "/v1/entitlements/features/{id}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathId": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathId"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "819bf18f7757",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "cce5603d8a4c",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "8edfe9ec124a",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "d77150f7bc7e",
+    "method": "GET",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "d6209567abc8",
+      "left": "/v1/entitlements/features/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "58a275aa1ab7",
+        "keyPath": "pathId",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "c9f3f76a7f74",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

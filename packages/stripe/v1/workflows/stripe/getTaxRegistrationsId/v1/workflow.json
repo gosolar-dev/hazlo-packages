@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve a registration",
+  "description": "<p>Returns a Tax <code>Registration</code> object.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getTaxRegistrationsId",
+    "path": "/v1/tax/registrations/{id}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathId": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathId"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "a40df896edc0",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "577965c1c62e",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "d4fd4f8dbb41",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "c1d275e18acc",
+    "method": "GET",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "237db61b7ff1",
+      "left": "/v1/tax/registrations/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "b1572ee6104c",
+        "keyPath": "pathId",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "43a0aa49455a",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

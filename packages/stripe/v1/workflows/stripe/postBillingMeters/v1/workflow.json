@@ -1,0 +1,61 @@
+{
+  "name": "Create a billing meter",
+  "description": "<p>Creates a billing meter.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postBillingMeters",
+    "path": "/v1/billing/meters",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "customer_mapping": {
+        "event_payload_key": "<string>",
+        "type": "by_id"
+      },
+      "default_aggregation": {
+        "formula": "count"
+      },
+      "display_name": "<string>",
+      "event_name": "<string>",
+      "event_time_window": "day",
+      "expand": [
+        "<string>"
+      ],
+      "value_settings": {
+        "event_payload_key": "<string>"
+      }
+    }
+  },
+  "inputRequired": [
+    "body"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "536d647a19b4",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "7355c77f377e",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "f4d07445a138",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "ab3b94af9500",
+    "method": "POST",
+    "path": "/v1/billing/meters",
+    "query": {}
+  }
+}

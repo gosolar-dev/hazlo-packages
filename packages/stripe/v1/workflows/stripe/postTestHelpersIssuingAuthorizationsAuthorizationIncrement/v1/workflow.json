@@ -1,0 +1,67 @@
+{
+  "name": "Increment a test-mode authorization",
+  "description": "<p>Increment a test-mode Authorization.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postTestHelpersIssuingAuthorizationsAuthorizationIncrement",
+    "path": "/v1/test_helpers/issuing/authorizations/{authorization}/increment",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ],
+      "increment_amount": "<number>",
+      "is_amount_controllable": "<boolean>"
+    },
+    "pathAuthorization": "<string>"
+  },
+  "inputRequired": [
+    "body",
+    "pathAuthorization"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "9f3bebd8b25e",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "e66f50c1483f",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "c7a1ca240402",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "91dfd0ab9ef1",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "5a42b08ff078",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "aa5917cc163d",
+        "left": "/v1/test_helpers/issuing/authorizations/",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "7d73ec9bdd05",
+          "keyPath": "pathAuthorization",
+          "optional": false
+        }
+      },
+      "right": "/increment"
+    },
+    "query": {}
+  }
+}

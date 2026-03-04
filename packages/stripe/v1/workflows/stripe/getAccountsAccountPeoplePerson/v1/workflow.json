@@ -1,0 +1,80 @@
+{
+  "name": "Retrieve a person",
+  "description": "<p>Retrieves an existing person.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getAccountsAccountPeoplePerson",
+    "path": "/v1/accounts/{account}/people/{person}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathAccount": "<string>",
+    "pathPerson": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathAccount",
+    "pathPerson"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "3949e15b30d9",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "6f024181f52b",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "814afb9fa4be",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "82ff3945c4f1",
+    "method": "GET",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "e2430be9e69a",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "48cc33046769",
+        "left": {
+          "_pbd_nebula_type": "concat",
+          "id": "a95e5f02511b",
+          "left": "/v1/accounts/",
+          "right": {
+            "_pbd_nebula_type": "var",
+            "id": "3325ee051772",
+            "keyPath": "pathAccount",
+            "optional": false
+          }
+        },
+        "right": "/people/"
+      },
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "ad2c2352d377",
+        "keyPath": "pathPerson",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "6098ef128a52",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

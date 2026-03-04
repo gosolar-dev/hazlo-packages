@@ -1,0 +1,69 @@
+{
+  "name": "Report payment attempt guaranteed",
+  "description": "<p>Report that the most recent payment attempt on the specified Payment Record\n was guaranteed.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postPaymentRecordsIdReportPaymentAttemptGuaranteed",
+    "path": "/v1/payment_records/{id}/report_payment_attempt_guaranteed",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ],
+      "guaranteed_at": "<number>",
+      "metadata": {
+        "<key>": "<string>"
+      }
+    },
+    "pathId": "<string>"
+  },
+  "inputRequired": [
+    "body",
+    "pathId"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "286103e7d6f6",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "7153e704b77d",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "1d28d3a2e8e7",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "2ba45f845174",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "6303d170672a",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "a9caac9e1e54",
+        "left": "/v1/payment_records/",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "c4ba1800835f",
+          "keyPath": "pathId",
+          "optional": false
+        }
+      },
+      "right": "/report_payment_attempt_guaranteed"
+    },
+    "query": {}
+  }
+}

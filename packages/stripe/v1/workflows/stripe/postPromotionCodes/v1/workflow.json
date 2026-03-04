@@ -1,0 +1,71 @@
+{
+  "name": "Create a promotion code",
+  "description": "<p>A promotion code points to an underlying promotion. You can optionally restrict the code to a specific customer, redemption limit, and expiration date.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postPromotionCodes",
+    "path": "/v1/promotion_codes",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "active": "<boolean>",
+      "code": "<string>",
+      "customer": "<string>",
+      "customer_account": "<string>",
+      "expand": [
+        "<string>"
+      ],
+      "expires_at": "<number>",
+      "max_redemptions": "<number>",
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "promotion": {
+        "coupon": "<string>",
+        "type": "coupon"
+      },
+      "restrictions": {
+        "currency_options": {
+          "<key>": {
+            "minimum_amount": "<number>"
+          }
+        },
+        "first_time_transaction": "<boolean>",
+        "minimum_amount": "<number>",
+        "minimum_amount_currency": "<string>"
+      }
+    }
+  },
+  "inputRequired": [
+    "body"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "9eb6be0aeecc",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "466e17965229",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "9b44ef3b9324",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "8513039c777f",
+    "method": "POST",
+    "path": "/v1/promotion_codes",
+    "query": {}
+  }
+}

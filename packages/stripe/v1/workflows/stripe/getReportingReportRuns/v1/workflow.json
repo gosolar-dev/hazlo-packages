@@ -1,0 +1,77 @@
+{
+  "name": "List all Report Runs",
+  "description": "<p>Returns a list of Report Runs, with the most recent appearing first.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getReportingReportRuns",
+    "path": "/v1/reporting/report_runs",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryCreated": "<string>",
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryLimit": "<number>",
+    "queryStartingAfter": "<string>"
+  },
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "64e552488b8f",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "87590705db6d",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "7565d3632d7c",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "cf76a6480582",
+    "method": "GET",
+    "path": "/v1/reporting/report_runs",
+    "query": {
+      "created": {
+        "_pbd_nebula_type": "var",
+        "id": "27bb66c6d2fe",
+        "keyPath": "queryCreated",
+        "optional": true
+      },
+      "ending_before": {
+        "_pbd_nebula_type": "var",
+        "id": "1bfdc78ab09c",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "98bffbc12e4a",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_nebula_type": "var",
+        "id": "2c3992bed425",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_nebula_type": "var",
+        "id": "2fe329e0177b",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      }
+    }
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "name": "Retrieve a customer balance transaction",
+  "description": "<p>Retrieves a specific customer balance transaction that updated the customer’s <a href=\"/docs/billing/customer/balance\">balances</a>.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getCustomersCustomerBalanceTransactionsTransaction",
+    "path": "/v1/customers/{customer}/balance_transactions/{transaction}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathCustomer": "<string>",
+    "pathTransaction": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathCustomer",
+    "pathTransaction"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "3b4ab404aa59",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "3edb46ebca8b",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "1a55565a2dd6",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "c08fcd518f59",
+    "method": "GET",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "06a8ddd34670",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "e41411869a92",
+        "left": {
+          "_pbd_nebula_type": "concat",
+          "id": "8d85a8274dbe",
+          "left": "/v1/customers/",
+          "right": {
+            "_pbd_nebula_type": "var",
+            "id": "76b3083c9187",
+            "keyPath": "pathCustomer",
+            "optional": false
+          }
+        },
+        "right": "/balance_transactions/"
+      },
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "941eb777420e",
+        "keyPath": "pathTransaction",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "edae268e6455",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "name": "Verify microdeposits on a PaymentIntent",
+  "description": "<p>Verifies microdeposits on a PaymentIntent object.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postPaymentIntentsIntentVerifyMicrodeposits",
+    "path": "/v1/payment_intents/{intent}/verify_microdeposits",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "amounts": [
+        "<number>"
+      ],
+      "client_secret": "<string>",
+      "descriptor_code": "<string>",
+      "expand": [
+        "<string>"
+      ]
+    },
+    "pathIntent": "<string>"
+  },
+  "inputRequired": [
+    "pathIntent"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "2e2af216a695",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "82fb92ca2065",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "919a86f45dc8",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "eea0a0b3d931",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "806421ed0c0e",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "70ef336a0a29",
+        "left": "/v1/payment_intents/",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "a99b7604b6f2",
+          "keyPath": "pathIntent",
+          "optional": false
+        }
+      },
+      "right": "/verify_microdeposits"
+    },
+    "query": {}
+  }
+}

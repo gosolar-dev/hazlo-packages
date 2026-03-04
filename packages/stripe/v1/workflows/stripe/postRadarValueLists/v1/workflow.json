@@ -1,0 +1,54 @@
+{
+  "name": "Create a value list",
+  "description": "<p>Creates a new <code>ValueList</code> object, which can then be referenced in rules.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postRadarValueLists",
+    "path": "/v1/radar/value_lists",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "alias": "<string>",
+      "expand": [
+        "<string>"
+      ],
+      "item_type": "card_bin",
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "name": "<string>"
+    }
+  },
+  "inputRequired": [
+    "body"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "f0d749feaa6a",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "63222568563a",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "131e44a4c81e",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "63313056b2c7",
+    "method": "POST",
+    "path": "/v1/radar/value_lists",
+    "query": {}
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "name": "Retrieve a subscription",
+  "description": "<p>Retrieves the subscription with the given ID.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getCustomersCustomerSubscriptionsSubscriptionExposedId",
+    "path": "/v1/customers/{customer}/subscriptions/{subscription_exposed_id}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathCustomer": "<string>",
+    "pathSubscriptionExposedId": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathCustomer",
+    "pathSubscriptionExposedId"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "0a4f7549dbe9",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "7eaff8e0d6c5",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "2f04b22f5d57",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "8befe88c341c",
+    "method": "GET",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "fd5eea2a5bab",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "23ac8dad4478",
+        "left": {
+          "_pbd_nebula_type": "concat",
+          "id": "8e288007e7ce",
+          "left": "/v1/customers/",
+          "right": {
+            "_pbd_nebula_type": "var",
+            "id": "83a88af2a8e7",
+            "keyPath": "pathCustomer",
+            "optional": false
+          }
+        },
+        "right": "/subscriptions/"
+      },
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "3ad50c4b3830",
+        "keyPath": "pathSubscriptionExposedId",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "5a514d847e32",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

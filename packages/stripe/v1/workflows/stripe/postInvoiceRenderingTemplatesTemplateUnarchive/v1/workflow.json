@@ -1,0 +1,64 @@
+{
+  "name": "Unarchive an invoice rendering template",
+  "description": "<p>Unarchive an invoice rendering template so it can be used on new Stripe objects again.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postInvoiceRenderingTemplatesTemplateUnarchive",
+    "path": "/v1/invoice_rendering_templates/{template}/unarchive",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ]
+    },
+    "pathTemplate": "<string>"
+  },
+  "inputRequired": [
+    "pathTemplate"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "8cf30594ab8b",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "a0ec7e4ca411",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "27db537b26fb",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "62f95ad7602f",
+    "method": "POST",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "8c3e8c871491",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "a39f194cf838",
+        "left": "/v1/invoice_rendering_templates/",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "bf26be476669",
+          "keyPath": "pathTemplate",
+          "optional": false
+        }
+      },
+      "right": "/unarchive"
+    },
+    "query": {}
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "name": "Retrieve an exchange rate",
+  "description": "<p>[Deprecated] The <code>ExchangeRate</code> APIs are deprecated. Please use the <a href=\"https://docs.stripe.com/payments/currencies/localize-prices/fx-quotes-api\">FX Quotes API</a> instead.</p>\n\n<p>Retrieves the exchange rates from the given currency to every supported currency.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getExchangeRatesRateId",
+    "path": "/v1/exchange_rates/{rate_id}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathRateId": "<string>",
+    "queryExpand": []
+  },
+  "inputRequired": [
+    "pathRateId"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "829712bd7a6f",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "86885c19c933",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "a68a562ab112",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "5b7e208c9436",
+    "method": "GET",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "445a9123be49",
+      "left": "/v1/exchange_rates/",
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "879b744e70d1",
+        "keyPath": "pathRateId",
+        "optional": false
+      }
+    },
+    "query": {
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "6fbd73017782",
+        "keyPath": "queryExpand",
+        "optional": true
+      }
+    }
+  }
+}

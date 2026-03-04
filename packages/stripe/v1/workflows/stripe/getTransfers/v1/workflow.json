@@ -1,0 +1,91 @@
+{
+  "name": "List all transfers",
+  "description": "<p>Returns a list of existing transfers sent to connected accounts. The transfers are returned in sorted order, with the most recently created transfers appearing first.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getTransfers",
+    "path": "/v1/transfers",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryCreated": "<string>",
+    "queryDestination": "<string>",
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryLimit": "<number>",
+    "queryStartingAfter": "<string>",
+    "queryTransferGroup": "<string>"
+  },
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "121ac91c95b8",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "852d3961d4d1",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "9e8f4a5ab884",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "cc35dda95ad0",
+    "method": "GET",
+    "path": "/v1/transfers",
+    "query": {
+      "created": {
+        "_pbd_nebula_type": "var",
+        "id": "398e0269ed76",
+        "keyPath": "queryCreated",
+        "optional": true
+      },
+      "destination": {
+        "_pbd_nebula_type": "var",
+        "id": "2457851944d2",
+        "keyPath": "queryDestination",
+        "optional": true
+      },
+      "ending_before": {
+        "_pbd_nebula_type": "var",
+        "id": "72c16839f9e8",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "8a53dad2bb31",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_nebula_type": "var",
+        "id": "d927a2cd480d",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_nebula_type": "var",
+        "id": "155bec26394e",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      },
+      "transfer_group": {
+        "_pbd_nebula_type": "var",
+        "id": "7f11dda8f2e5",
+        "keyPath": "queryTransferGroup",
+        "optional": true
+      }
+    }
+  }
+}

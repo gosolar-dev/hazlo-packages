@@ -1,0 +1,133 @@
+{
+  "name": "Create a quote",
+  "description": "<p>A quote models prices and services for a customer. Default options for <code>header</code>, <code>description</code>, <code>footer</code>, and <code>expires_at</code> can be set in the dashboard via the <a href=\"https://dashboard.stripe.com/settings/billing/quote\">quote template</a>.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postQuotes",
+    "path": "/v1/quotes",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "application_fee_amount": "<number>",
+      "application_fee_percent": "<number>",
+      "automatic_tax": {
+        "enabled": "<boolean>",
+        "liability": {
+          "account": "<string>",
+          "type": "account"
+        }
+      },
+      "collection_method": "charge_automatically",
+      "customer": "<string>",
+      "customer_account": "<string>",
+      "default_tax_rates": [
+        "<string>"
+      ],
+      "description": "<string>",
+      "discounts": [
+        {
+          "coupon": "<string>",
+          "discount": "<string>",
+          "promotion_code": "<string>"
+        }
+      ],
+      "expand": [
+        "<string>"
+      ],
+      "expires_at": "<number>",
+      "footer": "<string>",
+      "from_quote": {
+        "is_revision": "<boolean>",
+        "quote": "<string>"
+      },
+      "header": "<string>",
+      "invoice_settings": {
+        "days_until_due": "<number>",
+        "issuer": {
+          "account": "<string>",
+          "type": "account"
+        }
+      },
+      "line_items": [
+        {
+          "discounts": [
+            {
+              "coupon": "<string>",
+              "discount": "<string>",
+              "promotion_code": "<string>"
+            }
+          ],
+          "price": "<string>",
+          "price_data": {
+            "currency": "<string>",
+            "product": "<string>",
+            "recurring": {
+              "interval": "day",
+              "interval_count": "<number>"
+            },
+            "tax_behavior": "exclusive",
+            "unit_amount": "<number>",
+            "unit_amount_decimal": "<string>"
+          },
+          "quantity": "<number>",
+          "tax_rates": [
+            "<string>"
+          ]
+        }
+      ],
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "on_behalf_of": "<string>",
+      "subscription_data": {
+        "billing_mode": {
+          "flexible": {
+            "proration_discounts": "included"
+          },
+          "type": "classic"
+        },
+        "description": "<string>",
+        "effective_date": "current_period_end",
+        "metadata": {
+          "<key>": "<string>"
+        },
+        "trial_period_days": "<number>"
+      },
+      "test_clock": "<string>",
+      "transfer_data": {
+        "amount": "<number>",
+        "amount_percent": "<number>",
+        "destination": "<string>"
+      }
+    }
+  },
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "e6db0f679633",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "592cadf45ec4",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "6acdb785ce83",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "d2e15c078415",
+    "method": "POST",
+    "path": "/v1/quotes",
+    "query": {}
+  }
+}

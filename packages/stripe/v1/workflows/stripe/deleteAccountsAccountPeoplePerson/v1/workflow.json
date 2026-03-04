@@ -1,0 +1,72 @@
+{
+  "name": "Delete a person",
+  "description": "<p>Deletes an existing person’s relationship to the account’s legal entity. Any person with a relationship for an account can be deleted through the API, except if the person is the <code>account_opener</code>. If your integration is using the <code>executive</code> parameter, you cannot delete the only verified <code>executive</code> on file.</p>",
+  "meta": {
+    "method": "DELETE",
+    "operationId": "deleteAccountsAccountPeoplePerson",
+    "path": "/v1/accounts/{account}/people/{person}",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "pathAccount": "<string>",
+    "pathPerson": "<string>"
+  },
+  "inputRequired": [
+    "pathAccount",
+    "pathPerson"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "4d84ac09d6ff",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "cd6b69380c86",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "31654d21f7ca",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "91a25d5006d1",
+    "method": "DELETE",
+    "path": {
+      "_pbd_nebula_type": "concat",
+      "id": "c0e96c1f6d76",
+      "left": {
+        "_pbd_nebula_type": "concat",
+        "id": "89d6baf59c38",
+        "left": {
+          "_pbd_nebula_type": "concat",
+          "id": "c2966ed80801",
+          "left": "/v1/accounts/",
+          "right": {
+            "_pbd_nebula_type": "var",
+            "id": "6c2566e2e867",
+            "keyPath": "pathAccount",
+            "optional": false
+          }
+        },
+        "right": "/people/"
+      },
+      "right": {
+        "_pbd_nebula_type": "var",
+        "id": "e2476619ea5f",
+        "keyPath": "pathPerson",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

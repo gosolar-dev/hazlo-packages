@@ -1,0 +1,50 @@
+{
+  "name": "Create a payment method domain",
+  "description": "<p>Creates a payment method domain.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postPaymentMethodDomains",
+    "path": "/v1/payment_method_domains",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "domain_name": "<string>",
+      "enabled": "<boolean>",
+      "expand": [
+        "<string>"
+      ]
+    }
+  },
+  "inputRequired": [
+    "body"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "6ee1a45b0a91",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "0bf88ffabb75",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "c1ff2df2cadc",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "6f42be13048e",
+    "method": "POST",
+    "path": "/v1/payment_method_domains",
+    "query": {}
+  }
+}

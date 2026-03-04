@@ -1,0 +1,113 @@
+{
+  "name": "Create a customer",
+  "description": "<p>Creates a new customer object.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postCustomers",
+    "path": "/v1/customers",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "address": {
+        "city": "<string>",
+        "country": "<string>",
+        "line1": "<string>",
+        "line2": "<string>",
+        "postal_code": "<string>",
+        "state": "<string>"
+      },
+      "balance": "<number>",
+      "business_name": "<string>",
+      "cash_balance": {
+        "settings": {
+          "reconciliation_mode": "automatic"
+        }
+      },
+      "description": "<string>",
+      "email": "<string>",
+      "expand": [
+        "<string>"
+      ],
+      "individual_name": "<string>",
+      "invoice_prefix": "<string>",
+      "invoice_settings": {
+        "custom_fields": [
+          {
+            "name": "<string>",
+            "value": "<string>"
+          }
+        ],
+        "default_payment_method": "<string>",
+        "footer": "<string>",
+        "rendering_options": {
+          "amount_tax_display": "",
+          "template": "<string>"
+        }
+      },
+      "metadata": {
+        "<key>": "<string>"
+      },
+      "name": "<string>",
+      "next_invoice_sequence": "<number>",
+      "payment_method": "<string>",
+      "phone": "<string>",
+      "preferred_locales": [
+        "<string>"
+      ],
+      "shipping": {
+        "address": {
+          "city": "<string>",
+          "country": "<string>",
+          "line1": "<string>",
+          "line2": "<string>",
+          "postal_code": "<string>",
+          "state": "<string>"
+        },
+        "name": "<string>",
+        "phone": "<string>"
+      },
+      "source": "<string>",
+      "tax": {
+        "ip_address": "<string>",
+        "validate_location": "deferred"
+      },
+      "tax_exempt": "",
+      "tax_id_data": [
+        {
+          "type": "ad_nrt",
+          "value": "<string>"
+        }
+      ],
+      "test_clock": "<string>"
+    }
+  },
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "980d6b1b1431",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "921572a2949c",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "cf1ffabff842",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "09e4c8199c06",
+    "method": "POST",
+    "path": "/v1/customers",
+    "query": {}
+  }
+}

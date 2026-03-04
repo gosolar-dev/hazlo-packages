@@ -1,0 +1,50 @@
+{
+  "name": "Create a test clock",
+  "description": "<p>Creates a new test clock that can be attached to new customers and quotes.</p>",
+  "meta": {
+    "method": "POST",
+    "operationId": "postTestHelpersTestClocks",
+    "path": "/v1/test_helpers/test_clocks",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {
+      "expand": [
+        "<string>"
+      ],
+      "frozen_time": "<number>",
+      "name": "<string>"
+    }
+  },
+  "inputRequired": [
+    "body"
+  ],
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "11f1ceaf8229",
+      "keyPath": "body",
+      "optional": false
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "d83a0d4e9fde",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "aad24747cfbd",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "ed2c4686a440",
+    "method": "POST",
+    "path": "/v1/test_helpers/test_clocks",
+    "query": {}
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "name": "List Country Specs",
+  "description": "<p>Lists all Country Spec objects available in the API.</p>",
+  "meta": {
+    "method": "GET",
+    "operationId": "getCountrySpecs",
+    "path": "/v1/country_specs",
+    "provider": "stripe"
+  },
+  "input": {
+    "authBearerAuth": "<string>",
+    "body": {},
+    "queryEndingBefore": "<string>",
+    "queryExpand": [],
+    "queryLimit": "<number>",
+    "queryStartingAfter": "<string>"
+  },
+  "ruleset": {
+    "_pbd_nebula_type": "api_req",
+    "body": {
+      "_pbd_nebula_type": "var",
+      "id": "c9c4aad7cc51",
+      "keyPath": "body",
+      "optional": true
+    },
+    "headers": {
+      "Authorization": {
+        "_pbd_nebula_type": "concat",
+        "id": "9e4f5949bab9",
+        "left": "Bearer ",
+        "right": {
+          "_pbd_nebula_type": "var",
+          "id": "df7a7bdc1220",
+          "keyPath": "authBearerAuth",
+          "optional": true
+        }
+      }
+    },
+    "host": "https://api.stripe.com",
+    "id": "645047eb7d49",
+    "method": "GET",
+    "path": "/v1/country_specs",
+    "query": {
+      "ending_before": {
+        "_pbd_nebula_type": "var",
+        "id": "65586faf3768",
+        "keyPath": "queryEndingBefore",
+        "optional": true
+      },
+      "expand": {
+        "_pbd_nebula_type": "var",
+        "id": "49a8537b43df",
+        "keyPath": "queryExpand",
+        "optional": true
+      },
+      "limit": {
+        "_pbd_nebula_type": "var",
+        "id": "7f330ca9e1e6",
+        "keyPath": "queryLimit",
+        "optional": true
+      },
+      "starting_after": {
+        "_pbd_nebula_type": "var",
+        "id": "6b832decf4bc",
+        "keyPath": "queryStartingAfter",
+        "optional": true
+      }
+    }
+  }
+}
