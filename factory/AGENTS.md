@@ -18,6 +18,24 @@ It is the only area for workflow authoring and release preparation.
 4. Publish with:
    - `node factory/scripts/promote-package.mjs --manifest ... [--dry-run]`
 
+## OpenAPI Pipeline (Default)
+
+Use an OpenAPI-first creation flow whenever a provider spec is available:
+
+1. Save spec under `factory/openapi/<provider>/...`
+2. Generate workflows with:
+   - `node factory/scripts/create-workflow.mjs import-openapi --spec factory/openapi/<provider>/openapi.yaml --provider <provider> --host https://api.example.com --version v1`
+3. Refine generated files in `factory/hazlo_workflows/<provider>/**`
+4. Run strict gates before publish
+
+Manual `new` scaffolding is fallback only when there is no usable OpenAPI spec.
+
+## MCP Requirement
+
+For easier OpenAPI discovery during workflow development, keep the OpenAPI Directory MCP server enabled in your local tooling:
+
+- [`openapi-directory-mcp`](https://github.com/rawveg/openapi-directory-mcp)
+
 ## Script Entry Points
 
 - `factory/scripts/create-workflow.mjs`

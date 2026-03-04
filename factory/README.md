@@ -30,6 +30,26 @@ node factory/scripts/create-workflow.mjs import-openapi \
 
 Both commands enforce `factory/hazlo_workflows` as the base directory.
 
+### OpenAPI-First Pipeline
+
+Prefer OpenAPI import when a provider spec exists:
+
+```bash
+node factory/scripts/create-workflow.mjs import-openapi \
+  --spec factory/openapi/<provider>/openapi.yaml \
+  --provider <provider> \
+  --host https://api.example.com \
+  --version v1
+```
+
+Then refine generated workflows and run lint/smoke gates before publish.
+
+### MCP for OpenAPI Discovery
+
+For faster API workflow development, keep this MCP server enabled in your local environment:
+
+- [`openapi-directory-mcp`](https://github.com/rawveg/openapi-directory-mcp)
+
 ## 2) Iterate
 
 ```bash

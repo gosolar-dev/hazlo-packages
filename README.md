@@ -38,6 +38,22 @@ node packages/tests/run.mjs
 node factory/scripts/migrate-node-key.mjs --root factory/hazlo_workflows --root packages
 ```
 
+## OpenAPI Authoring + MCP
+
+Use the OpenAPI pipeline as the default authoring path:
+
+```bash
+node factory/scripts/create-workflow.mjs import-openapi \
+  --spec factory/openapi/<provider>/openapi.yaml \
+  --provider <provider> \
+  --host https://api.example.com \
+  --version v1
+```
+
+For easier API discovery while building workflows, keep the OpenAPI Directory MCP server enabled:
+
+- [`openapi-directory-mcp`](https://github.com/rawveg/openapi-directory-mcp)
+
 ## Rules
 
 - Author only in `factory/`.
