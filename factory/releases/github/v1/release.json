@@ -1,0 +1,52 @@
+{
+  "schemaVersion": "v1",
+  "package": "github",
+  "version": "v1",
+  "provider": "github",
+  "mode": "refs",
+  "refs": [
+    "github/BuildUnauthPublicRequest/v1",
+    "github/meta_root/v1",
+    "github/meta_get/v1",
+    "github/rate-limit_get/v1",
+    "github/users_get-by-username/v1",
+    "github/repos_get/v1",
+    "github/repos_get-readme/v1",
+    "github/repos_list-commits/v1",
+    "github/repos_list-contributors/v1",
+    "github/search_repos/v1"
+  ],
+  "description": "GitHub public REST API workflows focused on unauthenticated endpoints for metadata, user and repository discovery.",
+  "defaultInstallRefs": [
+    "github/meta_root/v1",
+    "github/users_get-by-username/v1",
+    "github/repos_get/v1",
+    "github/search_repos/v1"
+  ],
+  "env": [],
+  "homepage": "https://docs.github.com/rest",
+  "license": "MIT",
+  "tags": [
+    "github",
+    "public-api",
+    "unauthenticated",
+    "repos",
+    "search",
+    "openapi",
+    "generated"
+  ],
+  "smokeTests": [
+    {
+      "name": "Build repo lookup unauth request",
+      "ref": "github/BuildUnauthPublicRequest/v1",
+      "input": "../../../fixtures/inputs/github.buildUnauthPublicRequest.repoGet.json",
+      "expected": "../../../fixtures/expected/github.buildUnauthPublicRequest.repoGet.json"
+    },
+    {
+      "name": "Build repository search unauth request",
+      "ref": "github/BuildUnauthPublicRequest/v1",
+      "input": "../../../fixtures/inputs/github.buildUnauthPublicRequest.searchRepos.json",
+      "expected": "../../../fixtures/expected/github.buildUnauthPublicRequest.searchRepos.json"
+    }
+  ]
+}

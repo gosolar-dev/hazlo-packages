@@ -1,0 +1,118 @@
+{
+  "schemaVersion": "v1",
+  "name": "github",
+  "version": "v1",
+  "description": "GitHub public REST API workflows focused on unauthenticated endpoints for metadata, user and repository discovery.",
+  "workflows": [
+    {
+      "ref": "github/BuildUnauthPublicRequest/v1",
+      "path": "workflows/github/BuildUnauthPublicRequest/v1/workflow.json",
+      "description": "Builds a deterministic GitHub public API request envelope for smoke validation and local request-shaping checks.",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "github/meta_get/v1",
+      "path": "workflows/github/meta_get/v1/workflow.json",
+      "description": "Returns meta information about GitHub, including a list of GitHub's IP addresses. For more information, see \"[About GitHub's IP addresses](https://docs.github.com/articles/about-github-s-ip-addresses/).\"\n\n**Note:** This endpoint returns both IPv4 and IPv6 addresses. However, not all features support IPv6. You should refer to the specific documentation for each feature to determine if IPv6 is supported.\n\n**Note:** The IP addresses shown in the documentation's response are only example values. You must always query the API directly to get the latest list of IP addresses.",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "github/meta_root/v1",
+      "path": "workflows/github/meta_root/v1/workflow.json",
+      "description": "Get Hypermedia links to resources accessible in GitHub's REST API",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "github/rate-limit_get/v1",
+      "path": "workflows/github/rate-limit_get/v1/workflow.json",
+      "description": "**Note:** Accessing this endpoint does not count against your REST API rate limit.\n\n**Note:** The `rate` object is deprecated. If you're writing new API client code or updating existing code, you should use the `core` object instead of the `rate` object. The `core` object contains the same information that is present in the `rate` object.",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "github/repos_get-readme/v1",
+      "path": "workflows/github/repos_get-readme/v1/workflow.json",
+      "description": "Gets the preferred README for a repository.\n\nREADMEs support [custom media types](https://docs.github.com/rest/reference/repos#custom-media-types) for retrieving the raw content or rendered HTML.",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "github/repos_get/v1",
+      "path": "workflows/github/repos_get/v1/workflow.json",
+      "description": "The `parent` and `source` objects are present when the repository is a fork. `parent` is the repository this repository was forked from, `source` is the ultimate source for the network.\n\n**Note:** In order to see the `security_and_analysis` block for a repository you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see \"[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization).\"",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "github/repos_list-commits/v1",
+      "path": "workflows/github/repos_list-commits/v1/workflow.json",
+      "description": "**Signature verification object**\n\nThe response will include a `verification` object that describes the result of verifying the commit's signature. The following fields are included in the `verification` object:\n\n| Name | Type | Description |\n| ---- | ---- | ----------- |\n| `verified` | `boolean` | Indicates whether GitHub considers the signature in this commit to be verified. |\n| `reason` | `string` | The reason for verified value. Possible values and their meanings are enumerated in table below. |\n| `signature` | `string` | The signature that was extracted from the commit. |\n| `payload` | `string` | The value that was signed. |\n\nThese are the possible values for `reason` in the `verification` object:\n\n| Value | Description |\n| ----- | ----------- |\n| `expired_key` | The key that made the signature is expired. |\n| `not_signing_key` | The \"signing\" flag is not among the usage flags in the GPG key that made the signature. |\n| `gpgverify_error` | There was an error communicating with the signature verification service. |\n| `gpgverify_unavailable` | The signature verification service is currently unavailable. |\n| `unsigned` | The object does not include a signature. |\n| `unknown_signature_type` | A non-PGP signature was found in the commit. |\n| `no_user` | No user was associated with the `committer` email address in the commit. |\n| `unverified_email` | The `committer` email address in the commit was associated with a user, but the email address is not verified on her/his account. |\n| `bad_email` | The `committer` email address in the commit is not included in the identities of the PGP key that made the signature. |\n| `unknown_key` | The key that made the signature has not been registered with any user's account. |\n| `malformed_signature` | There was an error parsing the signature. |\n| `invalid` | The signature could not be cryptographically verified using the key whose key-id was found in the signature. |\n| `valid` | None of the above errors applied, so the signature is considered to be verified. |",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "github/repos_list-contributors/v1",
+      "path": "workflows/github/repos_list-contributors/v1/workflow.json",
+      "description": "Lists contributors to the specified repository and sorts them by the number of commits per contributor in descending order. This endpoint may return information that is a few hours old because the GitHub REST API caches contributor data to improve performance.\n\nGitHub identifies contributors by author email address. This endpoint groups contribution counts by GitHub user, which includes all associated email addresses. To improve performance, only the first 500 author email addresses in the repository link to GitHub users. The rest will appear as anonymous contributors without associated GitHub user information.",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "github/search_repos/v1",
+      "path": "workflows/github/search_repos/v1/workflow.json",
+      "description": "Find repositories via various criteria. This method returns up to 100 results [per page](https://docs.github.com/rest/overview/resources-in-the-rest-api#pagination).\n\nWhen searching for repositories, you can get text match metadata for the **name** and **description** fields when you pass the `text-match` media type. For more details about how to receive highlighted search results, see [Text match metadata](https://docs.github.com/rest/reference/search#text-match-metadata).\n\nFor example, if you want to search for popular Tetris repositories written in assembly code, your query might look like this:\n\n`q=tetris+language:assembly&sort=stars&order=desc`\n\nThis query searches for repositories with the word `tetris` in the name, the description, or the README. The results are limited to repositories where the primary language is assembly. The results are sorted by stars in descending order, so that the most popular repositories appear first in the search results.",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    },
+    {
+      "ref": "github/users_get-by-username/v1",
+      "path": "workflows/github/users_get-by-username/v1/workflow.json",
+      "description": "Provides publicly available information about someone with a GitHub account.\n\nGitHub Apps with the `Plan` user permission can use this endpoint to retrieve information about a user's GitHub plan. The GitHub App must be authenticated as a user. See \"[Identifying and authorizing users for GitHub Apps](https://docs.github.com/apps/building-github-apps/identifying-and-authorizing-users-for-github-apps/)\" for details about authentication. For an example response, see 'Response with GitHub plan information' below\"\n\nThe `email` key in the following response is the publicly visible email address from your GitHub [profile page](https://github.com/settings/profile). When setting up your profile, you can select a primary email address to be “public” which provides an email entry for this endpoint. If you do not set a public email address for `email`, then it will have a value of `null`. You only see publicly visible email addresses when authenticated with GitHub. For more information, see [Authentication](https://docs.github.com/rest/overview/resources-in-the-rest-api#authentication).\n\nThe Emails API enables you to list all of your email addresses, and toggle a primary email to be visible publicly. For more information, see \"[Emails API](https://docs.github.com/rest/reference/users#emails)\".",
+      "subworkRefs": [],
+      "requiredEnvKeys": [],
+      "optionalEnvKeys": []
+    }
+  ],
+  "defaultInstallRefs": [
+    "github/meta_root/v1",
+    "github/repos_get/v1",
+    "github/search_repos/v1",
+    "github/users_get-by-username/v1"
+  ],
+  "env": [],
+  "checksums": {
+    "github/BuildUnauthPublicRequest/v1": "cf595c6fb07d494e952230a36b833ce8ee214a092e2a76a849488472d7422dad",
+    "github/meta_get/v1": "20545f9d4466abdfa7522b0fa3aa642a8e982b948120275a96be5fd4357a1f4d",
+    "github/meta_root/v1": "80441effa2ded51013db06e20c8ff37a9b04113888db4ef8f0d6c85b19f6d577",
+    "github/rate-limit_get/v1": "caee08df73bedeb876f9ac9fab728e6da4834f8124afbef3687c0de39d24323a",
+    "github/repos_get-readme/v1": "91d43fe18d7ee793084b43a1cab96b4be11949422e01d96930d096560e35f572",
+    "github/repos_get/v1": "5f916c9240309bab0fdbee454934ed8ca4144168236a2da3b19092d300112663",
+    "github/repos_list-commits/v1": "84cf62639721c71994391a8e76a3bdc6380cee6163bbccb58cd879bb91ab0aa1",
+    "github/repos_list-contributors/v1": "bdc9baf43da208b81a7542cee017cb4d21374ad7549a2d841828f62bc8b2e35c",
+    "github/search_repos/v1": "dfcb38d50a5899936d4c411052354620123a19a857a911b23604d93ab5bcc070",
+    "github/users_get-by-username/v1": "0977f9bf494c2c892388bec1a4ca5ac84a0c4f2a3c6f65b38a9a11b359856cf6"
+  },
+  "homepage": "https://docs.github.com/rest",
+  "license": "MIT",
+  "tags": [
+    "github",
+    "public-api",
+    "unauthenticated",
+    "repos",
+    "search",
+    "openapi",
+    "generated"
+  ]
+}

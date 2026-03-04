@@ -1,0 +1,79 @@
+{
+  "name": "List repository contributors",
+  "description": "Lists contributors to the specified repository and sorts them by the number of commits per contributor in descending order. This endpoint may return information that is a few hours old because the GitHub REST API caches contributor data to improve performance.\n\nGitHub identifies contributors by author email address. This endpoint groups contribution counts by GitHub user, which includes all associated email addresses. To improve performance, only the first 500 author email addresses in the repository link to GitHub users. The rest will appear as anonymous contributors without associated GitHub user information.",
+  "meta": {
+    "method": "GET",
+    "operationId": "repos/list-contributors",
+    "path": "/repos/{owner}/{repo}/contributors"
+  },
+  "input": {
+    "pathOwner": "<string>",
+    "pathRepo": "<string>",
+    "queryAnon": "<string>",
+    "queryPage": "<number>",
+    "queryPerPage": "<number>"
+  },
+  "inputRequired": [
+    "pathOwner",
+    "pathRepo"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {},
+    "host": "https://api.github.com",
+    "id": "15fb51684aa5",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "64905b90f3e1",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "321a5cf66126",
+        "left": {
+          "_pbd_hazlo_type": "concat",
+          "id": "e8960a5499ce",
+          "left": {
+            "_pbd_hazlo_type": "concat",
+            "id": "8f439aa8e5e4",
+            "left": "/repos/",
+            "right": {
+              "_pbd_hazlo_type": "var",
+              "id": "d71f5a771271",
+              "keyPath": "pathOwner",
+              "optional": false
+            }
+          },
+          "right": "/"
+        },
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "c279a1e5d926",
+          "keyPath": "pathRepo",
+          "optional": false
+        }
+      },
+      "right": "/contributors"
+    },
+    "query": {
+      "anon": {
+        "_pbd_hazlo_type": "var",
+        "id": "50c42e2e772c",
+        "keyPath": "queryAnon",
+        "optional": true
+      },
+      "page": {
+        "_pbd_hazlo_type": "var",
+        "id": "8bb4d5bb1b53",
+        "keyPath": "queryPage",
+        "optional": true
+      },
+      "per_page": {
+        "_pbd_hazlo_type": "var",
+        "id": "b4c8a9f70141",
+        "keyPath": "queryPerPage",
+        "optional": true
+      }
+    }
+  }
+}

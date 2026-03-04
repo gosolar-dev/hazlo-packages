@@ -1,0 +1,19 @@
+{
+  "name": "GitHub API Root",
+  "description": "Get Hypermedia links to resources accessible in GitHub's REST API",
+  "meta": {
+    "method": "GET",
+    "operationId": "meta/root",
+    "path": "/"
+  },
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {},
+    "host": "https://api.github.com",
+    "id": "6cf475cfce08",
+    "method": "GET",
+    "path": "/",
+    "query": {}
+  }
+}

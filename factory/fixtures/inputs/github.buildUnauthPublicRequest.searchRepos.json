@@ -1,0 +1,8 @@
+{
+  "endpoint": "search_repositories",
+  "queryQ": "topic:hazlo language:go",
+  "querySort": "stars",
+  "queryOrder": "desc",
+  "queryPerPage": 5,
+  "queryPage": 1
+}

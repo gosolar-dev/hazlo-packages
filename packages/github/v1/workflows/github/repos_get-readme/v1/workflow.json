@@ -1,0 +1,65 @@
+{
+  "name": "Get a repository README",
+  "description": "Gets the preferred README for a repository.\n\nREADMEs support [custom media types](https://docs.github.com/rest/reference/repos#custom-media-types) for retrieving the raw content or rendered HTML.",
+  "meta": {
+    "method": "GET",
+    "operationId": "repos/get-readme",
+    "path": "/repos/{owner}/{repo}/readme"
+  },
+  "input": {
+    "pathOwner": "<string>",
+    "pathRepo": "<string>",
+    "queryRef": "<string>"
+  },
+  "inputRequired": [
+    "pathOwner",
+    "pathRepo"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {},
+    "host": "https://api.github.com",
+    "id": "4eda43c03560",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "f46775a16887",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "93edaaa23931",
+        "left": {
+          "_pbd_hazlo_type": "concat",
+          "id": "14b471e233fe",
+          "left": {
+            "_pbd_hazlo_type": "concat",
+            "id": "156125f2312d",
+            "left": "/repos/",
+            "right": {
+              "_pbd_hazlo_type": "var",
+              "id": "7be45070233f",
+              "keyPath": "pathOwner",
+              "optional": false
+            }
+          },
+          "right": "/"
+        },
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "06f6e0d884eb",
+          "keyPath": "pathRepo",
+          "optional": false
+        }
+      },
+      "right": "/readme"
+    },
+    "query": {
+      "ref": {
+        "_pbd_hazlo_type": "var",
+        "id": "c3e0549791e0",
+        "keyPath": "queryRef",
+        "optional": true
+      }
+    }
+  }
+}

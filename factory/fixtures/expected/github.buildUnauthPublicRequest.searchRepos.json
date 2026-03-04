@@ -1,0 +1,21 @@
+{
+  "result": {
+    "authMode": "unauthenticated",
+    "headers": {
+      "Accept": "application/vnd.github+json",
+      "X-GitHub-Api-Version": "2022-11-28"
+    },
+    "host": "https://api.github.com",
+    "method": "GET",
+    "path": "/search/repositories",
+    "query": {
+      "order": "desc",
+      "page": 1,
+      "per_page": 5,
+      "q": "topic:hazlo language:go",
+      "sort": "stars"
+    },
+    "summary": "Prepared GitHub public request for endpoint search_repositories"
+  },
+  "workflowRef": "github/BuildUnauthPublicRequest/v1"
+}

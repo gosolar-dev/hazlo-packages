@@ -1,0 +1,300 @@
+{
+  "name": "Build unauthenticated public request",
+  "description": "Builds a deterministic GitHub public API request envelope for smoke validation and local request-shaping checks.",
+  "meta": {
+    "provider": "github",
+    "operationId": "BuildUnauthPublicRequest"
+  },
+  "input": {
+    "endpoint": "root|meta|rate_limit|user_get|repo_get|repo_get_readme|repo_list_commits|repo_list_contributors|search_repositories",
+    "pathUsername": "<string>",
+    "pathOwner": "<string>",
+    "pathRepo": "<string>",
+    "queryQ": "<string>",
+    "querySort": "<string>",
+    "queryOrder": "<string>",
+    "queryPerPage": "<number>",
+    "queryPage": "<number>",
+    "querySha": "<string>",
+    "queryPath": "<string>",
+    "querySince": "<string>",
+    "queryUntil": "<string>",
+    "queryAnon": "<string>"
+  },
+  "inputRequired": [
+    "endpoint"
+  ],
+  "ruleset": {
+    "method": "GET",
+    "host": "https://api.github.com",
+    "headers": {
+      "Accept": "application/vnd.github+json",
+      "X-GitHub-Api-Version": "2022-11-28"
+    },
+    "path": {
+      "_pbd_hazlo_type": "switch",
+      "this": {
+        "_pbd_hazlo_type": "var",
+        "keyPath": "endpoint",
+        "optional": false
+      },
+      "cases": [
+        {
+          "_pbd_hazlo_type": "is",
+          "that": "root",
+          "then": "/"
+        },
+        {
+          "_pbd_hazlo_type": "is",
+          "that": "meta",
+          "then": "/meta"
+        },
+        {
+          "_pbd_hazlo_type": "is",
+          "that": "rate_limit",
+          "then": "/rate_limit"
+        },
+        {
+          "_pbd_hazlo_type": "is",
+          "that": "user_get",
+          "then": {
+            "_pbd_hazlo_type": "concat",
+            "left": "/users/",
+            "right": {
+              "_pbd_hazlo_type": "var",
+              "keyPath": "pathUsername",
+              "optional": false
+            }
+          }
+        },
+        {
+          "_pbd_hazlo_type": "is",
+          "that": "repo_get",
+          "then": {
+            "_pbd_hazlo_type": "concat",
+            "left": {
+              "_pbd_hazlo_type": "concat",
+              "left": {
+                "_pbd_hazlo_type": "concat",
+                "left": "/repos/",
+                "right": {
+                  "_pbd_hazlo_type": "var",
+                  "keyPath": "pathOwner",
+                  "optional": false
+                }
+              },
+              "right": "/"
+            },
+            "right": {
+              "_pbd_hazlo_type": "var",
+              "keyPath": "pathRepo",
+              "optional": false
+            }
+          }
+        },
+        {
+          "_pbd_hazlo_type": "is",
+          "that": "repo_get_readme",
+          "then": {
+            "_pbd_hazlo_type": "concat",
+            "left": {
+              "_pbd_hazlo_type": "concat",
+              "left": {
+                "_pbd_hazlo_type": "concat",
+                "left": {
+                  "_pbd_hazlo_type": "concat",
+                  "left": "/repos/",
+                  "right": {
+                    "_pbd_hazlo_type": "var",
+                    "keyPath": "pathOwner",
+                    "optional": false
+                  }
+                },
+                "right": "/"
+              },
+              "right": {
+                "_pbd_hazlo_type": "var",
+                "keyPath": "pathRepo",
+                "optional": false
+              }
+            },
+            "right": "/readme"
+          }
+        },
+        {
+          "_pbd_hazlo_type": "is",
+          "that": "repo_list_commits",
+          "then": {
+            "_pbd_hazlo_type": "concat",
+            "left": {
+              "_pbd_hazlo_type": "concat",
+              "left": {
+                "_pbd_hazlo_type": "concat",
+                "left": {
+                  "_pbd_hazlo_type": "concat",
+                  "left": "/repos/",
+                  "right": {
+                    "_pbd_hazlo_type": "var",
+                    "keyPath": "pathOwner",
+                    "optional": false
+                  }
+                },
+                "right": "/"
+              },
+              "right": {
+                "_pbd_hazlo_type": "var",
+                "keyPath": "pathRepo",
+                "optional": false
+              }
+            },
+            "right": "/commits"
+          }
+        },
+        {
+          "_pbd_hazlo_type": "is",
+          "that": "repo_list_contributors",
+          "then": {
+            "_pbd_hazlo_type": "concat",
+            "left": {
+              "_pbd_hazlo_type": "concat",
+              "left": {
+                "_pbd_hazlo_type": "concat",
+                "left": {
+                  "_pbd_hazlo_type": "concat",
+                  "left": "/repos/",
+                  "right": {
+                    "_pbd_hazlo_type": "var",
+                    "keyPath": "pathOwner",
+                    "optional": false
+                  }
+                },
+                "right": "/"
+              },
+              "right": {
+                "_pbd_hazlo_type": "var",
+                "keyPath": "pathRepo",
+                "optional": false
+              }
+            },
+            "right": "/contributors"
+          }
+        },
+        {
+          "_pbd_hazlo_type": "is",
+          "that": "search_repositories",
+          "then": "/search/repositories"
+        }
+      ],
+      "default": "/"
+    },
+    "query": {
+      "_pbd_hazlo_type": "switch",
+      "this": {
+        "_pbd_hazlo_type": "var",
+        "keyPath": "endpoint",
+        "optional": false
+      },
+      "cases": [
+        {
+          "_pbd_hazlo_type": "is",
+          "that": "search_repositories",
+          "then": {
+            "q": {
+              "_pbd_hazlo_type": "var",
+              "keyPath": "queryQ",
+              "optional": false
+            },
+            "sort": {
+              "_pbd_hazlo_type": "var",
+              "keyPath": "querySort",
+              "optional": true
+            },
+            "order": {
+              "_pbd_hazlo_type": "var",
+              "keyPath": "queryOrder",
+              "optional": true
+            },
+            "per_page": {
+              "_pbd_hazlo_type": "var",
+              "keyPath": "queryPerPage",
+              "optional": true
+            },
+            "page": {
+              "_pbd_hazlo_type": "var",
+              "keyPath": "queryPage",
+              "optional": true
+            }
+          }
+        },
+        {
+          "_pbd_hazlo_type": "is",
+          "that": "repo_list_commits",
+          "then": {
+            "sha": {
+              "_pbd_hazlo_type": "var",
+              "keyPath": "querySha",
+              "optional": true
+            },
+            "path": {
+              "_pbd_hazlo_type": "var",
+              "keyPath": "queryPath",
+              "optional": true
+            },
+            "since": {
+              "_pbd_hazlo_type": "var",
+              "keyPath": "querySince",
+              "optional": true
+            },
+            "until": {
+              "_pbd_hazlo_type": "var",
+              "keyPath": "queryUntil",
+              "optional": true
+            },
+            "per_page": {
+              "_pbd_hazlo_type": "var",
+              "keyPath": "queryPerPage",
+              "optional": true
+            },
+            "page": {
+              "_pbd_hazlo_type": "var",
+              "keyPath": "queryPage",
+              "optional": true
+            }
+          }
+        },
+        {
+          "_pbd_hazlo_type": "is",
+          "that": "repo_list_contributors",
+          "then": {
+            "anon": {
+              "_pbd_hazlo_type": "var",
+              "keyPath": "queryAnon",
+              "optional": true
+            },
+            "per_page": {
+              "_pbd_hazlo_type": "var",
+              "keyPath": "queryPerPage",
+              "optional": true
+            },
+            "page": {
+              "_pbd_hazlo_type": "var",
+              "keyPath": "queryPage",
+              "optional": true
+            }
+          }
+        }
+      ],
+      "default": {}
+    },
+    "authMode": "unauthenticated",
+    "summary": {
+      "_pbd_hazlo_type": "concat",
+      "left": "Prepared GitHub public request for endpoint ",
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "keyPath": "endpoint",
+        "optional": false
+      }
+    }
+  }
+}

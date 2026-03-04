@@ -1,0 +1,19 @@
+{
+  "name": "Get rate limit status for the authenticated user",
+  "description": "**Note:** Accessing this endpoint does not count against your REST API rate limit.\n\n**Note:** The `rate` object is deprecated. If you're writing new API client code or updating existing code, you should use the `core` object instead of the `rate` object. The `core` object contains the same information that is present in the `rate` object.",
+  "meta": {
+    "method": "GET",
+    "operationId": "rate-limit/get",
+    "path": "/rate_limit"
+  },
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {},
+    "host": "https://api.github.com",
+    "id": "cc26e240ef4a",
+    "method": "GET",
+    "path": "/rate_limit",
+    "query": {}
+  }
+}

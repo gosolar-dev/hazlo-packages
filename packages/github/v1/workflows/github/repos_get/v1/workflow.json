@@ -1,0 +1,52 @@
+{
+  "name": "Get a repository",
+  "description": "The `parent` and `source` objects are present when the repository is a fork. `parent` is the repository this repository was forked from, `source` is the ultimate source for the network.\n\n**Note:** In order to see the `security_and_analysis` block for a repository you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see \"[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization).\"",
+  "meta": {
+    "method": "GET",
+    "operationId": "repos/get",
+    "path": "/repos/{owner}/{repo}"
+  },
+  "input": {
+    "pathOwner": "<string>",
+    "pathRepo": "<string>"
+  },
+  "inputRequired": [
+    "pathOwner",
+    "pathRepo"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {},
+    "host": "https://api.github.com",
+    "id": "9df0cc02cc40",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "5f75f24dddb5",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "eb45e52a7577",
+        "left": {
+          "_pbd_hazlo_type": "concat",
+          "id": "1d4b3c457350",
+          "left": "/repos/",
+          "right": {
+            "_pbd_hazlo_type": "var",
+            "id": "02c3b4cd0da1",
+            "keyPath": "pathOwner",
+            "optional": false
+          }
+        },
+        "right": "/"
+      },
+      "right": {
+        "_pbd_hazlo_type": "var",
+        "id": "1a3fa76f2884",
+        "keyPath": "pathRepo",
+        "optional": false
+      }
+    },
+    "query": {}
+  }
+}

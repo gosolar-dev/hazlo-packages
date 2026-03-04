@@ -1,0 +1,107 @@
+{
+  "name": "List commits",
+  "description": "**Signature verification object**\n\nThe response will include a `verification` object that describes the result of verifying the commit's signature. The following fields are included in the `verification` object:\n\n| Name | Type | Description |\n| ---- | ---- | ----------- |\n| `verified` | `boolean` | Indicates whether GitHub considers the signature in this commit to be verified. |\n| `reason` | `string` | The reason for verified value. Possible values and their meanings are enumerated in table below. |\n| `signature` | `string` | The signature that was extracted from the commit. |\n| `payload` | `string` | The value that was signed. |\n\nThese are the possible values for `reason` in the `verification` object:\n\n| Value | Description |\n| ----- | ----------- |\n| `expired_key` | The key that made the signature is expired. |\n| `not_signing_key` | The \"signing\" flag is not among the usage flags in the GPG key that made the signature. |\n| `gpgverify_error` | There was an error communicating with the signature verification service. |\n| `gpgverify_unavailable` | The signature verification service is currently unavailable. |\n| `unsigned` | The object does not include a signature. |\n| `unknown_signature_type` | A non-PGP signature was found in the commit. |\n| `no_user` | No user was associated with the `committer` email address in the commit. |\n| `unverified_email` | The `committer` email address in the commit was associated with a user, but the email address is not verified on her/his account. |\n| `bad_email` | The `committer` email address in the commit is not included in the identities of the PGP key that made the signature. |\n| `unknown_key` | The key that made the signature has not been registered with any user's account. |\n| `malformed_signature` | There was an error parsing the signature. |\n| `invalid` | The signature could not be cryptographically verified using the key whose key-id was found in the signature. |\n| `valid` | None of the above errors applied, so the signature is considered to be verified. |",
+  "meta": {
+    "method": "GET",
+    "operationId": "repos/list-commits",
+    "path": "/repos/{owner}/{repo}/commits"
+  },
+  "input": {
+    "pathOwner": "<string>",
+    "pathRepo": "<string>",
+    "queryAuthor": "<string>",
+    "queryPage": "<number>",
+    "queryPath": "<string>",
+    "queryPerPage": "<number>",
+    "querySha": "<string>",
+    "querySince": "<string>",
+    "queryUntil": "<string>"
+  },
+  "inputRequired": [
+    "pathOwner",
+    "pathRepo"
+  ],
+  "ruleset": {
+    "_pbd_hazlo_type": "api_req",
+    "body": null,
+    "headers": {},
+    "host": "https://api.github.com",
+    "id": "abaed9aacb78",
+    "method": "GET",
+    "path": {
+      "_pbd_hazlo_type": "concat",
+      "id": "87df2b5ba5c9",
+      "left": {
+        "_pbd_hazlo_type": "concat",
+        "id": "9ca272b8680e",
+        "left": {
+          "_pbd_hazlo_type": "concat",
+          "id": "0b18be32b218",
+          "left": {
+            "_pbd_hazlo_type": "concat",
+            "id": "cadd2e064fe0",
+            "left": "/repos/",
+            "right": {
+              "_pbd_hazlo_type": "var",
+              "id": "4bf24e54cad5",
+              "keyPath": "pathOwner",
+              "optional": false
+            }
+          },
+          "right": "/"
+        },
+        "right": {
+          "_pbd_hazlo_type": "var",
+          "id": "285784df2985",
+          "keyPath": "pathRepo",
+          "optional": false
+        }
+      },
+      "right": "/commits"
+    },
+    "query": {
+      "author": {
+        "_pbd_hazlo_type": "var",
+        "id": "5bd927344c58",
+        "keyPath": "queryAuthor",
+        "optional": true
+      },
+      "page": {
+        "_pbd_hazlo_type": "var",
+        "id": "32315c83bc54",
+        "keyPath": "queryPage",
+        "optional": true
+      },
+      "path": {
+        "_pbd_hazlo_type": "var",
+        "id": "ad964fa191af",
+        "keyPath": "queryPath",
+        "optional": true
+      },
+      "per_page": {
+        "_pbd_hazlo_type": "var",
+        "id": "e288f30a86a3",
+        "keyPath": "queryPerPage",
+        "optional": true
+      },
+      "sha": {
+        "_pbd_hazlo_type": "var",
+        "id": "27ce79b927b3",
+        "keyPath": "querySha",
+        "optional": true
+      },
+      "since": {
+        "_pbd_hazlo_type": "var",
+        "id": "6455fdd4d5d5",
+        "keyPath": "querySince",
+        "optional": true
+      },
+      "until": {
+        "_pbd_hazlo_type": "var",
+        "id": "73aa327a48f2",
+        "keyPath": "queryUntil",
+        "optional": true
+      }
+    }
+  }
+}

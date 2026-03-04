@@ -1,6 +1,6 @@
 {
   "schemaVersion": "v1",
-  "generatedAt": "2026-03-04T09:48:36.674Z",
+  "generatedAt": "2026-03-04T09:58:11.382Z",
   "packages": [
     {
       "name": "examples",
@@ -10,6 +10,15 @@
       ],
       "description": "Factory example workflows used to validate local authoring, iteration, and publish pipeline behavior.",
       "path": "packages/examples"
+    },
+    {
+      "name": "github",
+      "latestVersion": "v1",
+      "versions": [
+        "v1"
+      ],
+      "description": "GitHub public REST API workflows focused on unauthenticated endpoints for metadata, user and repository discovery.",
+      "path": "packages/github"
     },
     {
       "name": "stripe",
